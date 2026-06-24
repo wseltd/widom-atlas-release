@@ -31,7 +31,7 @@ def panel(ax, x, y, w, h, title, lines, fc):
                                 boxstyle="round,pad=0.02,rounding_size=0.05",
                                 fc=fc, ec="black", lw=1.0))
     ax.text(x + w / 2, y + h - 0.30, title, ha="center", va="center",
-            fontsize=10, fontweight="bold")
+            fontsize=9, fontweight="bold")
     ax.plot([x + 0.2, x + w - 0.2], [y + h - 0.58, y + h - 0.58],
             color="0.5", lw=0.6)
     top = y + h - 0.95
@@ -48,12 +48,12 @@ def main():
     ax.set_ylim(0, 6)
     ax.axis("off")
 
-    panel(ax, 0.15, 0.7, 3.7, 4.7, "Recipe (locked per branch)", INGREDIENTS, "#eef3fa")
+    panel(ax, 0.1, 0.7, 4.1, 4.7, "Recipe (locked per branch)", INGREDIENTS, "#eef3fa")
     panel(ax, 4.55, 2.6, 2.6, 1.3, "Widom insertion",
           [r"$\langle e^{-\beta U}\rangle \rightarrow K_H,\ Q_{st}$"], "#fbf3e6")
     panel(ax, 7.95, 0.7, 3.9, 4.7, "Verdict (exactly one)", VERDICTS, "#eef7ee")
 
-    ax.add_patch(FancyArrowPatch((3.9, 3.25), (4.5, 3.25), arrowstyle="-|>",
+    ax.add_patch(FancyArrowPatch((4.25, 3.25), (4.5, 3.25), arrowstyle="-|>",
                                  mutation_scale=15, lw=1.4, color="black"))
     ax.add_patch(FancyArrowPatch((7.2, 3.25), (7.9, 3.25), arrowstyle="-|>",
                                  mutation_scale=15, lw=1.4, color="black"))
