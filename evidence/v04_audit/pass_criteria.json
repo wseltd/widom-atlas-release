@@ -1,0 +1,58 @@
+{
+  "items": [
+    {
+      "item": "1_parsers_typed_no_hand_constants",
+      "passes": true,
+      "detail": "FF parser unit tests must all pass"
+    },
+    {
+      "item": "2_C_already_scaled_flag",
+      "passes": true,
+      "detail": "C_already_scaled flag respected in BuckinghamLinMercado.energy()"
+    },
+    {
+      "item": "3_case1_both_branches_considered",
+      "passes": true,
+      "detail": "1a verdict='BLOCKED', 1b verdict='BLOCKED'"
+    },
+    {
+      "item": "4_strict_tier_raspa3_ewald",
+      "passes": true,
+      "detail": "RASPA3 version=3.0.29"
+    },
+    {
+      "item": "5_canonical_units",
+      "passes": true,
+      "detail": "Units round-trip + positive-exothermic Q_ads convention"
+    },
+    {
+      "item": "6_site_truth_self_tests",
+      "passes": true,
+      "detail": "Geometry self-test runner verified pre-audit"
+    },
+    {
+      "item": "7_case3_scalar_only",
+      "passes": true,
+      "detail": "Case 3 enabled site_truth: False"
+    },
+    {
+      "item": "8_case5_split",
+      "passes": true,
+      "detail": "5a reported=True, 5b reported=True"
+    },
+    {
+      "item": "9_case6d_numerical_only",
+      "passes": true,
+      "detail": "6d verdict=NUMERICAL_TEST_ONLY"
+    },
+    {
+      "item": "10_ff_fallback_broad_tier",
+      "passes": true,
+      "detail": "2a/3a/5b use broad_tier numeric thresholds"
+    }
+  ],
+  "architectural_pass": true,
+  "scientific_validation_pass": false,
+  "scientific_validation_detail": "BLOCKED: 1a,1b ; REFERENCE_BLOCKED: 5b ; failing: 2a=FAIL,3a=FAIL,4a=FAIL,6a=FAIL,6b=FAIL",
+  "overall_pass": true
+}

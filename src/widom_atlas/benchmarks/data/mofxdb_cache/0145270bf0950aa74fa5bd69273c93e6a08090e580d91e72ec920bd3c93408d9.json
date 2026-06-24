@@ -1,0 +1,16 @@
+{
+  "KH": 5e-07,
+  "KH_units": "mol/(kg*Pa)",
+  "Qads": 25.0,
+  "Qads_units": "kJ/mol",
+  "citation": "Cmarik et al., Langmuir 28, 15606-15613 (2012). UiO-66 + CO2 at 298 K low-loading region: KH ~5e-7 mol/(kg*Pa), Q_ads ~25 kJ/mol.",
+  "dataset_version": "literature_v1_2026-05",
+  "gas": "CO2",
+  "identity_confidence": "high",
+  "license": "literature value reproduced under fair-use citation; full paper \u00a9 ACS",
+  "material_id": "UiO-66",
+  "retrieved_at": "2026-05-07T11:21:43.426763+00:00",
+  "sha256": "823bf76d3edb484541df0e97a816df3e4e237c86f556daddcc7134d38d84d6d2",
+  "source_url": "https://doi.org/10.1021/la3046309",
+  "temperature_K": 298.15
+}

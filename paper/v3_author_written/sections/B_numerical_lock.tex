@@ -1,0 +1,24 @@
+% Appendix B --- Numerical lock and reproducibility. Populated 2026-06-09 from
+% the scientific status lock, src/.../thresholds.py, and the production verdicts.
+% No values recomputed; no unverified software-version claims.
+\section{Numerical lock and reproducibility}\label{app:lock}
+
+This appendix records the numerical identity of the v0.4 result. All values are read from the locked case matrix, the scientific status lock, and the production verdict JSONs; none is recomputed here.
+
+\paragraph{Locked case matrix.} The v0.4 case matrix is pinned by the SHA-256 digest
+\begin{center}\small\ttfamily
+CASE\_MATRIX\_SHA256 =\\
+b0571780a4794be0fabb2a7d47a093fcb8dab07c4355467bb2fabe1a6a085664\\
+8c943c3890847dfe6d98f684211d449e
+\end{center}
+A locked-input loader verifies this digest before any consumer reads the matrix.
+
+\paragraph{Strict acceptance thresholds.} The Tier-A strict (regression) band is \(\pm 0.10\) in \(\Delta\log_{10} K_H\) and \(\pm 2.0\ \mathrm{kJ\,mol^{-1}}\) in \(\Delta Q_{st}\). It is a tight reproducibility gate, deliberately tighter than experimental scatter, and is not itself a physical-accuracy claim. Acceptance is \emph{inclusive}: a branch passes when \(|\Delta\log_{10}K_H| \le 0.10\) and \(|\Delta Q_{st}| \le 2.0\ \mathrm{kJ\,mol^{-1}}\). The decision is taken on the three-seed point estimate; the seed-to-seed standard deviation (for example \(\pm 0.33\ \mathrm{kJ\,mol^{-1}}\) on the 4c heat) is reported as a reproducibility indicator and is not folded into the pass/fail logic. Branch 4c sits exactly on the heat boundary, and which side it lands on is engine-dependent: on the native estimator \(\Delta Q_{st} = +1.99\ \mathrm{kJ\,mol^{-1}}\) (inside), on RASPA3 \(+2.24\) (outside). The same recipe is therefore nominally strict on one engine and Tier-B on the other; we report 4c as Tier-B (the cross-engine \(K_H\) agreement is \(\sim\!9\%\) and the result is inside the experimental window).
+
+\paragraph{Headline disposition.} Two of fifteen verdict-affecting branches pass the strict criterion: 6c (all-silica MFI + Ar) and 3a (UiO-66 + CO\textsubscript{2} under genuine UFF). Five of fifteen pass the Tier-B physical-accuracy criterion: 6c, 3a, 2a (HKUST-1 + CO\textsubscript{2}, genuine UFF), 4c (Si-CHA + CO\textsubscript{2} under the Bai 2013 TraPPE-zeo recipe), and 3b\_EHq (UiO-66 + CO\textsubscript{2}, explicit-hydrogen Yang-charge Maia 2023 variant). The 2a/3a passes are the v0.4.2 genuine-UFF rebuild that corrected a generator mislabel (see the audit result); their superseded as-locked deviations are retained in the case matrix.
+
+\paragraph{Branches that are not scalar-scored.} Branch 5b (Na-Rho + CO\textsubscript{2}) is method-blocked: a rigid closed-state Widom calculation and the open-state trapdoor adsorption experiment are different statistical-mechanical observables, so the scalar \(K_H\)/\(Q_{st}\) comparison is not scored as a pass or a fail. The 5c cationic-zeolite targets (Na-ZK-5, Zeolite 5A, Zeolite 13X, Zeolite 4A) are reference-audited only: their experimental references are recorded, but the cation-containing structures and cation force-field and charge models are not locked, so they are not executed validation branches and do not validate 5b.
+
+\paragraph{Scope of the v0.4 claim.} On this evidence, widom-atlas is not scientifically validated as a general predictive adsorption tool. No v0.4 strict pass used a machine-learned interatomic potential or GPU acceleration.
+
+\paragraph{Backend-agreement controls (as recorded).} The native Lennard-Jones evaluator agrees with RASPA3 to within one percent on the all-silica MFI + Ar and MFI + CH\textsubscript{4} recipes. On the Si-CHA + CO\textsubscript{2} charged-framework control (4c) the native Ewald estimator and RASPA3 agree to \(\sim\!9\%\) on \(K_H\) and \(\sim\!1\%\) on \(Q_{st}\). On HKUST-1, by contrast, the native charged-Ewald path shows a large empirical discrepancy against RASPA3 --- about a factor of four on the identical recipe. A suspected non-orthogonal minimum-image explanation was tested after the audit; at the actual supercells and cutoffs of the published runs, a brute-force image check found no within-cutoff mis-imaged pairs for HKUST-1, Si-CHA, or MFI, so the root cause is \emph{not} established. The native charged-MOF results are therefore treated as non-verdict-supporting; the MOF branches are reported from RASPA3 (2a, 3a) or RASPA2 (1a). The 4c result is retained because it is directly cross-engine checked, not because of any orthogonality assumption. The Mg-MOF-74 + CO\textsubscript{2} Buckingham recipe was run on RASPA2; the native Buckingham path is not independently cross-validated on this MOF. The MOF branches presented only as audited examples (1b, 1c, 1d, 2b, 3b) inherit this limitation. No headline result depends on the native charged-MOF path. The specific backend build versions are recorded in the locked case matrix and are not restated here.

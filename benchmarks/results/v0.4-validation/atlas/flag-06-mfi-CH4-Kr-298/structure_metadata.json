@@ -1,0 +1,35 @@
+{
+  "cell_matrix": [
+    [
+      20.022,
+      0.0,
+      0.0
+    ],
+    [
+      0.0,
+      19.899,
+      0.0
+    ],
+    [
+      0.0,
+      0.0,
+      13.383
+    ]
+  ],
+  "metadata": {
+    "KH_mol_per_kg_per_Pa": 0.0010734387391578494,
+    "Qads_kJ_per_mol": 27.77041020812041,
+    "case_id": "flag-06-mfi-CH4-Kr-298",
+    "evaluator": "widom_atlas.evaluator (LJ+Wolf-Coulomb)",
+    "formula": "O192Si96",
+    "framework_name": "MFI",
+    "grid_mode": "stochastic_uniform",
+    "n_atoms": 288,
+    "n_insertions": 1024,
+    "r_cut_A": 12.0,
+    "seed": 0,
+    "source": "ase",
+    "structure_sha256": "65ffb4fe61e5c2ad2c5b2a0c452ecb6db8d43faa9c2d172601e594c65e88d9c8"
+  },
+  "structure_id": "O192Si96"
+}

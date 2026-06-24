@@ -1,0 +1,50 @@
+{
+  "branch_id": "4c",
+  "role": "RASPA3 cross-check of the native 4c (Si-CHA+CO2) result, identical recipe (TraPPE-CO2, Ewald, 14A+tail)",
+  "engine": "RASPA3 v3.0.29",
+  "n_seeds": 11,
+  "n_cycles_per_seed": 20000,
+  "temperatures_K": [
+    298.15,
+    323.15
+  ],
+  "K_H_298_per_seed": [
+    1.9253,
+    1.9624,
+    2.1079,
+    1.8704,
+    2.0172,
+    2.0709,
+    2.3072,
+    1.8524,
+    2.003,
+    1.8297,
+    2.4393
+  ],
+  "K_H_323_per_seed": [
+    0.945,
+    0.9121,
+    0.9823,
+    0.9043,
+    0.9785,
+    1.0553,
+    0.9081,
+    0.9538,
+    1.0112,
+    1.1196,
+    1.0526
+  ],
+  "K_H_298_geomean": 2.027,
+  "Q_st_vant_Hoff": 23.24,
+  "reference_K_H": 2.43,
+  "reference_Q_st": 21.0,
+  "delta_log10_K_H": -0.079,
+  "delta_Q_st": 2.24,
+  "native_comparison": {
+    "native_K_H": 2.223,
+    "native_Q_st": 22.99,
+    "K_H_agreement_pct": 8.8,
+    "Q_st_agreement_pct": 1.1
+  },
+  "verdict_note": "native +1.99 inside the +-2.0 Q_st strict gate; RASPA3 +2.24 outside -> the strict-vs-Tier-B verdict is engine-dependent; reported as Tier-B."
+}

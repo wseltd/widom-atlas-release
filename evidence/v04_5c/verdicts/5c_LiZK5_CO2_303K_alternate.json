@@ -1,0 +1,136 @@
+{
+  "branch_id_candidate": "5c_LiZK5_CO2_303K_alternate",
+  "label": "Li-ZK-5 + CO2 at 303 K \u2014 alternate KFI cation comparison",
+  "reference_isodb_audit": {
+    "source_file": "docs/research/dataset-research-for-v0.4/5c_replacement_branches/na_zk5_pham_lobo_2013/pham_lobo_2013_isotherm48_li_zk5_co2_303K.json",
+    "doi": "10.1021/La400352r",
+    "adsorbent": "Zeolite Li-ZK-5",
+    "adsorbate": "Carbon Dioxide",
+    "temperature_K": 303.0,
+    "n_points": 9,
+    "p_units_in_json": "bar",
+    "q_units_in_json": "mmol/g",
+    "unit_conversion": {
+      "bar_to_Pa": 100000.0,
+      "mmol_per_g_to_mol_per_kg": 1.0
+    },
+    "isotherm_data": [
+      {
+        "p_bar": 0.00103316,
+        "p_Pa": 103.316,
+        "q_mmol_per_g": 0.129218,
+        "q_mol_per_kg": 0.129218
+      },
+      {
+        "p_bar": 0.00422603,
+        "p_Pa": 422.60300000000007,
+        "q_mmol_per_g": 0.168545,
+        "q_mol_per_kg": 0.168545
+      },
+      {
+        "p_bar": 0.0201022,
+        "p_Pa": 2010.22,
+        "q_mmol_per_g": 0.365184,
+        "q_mol_per_kg": 0.365184
+      },
+      {
+        "p_bar": 0.100555,
+        "p_Pa": 10055.5,
+        "q_mmol_per_g": 0.837117,
+        "q_mol_per_kg": 0.837117
+      },
+      {
+        "p_bar": 0.213862,
+        "p_Pa": 21386.2,
+        "q_mmol_per_g": 1.50569,
+        "q_mol_per_kg": 1.50569
+      },
+      {
+        "p_bar": 0.528946,
+        "p_Pa": 52894.600000000006,
+        "q_mmol_per_g": 2.39712,
+        "q_mol_per_kg": 2.39712
+      },
+      {
+        "p_bar": 1.15363,
+        "p_Pa": 115363.0,
+        "q_mmol_per_g": 3.30165,
+        "q_mol_per_kg": 3.30165
+      },
+      {
+        "p_bar": 3.57819,
+        "p_Pa": 357819.0,
+        "q_mmol_per_g": 4.20619,
+        "q_mol_per_kg": 4.20619
+      },
+      {
+        "p_bar": 9.54363,
+        "p_Pa": 954363.0,
+        "q_mmol_per_g": 4.82233,
+        "q_mol_per_kg": 4.82233
+      }
+    ],
+    "K_H_fits": [
+      {
+        "method": "1pt_slope",
+        "K_H_mmol_per_g_per_bar": 125.07065701343451,
+        "K_H_mol_per_kg_per_bar": 125.07065701343451,
+        "K_H_mol_per_kg_per_Pa": 0.0012507065701343452,
+        "n_points_used": 1,
+        "p_max_used_bar": 0.00103316,
+        "notes": []
+      },
+      {
+        "method": "2pt_origin_linear",
+        "K_H_mmol_per_g_per_bar": 44.68697126396924,
+        "K_H_mol_per_kg_per_bar": 44.68697126396924,
+        "K_H_mol_per_kg_per_Pa": 0.0004468697126396924,
+        "n_points_used": 2,
+        "p_max_used_bar": 0.00422603,
+        "notes": []
+      },
+      {
+        "method": "3pt_origin_linear",
+        "K_H_mmol_per_g_per_bar": 19.35293929630883,
+        "K_H_mol_per_kg_per_bar": 19.35293929630883,
+        "K_H_mol_per_kg_per_Pa": 0.0001935293929630883,
+        "n_points_used": 3,
+        "p_max_used_bar": 0.0201022,
+        "notes": []
+      },
+      {
+        "method": "virial_lowhalf",
+        "K_H_mmol_per_g_per_bar": 89.67356568368726,
+        "K_H_mol_per_kg_per_bar": 89.67356568368726,
+        "K_H_mol_per_kg_per_Pa": 0.0008967356568368726,
+        "n_points_used": 4,
+        "p_max_used_bar": 0.100555,
+        "notes": []
+      }
+    ],
+    "K_H_sensitivity": {
+      "min_mol_per_kg_per_bar": 19.35293929630883,
+      "max_mol_per_kg_per_bar": 125.07065701343451,
+      "ratio_max_over_min": 6.462618163499802
+    },
+    "henry_regime_adequacy": "adequate (q[0]/q_max = 0.027 < 0.05)"
+  },
+  "Q_st_reference": {
+    "value_kJ_per_mol": 47.0,
+    "source": "Pham & Lobo 2013 Langmuir; KFI Li variant Qst \u2248 47 kJ/mol.",
+    "source_doi": "10.1021/la400352r",
+    "method": "literature_citation (not derived from isotherm; would require multi-T van't Hoff or calorimetric data)"
+  },
+  "structure_provenance_required": "Li-KFI framework + Li cation positions.",
+  "structure_provenance_in_repo": false,
+  "ff_provenance_required": "UFF Li+ + framework Garcia-Perez 2007 Si/O LJ + TraPPE-CO2.",
+  "ff_provenance_in_repo": false,
+  "execution_status": "reference_audited_pending_both_cation_cif_and_ff_lock",
+  "exact_missing_artefacts_for_atlas_execution": [
+    "Li-KFI framework + Li cation positions.",
+    "UFF Li+ + framework Garcia-Perez 2007 Si/O LJ + TraPPE-CO2."
+  ],
+  "verdict": "REFERENCE_AUDITED",
+  "verdict_notes": "K_H reference + Q_st reference + sensitivity range fully audited and reproducible from the archived ISODB JSON. Atlas simulation execution pending cation-CIF + force-field lock (see exact_missing_artefacts_for_atlas_execution). NOT a 5b validation.",
+  "do_not_call_replacement_a_validation_of_5b": true
+}

@@ -1,0 +1,26 @@
+{
+  "gas": "CH4",
+  "generated_at": "2026-05-08T14:26:25.737008+00:00",
+  "pipeline_params": {
+    "angle_tolerance": 5.0,
+    "annotate_uncertainty": true,
+    "basin_match_tol_A": 0.35,
+    "dbscan_eps_A": 1.5,
+    "energy_match_tol_kJmol": 2.0,
+    "grid_spacing_A": null,
+    "min_samples": 8,
+    "n_grid": [
+      32,
+      32,
+      32
+    ],
+    "smoothing_sigma_A": 0.0,
+    "symprec": 0.01,
+    "temperature_K": 298.15
+  },
+  "run_id": "O192Si96_20260508T142625Z",
+  "schema_version": "1",
+  "structure_id": "O192Si96",
+  "temperature_K": 298.15,
+  "widom_atlas_version": "0.1.0"
+}

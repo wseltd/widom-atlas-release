@@ -1,0 +1,134 @@
+{
+  "audit_timestamp_utc": "2026-06-01 16:16:04",
+  "n_candidates": 8,
+  "candidates": {
+    "5c_NaZK5_CO2_303K_PRIMARY": {
+      "status": "reference_audited_pending_both_cation_cif_and_ff_lock",
+      "verdict": "REFERENCE_AUDITED",
+      "K_H_method_values_mol_per_kg_per_bar": {
+        "1pt_slope": 125.07065701343451,
+        "2pt_origin_linear": 44.68697126396924,
+        "3pt_origin_linear": 19.35293929630883,
+        "virial_lowhalf": 89.19715899271426
+      },
+      "K_H_sensitivity_range_mol_per_kg_per_bar": [
+        19.35293929630883,
+        125.07065701343451
+      ],
+      "Q_st_reference_kJ_per_mol": 49.0,
+      "henry_regime_adequacy": "adequate (q[0]/q_max = 0.029 < 0.05)"
+    },
+    "5c_LiZK5_CO2_303K_alternate": {
+      "status": "reference_audited_pending_both_cation_cif_and_ff_lock",
+      "verdict": "REFERENCE_AUDITED",
+      "K_H_method_values_mol_per_kg_per_bar": {
+        "1pt_slope": 125.07065701343451,
+        "2pt_origin_linear": 44.68697126396924,
+        "3pt_origin_linear": 19.35293929630883,
+        "virial_lowhalf": 89.67356568368726
+      },
+      "K_H_sensitivity_range_mol_per_kg_per_bar": [
+        19.35293929630883,
+        125.07065701343451
+      ],
+      "Q_st_reference_kJ_per_mol": 47.0,
+      "henry_regime_adequacy": "adequate (q[0]/q_max = 0.027 < 0.05)"
+    },
+    "5c_KZK5_CO2_303K_alternate": {
+      "status": "reference_audited_pending_both_cation_cif_and_ff_lock",
+      "verdict": "REFERENCE_AUDITED",
+      "K_H_method_values_mol_per_kg_per_bar": {
+        "1pt_slope": 7.646073954086667,
+        "2pt_origin_linear": 9.490042387880468,
+        "3pt_origin_linear": 9.874777021271381,
+        "virial_lowhalf": 9.331151467161398
+      },
+      "K_H_sensitivity_range_mol_per_kg_per_bar": [
+        7.646073954086667,
+        9.874777021271381
+      ],
+      "Q_st_reference_kJ_per_mol": 45.0,
+      "henry_regime_adequacy": "adequate (q[0]/q_max = 0.003 < 0.05)"
+    },
+    "5c_Zeolite5A_CaA_CO2_298K_fallback": {
+      "status": "reference_audited_pending_both_cation_cif_and_ff_lock",
+      "verdict": "REFERENCE_AUDITED",
+      "K_H_method_values_mol_per_kg_per_bar": {
+        "1pt_slope": 2813.0454545454545,
+        "2pt_origin_linear": 2743.732298806583,
+        "3pt_origin_linear": 2672.8623840751234,
+        "virial_lowhalf": 2506.7828490886122
+      },
+      "K_H_sensitivity_range_mol_per_kg_per_bar": [
+        2506.7828490886122,
+        2813.0454545454545
+      ],
+      "Q_st_reference_kJ_per_mol": 36.0,
+      "henry_regime_adequacy": "adequate (q[0]/q_max = 0.006 < 0.05)"
+    },
+    "5c_Zeolite13X_NaX_CO2_273K_fallback": {
+      "status": "reference_audited_pending_both_cation_cif_and_ff_lock",
+      "verdict": "REFERENCE_AUDITED",
+      "K_H_method_values_mol_per_kg_per_bar": {
+        "1pt_slope": 2577.8854532744735,
+        "2pt_origin_linear": 2486.084371755289,
+        "3pt_origin_linear": 2381.399846158001,
+        "virial_lowhalf": 2420.874841559912
+      },
+      "K_H_sensitivity_range_mol_per_kg_per_bar": [
+        2381.399846158001,
+        2577.8854532744735
+      ],
+      "Q_st_reference_kJ_per_mol": 44.0,
+      "henry_regime_adequacy": "adequate (q[0]/q_max = 0.045 < 0.05)"
+    },
+    "5c_Zeolite4A_NaA_CO2_273K_fallback": {
+      "status": "reference_audited_pending_both_cation_cif_and_ff_lock",
+      "verdict": "REFERENCE_AUDITED",
+      "K_H_method_values_mol_per_kg_per_bar": {
+        "1pt_slope": 1591.611111111111,
+        "2pt_origin_linear": 5143.289317507419,
+        "3pt_origin_linear": 5968.301146972526,
+        "virial_lowhalf": 5583.486607854883
+      },
+      "K_H_sensitivity_range_mol_per_kg_per_bar": [
+        1591.611111111111,
+        5968.301146972526
+      ],
+      "Q_st_reference_kJ_per_mol": 40.0,
+      "henry_regime_adequacy": "adequate (q[0]/q_max = 0.005 < 0.05)"
+    },
+    "5c_R1KCHA_CO2_273K_alternate": {
+      "status": "reference_audited_pending_both_cation_cif_and_ff_lock",
+      "verdict": "REFERENCE_AUDITED",
+      "K_H_method_values_mol_per_kg_per_bar": {
+        "1pt_slope": 39.372600901432754,
+        "2pt_origin_linear": 18.116122879362866,
+        "3pt_origin_linear": 7.8211580088187835,
+        "virial_lowhalf": 61.0952639521473
+      },
+      "K_H_sensitivity_range_mol_per_kg_per_bar": [
+        7.8211580088187835,
+        61.0952639521473
+      ],
+      "Q_st_reference_kJ_per_mol": 35.0,
+      "henry_regime_adequacy": "inadequate (q[0]/q_max = 0.374 >= 0.15 \u2014 first point is far past Henry regime)"
+    },
+    "5c_HighSilicaCHA_CO2_298K_alternate": {
+      "status": "reference_audited_pending_ff_lock",
+      "verdict": "REFERENCE_AUDITED",
+      "K_H_method_values_mol_per_kg_per_bar": {
+        "1pt_slope": 3.7042594385285574,
+        "2pt_origin_linear": 3.902910555495745,
+        "3pt_origin_linear": 3.1242506553047704,
+        "virial_lowhalf": 3.8593030319872943
+      },
+      "K_H_sensitivity_range_mol_per_kg_per_bar": [
+        3.1242506553047704,
+        3.902910555495745
+      ],
+      "Q_st_reference_kJ_per_mol": 25.0,
+      "henry_regime_adequacy": "adequate (q[0]/q_max = 0.006 < 0.05)"
+    }
+  }
+}

@@ -1,0 +1,92 @@
+{
+  "branch_id": "1a",
+  "case_id": "1",
+  "verdict": "FAIL",
+  "status": "locked_strict_executed",
+  "backend": "RASPA2",
+  "verdict_tier": "flagship_strict",
+  "numeric_thresholds": "flagship_strict",
+  "thresholds_used": {
+    "delta_log10_KH_max": 0.1,
+    "delta_Qads_kJ_per_mol_max": 2.0,
+    "site_truth_distance_tolerance_angstrom": 0.10
+  },
+  "fail_axes": [
+    {
+      "axis": "K_H",
+      "delta_log10": 2.0735863665974246,
+      "atlas_mol_per_kg_per_bar": 22152.766666666666,
+      "ref_mol_per_kg_per_bar": 187.0,
+      "ref_source": "Mason_2011_EES_regression"
+    },
+    {
+      "axis": "Q_st",
+      "delta_kJ_per_mol": 9.027189010836004,
+      "atlas_kJ_per_mol": 51.027189010836004,
+      "ref_kJ_per_mol": 42.0,
+      "ref_source": "Mason_2011_EES + Simmons_2011_Fig_S23"
+    },
+    {
+      "axis": "site_geometry",
+      "atlas_Mg_O_CO2_angstrom": 2.65,
+      "ref_Mg_O_CO2_angstrom": 2.27,
+      "delta_angstrom": 0.38,
+      "tolerance_angstrom": 0.10,
+      "ref_source": "Wu_2010_JPCL_SI_Table_S1",
+      "method": "VdW-only end-on probe sweep around Mg0; native Buckingham + LJ pair energies; minimum-energy distance"
+    }
+  ],
+  "verdict_reason": "Lin/Mercado Model 4 versus Mason 2011 disagreement after corrected mass normalisation (pseudo_atoms.def 9->14 column schema fix, see V04_1A_RASPA2_FORENSIC_AUDIT.md).",
+  "reference_caveat": "possible reference caveat: Mason 2011 K_H = 187 mol/(kg.bar) is a van't Hoff regression of 20-200 deg C isotherms, not a directly measured 298 K zero-coverage Henry. Not used to explain away the failure.",
+  "parsed_K_H_mol_per_kg_per_Pa": 0.22152766666666668,
+  "parsed_K_H_mol_per_kg_per_bar": 22152.766666666666,
+  "parsed_Q_st_kJ_per_mol": 51.027189010836004,
+  "delta_log10_K_H": 2.0735863665974246,
+  "delta_Q_st_kJ_per_mol": 9.027189010836004,
+  "passes_K_H": false,
+  "passes_Q_st": false,
+  "reference": {
+    "K_H_value_mol_per_kg_per_bar": 187.0,
+    "K_H_value_mol_per_kg_per_Pa": 0.00187,
+    "K_H_window_min": null,
+    "K_H_window_max": null,
+    "K_H_source": "Mason_2011_EES_regression",
+    "K_H_temperature_K": 298.0,
+    "Q_st_value_kj_per_mol": 42.0,
+    "Q_st_window_min": null,
+    "Q_st_window_max": null,
+    "Q_st_source": "Mason_2011_EES + Simmons_2011_Fig_S23"
+  },
+  "evidence": {
+    "raspa2_version": "2.0.50",
+    "raspa2_bin_sha256": "b875b3eee608d5bef456655e13b5b8afa67cbde3370287a717c7117ab23e70a8",
+    "raspa2_lib_sha256": "4e911a1543fe8985375d2fc23452af66ca16a16426d5fffadd5ef4f097dd34fc",
+    "input_sha256": {
+      "simulation.input": "b72baed92eabbb130a685ad4150ddb8cd27c9cc1fbb459d4894875d3a8a83705",
+      "share/raspa/forcefield/LinMercado/pseudo_atoms.def": "6e485d9eff811d36c493ca4b6ca824ac035d21af76893adbc6fcc06e8ba8ad0a",
+      "share/raspa/forcefield/LinMercado/force_field_mixing_rules.def": "cbf24b3eb4abedc324b53ace95a530cd8f971874328ce7cb42d8c6da70b303ca",
+      "share/raspa/forcefield/LinMercado/force_field.def": "9c99fc68413b5e82e2220f5436adae650c945eabe4a2f4ba60bcaec6ccd95e12",
+      "share/raspa/structures/cif/VOGTIV_LinMercado.cif": "ffae1b58206b32f08bfed26acf262b85c6509809e8cb535cb3fee4a5e73fcf95"
+    },
+    "output_data_path": "evidence/v04_1a_raspa2/evidence/1a/T298_seed0/Output/System_0/output_VOGTIV_LinMercado_4.2.2_298.000000_0.data",
+    "stdout_path": "evidence/v04_1a_raspa2/evidence/1a/T298_seed0/raspa2.stdout.txt",
+    "stderr_path": "evidence/v04_1a_raspa2/evidence/1a/T298_seed0/raspa2.stderr.txt",
+    "Q_st_widom_kJ_per_mol_per_run": 50.210200341036,
+    "Q_st_widom_seed_mean": 51.027189010836004,
+    "Q_st_widom_seed_std": 0.9837605030983027,
+    "Q_st_vant_hoff": 57.00196554061855,
+    "Q_st_vant_hoff_unc": 4.547031188714161,
+    "Q_st_method": "direct_widom_from_RASPA2",
+    "backend": "RASPA2_v2.0.50_Lin_Mercado_BUCKINGHAM2_hardcore_1A",
+    "seeds": 3,
+    "insertions_per_seed": 100000,
+    "aggregate_insertions": 600000,
+    "K_H_seed_std_mol_per_kg_per_Pa": 0.05351438910548578,
+    "Q_st_uncertainty_kJ_per_mol": 0.9837605030983027,
+    "derived_charges": null,
+    "derivation_notes": null,
+    "binary_interactions": null,
+    "branch_manifest_path": "evidence/1a/branch_manifest.json"
+  },
+  "notes": []
+}

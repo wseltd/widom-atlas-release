@@ -1,0 +1,612 @@
+\section{Thesis}\label{thesis}
+
+A published force-field parameter table is \textbf{not} a complete
+simulation recipe. The load-bearing ingredients are frequently
+unpublished: a short-range protection convention, a mixing rule applied
+to the framework atoms, a dispersion correction, a blocking radius, an
+energy-reference convention. An ungoverned pipeline that guesses any of
+them wrong returns a confident, wrong number with no warning. This is
+the \textbf{domain-of-validity / realization-gap} failure class.
+The v0.4/v0.4.2 classical audit established this failure class on locked
+classical force-field recipes; \textbf{v0.6 retargets the same governance
+logic onto CuspAI's own engine (kUPS) and the machine-learning
+interatomic potential (MLIP) it ships} --- and shows a governance
+layer that \emph{characterizes, discriminates, and where the evidence
+supports it, screen-passes a governed remediation.}
+
+\textbf{Reader note on labels.} Branch codes such as \texttt{6c} and
+\texttt{4c} are internal locked-recipe identifiers, not chemical formulae
+or universal benchmark names: each fixes one complete Widom-insertion
+recipe (structure, guest model, force field, charges, mixing rule,
+electrostatics, backend, sampling, and reference). Branch 6c is the
+all-silica MFI + Ar recipe used as the positive control; branch 4c is the
+Si-CHA + CO\textsubscript{2} charged-zeolite control. ``Native'' is this
+project's own independent Python Widom estimator (not a generic term),
+reported alongside the external Monte Carlo engine RASPA3. The version
+labels are internal repository milestones: v0.4 and v0.4.2 are the locked
+and corrected classical-audit layers, v0.5 is non-load-bearing
+consolidation or extension material, and v0.6 is this kUPS and MLIP
+governance extension.
+
+Three results carry the report: 1. \textbf{A2/F1} --- the originally-locked positive
+control \emph{double-counted silicon}; its strict-band agreement was a fortuitous four-error
+cancellation; rebuilt clean (single-source, Talu's calibration Olson
+geometry) it reproduces the corrected reference \(K_H = 0.200\)
+cross-engine (native 0.200, RASPA3 0.199) (Finding~F1). 2. \textbf{A2-F2} --- to our knowledge, the first published
+independent validation of kUPS's (six-week-old, unreleased) Widom
+estimator. 3. \textbf{WPB} --- a four-configuration MLIP demonstration:
+discriminate two failure modes, screen-pass a dispersion-corrected
+route, and show the failure generalizes across MLIP families.
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\section{Cross-engine Widom parity
+(WPA-A2)}\label{cross-engine-widom-parity-wpa-a2}
+
+\subsection{System and recipe}\label{system-and-recipe}
+
+6c positive control: \textbf{MFI (all-silica) + Ar}, García-Pérez 2007
+framework + Talu-Myers 2001 cross-pair. The complete locked recipe
+(recovered verbatim from the RASPA3 evidence
+\texttt{force\_field.json}):
+
+{%
+\begin{longtable}[]{@{}lll@{}}
+\toprule\noalign{}
+element & self LJ (ε/K, σ/Å) & source \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+Ar & 119.8 / 3.405 & Talu-Myers 2001 \\
+O & 53.0 / 3.3 & TraPPE-zeo, Bai 2013 \\
+Si & 22.0 / 2.3 & TraPPE-zeo, Bai 2013 \\
+\end{longtable}
+}
+
+Ar--O is an \textbf{explicit} binary (93.0 K / 3.335 Å, Talu-Myers);
+\textbf{MixingRule Lorentz-Berthelot}, \textbf{truncation shifted},
+cutoff 12 Å, \textbf{TailCorrections false}, no electrostatics.
+Critically, the Lorentz-Berthelot rule applied to the framework
+self-parameters generates a \textbf{second} interaction ---
+\textbf{Ar--Si (51.34 K / 2.8525 Å)} --- in addition to the explicit
+Ar--O term. This is the \emph{as-locked} recipe, recorded verbatim;
+Finding~F1 (§2.4) shows this Ar--Si term is a \emph{silicon double-count}
+(Talu's Ar--O already folds silicon's dispersion into oxygen) and gives
+the clean single-source rebuild that reproduces the corrected reference.
+
+\subsection{The clean metric}\label{the-clean-metric}
+
+Engines report different units (kUPS: K\_H in Å³/eV; RASPA3/native:
+mol·kg⁻¹·bar⁻¹), so the comparison is on the engine-agnostic
+\textbf{⟨exp(−βU)⟩}, with K\_H and q\_st reported in common units.
+
+\subsection{Result}\label{result}
+
+{%
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.2500}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.2500}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.2500}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.2500}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Engine (full recipe unless noted)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+⟨W⟩
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+K\_H (mol·kg⁻¹·bar⁻¹)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+q\_st (kJ/mol)
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+RASPA3 (locked reference) & --- & \textbf{0.2070} & \textbf{16.03} \\
+native independent (Ar--O \textbf{+ Ar--Si}) & 9.54 & \textbf{0.2093}
+(+1.1 \%) & 15.91 (−0.12) \\
+kUPS Widom (Ar--O \textbf{+ Ar--Si}) & 11.08 & 0.2432 (+16.2 \%) & 16.25
+(+0.22) \\
+native (Ar--O \textbf{only}, naive) & 5.24 & 0.1149 (\textbf{1.8× low})
+& 14.36 \\
+kUPS (Ar--O only) & 5.98 & 0.1313 & --- \\
+\end{longtable}
+}
+
+\subsection{Finding F1 --- a silicon double-count caught by audit (and a
+clean rebuild)}\label{finding-f1-the-arsi-term-is-load-bearing-1.82-on-k_h}
+
+The originally-locked 6c recipe \textbf{double-counted silicon}, and
+agreed with its reference only as a fortuitous cancellation of four
+compounding errors. Talu--Myers' Ar--O cross-parameter (93.0 K) is the
+Lorentz--Berthelot combination of argon with an oxygen-only
+\emph{effective} oxygen (72.2 K, Talu Table 1) that already folds
+silicon's dispersion into oxygen --- Talu's model is oxygen-only by
+construction (Talu \S2: ``ignores partially concealed silicon atoms and
+lumps their dispersion energy with the oxygen atoms''). The locked recipe
+nonetheless added an explicit Ar--Si from an active TraPPE-zeo framework
+silicon, counting silicon twice (\(\times 1.82\) on \(K_H\)). That
+spurious term compensated three further errors --- an idealized (IZA)
+rather than the calibration (Olson) geometry (\(\sim\!-25\,\%\)), an
+under-converged 12~\AA{} tail-off cutoff (\(\sim\!-25\,\%\) more), and a
+reference value mis-derived by \(\sim\!12\,\%\) (0.224 vs the correct
+0.200) --- which multiplied back to roughly the (wrong) reference.
+Removing all four and running the coherent \textbf{single-source} recipe
+(pure Talu, oxygen-only, no Ar--Si) at a converged cutoff on Talu's own
+(Olson) geometry reproduces the \textbf{corrected} reference
+(\(K_H = 0.200\)) exactly and \textbf{cross-engine}: native 0.200,
+RASPA3 0.199 (parity 0.5\,\%), \(q_{st}\) 14.97 (within 0.7 kJ/mol of
+calorimetry). In strict-band terms the as-locked hybrid lands in-band against \emph{both} the
+mis-derived 0.224 and the corrected 0.200 reference; the rebuild changes the recipe's coherence, not the
+pass/fail verdict.
+
+{%
+\begin{longtable}[]{@{}lll@{}}
+\toprule\noalign{}
+6c recipe / setup & \(K_H\) (mol/kg/bar) & note \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+locked hybrid (IZA, 12~\AA{} tail-off) & 0.207 & in-band by a fortuitous cancellation (also passes 0.200) \\
+\(-\) double-counted silicon & 0.115 & pure Talu, oxygen-only (IZA, 12~\AA{}) \\
+\(+\) converged 24~\AA{} + tail & 0.154 & numerical defect fixed (IZA) \\
+\(+\) Olson calibration geometry & \textbf{0.200} & native; RASPA3 0.199 (parity 0.5\,\%) \\
+\textbf{corrected reference} (Dunne 1996) & \textbf{0.200} & strict window [0.159, 0.252] \\
+structure sensitivity (single-source) & 0.200 / 0.205 / 0.154 & Olson / van Koningsveld / IZA \\
+\end{longtable}
+}
+
+(The locked hybrid evidence is retained intact as the documented
+negative case.)
+
+\subsection{Finding F2 --- independent cross-engine validation of
+kUPS's Widom estimator}\label{finding-f2-the-first-published-independent-validation-of-kupss-widom-estimator}
+
+kUPS ships a Widom test-particle module (\texttt{kups.mcmc.widom}; in
+source \texttt{main}, absent from the released PyPI
+\texttt{kups\ 1.0.1}; no published external validation). v0.6 is, to our
+knowledge, the first \emph{published} independent cross-engine check of
+this specific module --- distinct from standalone Widom packages (e.g.\ the
+\texttt{widom} ASE add-on) and from machine-learned-potential adsorption
+benchmarks such as ODAC25 (Sriram et al.\ 2025, arXiv:2508.03162), based on public-source
+searches (the kUPS source carries internal unit tests only; the open
+tracker was inspected 2026-06-12 --- one unrelated feature issue).
+
+\begin{itemize}
+\item
+  \textbf{The estimator is correct.} \texttt{widom\_test()} returns lnα
+  = −βΔU for a ghost insertion ⇒ \textbf{W ≡ exp(−βU)} --- identical to
+  the textbook Widom weight; the μ\_ex / K\_H / q\_st reductions match
+  widom-atlas's definitions. Verified by reading the source \emph{and}
+  by the parity run.
+\item
+  \textbf{q\_st is validated to 0.22 kJ/mol} (16.25 vs 16.03 RASPA3;
+  15.91 native). The energies are right.
+\item
+  \textbf{The +16 \% K\_H is a shifted-vs-truncated LJ convention ---
+  root-caused, not a normalization bug.} kUPS's
+  \texttt{lennard\_jones\_energy} is \textbf{truncated, not
+  energy-shifted} (\texttt{4ε(c6²−c6)} masked at cutoff, no
+  \texttt{−U(rc)} term); our config (\texttt{tail\_correction:\ false},
+  no \texttt{truncation\_radius}) selects that plain variant. RASPA3's
+  recipe is \texttt{TruncationMethod:\ shifted}, and the native
+  estimator shifts too. The unshifted potential is more attractive by
+  U(rc) per interaction. Toggling the shift off in native reproduces
+  kUPS:
+
+  {%
+  \begin{longtable}[]{@{}llll@{}}
+  \toprule\noalign{}
+  native (with-Si) & ⟨W⟩ & K\_H & q\_st (kJ/mol) \\
+  \midrule\noalign{}
+  \endhead
+  \bottomrule\noalign{}
+  \endlastfoot
+  shifted (RASPA convention) & 9.54 & 0.2093 & 15.91 \\
+  truncated / no-shift (kUPS convention) & 11.35 & 0.2490 & 16.34 \\
+  kUPS Widom & 11.08 & 0.2432 & 16.25 \\
+  \end{longtable}
+  }
+
+  The implied constant shift δ = RT·ln(11.35/9.54) = \textbf{0.43
+  kJ/mol} (predicted ≈0.35) explains \textbf{both} the +16 \% K\_H
+  \textbf{and} the +0.34 kJ/mol q\_st: matching kUPS's convention,
+  native-no-shift agrees with kUPS to \textbf{+2.4 \% on K\_H (within
+  the 3.4 \% SEM) and 0.09 kJ/mol on q\_st}. Neither engine is wrong ---
+  but the shift convention is a load-bearing recipe element worth
+  \textasciitilde16 \% on K\_H, which must be locked and matched. The
+  exponential sensitivity of K\_H to a constant energy offset, and the
+  resulting need to lock the tail/truncation convention, are established
+  (Jablonka, Ongari \& Smit 2019, \emph{J. Chem. Theory Comput.}\ \textbf{15},
+  5635; Dubbeldam et al.\ 2016, \emph{Mol. Simul.}\ \textbf{42}, 81); what is
+  new here is the cross-engine \emph{quantification} (\(\delta \approx 0.43\)
+  kJ/mol). Does
+  \textbf{not} affect q\_st-as-physics or the OOD governance demo
+  (energy path).
+\end{itemize}
+
+The recipe all three engines share for this parity is the as-locked
+hybrid now reframed in F1 as a silicon double-count: F2 establishes that
+independent estimators agree on a \emph{common} recipe (to \(1.1\,\%\) on
+\(K_H\)), not that the recipe reproduces experiment --- that correction
+lives entirely in F1, and the two findings are consistent.
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\section{Blocking-sphere governance
+(WPA-A3)}\label{blocking-sphere-governance-wpa-a3}
+
+kUPS exposes the v0.5 short-range-protection lesson as an explicit API
+--- \texttt{blocking\_spheres} (per-host hard-sphere exclusions). So the
+convention is no longer a claim of ours; it is CuspAI's own engineering.
+A sweep on the 6c system (64 spheres on framework-O positions):
+
+{%
+\begin{longtable}[]{@{}lllll@{}}
+\toprule\noalign{}
+blocking & radius (Å) & K\_H (Å³/eV) & ΔK\_H & q\_st (kJ/mol) \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+off & --- & 1.798×10⁷ & --- & 16.25 \\
+on & 2.0 & 1.856×10⁷ & +3.2 \% & 16.34 \\
+on & 3.0 & 1.812×10⁷ & +0.8 \% & 16.28 \\
+\end{longtable}
+}
+
+\textbf{Finding.} On a physically-repulsive LJ recipe blocking is a
+\textbf{no-op} (ΔK\_H \textless{} SEM, q\_st unchanged): the potential
+already excludes overlaps, so a hard sphere on top adds nothing. The
+corollary is the governance lesson --- \textbf{blocking is load-bearing
+exactly when the recipe has an \emph{unphysical} short-range attraction
+the potential does not repel} (open-metal-site over-binding; the v0.5 1b
+exp-6 case). A recipe's blocking configuration is therefore part of the
+recipe and must be locked: invisible on an all-silica LJ host, decisive
+on an OMS host. The small +0.8\ldots+3.2 \% K\_H nudge from blocking is
+an insertion-count effect (a distinct, much smaller thing than F2's +16
+\%, which is the LJ shift convention), within the SEM and not affecting
+q\_st.
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\section{MLIP out-of-distribution governance (WPB) --- the
+headline}\label{mlip-out-of-distribution-governance-wpb-the-headline}
+
+\subsection{Setup}\label{setup}
+
+Widom insertions of \textbf{Ar into all-silica CHA}, N = 120, seed 0, T
+= 298.15 K. A classical UFF LJ baseline scores the \textbf{same}
+insertion geometries as each MLIP, so all differences are the potential,
+not the sampling. Two transparent OOD flags (hard-overlap at \textless{}
+0.80 σ\_min = 2.762 Å; energetic-anomaly at U \textless{} −25 kJ/mol or
+U \textless{} U\_classical − 50) and a \textbf{pre-registered verdict
+schema} with two refusal classes: \textbf{Class I} (flagged
+Boltzmann-weight fraction ≥ 0.5 → OOD over-binding) and \textbf{Class
+II} (min U \textgreater{} 0 or q\_st ≤ RT where physisorption is
+established → under-binding). The schema was written before the results
+so refusal is rule-based, not retrofit.
+
+The governance premise is the model authors' own statement: CuspAI's
+\texttt{kUPS-mace-jax} model card declares MACE-MPA-0 \emph{``not
+trained for isolated molecules''} --- scoring an adsorbate is
+out-of-domain by the authors' own words. What is refused is
+\textbf{ungoverned usage of a configuration}, never a model.
+
+\subsection{Result --- four configurations, discriminate then
+remediate}\label{result-four-configurations-discriminate-then-remediate}
+
+{%
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.2500}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.2500}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.2500}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.2500}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Configuration
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+min U (kJ/mol)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+flagged-weight
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Verdict
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+MACE-MP-small (2023) & −19.3 & 0.995 & \textbf{REFUSE --- Class I}
+(over-binds overlaps) \\
+MACE-MPA-0 bare (kUPS's shipped export) & +8.5 & 0.0 & \textbf{REFUSE
+--- Class II} (no physisorption) \\
+MACE-MPA-0 \textbf{+ D3(BJ)} & −5.03 & 0.0001 & \textbf{screen-pass}
+(physical but shallow well; accuracy unassessed) \\
+UMA \texttt{uma-s-1.1}, task = omat (fairchem flagship) & −292.8 & 1.0 &
+\textbf{REFUSE --- Class I} (erratic OOD) \\
+\end{longtable}
+}
+
+Paired energies at identical \emph{open} (\textasciitilde4 Å, no
+overlap) insertions make the mechanism airtight:
+
+{%
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\linewidth - 12\tabcolsep) * \real{0.1429}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 12\tabcolsep) * \real{0.1429}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 12\tabcolsep) * \real{0.1429}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 12\tabcolsep) * \real{0.1429}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 12\tabcolsep) * \real{0.1429}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 12\tabcolsep) * \real{0.1429}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 12\tabcolsep) * \real{0.1429}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+insertion
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+min\_dist Å
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+classical
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+small (2023)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+MPA-0 bare
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
++ D3(BJ)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+UMA omat
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\#76 & 4.33 & −16.2 & −0.3 & +10.7 & +0.2 & −58.3 \\
+\#95 & 4.23 & −13.4 & −0.1 & +8.5 & −1.4 & −39.3 \\
+\#51 & 3.99 & −17.8 & −0.4 & +10.5 & −1.0 & +121.3 \\
+\end{longtable}
+}
+
+\subsection{Interpretation}\label{interpretation}
+
+\begin{itemize}
+\item
+  \textbf{MACE-MP-small (2023)} hallucinates \emph{attractive} energies
+  inside the repulsive overlap region --- its global minimum (−19.3)
+  sits \emph{at} a hard overlap, and the flagged insertions carry
+  \textbf{99.5 \%} of the partition weight. At physical sites its
+  attraction is ≈ 0 (−0.1\ldots−0.4): the ``binding'' is a pure overlap
+  artifact, not physisorption. \textbf{Class I.}
+\item
+  \textbf{MACE-MPA-0 bare (2024, kUPS's shipped weights)} \emph{fixed}
+  the overlap hallucination --- it is correctly repulsive at overlaps
+  --- but is repulsive \emph{everywhere} (min +8.5), finding no
+  physisorption well. This is the bare-PBE signature: no −C₆/r⁶
+  dispersion tail. \textbf{Class II.}
+\item
+  \textbf{MACE-MPA-0 + D3(BJ)} --- pairing the \emph{same} weights with
+  the standard D3 Becke-Johnson dispersion correction (xc = PBE, cutoff
+  40 Bohr, torch-dftd 0.5.3) restores a physical well (min −5.03) at a
+  non-overlap distance (3.37 Å; flagged-weight 0.0001). \textbf{Screen-passes; accuracy unassessed.} The
+  governance lesson crystallizes: \emph{dispersion-correction on/off is
+  a load-bearing recipe element, and ungoverned pipelines silently
+  differ on it.} kUPS's potential list contains no dispersion term --- a
+  finding, recorded, not a criticism.
+\item
+  \textbf{UMA \texttt{uma-s-1.1} (deployment-class flagship)} ---
+  fairchem's multi-task foundation model (ODAC23 is one of its five
+  training sets, so it is the UMA \emph{and} ODAC leg).
+  \texttt{task\_name} is a load-bearing recipe element (five DFT levels
+  of theory), and it produces a clean \textbf{task × system matrix}:
+
+  {%
+  \begin{longtable}[]{@{}
+    >{\raggedright\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.2000}}
+    >{\raggedright\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.2000}}
+    >{\raggedright\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.2000}}
+    >{\raggedright\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.2000}}
+    >{\raggedright\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.2000}}@{}}
+  \toprule\noalign{}
+  \begin{minipage}[b]{\linewidth}\raggedright
+  task
+  \end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+  system
+  \end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+  Gate 1
+  \end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+  min U
+  \end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+  Verdict
+  \end{minipage} \\
+  \midrule\noalign{}
+  \endhead
+  \bottomrule\noalign{}
+  \endlastfoot
+  omat & Ar/CHA & −0.19 ✅ & −292.8 & REFUSE --- Class I (erratic OOD
+  overlaps) \\
+  odac & Ar/CHA & −2.73 ❌ & --- & WITHHELD (inconsistent at equivalent
+  sites) \\
+  \textbf{odac} & \textbf{CO₂/CHA} & +0.06 ✅ & \textbf{−15.66} &
+  \textbf{screen-pass} (in-domain, N=60 small sample; q\_st 17.7 vs
+  anchor 21.0, −3.3 below strict) \\
+  omat & CO₂/CHA & +0.04 ✅ & +1.16 & REFUSE --- Class II (no CO₂
+  well) \\
+  \end{longtable}
+  }
+
+  The \textbf{odac} head (trained on MOF/CO₂/H₂O direct-air-capture
+  data) finds a \textbf{physical CO₂ well (−15.7 kJ/mol, screen q\_st
+  17.7; experimental CO₂/CHA ≈ 20--30) on CO₂/CHA --- its actual
+  training domain → governance screen-passes it}. The screen q\_st is 17.7 kJ/mol against a reference anchor of ≈21 (≈3 kJ/mol low, −3.3 below strict): a screen-pass, not an accuracy certificate. On Ar/CHA (a noble gas it
+  never trained on) the \emph{same} head is internally inconsistent ---
+  2.7 kJ between symmetry-equivalent open sites --- which Gate 1 catches
+  → \textbf{withheld}. The \textbf{omat} (materials) head under-binds
+  adsorbates (no CO₂ well; erratic deep-overlap hallucinations on Ar).
+  \textbf{The model passes exactly where its documented training domain
+  says it should, and is refused/withheld everywhere else} --- the
+  governance respects the model card rather than fighting it.
+  Separately, the OOD-overlap failure on Ar is not MACE-specific: it
+  generalizes across MLIP families (MACE-MP-small and UMA-omat alike).
+\end{itemize}
+
+\subsection{Validity gates (why the numbers can be
+trusted)}\label{validity-gates-why-the-numbers-can-be-trusted}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{MACE Gate 1 (reference offset).} A +8.5 floor could be a
+  broken differencing. Ruled out: Ar is in the model (Z = 18, 89-element
+  table); \textbf{U(Ar isolated, 12.9 Å) = 0.000 kJ/mol} ---
+  differencing exact. The +floor is real missing-dispersion physics.
+\item
+  \textbf{UMA --- two hazards, both caught by Gate 1 before any
+  verdict.} (1) UMA conditions on a \textbf{per-graph} global
+  charge/spin/task embedding, so naive three-graph differencing does not
+  cancel --- a task-dependent far-field offset (omat +474, odac −245,
+  omol +119 kJ at 12.9 Å). Fixed with a \textbf{same-graph reference}
+  U(r) = E(host+Ar@r) − E(host+Ar@ref). (2) A non-periodic cut cluster
+  is itself OOD for a periodic materials model (+800\ldots+2900 kJ at
+  open sites) despite passing the narrow far-field check; fixed by
+  \textbf{periodic} in-domain evaluation with an open-pore reference
+  (Gate 1 = −0.19 kJ; a 0.09 Å overlap → +21 572 kJ, correctly
+  repulsive). \textbf{task\_name is a locked, load-bearing recipe
+  element} (UMA carries five DFT levels of theory; we lock
+  \texttt{omat}). The governance harness thus validates \emph{itself}
+  for an engine before it is permitted to judge that engine.
+\end{itemize}
+
+\subsection{Provenance (pinned)}\label{provenance-pinned}
+
+MACE-MPA-0 checkpoint SHA-256{[}:16{]} \texttt{75428afe3a1d7d80}; kUPS
+export \texttt{mace-mpa-0-medium\_32.zip} SHA-256{[}:16{]}
+\texttt{c5eb645f2dc2c904}; D3 = D3(BJ)/PBE/40 Bohr via torch-dftd 0.5.3;
+UMA = \texttt{uma-s-1.1} (extensivity-safe, not \texttt{uma-s-1}),
+fairchem-core 2.21.0. N, seed, T, CIF in every summary JSON.
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\section{Methods honesty}\label{methods-honesty}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Numerical guards are recipe elements.} Two self-corrections
+  are documented and retained: a spurious −50 weight-clip that
+  manufactured a fake Class-I verdict for bare MPA-0 (discarded), and an
+  eV/kJ unit mismatch in the Boltzmann weight that inflated exponents
+  ×96 and tripped the exp(700) overflow cap spuriously (fixed with RT =
+  2.478 kJ/mol; after the fix no leg hits the cap --- confirming the
+  cap-firing was the bug, not deep physics). Verdict \emph{directions}
+  were unchanged; the quantitative weights are now physical.
+\item
+  \textbf{Convergence.} kUPS: 25 000 ghost insertions, 12 blocks, K\_H
+  SEM ≈ 3.4 \%; the +16 \% is a systematic. native: 1--2×10⁶ insertions,
+  ⟨W⟩ \textless{} 0.5 \%. The analytical LJ tail was tested on native
+  (moves K\_H only +8 \%), confirming the recipe's
+  \texttt{TailCorrections:\ false} and ruling tail out as the parity gap
+  driver --- the Ar--Si term, not tail, was the 1.8×.
+\item
+  \textbf{Native charged-Ewald limitation (classical matrix).} On the
+  Si-CHA + CO\(_2\) charged control (4c) the native estimator and RASPA3
+  agree to \(\sim\!9\%\) on K\_H and \(\sim\!1\%\) on q\_st (inside the
+  experimental window); on the LJ-only MFI + Ar control they agree to
+  0.5\%. On HKUST-1, by contrast, the native charged-Ewald path shows a
+  large empirical discrepancy against RASPA3 --- about a factor of four on
+  the identical recipe. A suspected non-orthogonal minimum-image
+  explanation was tested: at the actual supercells and cutoffs of the
+  published runs, a brute-force image check found no within-cutoff
+  mis-imaged pairs for HKUST-1, Si-CHA, or MFI, so the root cause is not
+  established. The classical MOF branches are therefore reported from
+  RASPA3 (2a, 3a) or RASPA2 (1a), or presented as audited examples with
+  this limitation stated (1b, 1c, 1d, 2b, 3b); 4c is retained because it is
+  directly cross-engine checked, not because of any orthogonality
+  assumption. For
+  4c itself the strict-vs-Tier-B verdict is engine-marginal: the q\_st
+  deviation straddles the \(\pm2.0\) boundary (native \(+1.99\), inside;
+  RASPA3 \(+2.24\), outside), so we report it as Tier-B --- a worked
+  example, on a charged system, of the verdict fragility this harness
+  exists to expose. No result in this report depends on the native
+  charged-MOF path.
+\item
+  \textbf{A third silent-substitution defect (1c).} Beyond the 6c silicon
+  double-count (F1) and the HKUST-1/UiO-66 generator mislabel (framework
+  atoms stamped ``UFF'' but carrying guest/zeolite parameters; corrected to
+  genuine UFF, both MOFs reproduce experiment), the audit also caught
+  branch 1c (Becker Mg-MOF-74): its as-run framework LJ was plain UFF with
+  a placeholder Mg \(\epsilon = 5.0\) K, not the ``reduced'' Becker values
+  its label claimed. Retained as a FAIL example, not rebuilt --- the same
+  defect class the harness exists to expose.
+\end{itemize}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\section{Open scientific questions}\label{open-scientific-questions}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{kUPS K\_H +16 \% --- RESOLVED (shift convention).} Root-caused
+  to kUPS's truncated (unshifted) LJ vs RASPA/native shifted; δ ≈ 0.43
+  kJ/mol reconciles K\_H to 2.4 \% and q\_st to 0.09 kJ/mol (§2.5). Open
+  only as an upstream documentation point: kUPS's default LJ is
+  unshifted.
+\item
+  \textbf{Ewald leg (4c, Si-CHA + CO₂) --- DONE, read via the convention
+  matrix.} TraPPE-CO₂ + framework charges + Ewald, 14 Å + tail.
+  \textbf{q\_st validated to 0.01 kJ/mol} (22.98 vs 22.99). For K\_H, a
+  fresh same-session native re-run (the 2.223 was the v0.4 \emph{lock};
+  the re-run gives 2.215, reproducing it to 0.3 \%) toggles the
+  conventions: \textbf{shift = +11.6 \%, tail = +11.9 \%} (the shift is
+  \emph{not} negligible at 14 Å --- earlier-draft correction). kUPS uses
+  a truncated LJ and \textbf{does apply a tail} (tested:
+  \texttt{tail\_correction:\ false} drops K\_H −16 \%, q\_st −0.49 --- a
+  ``no-tail-in-Widom'' hypothesis is \emph{falsified}). So its +2.2 \%
+  vs the shifted lock is a \textbf{cancellation}: read on the same
+  (truncated+tail) convention, \textbf{kUPS is −8.1 \% vs native} (−11.7
+  \% with tail also off). That residual is \textbf{q\_st-invariant
+  (Δq\_st ≤ 0.3 kJ/mol) → a normalization-flavoured ⟨W⟩ scale}
+  (volume/insertion-count), 4c-specific and larger than 6c's −2.4 \%;
+  contributors include a tail-implementation difference (kUPS +16.3 \%
+  vs native +11.9 \%), the Ewald convention, and CO₂ orientation
+  (\texttt{native\_4c\_convention\_matrix.json}).
+\item
+  \textbf{OMS blocking positive case.} The dramatic blocking
+  demonstration (collapsing a divergent open-metal K\_H to a physical
+  value) needs a kUPS-representable OMS recipe with charges (1c Becker,
+  or 2a UFF Cu + EPM2); the exotic 1a/1b/1d Buckingham forms are not
+  representable in kUPS (LJ/Coulomb/Morse/MACE only).
+\item
+  \textbf{WPB through kUPS's in-engine JAX MACE --- DONE.} Loaded kUPS's
+  \texttt{TojaxedMliap} export and scored identical geometries; agrees
+  with the torch path to \textbf{max rel 2.1×10⁻⁷}
+  (\texttt{jax\_torch\_parity.json}), independently confirming the model
+  card's rtol = 1e-4. The governance conclusions carry to kUPS's JAX
+  runtime exactly.
+\end{itemize}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\section{One-paragraph summary}\label{one-paragraph-summary}
+
+On the locked positive control, audit found the recipe had
+\emph{double-counted silicon} --- Talu's Ar--O cross-parameter already folds
+silicon's dispersion into oxygen, and the recipe added an explicit Ar--Si
+on top --- so its strict-band agreement was a fortuitous four-error cancellation; rebuilt clean
+(single-source oxygen-only, converged convention, on Talu's calibration
+Olson geometry) it reproduces the corrected reference (\(K_H = 0.200\))
+exactly and cross-engine (native 0.200, RASPA3 0.199). Separately and
+intact, the engines agree on the shared recipe to 1.1 \% --- the
+cross-engine parity result. CuspAI's own
+Widom estimator was independently validated for the first time --- its
+energies are right (q\_st to 0.22 kJ/mol) and its +16 \% K\_H was
+root-caused to a shifted-vs-truncated LJ convention (δ ≈ 0.43 kJ/mol,
+reconciling both K\_H and q\_st to within the SEM). Pointed at the MLIP
+CuspAI ships, governance discriminated two distinct failure modes
+(overlap over-binding vs missing dispersion), screen-passed a
+D3(BJ)-corrected route on the single governed Si-CHA + Ar screen, and
+showed the deployment-class flagship (UMA) fails the same way
+--- with the governance harness proving its own validity for each engine
+before judging it. \emph{The published table is never the whole recipe;
+the unpublished conventions are load-bearing, and they can be
+characterized, discriminated, and in some cases fixed.}

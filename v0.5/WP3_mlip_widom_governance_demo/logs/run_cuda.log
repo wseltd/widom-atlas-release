@@ -1,0 +1,30 @@
+framework=docs/research/dataset-research-for-v0.4/7/CHA_iza.cif reps=[1, 1, 1] n_atoms=108 cell_diag=[13.675     11.8428974 14.767    ]
+MACE ready: {'mace_torch': '0.3.16', 'torch': '2.12.0+cu130', 'model': 'mace_mp small', 'device': 'cuda', 'checkpoint': '20231210mace128L0_energy_epoch249model', 'checkpoint_sha256_16': '2ddb079cee0e131e'}
+E_frame=-852.652 eV  E_guest=-0.071 eV
+  insertion 0/500 min_dist=3.17 U_cl=-12.088 U_ml=-1.944
+  insertion 20/500 min_dist=1.94 U_cl=4099.424 U_ml=-8.818
+  insertion 40/500 min_dist=2.10 U_cl=1554.002 U_ml=-9.16
+  insertion 60/500 min_dist=1.43 U_cl=209110.241 U_ml=2.551
+  insertion 80/500 min_dist=1.49 U_cl=311396.297 U_ml=0.29
+  insertion 100/500 min_dist=2.00 U_cl=3026.01 U_ml=-10.695
+  insertion 120/500 min_dist=0.46 U_cl=89132803690.559 U_ml=116.094
+  insertion 140/500 min_dist=3.33 U_cl=-15.294 U_ml=-0.493
+  insertion 160/500 min_dist=1.05 U_cl=3970777.685 U_ml=5.184
+  insertion 180/500 min_dist=1.07 U_cl=14029854.771 U_ml=-2.775
+  insertion 200/500 min_dist=1.48 U_cl=66522.506 U_ml=-15.879
+  insertion 220/500 min_dist=2.11 U_cl=1696.478 U_ml=-9.654
+  insertion 240/500 min_dist=2.74 U_cl=102.434 U_ml=-1.659
+  insertion 260/500 min_dist=1.53 U_cl=107201.606 U_ml=-7.816
+  insertion 280/500 min_dist=2.36 U_cl=703.531 U_ml=-4.817
+  insertion 300/500 min_dist=2.11 U_cl=1109.021 U_ml=-7.774
+  insertion 320/500 min_dist=2.82 U_cl=34.714 U_ml=-1.983
+  insertion 340/500 min_dist=2.23 U_cl=1755.792 U_ml=-5.787
+  insertion 360/500 min_dist=1.38 U_cl=224450.974 U_ml=0.274
+  insertion 380/500 min_dist=1.09 U_cl=2639934.235 U_ml=3.86
+  insertion 400/500 min_dist=0.60 U_cl=3179092648.482 U_ml=77.31
+  insertion 420/500 min_dist=1.33 U_cl=237457.764 U_ml=-6.476
+  insertion 440/500 min_dist=0.81 U_cl=404542879.37 U_ml=10.373
+  insertion 460/500 min_dist=0.93 U_cl=75221975.175 U_ml=7.282
+  insertion 480/500 min_dist=1.47 U_cl=119569.666 U_ml=-3.446
+WROTE governance_summary_cuda.json + per_insertion_cuda.json
+VERDICT: REFUSE — MLIP-Widom untrustworthy: flagged OOD insertions dominate the Boltzmann average

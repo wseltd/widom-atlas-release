@@ -1,0 +1,130 @@
+{
+  "generated_at_utc": "2026-05-08T14:26:25Z",
+  "n_rows": 6,
+  "notes": "",
+  "rows": [
+    {
+      "atlas_run_dir": "benchmarks/results/v0.4-validation/atlas/flag-01-mg-mof-74-CO2-298",
+      "case_id": "flag-01-mg-mof-74-CO2-298",
+      "dominant_basin_centroid_A": [
+        0.9481337886185999,
+        10.906784089375497,
+        4.642524138118909
+      ],
+      "dominant_basin_centroid_frac": [
+        0.27721030450767786,
+        0.48186675313698124,
+        0.668758879014536
+      ],
+      "dominant_basin_weight": 0.26482191668075206,
+      "framework": "Mg-MOF-74",
+      "gas": "CO2",
+      "n_basins": 14,
+      "pipeline_completed": true,
+      "temperature_K": 298.15
+    },
+    {
+      "atlas_run_dir": "benchmarks/results/v0.4-validation/atlas/flag-02-hkust-1-CO2-298",
+      "case_id": "flag-02-hkust-1-CO2-298",
+      "dominant_basin_centroid_A": [
+        6.514221916049673,
+        20.35303251814365,
+        19.951187491523662
+      ],
+      "dominant_basin_centroid_frac": [
+        0.247284740388326,
+        0.7726163503831625,
+        0.7573620123571219
+      ],
+      "dominant_basin_weight": 0.48110383575587523,
+      "framework": "HKUST-1",
+      "gas": "CO2",
+      "n_basins": 14,
+      "pipeline_completed": true,
+      "temperature_K": 298.15
+    },
+    {
+      "atlas_run_dir": "benchmarks/results/v0.4-validation/atlas/flag-03-uio-66-CO2-298",
+      "case_id": "flag-03-uio-66-CO2-298",
+      "dominant_basin_centroid_A": [
+        5.711082634678085,
+        5.78503062403416,
+        6.446222874043728
+      ],
+      "dominant_basin_centroid_frac": [
+        0.27589238056646664,
+        0.2794646781721204,
+        0.3114057155438411
+      ],
+      "dominant_basin_weight": 0.18701854087753816,
+      "framework": "UiO-66",
+      "gas": "CO2",
+      "n_basins": 28,
+      "pipeline_completed": true,
+      "temperature_K": 298.15
+    },
+    {
+      "atlas_run_dir": "benchmarks/results/v0.4-validation/atlas/flag-04-cha-CO2-298",
+      "case_id": "flag-04-cha-CO2-298",
+      "dominant_basin_centroid_A": [
+        4.18550450951972,
+        4.372255573693687,
+        4.721306191600993
+      ],
+      "dominant_basin_centroid_frac": [
+        0.5137201146550994,
+        0.5017420217728737,
+        0.5018624351802099
+      ],
+      "dominant_basin_weight": 1.0,
+      "framework": "CHA",
+      "gas": "CO2",
+      "n_basins": 1,
+      "pipeline_completed": true,
+      "temperature_K": 298.15
+    },
+    {
+      "atlas_run_dir": "benchmarks/results/v0.4-validation/atlas/flag-05-nak-a-CO2-298",
+      "case_id": "flag-05-nak-a-CO2-298",
+      "dominant_basin_centroid_A": [
+        24.191965480393797,
+        23.62096446413211,
+        0.0881560276057331
+      ],
+      "dominant_basin_centroid_frac": [
+        0.9852154543023334,
+        0.961961493143234,
+        0.003590145697647449
+      ],
+      "dominant_basin_weight": 0.5506124039829084,
+      "framework": "NaK-A",
+      "gas": "CO2",
+      "n_basins": 3,
+      "pipeline_completed": true,
+      "temperature_K": 298.15
+    },
+    {
+      "atlas_run_dir": "benchmarks/results/v0.4-validation/atlas/flag-06-mfi-CH4-Kr-298",
+      "case_id": "flag-06-mfi-CH4-Kr-298",
+      "dominant_basin_centroid_A": [
+        19.876167472436553,
+        19.244188691909795,
+        7.087505238279334
+      ],
+      "dominant_basin_centroid_frac": [
+        0.9927163855976703,
+        0.9670932555359463,
+        0.5295901694896014
+      ],
+      "dominant_basin_weight": 0.17323365845545166,
+      "framework": "MFI",
+      "gas": "CH4",
+      "n_basins": 16,
+      "pipeline_completed": true,
+      "temperature_K": 298.15
+    }
+  ],
+  "schema_version": "0.4",
+  "table_id": "T6",
+  "title": "Gas-loaded CIF site match summary"
+}

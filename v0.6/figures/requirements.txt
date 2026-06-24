@@ -1,0 +1,5 @@
+# Dependencies to regenerate the figures (a clean scientific stack). verify_verdict.py needs none of
+# these (stdlib only).
+matplotlib
+numpy
+ase

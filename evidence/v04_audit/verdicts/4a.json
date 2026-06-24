@@ -1,0 +1,54 @@
+{
+  "branch_id": "4a",
+  "case_id": "4",
+  "verdict": "FAIL",
+  "verdict_tier": "flagship_strict",
+  "numeric_thresholds": "flagship_strict",
+  "thresholds_used": {
+    "delta_log10_KH_max": 0.1,
+    "delta_Qads_kJ_per_mol_max": 2.0
+  },
+  "parsed_K_H_mol_per_kg_per_Pa": 1.451685e-05,
+  "parsed_K_H_mol_per_kg_per_bar": 1.451685,
+  "parsed_Q_st_kJ_per_mol": 26.410657404614483,
+  "delta_log10_K_H": -0.22409118123599467,
+  "delta_Q_st_kJ_per_mol": 5.410657404614483,
+  "passes_K_H": false,
+  "passes_Q_st": false,
+  "reference": {
+    "K_H_value_mol_per_kg_per_bar": 2.432,
+    "K_H_value_mol_per_kg_per_Pa": 2.432e-05,
+    "K_H_window_min": 1.8,
+    "K_H_window_max": 3.2,
+    "K_H_source": "Maghsoudi_2013_Adsorption_Table_2",
+    "K_H_temperature_K": 298.0,
+    "Q_st_value_kj_per_mol": 21.0,
+    "Q_st_window_min": 18.0,
+    "Q_st_window_max": 25.0,
+    "Q_st_source": "Maghsoudi_2013_section_4.3_zero_coverage"
+  },
+  "evidence": {
+    "raspa3_version": "3.0.29",
+    "raspa3_sha256": "2b4132becc0f38dedb2de470386defe9956d8129307e70dc7fcd0d6f03d57732",
+    "input_sha256": {
+      "simulation.json": "d6fb6b3a23969161e05ca71eb7e805b58f5975850545ff0f33b87820cfb25f69",
+      "force_field.json": "4dd1a8f3f7da9ede928362868dfdafbb8734cca3adcb9243e2e1e2d9e54ff6fd",
+      "CO2.json": "c975266898f7e71fa73649b7a993a2f88a697548643cae337b8b392cab0d9380",
+      "CHA_iza.cif": "74c7648d2c8426f53ffb6e2c76f213098433f9712f4522cf934dc350ca38ff04"
+    },
+    "output_txt_path": "evidence/v04_audit/evidence/4a/T298_seed0/output/output_298_0.s0.txt",
+    "stdout_path": "evidence/v04_audit/evidence/4a/T298_seed0/raspa3.stdout.txt",
+    "stderr_path": "evidence/v04_audit/evidence/4a/T298_seed0/raspa3.stderr.txt",
+    "seeds": 3,
+    "insertions_per_seed": 100000,
+    "aggregate_insertions": 600000,
+    "K_H_seed_std_mol_per_kg_per_Pa": 4.697385273745385e-06,
+    "Q_st_method": "two_point_van_t_Hoff",
+    "Q_st_uncertainty_kJ_per_mol": 6.355541723264805,
+    "derived_charges": null,
+    "derivation_notes": null,
+    "binary_interactions": null,
+    "branch_manifest_path": "evidence/4a/branch_manifest.json"
+  },
+  "notes": []
+}

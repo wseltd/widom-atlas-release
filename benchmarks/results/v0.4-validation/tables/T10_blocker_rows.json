@@ -1,0 +1,57 @@
+{
+  "n_rows": 4,
+  "notes": "structured (record_id, material, gas, missing_item, needed_path, reason, source_url, licence_status) per blocker",
+  "rows": [
+    {
+      "gas": "Ar",
+      "licence_status": "MOFX-DB licence: unclear (cite-only by inventory.json policy)",
+      "material": "ABEFUL_clean",
+      "missing_item": "force-field 'UFF_XeKr-newAr_Tail-12.8Grid' not in cached FF table",
+      "needed_path": "benchmarks/cache/raspa2_ff/UFF_XeKr-newAr_Tail-12.8Grid_mixing_rules.def",
+      "reason": "MOFX simin requested force-field 'UFF_XeKr-newAr_Tail-12.8Grid'; the locally-cached RASPA2 ExampleMOFsForceField only resolves UFF + DREIDING + Garcia-Sanchez/TraPPE gas atoms. Other FFs (GAFF, OPLS-AA, PCFF, MOF-FF, ZIF-FF, etc.) need their own parameter tables, which are not bundled.",
+      "record_id": 7132216,
+      "simin_forcefield": "UFF_XeKr-newAr_Tail-12.8Grid",
+      "source_url": "https://mof.tech.northwestern.edu/mofs/7132216.json",
+      "temperature_K": 87.0
+    },
+    {
+      "gas": "Ar",
+      "licence_status": "MOFX-DB licence: unclear (cite-only by inventory.json policy)",
+      "material": "ABAYIO_clean",
+      "missing_item": "force-field 'UFF_XeKr-newAr_Tail-12.8Grid' not in cached FF table",
+      "needed_path": "benchmarks/cache/raspa2_ff/UFF_XeKr-newAr_Tail-12.8Grid_mixing_rules.def",
+      "reason": "MOFX simin requested force-field 'UFF_XeKr-newAr_Tail-12.8Grid'; the locally-cached RASPA2 ExampleMOFsForceField only resolves UFF + DREIDING + Garcia-Sanchez/TraPPE gas atoms. Other FFs (GAFF, OPLS-AA, PCFF, MOF-FF, ZIF-FF, etc.) need their own parameter tables, which are not bundled.",
+      "record_id": 7132214,
+      "simin_forcefield": "UFF_XeKr-newAr_Tail-12.8Grid",
+      "source_url": "https://mof.tech.northwestern.edu/mofs/7132214.json",
+      "temperature_K": 87.0
+    },
+    {
+      "gas": "Ar",
+      "licence_status": "MOFX-DB licence: unclear (cite-only by inventory.json policy)",
+      "material": "ABAYOU_clean",
+      "missing_item": "force-field 'UFF_XeKr-newAr_Tail-12.8Grid' not in cached FF table",
+      "needed_path": "benchmarks/cache/raspa2_ff/UFF_XeKr-newAr_Tail-12.8Grid_mixing_rules.def",
+      "reason": "MOFX simin requested force-field 'UFF_XeKr-newAr_Tail-12.8Grid'; the locally-cached RASPA2 ExampleMOFsForceField only resolves UFF + DREIDING + Garcia-Sanchez/TraPPE gas atoms. Other FFs (GAFF, OPLS-AA, PCFF, MOF-FF, ZIF-FF, etc.) need their own parameter tables, which are not bundled.",
+      "record_id": 7132215,
+      "simin_forcefield": "UFF_XeKr-newAr_Tail-12.8Grid",
+      "source_url": "https://mof.tech.northwestern.edu/mofs/7132215.json",
+      "temperature_K": 87.0
+    },
+    {
+      "gas": "Ar",
+      "licence_status": "MOFX-DB licence: unclear (cite-only by inventory.json policy)",
+      "material": "ABAVIJ_clean",
+      "missing_item": "force-field 'UFF_XeKr-newAr_Tail-12.8Grid' not in cached FF table",
+      "needed_path": "benchmarks/cache/raspa2_ff/UFF_XeKr-newAr_Tail-12.8Grid_mixing_rules.def",
+      "reason": "MOFX simin requested force-field 'UFF_XeKr-newAr_Tail-12.8Grid'; the locally-cached RASPA2 ExampleMOFsForceField only resolves UFF + DREIDING + Garcia-Sanchez/TraPPE gas atoms. Other FFs (GAFF, OPLS-AA, PCFF, MOF-FF, ZIF-FF, etc.) need their own parameter tables, which are not bundled.",
+      "record_id": 7132213,
+      "simin_forcefield": "UFF_XeKr-newAr_Tail-12.8Grid",
+      "source_url": "https://mof.tech.northwestern.edu/mofs/7132213.json",
+      "temperature_K": 87.0
+    }
+  ],
+  "schema_version": "0.4",
+  "table_id": "T10",
+  "title": "Blocker rows (MOFX simin parity, end-to-end attempts)"
+}

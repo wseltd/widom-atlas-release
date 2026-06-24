@@ -1,0 +1,17 @@
+{
+  "KH": 1e-07,
+  "KH_units": "mol/(kg*Pa)",
+  "Qads": 16.0,
+  "Qads_units": "kJ/mol",
+  "citation": "Cmarik, Knurr, Sharma, Schmidt, Knapp; Langmuir 28, 15606 (2012). UiO-66 + CH4 low-loading at 298 K: KH \u2248 1e-7 mol/(kg*Pa); Q_ads \u2248 16 kJ/mol (estimated from authors' isotherm tables; less canonical than CO2 number).",
+  "dataset_version": "literature_v1_2026-05",
+  "gas": "CH4",
+  "identity_confidence": "high",
+  "license": "literature value reproduced under fair-use citation",
+  "material_id": "UiO-66",
+  "retrieved_at": "2026-05-07T13:10:55.162589+00:00",
+  "sha256": "e6177c58eac54cfaa517e06b3ec17019063de2c53dea72587977067e109afc80",
+  "source": "literature",
+  "source_url": "https://doi.org/10.1021/la3046309",
+  "temperature_K": 298.15
+}

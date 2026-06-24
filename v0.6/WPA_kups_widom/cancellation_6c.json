@@ -1,0 +1,12 @@
+{
+  "description": "Branch 6c four-error cancellation chain (Finding F1 / section 2.4). Starting from the originally-locked hybrid recipe, each step removes one compounding error; the coherent single-source recipe on Talu's calibration (Olson) geometry reproduces the corrected reference. Every value is traced to committed evidence in 'source'; nothing here is hand-set.",
+  "chain": [
+    {"short": "locked\nhybrid", "step": "locked hybrid: IZA structure, 12 A tail-off, Talu Ar-O + active framework Si (the silicon double-count)", "K_H_mol_kg_bar": 0.207, "source": "parity_6c_threeway.json:RASPA3_locked (0.20701)"},
+    {"short": "- Si\ndouble-count", "step": "remove the double-counted silicon: pure Talu oxygen-only, still IZA, still 12 A", "K_H_mol_kg_bar": 0.115, "source": "parity_6c_threeway.json:native_O_only (0.1149)"},
+    {"short": "+ converged\ncutoff", "step": "converge the cutoff: 24 A + analytical tail, still IZA", "K_H_mol_kg_bar": 0.154, "source": "v04_6c_olson_clean/MANIFEST.md structure-sensitivity: IZA-idealized"},
+    {"short": "+ Olson\ngeometry", "step": "Talu's calibration (Olson) geometry: coherent single-source recipe", "K_H_mol_kg_bar": 0.200, "source": "v04_6c_olson_clean/olson_native_seed{0,1,2}.json mean (RASPA3 0.199)"}
+  ],
+  "clean_result": {"native_K_H_mol_kg_bar": 0.200, "raspa3_K_H_mol_kg_bar": 0.199, "parity_pct": 0.5, "Q_st_kJ": 14.97, "source": "evidence/v04_6c_olson_clean/"},
+  "reference": {"K_H_mol_kg_bar": 0.200, "window": [0.159, 0.252], "source": "Dunne 1996, K_H = B/kT (corrected; superseded the mis-derived 0.224)"},
+  "structure_sensitivity": {"Olson": 0.200, "van_Koningsveld": 0.205, "IZA_idealized": 0.154, "source": "v04_6c_olson_clean/MANIFEST.md"}
+}

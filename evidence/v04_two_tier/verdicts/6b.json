@@ -1,0 +1,50 @@
+{
+  "branch_id": "6b",
+  "case_id": "6",
+  "label": "MFI + Kr Garcia-Perez 2007 + Talu-Myers cross-pair",
+  "two_tier_verdict": {
+    "case_id": "6",
+    "branch_id": "6b",
+    "K_H_mean_mol_per_kg_per_bar": 0.95,
+    "K_H_reference_mol_per_kg_per_bar": 0.806,
+    "Q_st_mean_kJ_per_mol": 12.22,
+    "Q_st_reference_kJ_per_mol": 16.39,
+    "delta_log10_K_H": 0.07138856348375708,
+    "delta_Q_st_kJ_per_mol": -4.17,
+    "tier_A_regression": {
+      "delta_log10_KH_max": 0.1,
+      "delta_Qst_kJ_per_mol_max": 2.0,
+      "K_H_pass": true,
+      "Q_st_pass": false,
+      "composite": "FAIL",
+      "rationale": "Historical v04.2 strict thresholds. Used as an internal regression gate to detect code-change-induced shifts in K_H / Q_st. NOT a physical-accuracy claim. Tighter than experimental scatter for open-metal-site / defective MOFs."
+    },
+    "tier_B_physical": {
+      "delta_log10_KH_max": 0.15,
+      "delta_Qst_kJ_per_mol_max": 3.0,
+      "K_H_pass": true,
+      "Q_st_pass": false,
+      "composite": "FAIL",
+      "rationale": "All-silica MFI: well-characterized synthesis, narrow scatter. Hufton 1993 + Talu-Myers + Dunne 1996 + Golden-Sircar all consistent within ~10% on K_H.",
+      "sources": [
+        "10.1002/aic.690390605 (Hufton 1993)",
+        "10.1021/la960495z (Dunne 1996)"
+      ]
+    },
+    "headline_disposition": "PHYSICAL_FAIL",
+    "note": "Outside Tier B literature-scatter band. Honest force-field / reference disagreement beyond documented experimental scatter."
+  },
+  "bayesian_log_space_comparison": {
+    "K_H_sim_log10_std": 0.0045717108272665015,
+    "K_H_exp_log10_std": 0.05,
+    "delta_log10": 0.07138856348375708,
+    "combined_log10_std": 0.0502085703828355,
+    "z_score": 1.421840194600766,
+    "p_agreement_within_1_sigma": 0.32884976269338106,
+    "p_agreement_within_2_sigma": 0.7181108892033943,
+    "p_agreement_within_tier_b_band": 0.9412850985873815,
+    "tier_b_delta_log10_threshold": 0.15,
+    "classification": "AGREEMENT_WITHIN_2_SIGMA",
+    "note": "\u0394log10 = 0.071 \u00b1 0.050 (sim 1\u03c3 \u2248 0.005, exp scatter 1\u03c3 \u2248 0.050). |Z| = 1.42."
+  }
+}

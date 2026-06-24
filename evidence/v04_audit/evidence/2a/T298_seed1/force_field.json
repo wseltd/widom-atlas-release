@@ -1,0 +1,149 @@
+{
+  "PseudoAtoms": [
+    {
+      "name": "Cu1",
+      "framework": true,
+      "element": "Cu",
+      "mass": 63.546,
+      "charge": 0.936049294872,
+      "source": "DDEC6 from PACMOF2 / Nazarian 2016"
+    },
+    {
+      "name": "H1",
+      "framework": true,
+      "element": "H",
+      "mass": 1.00794,
+      "charge": 0.114709294872,
+      "source": "DDEC6 from PACMOF2 / Nazarian 2016"
+    },
+    {
+      "name": "C1",
+      "framework": true,
+      "element": "C",
+      "mass": 12.0107,
+      "charge": -0.170020705128,
+      "source": "DDEC6 from PACMOF2 / Nazarian 2016"
+    },
+    {
+      "name": "C2",
+      "framework": true,
+      "element": "C",
+      "mass": 12.0107,
+      "charge": 0.692409294872,
+      "source": "DDEC6 from PACMOF2 / Nazarian 2016"
+    },
+    {
+      "name": "C3",
+      "framework": true,
+      "element": "C",
+      "mass": 12.0107,
+      "charge": 0.0341588782051,
+      "source": "DDEC6 from PACMOF2 / Nazarian 2016"
+    },
+    {
+      "name": "O1",
+      "framework": true,
+      "element": "O",
+      "mass": 15.9994,
+      "charge": -0.569640705128,
+      "source": "DDEC6 from PACMOF2 / Nazarian 2016"
+    },
+    {
+      "name": "C_co2",
+      "framework": false,
+      "element": "C",
+      "print_as": "C",
+      "mass": 12.0107,
+      "charge": 0.6512,
+      "source": "Harris-Yung 1995 CO2"
+    },
+    {
+      "name": "O_co2",
+      "framework": false,
+      "element": "O",
+      "print_as": "O",
+      "mass": 15.9994,
+      "charge": -0.3256,
+      "source": "Harris-Yung 1995 CO2"
+    }
+  ],
+  "SelfInteractions": [
+    {
+      "name": "Cu1",
+      "type": "lennard-jones",
+      "parameters": [
+        2.5161,
+        3.1137
+      ],
+      "source": "UFF (per-element) for MOF framework"
+    },
+    {
+      "name": "H1",
+      "type": "lennard-jones",
+      "parameters": [
+        7.6493,
+        2.5711
+      ],
+      "source": "UFF (per-element) for MOF framework"
+    },
+    {
+      "name": "C1",
+      "type": "lennard-jones",
+      "parameters": [
+        28.129,
+        2.76
+      ],
+      "source": "UFF (per-element) for MOF framework"
+    },
+    {
+      "name": "C2",
+      "type": "lennard-jones",
+      "parameters": [
+        28.129,
+        2.76
+      ],
+      "source": "UFF (per-element) for MOF framework"
+    },
+    {
+      "name": "C3",
+      "type": "lennard-jones",
+      "parameters": [
+        28.129,
+        2.76
+      ],
+      "source": "UFF (per-element) for MOF framework"
+    },
+    {
+      "name": "O1",
+      "type": "lennard-jones",
+      "parameters": [
+        53.0,
+        3.3
+      ],
+      "source": "UFF (per-element) for MOF framework"
+    },
+    {
+      "name": "C_co2",
+      "type": "lennard-jones",
+      "parameters": [
+        28.129,
+        2.76
+      ],
+      "source": "Harris-Yung 1995"
+    },
+    {
+      "name": "O_co2",
+      "type": "lennard-jones",
+      "parameters": [
+        80.507,
+        3.033
+      ],
+      "source": "Harris-Yung 1995"
+    }
+  ],
+  "MixingRule": "Lorentz-Berthelot",
+  "TruncationMethod": "shifted",
+  "TailCorrections": false,
+  "CutOffVDW": 12.0,
+  "CutOffCoulomb": 12.0
+}

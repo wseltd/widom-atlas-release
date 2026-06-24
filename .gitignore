@@ -1,0 +1,49 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+*.egg-info/
+*.egg
+dist/
+build/
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Tools / caches
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+.coverage.*
+htmlcov/
+
+# IDE / OS
+.vscode/
+.idea/
+.DS_Store
+
+# Run outputs (not committed)
+runs/
+*.npz
+
+# Large regenerable evidence blobs (kept out of git; reproducible from locked inputs)
+evidence/**/restart_data.bin
+evidence/**/bias_factors/
+evidence/**/diff-input.diff
+
+# Large local research corpus (PDFs / CIFs / isotherm DBs — not committed)
+docs/research/dataset-research-for-v0.4/
+
+# LaTeX build artefacts
+paper/**/*.aux
+paper/**/*.bbl
+paper/**/*.blg
+paper/**/*.fdb_latexmk
+paper/**/*.fls
+paper/**/*.log
+paper/**/*.out
+paper/**/*.synctex.gz

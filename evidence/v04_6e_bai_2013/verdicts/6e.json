@@ -1,0 +1,132 @@
+{
+  "branch_id": "6e",
+  "case_id": "6",
+  "label": "MFI + CH4 (Bai 2013 TraPPE-zeo + TraPPE-UA CH4, Lorentz-Berthelot, shifted-truncated, 14 A cutoff + LJ tail)",
+  "force_field": {
+    "force_field_lineage": "Bai_2013_TraPPE_zeo_per_RASPA3_bundled_JSON_primary_anchored",
+    "force_field_doi": "10.1021/jp4074224",
+    "framework_atom_type_counts_per_primitive_cell": {
+      "O_zeo": 192,
+      "Si_zeo": 96
+    },
+    "framework_atom_type_counts_in_supercell": {
+      "O_zeo": 2304,
+      "Si_zeo": 1152
+    },
+    "cell_volume_angstrom3_supercell": 62535.37957968,
+    "cutoff_angstrom": 14.0,
+    "mixing_rule": "lorentz_berthelot",
+    "lj_truncation": "shifted_truncated",
+    "apply_lj_tail_correction": true,
+    "gas_species": "CH4",
+    "probe_self_lj": {
+      "CH4_sp3": [
+        148.0,
+        3.73
+      ]
+    },
+    "framework_self_lj": {
+      "Si_zeo": [
+        22.0,
+        2.3
+      ],
+      "O_zeo": [
+        53.0,
+        3.3
+      ]
+    },
+    "framework_charges_e_per_type": {
+      "Si_zeo": 2.05,
+      "O_zeo": -1.025
+    },
+    "supercell_replicas": [
+      2,
+      2,
+      3
+    ]
+  },
+  "executed_backend": "native_widom_v04",
+  "executed_at_utc": "2026-06-01 21:06:49",
+  "temperature_K": 298.0,
+  "n_insertions_per_seed": 60000,
+  "n_seeds": 3,
+  "tail_correction_offset_K": -42.39664253609813,
+  "seeds": [
+    {
+      "seed": 0,
+      "n_insertions": 60000,
+      "wall_seconds": 9.910720586776733,
+      "K_H_mol_per_kg_per_bar_without_tail": 0.3950112562286488,
+      "K_H_mol_per_kg_per_bar_with_tail": 0.45540397118914855,
+      "Q_st_kJ_per_mol_without_tail": 18.38658570051146,
+      "Q_st_kJ_per_mol_with_tail": 18.73907138655658
+    },
+    {
+      "seed": 1,
+      "n_insertions": 60000,
+      "wall_seconds": 9.958998203277588,
+      "K_H_mol_per_kg_per_bar_without_tail": 0.3918191363372582,
+      "K_H_mol_per_kg_per_bar_with_tail": 0.45172381258068184,
+      "Q_st_kJ_per_mol_without_tail": 18.432574771081544,
+      "Q_st_kJ_per_mol_with_tail": 18.785060457126665
+    },
+    {
+      "seed": 2,
+      "n_insertions": 60000,
+      "wall_seconds": 9.822424173355103,
+      "K_H_mol_per_kg_per_bar_without_tail": 0.38492341966320437,
+      "K_H_mol_per_kg_per_bar_with_tail": 0.44377381949050615,
+      "Q_st_kJ_per_mol_without_tail": 18.389778605077893,
+      "Q_st_kJ_per_mol_with_tail": 18.742264291123014
+    }
+  ],
+  "K_H_mean_mol_per_kg_per_bar": 0.45030053442011214,
+  "K_H_std_mol_per_kg_per_bar": 0.0059442743606873145,
+  "Q_st_mean_kJ_per_mol": 18.755465378268756,
+  "Q_st_std_kJ_per_mol": 0.025679762057836262,
+  "reference_K_H_mol_per_kg_per_bar": 0.89,
+  "reference_Q_st_kJ_per_mol": 20.9,
+  "reference_K_H_source": "Hufton 1993 AIChE J (DOI 10.1002/aic.690390605) chromatographic",
+  "reference_Q_st_source": "Dunne 1996 Langmuir (DOI 10.1021/la960495z) Tian-Calvet calorimetric",
+  "smoke_test_K_H_simulated": 0.6,
+  "smoke_test_source": "Shah, Tsapatsis, Siepmann 2015 Langmuir SI (DOI 10.1021/acs.langmuir.5b03015)",
+  "two_tier_verdict": {
+    "case_id": "6",
+    "branch_id": "6e",
+    "K_H_mean_mol_per_kg_per_bar": 0.45030053442011214,
+    "K_H_reference_mol_per_kg_per_bar": 0.89,
+    "Q_st_mean_kJ_per_mol": 18.755465378268756,
+    "Q_st_reference_kJ_per_mol": 20.9,
+    "delta_log10_K_H": -0.2958875442576673,
+    "delta_Q_st_kJ_per_mol": -2.1445346217312427,
+    "tier_A_regression": {
+      "delta_log10_KH_max": 0.1,
+      "delta_Qst_kJ_per_mol_max": 2.0,
+      "K_H_pass": false,
+      "Q_st_pass": false,
+      "composite": "FAIL",
+      "rationale": "Historical v04.2 strict thresholds. Used as an internal regression gate to detect code-change-induced shifts in K_H / Q_st. NOT a physical-accuracy claim. Tighter than experimental scatter for open-metal-site / defective MOFs."
+    },
+    "tier_B_physical": {
+      "delta_log10_KH_max": 0.15,
+      "delta_Qst_kJ_per_mol_max": 3.0,
+      "K_H_pass": false,
+      "Q_st_pass": true,
+      "composite": "FAIL",
+      "rationale": "All-silica MFI: well-characterized synthesis, narrow scatter. Hufton 1993 + Talu-Myers + Dunne 1996 + Golden-Sircar all consistent within ~10% on K_H.",
+      "sources": [
+        "10.1002/aic.690390605 (Hufton 1993)",
+        "10.1021/la960495z (Dunne 1996)"
+      ]
+    },
+    "headline_disposition": "PHYSICAL_FAIL",
+    "note": "Outside Tier B literature-scatter band. Honest force-field / reference disagreement beyond documented experimental scatter."
+  },
+  "bayesian_log_space_comparison": {
+    "delta_log10": -0.2958875442576673,
+    "combined_log10_std": 0.20008252876965635,
+    "z_score": -1.4788274922210014,
+    "classification": "AGREEMENT_WITHIN_2_SIGMA",
+    "p_agreement_within_tier_b_band": 0.22003598684715264
+  }
+}

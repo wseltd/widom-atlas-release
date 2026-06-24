@@ -1,0 +1,6 @@
+system,engine,recipe,mean_exp_negbU,K_H_mol_per_kg_per_bar,Q_st_kJ_per_mol,N_insertions,source
+6c MFI+Ar,raspa3_locked,Ar-O+Ar-Si LB shifted cut12 no-tail,,0.2070,16.03,600000,evidence v04 6c locked (RASPA3)
+6c MFI+Ar,native_lj,Ar-O+Ar-Si LB shifted cut12 no-tail,9.5370,0.2093,15.91,1000000,v0.6 native_widom_lj.py --si_eps_K 51.337
+6c MFI+Ar,kups_widom,Ar-O+Ar-Si LB shifted cut12 no-tail,11.0801,0.2432,16.25,25000,kups mcmc_widom withSi K_H=1.798e7 A3/eV
+6c MFI+Ar,native_lj,Ar-O ONLY (naive simplification),5.2350,0.1149,14.36,2000000,v0.6 native_widom_lj.py O-only
+6c MFI+Ar,kups_widom,Ar-O ONLY,5.9803,0.1313,,25000,kups mcmc_widom O-only K_H=9.704e6 A3/eV

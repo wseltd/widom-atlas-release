@@ -1,0 +1,27 @@
+{
+  "SimulationType": "MonteCarlo",
+  "NumberOfCycles": 5000,
+  "NumberOfInitializationCycles": 0,
+  "PrintEvery": 500,
+  "Systems": [
+    {
+      "Type": "Framework",
+      "Name": "MFI_iza",
+      "NumberOfUnitCells": [
+        2,
+        2,
+        2
+      ],
+      "ExternalTemperature": 87.0,
+      "ChargeMethod": "None"
+    }
+  ],
+  "Components": [
+    {
+      "Name": "argon",
+      "IdealGasRosenbluthWeight": 1.0,
+      "WidomProbability": 1.0,
+      "CreateNumberOfMolecules": 0
+    }
+  ]
+}

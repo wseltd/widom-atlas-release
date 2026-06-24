@@ -1,0 +1,151 @@
+{
+  "branch_id": "3a",
+  "case_id": "3",
+  "status": "ran",
+  "K_H_mol_per_kg_per_Pa": 1.9910127666666668e-05,
+  "K_H_seed_std": 2.1129221032058335e-05,
+  "Q_st_kJ_per_mol": 46.00245991380197,
+  "Q_st_uncertainty_kJ_per_mol": 19.665384599575976,
+  "Q_st_method": "two_point_van_t_Hoff",
+  "seeds": 3,
+  "insertions_per_seed": 100000,
+  "aggregate_insertions": 600000,
+  "derived_charges": null,
+  "derivation_notes": null,
+  "binary_interactions": null,
+  "blocked_info": null,
+  "runs": [
+    {
+      "temperature_K": 298.0,
+      "seed_label": "T298_seed0",
+      "exit_code": 0,
+      "duration_s": 64.88625073432922,
+      "K_H_mol_per_kg_per_Pa": 7.260068e-06,
+      "K_H_uncertainty": 7.026019e-07,
+      "widom_insertions_total": 100000,
+      "raspa_evidence": {
+        "raspa3_version": "3.0.29",
+        "raspa3_sha256": "2b4132becc0f38dedb2de470386defe9956d8129307e70dc7fcd0d6f03d57732",
+        "input_sha256": {
+          "simulation.json": "a73e84b08cbc7c93823b03903d7794569e0f2ab79500d304d05c5cb0a1844f89",
+          "force_field.json": "f5ca7ac18cb65d377035038157c83cb326a5752d0047866861fca6690fa47c13",
+          "CO2.json": "c975266898f7e71fa73649b7a993a2f88a697548643cae337b8b392cab0d9380",
+          "RUBTAK01_SL_DDEC.cif": "db5f8bdb9a0fefd4f0cffe66b9fdce69bcf7eafc54ab055f26a517fac4e51ea9"
+        },
+        "output_txt_path": "evidence/v04_audit/evidence/3a/T298_seed0/output/output_298_0.s0.txt",
+        "stdout_path": "evidence/v04_audit/evidence/3a/T298_seed0/raspa3.stdout.txt",
+        "stderr_path": "evidence/v04_audit/evidence/3a/T298_seed0/raspa3.stderr.txt"
+      }
+    },
+    {
+      "temperature_K": 298.0,
+      "seed_label": "T298_seed1",
+      "exit_code": 0,
+      "duration_s": 64.87964916229248,
+      "K_H_mol_per_kg_per_Pa": 4.430242e-05,
+      "K_H_uncertainty": 0.0001030586,
+      "widom_insertions_total": 100000,
+      "raspa_evidence": {
+        "raspa3_version": "3.0.29",
+        "raspa3_sha256": "2b4132becc0f38dedb2de470386defe9956d8129307e70dc7fcd0d6f03d57732",
+        "input_sha256": {
+          "simulation.json": "a73e84b08cbc7c93823b03903d7794569e0f2ab79500d304d05c5cb0a1844f89",
+          "force_field.json": "f5ca7ac18cb65d377035038157c83cb326a5752d0047866861fca6690fa47c13",
+          "CO2.json": "c975266898f7e71fa73649b7a993a2f88a697548643cae337b8b392cab0d9380",
+          "RUBTAK01_SL_DDEC.cif": "db5f8bdb9a0fefd4f0cffe66b9fdce69bcf7eafc54ab055f26a517fac4e51ea9"
+        },
+        "output_txt_path": "evidence/v04_audit/evidence/3a/T298_seed1/output/output_298_0.s0.txt",
+        "stdout_path": "evidence/v04_audit/evidence/3a/T298_seed1/raspa3.stdout.txt",
+        "stderr_path": "evidence/v04_audit/evidence/3a/T298_seed1/raspa3.stderr.txt"
+      }
+    },
+    {
+      "temperature_K": 298.0,
+      "seed_label": "T298_seed2",
+      "exit_code": 0,
+      "duration_s": 64.94465374946594,
+      "K_H_mol_per_kg_per_Pa": 8.167895e-06,
+      "K_H_uncertainty": 1.469682e-06,
+      "widom_insertions_total": 100000,
+      "raspa_evidence": {
+        "raspa3_version": "3.0.29",
+        "raspa3_sha256": "2b4132becc0f38dedb2de470386defe9956d8129307e70dc7fcd0d6f03d57732",
+        "input_sha256": {
+          "simulation.json": "a73e84b08cbc7c93823b03903d7794569e0f2ab79500d304d05c5cb0a1844f89",
+          "force_field.json": "f5ca7ac18cb65d377035038157c83cb326a5752d0047866861fca6690fa47c13",
+          "CO2.json": "c975266898f7e71fa73649b7a993a2f88a697548643cae337b8b392cab0d9380",
+          "RUBTAK01_SL_DDEC.cif": "db5f8bdb9a0fefd4f0cffe66b9fdce69bcf7eafc54ab055f26a517fac4e51ea9"
+        },
+        "output_txt_path": "evidence/v04_audit/evidence/3a/T298_seed2/output/output_298_0.s0.txt",
+        "stdout_path": "evidence/v04_audit/evidence/3a/T298_seed2/raspa3.stdout.txt",
+        "stderr_path": "evidence/v04_audit/evidence/3a/T298_seed2/raspa3.stderr.txt"
+      }
+    },
+    {
+      "temperature_K": 323.0,
+      "seed_label": "T323_seed0",
+      "exit_code": 0,
+      "duration_s": 64.55575656890869,
+      "K_H_mol_per_kg_per_Pa": 5.136163e-06,
+      "K_H_uncertainty": 1.048778e-06,
+      "widom_insertions_total": 100000,
+      "raspa_evidence": {
+        "raspa3_version": "3.0.29",
+        "raspa3_sha256": "2b4132becc0f38dedb2de470386defe9956d8129307e70dc7fcd0d6f03d57732",
+        "input_sha256": {
+          "simulation.json": "9ada78f4cfd7cb59bbb41f8ded5940b4abff1397b5723f257919453b3cf206ec",
+          "force_field.json": "f5ca7ac18cb65d377035038157c83cb326a5752d0047866861fca6690fa47c13",
+          "CO2.json": "c975266898f7e71fa73649b7a993a2f88a697548643cae337b8b392cab0d9380",
+          "RUBTAK01_SL_DDEC.cif": "db5f8bdb9a0fefd4f0cffe66b9fdce69bcf7eafc54ab055f26a517fac4e51ea9"
+        },
+        "output_txt_path": "evidence/v04_audit/evidence/3a/T323_seed0/output/output_323_0.s0.txt",
+        "stdout_path": "evidence/v04_audit/evidence/3a/T323_seed0/raspa3.stdout.txt",
+        "stderr_path": "evidence/v04_audit/evidence/3a/T323_seed0/raspa3.stderr.txt"
+      }
+    },
+    {
+      "temperature_K": 323.0,
+      "seed_label": "T323_seed1",
+      "exit_code": 0,
+      "duration_s": 65.01527953147888,
+      "K_H_mol_per_kg_per_Pa": 4.429738e-06,
+      "K_H_uncertainty": 8.303585e-07,
+      "widom_insertions_total": 100000,
+      "raspa_evidence": {
+        "raspa3_version": "3.0.29",
+        "raspa3_sha256": "2b4132becc0f38dedb2de470386defe9956d8129307e70dc7fcd0d6f03d57732",
+        "input_sha256": {
+          "simulation.json": "9ada78f4cfd7cb59bbb41f8ded5940b4abff1397b5723f257919453b3cf206ec",
+          "force_field.json": "f5ca7ac18cb65d377035038157c83cb326a5752d0047866861fca6690fa47c13",
+          "CO2.json": "c975266898f7e71fa73649b7a993a2f88a697548643cae337b8b392cab0d9380",
+          "RUBTAK01_SL_DDEC.cif": "db5f8bdb9a0fefd4f0cffe66b9fdce69bcf7eafc54ab055f26a517fac4e51ea9"
+        },
+        "output_txt_path": "evidence/v04_audit/evidence/3a/T323_seed1/output/output_323_0.s0.txt",
+        "stdout_path": "evidence/v04_audit/evidence/3a/T323_seed1/raspa3.stdout.txt",
+        "stderr_path": "evidence/v04_audit/evidence/3a/T323_seed1/raspa3.stderr.txt"
+      }
+    },
+    {
+      "temperature_K": 323.0,
+      "seed_label": "T323_seed2",
+      "exit_code": 0,
+      "duration_s": 64.8041741847992,
+      "K_H_mol_per_kg_per_Pa": 4.627872e-06,
+      "K_H_uncertainty": 4.114221e-07,
+      "widom_insertions_total": 100000,
+      "raspa_evidence": {
+        "raspa3_version": "3.0.29",
+        "raspa3_sha256": "2b4132becc0f38dedb2de470386defe9956d8129307e70dc7fcd0d6f03d57732",
+        "input_sha256": {
+          "simulation.json": "9ada78f4cfd7cb59bbb41f8ded5940b4abff1397b5723f257919453b3cf206ec",
+          "force_field.json": "f5ca7ac18cb65d377035038157c83cb326a5752d0047866861fca6690fa47c13",
+          "CO2.json": "c975266898f7e71fa73649b7a993a2f88a697548643cae337b8b392cab0d9380",
+          "RUBTAK01_SL_DDEC.cif": "db5f8bdb9a0fefd4f0cffe66b9fdce69bcf7eafc54ab055f26a517fac4e51ea9"
+        },
+        "output_txt_path": "evidence/v04_audit/evidence/3a/T323_seed2/output/output_323_0.s0.txt",
+        "stdout_path": "evidence/v04_audit/evidence/3a/T323_seed2/raspa3.stdout.txt",
+        "stderr_path": "evidence/v04_audit/evidence/3a/T323_seed2/raspa3.stderr.txt"
+      }
+    }
+  ]
+}

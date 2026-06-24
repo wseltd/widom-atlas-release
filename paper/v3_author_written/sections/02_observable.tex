@@ -1,0 +1,41 @@
+% Section 2 --- The observable
+% except the final paragraph, which the author revised before insertion to
+% align with the four-class taxonomy ("three" -> "four broad reasons").
+\section{The observable}\label{sec:observable}
+
+The word ``adsorption'' hides several different thermodynamic questions. One may ask how much gas a material holds at one bar, how an isotherm bends as sites fill, how quickly a molecule enters a pore, or where the first molecule sits at infinite dilution. Widom insertion answers only the last of these questions. It gives the zero-coverage limit of adsorption for a specified rigid host and a specified host-guest energy model.
+
+The calculation can be described before writing any equation. A guest molecule is placed into the empty framework without allowing it to perturb the framework or other guests. This test molecule is then moved through many random positions and orientations. At each insertion the interaction energy \(U\) between the test molecule and the host is evaluated. Attractive insertions contribute large Boltzmann weights, repulsive insertions contribute small weights, and severe overlaps contribute essentially nothing.
+
+The Henry constant follows from this average. In the dilute limit, loading is proportional to pressure, and the proportionality constant is \(K_H\). Widom insertion estimates that proportionality by averaging \(\exp(-\beta U)\), with \(\beta = 1/k_B T\). A second weighted average gives the mean energy of those insertions that actually contribute to adsorption. With the usual ideal-gas thermal term, this gives the zero-coverage isosteric heat \(Q_{st}\) \cite{FrenkelSmit2002}.
+
+For a guest in a rigid host at temperature \(T\), the estimators used in widom-atlas are
+
+\[
+K_H =
+\frac{V}{M k_B T N_A}
+\left\langle \exp(-\beta U)\right\rangle,
+\]
+
+and
+
+\[
+Q_{st}
+=
+-\frac{
+\left\langle U \exp(-\beta U)\right\rangle
+}{
+\left\langle \exp(-\beta U)\right\rangle
+}
++ RT,
+\]
+
+where \(V\) is the simulation-cell volume, \(M\) is the simulation-cell mass, \(N_A\) is Avogadro's constant, and the brackets denote the insertion average over position and orientation. The first expression is reported in \(\mathrm{mol\,kg^{-1}\,bar^{-1}}\). The second is reported in \(\mathrm{kJ\,mol^{-1}}\). Unit conversion is therefore part of the recipe, not a formatting detail.
+
+These equations are exact only after the model has been specified. The word ``model'' includes the crystallographic coordinates, atom typing, partial charges, non-bonded parameters, mixing rule, electrostatics, cutoff, tail correction, gas geometry, and backend implementation. If those ingredients are held fixed, the insertion average has a clear statistical meaning. If they are not held fixed, two calculations called ``Widom insertion'' may be different experiments.
+
+This is why widom-atlas treats an input recipe as a scientific object. A branch is not defined by the host name alone. ``MFI + methane'' is not a unique calculation. It becomes a calculation only after one states the MFI structure, the methane model, the framework force field, the mixing rule, the electrostatics convention, the cutoff, the backend, the temperature, and the reference observable. The same physical material can therefore appear in several branches if those recipes differ.
+
+The estimator also has physical limits. It samples a rigid host. It does not relax a framework, move an extra-framework cation to open a window, or change the protonation or defect state of a material. It samples zero coverage. It does not reproduce a finite-loading isotherm unless that isotherm has first been extrapolated to the Henry regime. It samples the chosen potential-energy surface. It cannot repair a force field that gives the wrong binding energy at an open metal site.
+
+These limits are not defects of Widom insertion. They are the conditions under which the observable is defined. A correct Widom calculation can therefore disagree with experiment for four broad reasons: the energy model may be wrong, the reference value may not be the same zero-coverage observable, the structure may not be the experimental material, or the sampled ensemble may not be the ensemble accessed in the experiment. The remainder of the paper uses this distinction to interpret the v0.4 branches.

@@ -1,0 +1,36 @@
+{
+  "V_supercell_A3": 41690.3,
+  "kT_eV": 0.025693,
+  "RASPA3_locked": {
+    "K_H_mol_kg_bar": 0.20701,
+    "Q_st_kJ": 16.033
+  },
+  "native_O_only": {
+    "W": 5.235,
+    "K_H_mol_kg_bar": 0.1149,
+    "Q_st_kJ": 14.36
+  },
+  "native_with_Si": {
+    "W": 9.537,
+    "K_H_mol_kg_bar": 0.2093,
+    "Q_st_kJ": 15.91
+  },
+  "kups_O_only": {
+    "W": 5.9803,
+    "K_H_A3_eV": 9704000.0,
+    "K_H_mol_kg_bar": 0.1313
+  },
+  "kups_with_Si": {
+    "W": 11.0801,
+    "K_H_A3_eV": 17979149.68728164,
+    "K_H_mol_kg_bar": 0.2432,
+    "Q_st_kJ": 16.25
+  },
+  "deltas": {
+    "native_withSi_vs_RASPA3_KH_pct": 1.1,
+    "native_withSi_vs_RASPA3_Qst_kJ": -0.12,
+    "kups_withSi_vs_native_KH_pct": 16.2,
+    "kups_withSi_vs_RASPA3_Qst_kJ": 0.22,
+    "Si_term_KH_inflation_native": 1.82
+  }
+}

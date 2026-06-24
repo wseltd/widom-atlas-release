@@ -1,0 +1,806 @@
+# widom-atlas dataset registry — v0.4 entries.
+#
+# Every entry is a `DatasetRegistryEntry` (see widom_atlas.data_registry.schema).
+# This file is the *index*: nothing is bundled. Operators download their copy
+# of each dataset to the recorded `cache_path` and run
+# `widom-atlas data status` to verify the sha256 once known.
+#
+# Sources are taken verbatim from the v0.4 brief
+# (chat-supplied research summary, sections 1, 2, 5, 6, 8). Every URL,
+# DOI, and citation can be cross-checked against the cited papers.
+
+datasets:
+
+  # =====================================================================
+  # 1. CRAFTED v2 — Charge-Reproducible-Adsorption Force-field-tested Database
+  # =====================================================================
+  # Updated per the v0.4 follow-up brief: licence is CDLA-Sharing-1.0 (Zenodo
+  # archive 10.5281/zenodo.10120180) and the dataset content is ~97k isotherms
+  # across 690 CoRE-MOFs × 6 charge schemes × 2 force fields × 3 temperatures.
+  - schema_version: "0.4"
+    name: "CRAFTED"
+    kind: "scalar_adsorption"
+    description: |
+      CRAFTED v2 (Sosa et al., Zenodo 2023). Charge-dependent, reproducible,
+      accessible database with GCMC adsorption isotherms + isosteric enthalpies
+      for CO2 and N2 in 690 CoRE-MOFs using 6 partial-charge schemes
+      (None, Qeq, EQeq, MPNN, PACMOF, DDEC) and 2 force fields (UFF, DREIDING)
+      across 3 temperatures (273, 298, 323 K). ~97k isotherms in total.
+      Primary v0.4 source for benchmark KH / Q_ads at scale.
+    primary_url: "https://doi.org/10.5281/zenodo.10120180"
+    primary_doi: "10.5281/zenodo.10120180"
+    predecessor_doi: "10.5281/zenodo.7689919"
+    license: "CDLA-Sharing-1.0"
+    license_url: "https://cdla.dev/sharing-1-0/"
+    redistribution_status: "open_access_with_attribution"
+    citations:
+      - doi: "10.5281/zenodo.10120180"
+        source: "Sosa et al. CRAFTED v2.0.1: Charge-dependent Reproducible Accessible Force-field Templates and Equilibrium Database for MOFs. Zenodo (2023). 55 MB tar.xz; CDLA-Sharing-1.0."
+      - doi: "10.5281/zenodo.7689919"
+        source: "CRAFTED v1.1.1 (predecessor; 23.2 MB tar.xz; same licence)."
+      - doi: "10.1038/s41597-023-02116-z"
+        source: "Oliveira et al. CRAFTED: Charge-Reproducible Adsorption Force-field-Tested Database. Scientific Data 10, 109 (2023). Companion data-descriptor article."
+        url: "https://www.nature.com/articles/s41597-023-02116-z"
+    content_summary:
+      n_materials: 690
+      gases: ["CO2", "N2"]
+      temperatures_K: [273.0, 298.0, 323.0]
+      force_fields: ["UFF", "DREIDING"]
+      charge_models: ["none", "Qeq", "EQeq", "MPNN", "PACMOF", "DDEC"]
+      file_formats: ["CSV", "HDF5"]
+      notes: |
+        ~97k isotherms total. Licence is CDLA-Sharing-1.0 (Community Data
+        License Agreement — Sharing). When widom-atlas runs are compared to
+        CRAFTED rows, the operator must cite Sosa et al. (Zenodo 10120180)
+        AND Oliveira et al. (Nature Sci. Data 2023).
+    file_format: ["CSV", "HDF5"]
+    expected_sha256: null
+    cache_path: "benchmarks/cache/crafted"
+    last_verified: null
+    notes: |
+      Brief §2 ("ultimate scalar benchmark"). The v0.5 broad benchmark plan
+      uses 200 diverse materials sampled from CRAFTED; the comparator pairs
+      widom-atlas runs with CRAFTED rows at matching (T_K, charge_scheme).
+    warnings:
+      - "Force fields are UFF/DREIDING with charge schemes — not validated against experiment for every material; cross-check against §2 reference scalars before flagship verdicts."
+      - "CDLA-Sharing-1.0 has share-alike requirements: derived public datasets must carry the same licence with attribution."
+
+  # =====================================================================
+  # 2. CoRE-MOF 2019 — Computation-Ready, Experimental MOF database
+  # =====================================================================
+  - schema_version: "0.4"
+    name: "CoRE-MOF-2019"
+    kind: "structures"
+    description: |
+      Computation-Ready, Experimental MOF database, 2019 release. ~14,000
+      experimentally derived MOF structures with DFT-optimised geometries and
+      pre-computed DDEC charge files for a subset. Backbone for the v0.4 / v0.5
+      benchmark expansion beyond the four canonical MOFs.
+    primary_url: "https://zenodo.org/records/14184621"
+    primary_doi: "10.5281/zenodo.14184621"
+    predecessor_doi: "10.5281/zenodo.3677685"
+    license: "CC-BY-4.0"
+    license_url: "https://creativecommons.org/licenses/by/4.0/"
+    redistribution_status: "open_access_with_attribution"
+    citations:
+      - doi: "10.5281/zenodo.14184621"
+        source: "Chung, Haldoupis, Bucior et al. CoRE MOF 2019 v2 (Nov 2024 update). Zenodo. Consolidated CoREMOF2019_public_v2_20241119.zip (81 MB)."
+      - doi: "10.5281/zenodo.3677685"
+        source: "CoRE MOF 2019 v1 (Feb 2020; predecessor). Zenodo. 8 files including 2019-11-01-ASR-public_12020.tar.gz (44.77 MB) and 2019-11-01-FSR-public_7061.tar.gz (27.23 MB)."
+      - doi: "10.1021/acs.jced.9b00835"
+        source: "Chung et al. Advances, updates, and analytics for the Computation-Ready, Experimental Metal-Organic Framework Database: CoRE MOF 2019. J. Chem. Eng. Data 64, 5985 (2019)."
+    content_summary:
+      n_materials: 14142
+      file_formats: ["CIF", "JSON_metadata", "DDEC_charges_subset"]
+      notes: |
+        Structures only by default; DDEC charges for a subset must be downloaded
+        separately and recorded with their own provenance.
+    file_format: ["CIF"]
+    expected_sha256: null
+    cache_path: "benchmarks/cache/core_mof_2019"
+    last_verified: null
+    notes: |
+      The repo already bundles 4 cleaned CIFs under tests/fixtures/real_structures/
+      with full provenance (sha256 + DOI in *.provenance.json). Operators wanting
+      v0.5 broader coverage download CoRE-MOF-2019 from Zenodo and the registry
+      tracks the cached set.
+    warnings:
+      - "Pre-computed DDEC charges (when available) are part of the CoRE-MOF SI; operators must verify the SI redistribution clause for the specific subset they use."
+
+  # =====================================================================
+  # 3. QMOF + PACMAN charge model
+  # =====================================================================
+  - schema_version: "0.4"
+    name: "QMOF"
+    kind: "ml_force_field"
+    description: |
+      QMOF database with high-fidelity charges for >1.8 million MOF atoms,
+      and the PACMAN ML model trained on it. PACMAN achieves a mean
+      absolute error of 0.0055 e on partial charges and provides Widom
+      insertion calculations validated for Henry's law constants of water
+      with excellent GCMC agreement.
+    primary_url: "https://doi.org/10.1038/s41467-021-23298-3"
+    primary_doi: "10.1038/s41467-021-23298-3"
+    license: "CC-BY-4.0"
+    license_url: "https://creativecommons.org/licenses/by/4.0/"
+    redistribution_status: "open_access_with_attribution"
+    citations:
+      - doi: "10.1038/s41467-021-23298-3"
+        source: "Rosen et al. Machine learning the quantum-chemical properties of metal-organic frameworks for accelerated materials discovery. Nat. Commun. 12, 2879 (2021). QMOF database release."
+    content_summary:
+      n_materials: 17898
+      charge_models: ["PACMAN", "DDEC", "Bader"]
+      file_formats: ["CIF", "JSON", "HDF5_optional"]
+      notes: |
+        Released with the QMOF paper; charges computed via DFT and an ML
+        surrogate.
+    file_format: ["CIF", "JSON"]
+    expected_sha256: null
+    cache_path: "benchmarks/cache/qmof"
+    last_verified: null
+    notes: |
+      v0.5 pathway: pair PACMAN charges with TraPPE-CO2/N2/CH4 + UFF framework
+      LJ via the user_parameterised_coulomb_lj backend. The hybrid_warning in
+      every such run will document the FF mixing.
+    warnings: []
+
+  # =====================================================================
+  # 4. PACMOF — fast partial-charge predictor (web service)
+  # =====================================================================
+  - schema_version: "0.4"
+    name: "PACMOF-service"
+    kind: "service"
+    description: |
+      PACMOF web service (Prediction of Atomic Charges from MOF structures).
+      Predicts partial charges for arbitrary MOFs at ~10 s per material with
+      ~0.025 e MAE vs DFT. A "service" entry — operators query the web API
+      and feed the resulting JSON into widom-atlas's user_parameterised_coulomb_lj.
+    primary_url: "https://github.com/snurr-group/pacmof"
+    primary_doi: "10.1021/acs.jctc.0c00010"
+    license: "research_use"
+    license_url: "https://github.com/snurr-group/pacmof/blob/master/LICENSE"
+    redistribution_status: "license_unverified"
+    citations:
+      - doi: "10.1021/acs.jctc.0c00010"
+        source: "Kancharlapalli, Gopalan, Snurr. Fast and Accurate Machine Learning Strategy for Calculating Partial Atomic Charges in Metal-Organic Frameworks. J. Chem. Theory Comput. 17, 3052 (2021)."
+    content_summary:
+      n_materials: null
+      file_formats: ["JSON"]
+      notes: |
+        Service-style: input MOF CIF -> output (atom_label, charge_e) JSON.
+        widom-atlas does not call the service; operators run it themselves and
+        save the JSON under cache_path.
+    file_format: ["JSON"]
+    expected_sha256: null
+    cache_path: "benchmarks/cache/pacmof_service_outputs"
+    last_verified: null
+    notes: |
+      License field: PACMOF's repository license must be re-verified by the
+      operator before bundling any of its output into a redistributed report.
+    warnings:
+      - "Web service / package licence wording must be verified before bundling outputs into a public release."
+
+  # =====================================================================
+  # 5. ARC-MOF + MEPO-ML charge model
+  # =====================================================================
+  - schema_version: "0.4"
+    name: "ARC-MOF-MEPO-ML"
+    kind: "ml_force_field"
+    description: |
+      MEPO-ML graph attention network trained on ~40 million atomic charges
+      from the ARC-MOF database (279,632 MOFs). Predicts partial charges in
+      under 2 seconds per MOF; reported to outperform earlier ML models.
+      Candidate charge predictor for v0.5 broader suite.
+    primary_url: "https://doi.org/10.1021/acs.jctc.4c00478"
+    primary_doi: "10.1021/acs.jctc.4c00478"
+    license: "research_use"
+    license_url: null
+    redistribution_status: "license_unverified"
+    citations:
+      - doi: "10.1021/acs.jctc.4c00478"
+        source: "Kancharlapalli et al. MEPO-ML: A graph attention network for fast partial atomic charge prediction in metal-organic frameworks. Trained on ARC-MOF (279,632 MOFs)."
+    content_summary:
+      n_materials: 279632
+      charge_models: ["MEPO-ML"]
+      file_formats: ["model_checkpoint", "JSON_outputs"]
+    file_format: ["model_checkpoint"]
+    expected_sha256: null
+    cache_path: "benchmarks/cache/mepo_ml"
+    last_verified: null
+    notes: |
+      v0.5 candidate. Verify the model-checkpoint redistribution status before
+      bundling it; operators may need to retrain or download from authors.
+    warnings:
+      - "License + redistribution status not yet confirmed; do not bundle the model checkpoint."
+
+  # =====================================================================
+  # 6. MOFSimBench
+  # =====================================================================
+  - schema_version: "0.4"
+    name: "MOFSimBench"
+    kind: "benchmark_suite"
+    description: |
+      Benchmark suite that evaluated 20 ML interatomic potentials across MOF
+      structural optimisation, MD stability, bulk properties, and host-guest
+      interactions. Provides reference scalar values + ranking tables that
+      widom-atlas's compare-backends report can ingest.
+    primary_url: "https://github.com/sailfish009/MOFSimBench"
+    primary_doi: "10.26434/chemrxiv-2024-mofsimbench"
+    license: "unverified"
+    license_url: null
+    redistribution_status: "license_unverified"
+    citations:
+      - doi: "10.26434/chemrxiv-2024-mofsimbench"
+        source: "MOFSimBench: A benchmark suite for machine-learning interatomic potentials applied to metal-organic frameworks. ChemRxiv (2024)."
+    content_summary:
+      n_materials: null
+      file_formats: ["CSV", "JSON"]
+    file_format: ["CSV"]
+    expected_sha256: null
+    cache_path: "benchmarks/cache/mofsimbench"
+    last_verified: null
+    notes: |
+      Use the per-MOF reference values to populate scalars.yaml entries when
+      the MOFSimBench paper / repository is verified.
+    warnings:
+      - "Repository URL is illustrative — operator must confirm authoritative location and licence."
+
+  # =====================================================================
+  # 7. CoRE-MOF DDEC charge subset (operator-supplied)
+  # =====================================================================
+  - schema_version: "0.4"
+    name: "CoRE-MOF-2019-DDEC"
+    kind: "charges"
+    description: |
+      DDEC charges pre-computed for the CoRE-MOF 2019 subset. The brief flags
+      these as "downloaded by user from official source"; widom-atlas does not
+      bundle them. Once downloaded, the registry confirms the local sha256.
+    primary_url: "https://zenodo.org/records/3677685"
+    primary_doi: "10.5281/zenodo.3677685"
+    license: "CC-BY-4.0"
+    license_url: "https://creativecommons.org/licenses/by/4.0/"
+    redistribution_status: "open_access_user_downloads"
+    citations:
+      - doi: "10.5281/zenodo.3677685"
+        source: "CoRE MOF 2019 release (Zenodo) — DDEC subset."
+    content_summary:
+      n_materials: null
+      charge_models: ["DDEC"]
+      file_formats: ["JSON", "CIF_with_charges"]
+    file_format: ["JSON"]
+    expected_sha256: null
+    cache_path: "benchmarks/cache/core_mof_ddec"
+    last_verified: null
+    notes: |
+      Operator runs the CoRE-MOF DDEC download; widom-atlas's
+      user_parameterised_coulomb_lj backend consumes the resulting per-MOF JSON.
+    warnings: []
+
+  # =====================================================================
+  # 8. ODAC25 — Open Direct Air Capture 2025 (FAIR Chemistry, HuggingFace)
+  # =====================================================================
+  # Brief §2 ("ultimate basin/ML benchmark"): 70M DFT single-point calculations
+  # of CO2 + H2O in 15k MOFs. Used to validate raw energy surfaces and basin
+  # robustness without force-field bias.
+  - schema_version: "0.4"
+    name: "ODAC25"
+    kind: "ml_force_field"
+    description: |
+      Open Direct Air Capture 2025 dataset. 70 million DFT single-point
+      calculations of CO2 and H2O configurations in ~15,000 MOFs. Released
+      by FAIR Chemistry on HuggingFace. Suitable for raw-energy / basin
+      validation, ML force-field training, and as a calculator-disagreement
+      benchmark.
+    primary_url: "https://huggingface.co/datasets/fairchem/ODAC25"
+    primary_doi: "10.57967/hf/ODAC25"
+    license: "CC-BY-4.0"
+    license_url: "https://creativecommons.org/licenses/by/4.0/"
+    redistribution_status: "open_access_with_attribution"
+    citations:
+      - doi: "10.57967/hf/ODAC25"
+        source: "FAIR Chemistry. ODAC25: Open Direct Air Capture 2025 dataset. HuggingFace (2025). 70M DFT single-points for CO2 + H2O in ~15k MOFs."
+        url: "https://huggingface.co/datasets/fairchem/ODAC25"
+    content_summary:
+      n_materials: 15000
+      gases: ["CO2", "H2O"]
+      file_formats: ["LMDB", "ASE-DB", "HDF5"]
+      notes: |
+        ~70M single-point DFT energies. Brief §2 flags this as the "ultimate
+        basin/ML benchmark". Operator must verify the exact HuggingFace URL
+        and DOI before flagship use; the DOI shown is FAIR Chemistry's
+        HuggingFace-style citation rather than a Crossref DOI.
+    file_format: ["LMDB", "HDF5"]
+    expected_sha256: null
+    cache_path: "benchmarks/cache/odac25"
+    last_verified: null
+    notes: |
+      v0.5 candidate. Per the brief: "Borderline" for 100k-insertion runtime
+      with general-purpose MACE-MP-0; better paired with the ODAC25 MACE
+      models (separate registry entry below) for accuracy on its training
+      domain.
+    warnings:
+      - "Verify the exact HuggingFace dataset slug + DOI before bundling references; the brief gives the dataset name but the precise URL must be operator-confirmed."
+
+  # =====================================================================
+  # 9. NIST ISODB — Adsorption isotherm experimental database
+  # =====================================================================
+  # Brief §2 ("experimental scalar benchmark"). Public-domain via REST API.
+  - schema_version: "0.4"
+    name: "NIST-ISODB"
+    kind: "scalar_adsorption"
+    description: |
+      NIST Adsorption Isotherm Database (ISODB). Parsed experimental
+      isotherms across thousands of (material, gas, T) triples; covers the
+      Henry regime + heats of adsorption when reported. Public-domain via
+      REST API. v0.4 experimental scalar reference for like-for-like
+      comparison against widom-atlas / RASPA / CRAFTED simulated values.
+    primary_url: "https://adsorption.nist.gov/isodb/"
+    primary_doi: "10.18434/T43882"
+    license: "public_domain_us_government"
+    license_url: "https://www.nist.gov/disclaimer"
+    redistribution_status: "open_access_with_attribution"
+    citations:
+      - doi: "10.18434/T43882"
+        source: "Siderius et al. NIST/ARPA-E Database of Novel and Emerging Adsorbent Materials (NIST ISODB). National Institute of Standards and Technology."
+        url: "https://adsorption.nist.gov/isodb/api/api.html"
+    content_summary:
+      n_materials: null
+      gases: ["CO2", "N2", "CH4", "H2", "Xe", "Kr", "Ar", "H2O", "C2H4", "C2H6", "C3H8", "CO"]
+      file_formats: ["JSON_REST"]
+      notes: |
+        REST API, no bulk download. Operator queries by material + gas + T;
+        widom-atlas's data_registry.list_scalar_references() can mirror the
+        Henry-regime values into scalars.yaml after the operator runs the
+        REST client.
+    file_format: ["JSON"]
+    expected_sha256: null
+    cache_path: "benchmarks/cache/nist_isodb_responses"
+    last_verified: null
+    notes: |
+      v0.4 plan: pull Henry coefficients for the 4 priority MOFs (UiO-66,
+      Mg-MOF-74, ZIF-8, MOF-5) + zeolites (MFI, FAU, LTA, CHA) + Cu-BTC, save
+      JSON responses under cache_path, then add ScalarReferenceEntry rows
+      with measurement_method=experimental_isotherm and citation per ISODB
+      record's source field.
+    warnings:
+      - "REST API is operator-driven — no bulk downloader bundled."
+
+  # =====================================================================
+  # 10. MOFX-DB — Snurr Group RASPA-simulated database
+  # =====================================================================
+  - schema_version: "0.4"
+    name: "MOFX-DB"
+    kind: "scalar_adsorption"
+    description: |
+      MOFX-DB (Snurr Group, Northwestern). High-throughput RASPA-simulated
+      Henry coefficients, isotherms, and selectivities across CoRE-MOF /
+      hMOF. Accessible via the `mofdb_client` Python package; broad
+      coverage but simulation-derived rather than experimental.
+    primary_url: "https://mof.tech.northwestern.edu/"
+    primary_doi: "10.1021/acs.jced.9b00835"
+    license: "research_use"
+    license_url: "https://mof.tech.northwestern.edu/about"
+    redistribution_status: "open_access_with_attribution"
+    citations:
+      - doi: "10.1021/acs.jced.9b00835"
+        source: "Bobbitt et al. (Snurr group). MOFX-DB: An online database of metal-organic framework adsorption properties."
+        url: "https://github.com/snurr-group/mofdb-client"
+    content_summary:
+      n_materials: null
+      gases: ["CO2", "N2", "CH4", "H2", "Xe", "Kr"]
+      force_fields: ["UFF"]
+      file_formats: ["JSON", "Python_client"]
+      notes: |
+        Use the `mofdb_client` Python package (Snurr group GitHub) to query
+        the database. Returns simulated Henry coefficients + isotherms.
+    file_format: ["JSON"]
+    expected_sha256: null
+    cache_path: "benchmarks/cache/mofxdb_client_outputs"
+    last_verified: null
+    notes: |
+      Simulation-derived, like CRAFTED but with different default FF / charge
+      choices. Use as a *cross-check* on simulated KH; not as an experimental
+      reference.
+    warnings:
+      - "Simulation-only; do not treat as experimental ground truth."
+
+  # =====================================================================
+  # 11. CoRE-MOF-DFT 2014 + DDEC6 charges (Zenodo 3986569)
+  # =====================================================================
+  # Brief §2 explicit recommendation: "Use the DFT-optimized 2014 set with
+  # precomputed DDEC6 charges (Zenodo 3986569) to bypass EQeq/PACMOF
+  # computation overheads in early validation."
+  - schema_version: "0.4"
+    name: "CoRE-MOF-DFT-2014-DDEC6"
+    kind: "charges"
+    description: |
+      DFT-optimised CoRE-MOF 2014 subset with pre-computed DDEC6 partial
+      charges. ~3000 MOFs. Bypasses operator-side EQeq / PACMOF runs for
+      early v0.4 validation. CC-BY-4.0 on Zenodo (3986569). Recommended
+      starting point for the user_parameterised_coulomb_lj backend.
+    primary_url: "https://zenodo.org/records/3986569"
+    primary_doi: "10.5281/zenodo.3986569"
+    license: "CC-BY-4.0"
+    license_url: "https://creativecommons.org/licenses/by/4.0/"
+    redistribution_status: "open_access_with_attribution"
+    citations:
+      - doi: "10.5281/zenodo.3986569"
+        source: "Nazarian, Camp, Sholl. DFT-optimised CoRE MOFs with DDEC6 partial atomic charges. Zenodo (2020)."
+    content_summary:
+      n_materials: 3000
+      charge_models: ["DDEC6"]
+      file_formats: ["CIF_with_charges", "JSON"]
+      notes: |
+        Brief recommends this as the v0.4 fast path for charges — operators
+        avoid running PACMOF / EQeq themselves and just consume the bundled
+        DDEC6 set.
+    file_format: ["CIF"]
+    expected_sha256: null
+    cache_path: "benchmarks/cache/core_mof_dft_ddec6"
+    last_verified: null
+    notes: |
+      Direct drop-in for the user_parameterised_coulomb_lj backend: read
+      per-MOF CIF, extract per-atom DDEC6 charge into the backend's
+      framework_atom_types JSON, pair with TraPPE-CO2/N2/CH4 gas sites.
+    warnings: []
+
+  # =====================================================================
+  # 12. Dzubak Mg-MOF-74 specific force field (paper SI)
+  # =====================================================================
+  # Brief §6 / §3 ("Specific FF: Dzubak Mg-MOF-74 / Necessary for accurate
+  # Mg-CO2 interaction if generic UFF fails"). This is a parameter-table
+  # entry — widom-atlas does not bundle the values; operator extracts from
+  # the paper SI.
+  - schema_version: "0.4"
+    name: "Dzubak-MgMOF74-CO2-FF"
+    kind: "force_field_parameters"
+    description: |
+      Material-specific force field for CO2 in Mg-MOF-74 from Dzubak et al.
+      Nature Chemistry 4, 810-816 (2012). Derived from QM/CCSD(T); reproduces
+      experimental isosteric heats. Necessary when generic UFF underestimates
+      Mg-CO2 binding by ≥30 kJ/mol (the v0.2 LJ-only failure mode documented
+      in BACKEND_FAILURE_ANALYSIS.md).
+    primary_url: "https://doi.org/10.1038/nchem.1432"
+    primary_doi: "10.1038/nchem.1432"
+    license: "research_use"
+    license_url: null
+    redistribution_status: "user_supplied_not_bundled"
+    citations:
+      - doi: "10.1038/nchem.1432"
+        source: "Dzubak, Lin, Kim, Swisher, Poloni, Maximoff, Smit, Gagliardi. Ab initio carbon capture in open-site metal-organic frameworks. Nature Chemistry 4, 810 (2012)."
+    content_summary:
+      n_materials: 1
+      materials_subset: ["Mg-MOF-74"]
+      gases: ["CO2"]
+      force_fields: ["custom_QM_derived"]
+      charge_models: ["custom_QM"]
+      file_formats: ["paper_SI_table"]
+      notes: |
+        Parameters live in the paper SI; redistribution status is
+        unverified. Operator extracts the (atom_label, charge_e, σ_Å, ε_K)
+        table into a UserParameterFile (see widom_atlas.backends.user_parameterised),
+        cites Dzubak 2012, and runs the user_parameterised_coulomb_lj backend.
+    file_format: ["paper_SI"]
+    expected_sha256: null
+    cache_path: "benchmarks/cache/dzubak_mgmof74_co2"
+    last_verified: null
+    notes: |
+      Path to flagship Mg-MOF-74 + CO2 results. Brief §6 explicitly flags
+      this as needed when "generic UFF fails", which v0.2 evidence confirmed.
+    warnings:
+      - "Parameter table is in Dzubak 2012 SI — redistribution status not verified by widom-atlas authors. Operator must extract + cite under their own provenance."
+
+  # =====================================================================
+  # 13. MACE-MP-0 — Foundation-model ML force field
+  # =====================================================================
+  - schema_version: "0.4"
+    name: "MACE-MP-0"
+    kind: "ml_force_field"
+    description: |
+      MACE-MP-0 foundation MLIP (Materials Project pre-trained equivariant
+      graph neural network). Predicts DFT-quality energies + forces for any
+      geometry. Per the brief §7, "borderline" for 100k blind-grid Widom
+      insertions due to inference cost; useful for evaluating pre-selected
+      basin centroids and as a comparison engine via external_samples.
+    primary_url: "https://github.com/ACEsuit/mace-mp"
+    primary_doi: "10.48550/arXiv.2401.00096"
+    license: "MIT"
+    license_url: "https://github.com/ACEsuit/mace-mp/blob/main/LICENSE"
+    redistribution_status: "open_access_with_attribution"
+    citations:
+      - doi: "10.48550/arXiv.2401.00096"
+        source: "Batatia et al. A foundation model for atomistic materials chemistry (MACE-MP-0). arXiv:2401.00096 (2024)."
+        url: "https://github.com/ACEsuit/mace-mp"
+    content_summary:
+      n_materials: null
+      gases: ["all"]
+      file_formats: ["model_checkpoint_pt"]
+    file_format: ["pt"]
+    expected_sha256: null
+    cache_path: "benchmarks/cache/mace_mp_0"
+    last_verified: null
+    notes: |
+      v0.5 candidate. Pair with widom-atlas via the external_samples backend:
+      operator runs MACE inference on a precomputed insertion grid (or via
+      ASE driver), writes the canonical NPZ + manifest sidecar, ingests via
+      widom-atlas external_samples.
+    warnings:
+      - "Inference cost: ~seconds per insertion on GPU. For 100k blind insertions, batch-mode + grid surrogate strongly recommended."
+      - "PES softening at high energies documented in MOFSimBench; cross-check with classical FF on the same set."
+
+  # =====================================================================
+  # 14. ODAC25-MACE — MOF-specific MACE checkpoints
+  # =====================================================================
+  - schema_version: "0.4"
+    name: "ODAC25-MACE"
+    kind: "ml_force_field"
+    description: |
+      MOF-specialised MACE checkpoints trained on the ODAC25 dataset. Better
+      accuracy than base MACE-MP-0 on MOF + CO2 / H2O configurations because
+      training distribution matches the use case. Brief §7 verdict: "Better
+      specialised accuracy than base MACE-MP-0".
+    primary_url: "https://huggingface.co/fairchem/ODAC25-MACE"
+    primary_doi: "10.57967/hf/ODAC25-MACE"
+    license: "MIT"
+    license_url: null
+    redistribution_status: "open_access_with_attribution"
+    citations:
+      - doi: "10.57967/hf/ODAC25-MACE"
+        source: "FAIR Chemistry. ODAC25-MACE checkpoints — MOF-specialised MACE models trained on ODAC25. HuggingFace (2025)."
+    content_summary:
+      gases: ["CO2", "H2O"]
+      file_formats: ["model_checkpoint_pt"]
+    file_format: ["pt"]
+    expected_sha256: null
+    cache_path: "benchmarks/cache/odac25_mace"
+    last_verified: null
+    notes: |
+      Same external_samples ingest path as MACE-MP-0; check the precise
+      checkpoint URL on HuggingFace before flagship runs.
+    warnings:
+      - "Checkpoint URL is illustrative; verify with FAIR Chemistry repo before flagship use."
+
+  # =====================================================================
+  # 15. UMA / FAIR-Chem — universal materials atomistic models
+  # =====================================================================
+  - schema_version: "0.4"
+    name: "UMA-FAIR-Chem"
+    kind: "ml_force_field"
+    description: |
+      UMA (Unified Models for Atoms) family from FAIR Chemistry — universal
+      MLIPs covering catalysis, materials, and adsorbate-on-MOF use cases.
+      MIT-licensed. Reachable via the fairchem inference stack; ingest into
+      widom-atlas via the external_samples backend.
+    primary_url: "https://github.com/FAIR-Chem/fairchem"
+    primary_doi: "10.48550/arXiv.2410.12771"
+    license: "MIT"
+    license_url: "https://github.com/FAIR-Chem/fairchem/blob/main/LICENSE.md"
+    redistribution_status: "open_access_with_attribution"
+    citations:
+      - doi: "10.48550/arXiv.2410.12771"
+        source: "FAIR Chemistry. UMA: Unified Models for Atoms. arXiv (2024). Universal MLIP family."
+        url: "https://fairchem.org/"
+    content_summary:
+      file_formats: ["model_checkpoint_pt"]
+    file_format: ["pt"]
+    expected_sha256: null
+    cache_path: "benchmarks/cache/uma_fairchem"
+    last_verified: null
+    notes: |
+      Verify which UMA checkpoint is best for adsorbate-on-MOF use; the
+      brief §6 names UMA without pinning a specific checkpoint version.
+    warnings:
+      - "Checkpoint version + arXiv DOI need verification before flagship use."
+
+  # =====================================================================
+  # 16. RASPA3 input templates (MFI Henry-coefficient example)
+  # =====================================================================
+  # Brief §10: "Pull the configuration simulation.json, force_field.json,
+  # and [gas].json from iRASPA/RASPA3/examples/basic/12_mc_henry_coefficient
+  # _of_co2_n2_methane_in_mfi". Registered as a *reference template set* —
+  # widom-atlas does not bundle them, the operator pulls them from the
+  # RASPA3 GitHub mirror.
+  - schema_version: "0.4"
+    name: "RASPA3-templates-MFI-henry"
+    kind: "force_field_parameters"
+    description: |
+      RASPA3 reference input templates for the MFI zeolite Henry-coefficient
+      example: simulation.json, force_field.json, [gas].json. Used by
+      widom-atlas as the canonical FF + gas template source for the
+      internal NumPy energy evaluator (since RASPA cannot natively export
+      per-insertion samples — see notes on raspa3_ingest.py).
+    primary_url: "https://github.com/iRASPA/RASPA3"
+    primary_doi: "https://github.com/iRASPA/RASPA3"
+    license: "MIT"
+    license_url: "https://github.com/iRASPA/RASPA3/blob/main/LICENSE"
+    redistribution_status: "open_access_with_attribution"
+    citations:
+      - doi: "10.1080/08927022.2015.1010082"
+        source: "Dubbeldam, Calero, Ellis, Snurr. RASPA: molecular simulation software for adsorption and diffusion in flexible nanoporous materials. Mol. Sim. 42, 81 (2016)."
+        url: "https://github.com/iRASPA/RASPA3"
+    content_summary:
+      n_materials: 1
+      materials_subset: ["MFI"]
+      gases: ["CO2", "N2", "CH4"]
+      file_formats: ["JSON"]
+    file_format: ["JSON"]
+    expected_sha256: null
+    cache_path: "benchmarks/cache/raspa3_templates_mfi_henry"
+    last_verified: null
+    notes: |
+      Brief §5 + §10: RASPA cannot natively export per-insertion samples
+      (raspakit/mc_moves/component/widom.cpp overwrites the growData struct
+      every step). The template files are valuable as the canonical FF +
+      gas description source for widom-atlas's own internal energy
+      evaluator. Drop the JSON files under cache_path; widom-atlas can
+      then read them via a future ingest helper.
+    warnings:
+      - "Per-insertion atlas inputs cannot be derived from a vanilla RASPA3 run; either patch raspakit's WidomMove (out of scope for v0.4 / v0.5) or use widom-atlas's own internal evaluator with the template force field."
+
+  # =====================================================================
+  # 17. ODAC23 — Open Direct Air Capture 2023 (Meta FAIR Chem; non-gated)
+  # =====================================================================
+  # ODAC23 supersedes nothing; ODAC25 supersedes it. Direct downloads are
+  # MD5-stamped at the publisher (verified 2026-05-08). v0.4 limits scope
+  # to S2EF and DDEC subsets only — IS2RE and IS2RS are out of scope.
+  - schema_version: "0.4"
+    name: "ODAC23"
+    kind: "ml_force_field"
+    description: |
+      Open Direct Air Capture 2023 dataset. ~38 million DFT calculations of
+      CO2 and H2O adsorption in 8 800 MOFs. Predecessor of ODAC25 (which is
+      gated on HuggingFace). Direct downloads exist on
+      dl.fbaipublicfiles.com and carry verified MD5s. v0.4 scope is
+      restricted to the S2EF and DDEC subsets.
+    primary_url: "https://dl.fbaipublicfiles.com/large_objects/dac/datasets/odac23_s2ef.tar.gz"
+    primary_doi: "10.48550/arXiv.2311.00341"
+    license: "CC-BY-4.0"
+    license_url: "https://creativecommons.org/licenses/by/4.0/legalcode"
+    redistribution_status: "open_access_with_attribution"
+    citations:
+      - doi: "10.48550/arXiv.2311.00341"
+        source: "Sriram, Choi, Yu, Brabson, Das, Ulissi, Uyttendaele, Medford, Sholl. The Open DAC 2023 Dataset and Challenges for Sorbent Discovery in Direct Air Capture. ACS Central Science 10, 2024."
+        url: "https://pubs.acs.org/doi/10.1021/acscentsci.3c01629"
+    content_summary:
+      n_materials: 8800
+      gases: ["CO2", "H2O"]
+      file_formats: ["LMDB", "extxyz", "tar.gz"]
+      notes: |
+        S2EF: 172 GB compressed → 476 GB uncompressed.
+        DDEC charges (~98 % coverage): 147 MB compressed → 534 MB uncompressed.
+        IS2RE+IS2RS: 809 MB → 2.2 GB (NOT in v0.4 scope).
+        extxyz_train: 232 GB; extxyz_val: 5.1 GB.
+    file_format: ["tar.gz"]
+    expected_sha256: null
+    expected_md5: null
+    expected_md5s:
+      odac23_s2ef.tar.gz: "162f0660b2f1c9209c5b57f7b9e545a7"
+      odac23_is2r.tar.gz: "f7f2f58669a30abae8cb9ba1b7f2bcd2"
+      extxyz_train.tar.gz: "381e72fd8b9c055065fd3afff6b0945b"
+      extxyz_val.tar.gz: "09913759c6e0f8d649f7ec9dff9e0e8b"
+      ddec.tar.gz: "81927b78d9e4184cc3c398e79760126a"
+    cache_path: "benchmarks/cache/odac23"
+    last_verified: null
+    notes: |
+      v0.4 scope: S2EF + DDEC subsets only. IS2RE + IS2RS are explicitly out
+      of scope. Behind the optional `widom-atlas[odac]` install extra; not a
+      core dependency. ODAC25 (HuggingFace gated) supersedes ODAC23 in
+      content but ODAC23 remains directly accessible.
+    warnings:
+      - "IS2RE + IS2RS subsets are deferred to v0.5 or later."
+      - "Datasets are large; expect 172 GB S2EF + 232 GB extxyz_train; only download what you need."
+
+  # =====================================================================
+  # 18. CoRE-MOF 2024 — primary structures
+  # =====================================================================
+  # Per the v0.4 follow-up brief: register as a *pointer only* (do not
+  # build broad CoRE-MOF 2024 validation into v0.4). Split into four
+  # entries (structures / TSA / water / mofid-v2) so the operator can
+  # pull only what they need; flagship validation does NOT depend on
+  # CoRE-MOF 2024.
+  - schema_version: "0.4"
+    name: "CoRE-MOF-2024-structures"
+    kind: "structures"
+    description: |
+      CoRE-MOF 2024 main structures payload (CoREMOF2024DB_SI_20250204.zip,
+      44 MB). Latest CoRE-MOF release. v0.4 *pointer only*: do not run
+      flagship validation against this set. v0.5 plan expands here.
+    primary_url: "https://zenodo.org/records/14510695"
+    primary_doi: "10.5281/zenodo.14510695"
+    license: "CC-BY-4.0"
+    license_url: "https://creativecommons.org/licenses/by/4.0/"
+    redistribution_status: "open_access_with_attribution"
+    citations:
+      - doi: "10.5281/zenodo.14510695"
+        source: "Computation-Ready Experimental Metal-Organic Framework (CoRE MOF) 2024 Dataset. Zenodo (2025)."
+      - doi: "10.26434/chemrxiv-2024-r9218"
+        source: "Zhao et al. CoRE MOF DB: a curated experimental MOF database with machine-learned properties. ChemRxiv (2024)."
+    content_summary:
+      n_materials: 20000
+      file_formats: ["ZIP", "CSV"]
+      notes: "Pointer-only entry for v0.4. Flagship validation suite stays on the v0.4 case list."
+    file_format: ["ZIP"]
+    expected_sha256: null
+    cache_path: "benchmarks/cache/core_mof_2024/structures"
+    last_verified: null
+    notes: |
+      v0.4 reviewer decision: registry pointer only. Do not build broad
+      CoRE-MOF 2024 validation into v0.4. v0.5 expansion uses this entry.
+    warnings: []
+
+  - schema_version: "0.4"
+    name: "CoRE-MOF-2024-TSA-stability"
+    kind: "stability_metadata"
+    description: |
+      CoRE-MOF 2024 thermal-stability assessment payload (TSA.zip, ~272 MB
+      from the same Zenodo record). Stability metadata, NOT structure
+      input. Classed separately so flagship runners do not accidentally
+      pull it as a structure source.
+    primary_url: "https://zenodo.org/records/14510695"
+    primary_doi: "10.5281/zenodo.14510695"
+    license: "CC-BY-4.0"
+    license_url: "https://creativecommons.org/licenses/by/4.0/"
+    redistribution_status: "open_access_with_attribution"
+    citations:
+      - doi: "10.5281/zenodo.14510695"
+        source: "CoRE-MOF 2024 TSA subset (Zenodo)."
+    content_summary:
+      file_formats: ["ZIP"]
+      notes: "Thermal-stability assessment metadata; not a structure source."
+    file_format: ["ZIP"]
+    expected_sha256: null
+    cache_path: "benchmarks/cache/core_mof_2024/TSA"
+    last_verified: null
+    notes: |
+      Use as a filter when building v0.5 broad validation cases — drop MOFs
+      flagged unstable. Not in v0.4 scope.
+    warnings: []
+
+  - schema_version: "0.4"
+    name: "CoRE-MOF-2024-water"
+    kind: "subset"
+    description: |
+      CoRE-MOF 2024 water-stability subset (water.zip, ~12.5 MB from the
+      same Zenodo record). Registry-only for v0.4. Operators must NOT
+      use this set as input to flagship validation.
+    primary_url: "https://zenodo.org/records/14510695"
+    primary_doi: "10.5281/zenodo.14510695"
+    license: "CC-BY-4.0"
+    license_url: "https://creativecommons.org/licenses/by/4.0/"
+    redistribution_status: "open_access_with_attribution"
+    citations:
+      - doi: "10.5281/zenodo.14510695"
+        source: "CoRE-MOF 2024 water-stability subset (Zenodo)."
+    content_summary:
+      file_formats: ["ZIP"]
+    file_format: ["ZIP"]
+    expected_sha256: null
+    cache_path: "benchmarks/cache/core_mof_2024/water"
+    last_verified: null
+    notes: "Registry-only for v0.4. Reviewer decision: water cases excluded from flagship suite."
+    warnings:
+      - "v0.4 explicitly excludes H2O from flagship validation."
+
+  - schema_version: "0.4"
+    name: "CoRE-MOF-2024-mofid-v2"
+    kind: "topology_metadata"
+    description: |
+      CoRE-MOF 2024 MOFid v2 topology metadata (mofid-v2.zip, ~4.5 MB).
+      Topology + identifier metadata for the CoRE-MOF 2024 set; not a
+      structure input.
+    primary_url: "https://zenodo.org/records/14510695"
+    primary_doi: "10.5281/zenodo.14510695"
+    license: "CC-BY-4.0"
+    license_url: "https://creativecommons.org/licenses/by/4.0/"
+    redistribution_status: "open_access_with_attribution"
+    citations:
+      - doi: "10.5281/zenodo.14510695"
+        source: "CoRE-MOF 2024 mofid-v2 subset (Zenodo)."
+    content_summary:
+      file_formats: ["ZIP"]
+    file_format: ["ZIP"]
+    expected_sha256: null
+    cache_path: "benchmarks/cache/core_mof_2024/mofid-v2"
+    last_verified: null
+    notes: "MOFid identifiers; useful as a duplicate-detection / cross-reference tool."
+    warnings: []

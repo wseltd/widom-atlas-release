@@ -1,0 +1,11 @@
+{
+  "model": "uma-s-1p1", "engine": "fairchem", "access": "granted 2026-06-12 (HF approval)",
+  "status": "VERDICT WITHHELD — Gate 1 (reference-offset) FAILED",
+  "gate1_U_isolated_Ar_far_kJ_by_task": {"omat": 473.63, "odac": -244.98, "omol": 118.90},
+  "gate1_expect_kJ": 0.0,
+  "root_cause": "UMA is a multi-task model conditioned on a PER-GRAPH global charge/spin embedding (intensive). E(host+Ar) - E(host) - E(Ar) is evaluated across THREE separate graphs, so the per-graph global conditioning term does not cancel even at infinite separation -> a task-dependent ~120-470 kJ/mol offset. Naive test-particle (Widom) differencing is ill-defined for conditioned multi-task potentials.",
+  "implication": "The min_U=+134 / REFUSE verdict from the first run is contaminated by this offset and is NOT reported as a physics result.",
+  "governance_value": "The SAME Gate-1 check that PASSED for MACE-MPA-0 (U_far=0.000) FAILED for UMA (|U_far|>>0). Gate 1 discriminates not just models but whether the harness itself is valid for a given engine — and prevented a false UMA claim.",
+  "fix_path": "Use a single-graph adsorption protocol for UMA (score the full host+guest system with a consistent in-graph reference, e.g. relaxed-vs-inserted within one graph), or subtract UMA's per-graph reference explicitly. Not a drop-in ASE-calculator differencing.",
+  "note": "ODAC25 (esen-sm-full-odac25) still gated (separate facebook/ODAC25 license); UMA includes the odac task head and was the accessible deployment-class model."
+}

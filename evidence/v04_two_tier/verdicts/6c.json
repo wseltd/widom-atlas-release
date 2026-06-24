@@ -1,0 +1,50 @@
+{
+  "branch_id": "6c",
+  "case_id": "6",
+  "label": "MFI + Ar Garcia-Perez 2007 + Talu-Myers cross-pair (POSITIVE CONTROL)",
+  "two_tier_verdict": {
+    "case_id": "6",
+    "branch_id": "6c",
+    "K_H_mean_mol_per_kg_per_bar": 0.20701,
+    "K_H_reference_mol_per_kg_per_bar": 0.224,
+    "Q_st_mean_kJ_per_mol": 16.033,
+    "Q_st_reference_kJ_per_mol": 15.7,
+    "delta_log10_K_H": -0.03425669297424816,
+    "delta_Q_st_kJ_per_mol": 0.333,
+    "tier_A_regression": {
+      "delta_log10_KH_max": 0.1,
+      "delta_Qst_kJ_per_mol_max": 2.0,
+      "K_H_pass": true,
+      "Q_st_pass": true,
+      "composite": "PASS",
+      "rationale": "Historical v04.2 strict thresholds. Used as an internal regression gate to detect code-change-induced shifts in K_H / Q_st. NOT a physical-accuracy claim. Tighter than experimental scatter for open-metal-site / defective MOFs."
+    },
+    "tier_B_physical": {
+      "delta_log10_KH_max": 0.15,
+      "delta_Qst_kJ_per_mol_max": 3.0,
+      "K_H_pass": true,
+      "Q_st_pass": true,
+      "composite": "PASS",
+      "rationale": "All-silica MFI: well-characterized synthesis, narrow scatter. Hufton 1993 + Talu-Myers + Dunne 1996 + Golden-Sircar all consistent within ~10% on K_H.",
+      "sources": [
+        "10.1002/aic.690390605 (Hufton 1993)",
+        "10.1021/la960495z (Dunne 1996)"
+      ]
+    },
+    "headline_disposition": "PHYSICAL_PASS",
+    "note": "Within Tier B literature-scatter band. Atlas reproduces published experiment to within documented experimental reproducibility."
+  },
+  "bayesian_log_space_comparison": {
+    "K_H_sim_log10_std": 0.0015105233828522757,
+    "K_H_exp_log10_std": 0.05,
+    "delta_log10": -0.03425669297424816,
+    "combined_log10_std": 0.05002281160520812,
+    "z_score": -0.6848214219666439,
+    "p_agreement_within_1_sigma": 0.5776754499381085,
+    "p_agreement_within_2_sigma": 0.902146625134969,
+    "p_agreement_within_tier_b_band": 0.9895458928784449,
+    "tier_b_delta_log10_threshold": 0.15,
+    "classification": "AGREEMENT_WITHIN_1_SIGMA",
+    "note": "\u0394log10 = -0.034 \u00b1 0.050 (sim 1\u03c3 \u2248 0.002, exp scatter 1\u03c3 \u2248 0.050). |Z| = 0.68."
+  }
+}

@@ -1,0 +1,52 @@
+{
+  "system": "4c Si-CHA + CO2 (TraPPE, charges, Ewald, 14A), fresh native re-run this session",
+  "N_insertions": 60000,
+  "seed": 0,
+  "T_K": 298.0,
+  "corners_K_H_mol_kg_bar": {
+    "shifted+tail": 2.215326601716991,
+    "truncated+tail": 2.4724216042232507,
+    "shifted_notail": 1.9805003366292315,
+    "truncated_notail": 2.2103430779273783
+  },
+  "native_shifted_tail_THIS_RUN": 2.2153,
+  "v04_lock_value": 2.2227,
+  "lock_provenance": "native_widom_v04 backend, executed_at_utc 2026-06-01 (NOT this session)",
+  "kups_value": 2.2706,
+  "one_toggle_decomposition_pct": {
+    "shift_off_minus_on_tailON": 11.6,
+    "shift_off_minus_on_tailOFF": 11.6,
+    "tail_on_minus_off_shifted": 11.9
+  },
+  "kups_vs_native_shifted_tail_pct": 2.5,
+  "kups_vs_native_truncated_tail_pct": -8.2,
+  "kups_tail_test": {
+    "tail_ON": {
+      "K_H_A3_eV": 7868644.07,
+      "mu_ex_eV": -0.11393152,
+      "K_H_mol_kg_bar": 2.271,
+      "q_st_kJ": 22.98
+    },
+    "tail_OFF": {
+      "K_H_A3_eV": 6763056.71,
+      "mu_ex_eV": -0.11004334,
+      "K_H_mol_kg_bar": 1.952,
+      "q_st_kJ": 22.49
+    },
+    "kups_tail_effect_pct": 16.3,
+    "native_tail_effect_pct": 11.9,
+    "finding": "kUPS DOES apply an LJ tail to the Widom insertion (tail-off drops K_H -16%, q_st -0.49). The 'no tail in Widom path' hypothesis is FALSIFIED. kUPS's tail (+16.3%) is ~4% stronger than native's (+11.9%)."
+  },
+  "matched_convention_residuals_pct": {
+    "truncated+tail": -8.1,
+    "truncated+notail": -11.7,
+    "6c_reference": -2.4
+  },
+  "decomposition_+2.2pct_vs_lock": {
+    "shift": 11.6,
+    "residual_truncated+tail": -8.1,
+    "net": 2.5
+  },
+  "residual_character": "q_st-invariant (\u0394q_st \u22640.3 kJ/mol on matched convention) -> normalization-flavoured (volume / insertion-count / <W> scale). 4c-specific, larger than 6c (-2.4%). Contributors: Ewald convention, CO2 orientational sampling, tail-implementation difference (kUPS +16.3% vs native +11.9%), K_H normalization.",
+  "conclusion": "kUPS uses TRUNCATED LJ and DOES apply a tail (confirmed). On matched convention (truncated+tail) kUPS is -8.1% vs native (or -11.7% with tail also off vs native). The +2.2% vs the shifted lock is +11.6% shift combined with the -8.1% residual. The residual is q_st-invariant -> a normalization-flavoured scale, 4c-specific and larger than 6c's -2.4%; NOT the +2.8% a no-tail hypothesis would give (that hypothesis was tested and falsified)."
+}

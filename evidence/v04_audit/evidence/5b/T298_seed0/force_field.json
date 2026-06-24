@@ -1,0 +1,165 @@
+{
+  "PseudoAtoms": [
+    {
+      "name": "Al",
+      "framework": true,
+      "element": "Al",
+      "mass": 26.9815,
+      "charge": 1.111224489795917,
+      "source": "Lozinska_2012_composition_electroneutrality"
+    },
+    {
+      "name": "Na",
+      "framework": true,
+      "element": "Na",
+      "mass": 22.9898,
+      "charge": 1.0,
+      "source": "UFF cation fallback"
+    },
+    {
+      "name": "O",
+      "framework": true,
+      "element": "O",
+      "mass": 15.9994,
+      "charge": -1.025,
+      "source": "Jaramillo-Auerbach 1999 via Garc\u00eda-P\u00e9rez 2007"
+    },
+    {
+      "name": "Si",
+      "framework": true,
+      "element": "Si",
+      "mass": 28.0855,
+      "charge": 2.05,
+      "source": "Jaramillo-Auerbach 1999 via Garc\u00eda-P\u00e9rez 2007"
+    },
+    {
+      "name": "C_co2",
+      "framework": false,
+      "element": "C",
+      "print_as": "C",
+      "mass": 12.0107,
+      "charge": 0.6512,
+      "source": "Harris-Yung 1995 CO2"
+    },
+    {
+      "name": "O_co2",
+      "framework": false,
+      "element": "O",
+      "print_as": "O",
+      "mass": 15.9994,
+      "charge": -0.3256,
+      "source": "Harris-Yung 1995 CO2"
+    }
+  ],
+  "SelfInteractions": [
+    {
+      "name": "Al",
+      "type": "lennard-jones",
+      "parameters": [
+        22.0,
+        2.3
+      ],
+      "source": "UFF cation fallback"
+    },
+    {
+      "name": "Na",
+      "type": "lennard-jones",
+      "parameters": [
+        15.0966,
+        2.6576
+      ],
+      "source": "UFF Na+ fallback (spec)"
+    },
+    {
+      "name": "O",
+      "type": "lennard-jones",
+      "parameters": [
+        53.0,
+        3.3
+      ],
+      "source": "TraPPE-zeo Bai 2013"
+    },
+    {
+      "name": "Si",
+      "type": "lennard-jones",
+      "parameters": [
+        22.0,
+        2.3
+      ],
+      "source": "TraPPE-zeo Bai 2013"
+    },
+    {
+      "name": "C_co2",
+      "type": "lennard-jones",
+      "parameters": [
+        28.129,
+        2.76
+      ],
+      "source": "Harris-Yung 1995"
+    },
+    {
+      "name": "O_co2",
+      "type": "lennard-jones",
+      "parameters": [
+        80.507,
+        3.033
+      ],
+      "source": "Harris-Yung 1995"
+    }
+  ],
+  "MixingRule": "Lorentz-Berthelot",
+  "TruncationMethod": "shifted",
+  "TailCorrections": false,
+  "CutOffVDW": 12.0,
+  "CutOffCoulomb": 12.0,
+  "BinaryInteractions": [
+    {
+      "names": [
+        "O",
+        "O_co2"
+      ],
+      "type": "lennard-jones",
+      "parameters": [
+        78.98,
+        3.237
+      ],
+      "source": "Garcia_Sanchez_2009_O_zeo_O_co2"
+    },
+    {
+      "names": [
+        "O",
+        "C_co2"
+      ],
+      "type": "lennard-jones",
+      "parameters": [
+        37.595,
+        3.511
+      ],
+      "source": "Garcia_Sanchez_2009_O_zeo_C_co2"
+    },
+    {
+      "names": [
+        "Na",
+        "C_co2"
+      ],
+      "type": "lennard-jones",
+      "parameters": [
+        362.292,
+        3.32
+      ],
+      "source": "Garcia_Sanchez_2009_Na_C_co2"
+    },
+    {
+      "names": [
+        "Na",
+        "O_co2"
+      ],
+      "type": "lennard-jones",
+      "parameters": [
+        200.831,
+        2.758
+      ],
+      "source": "Garcia_Sanchez_2009_Na_O_co2"
+    }
+  ]
+}

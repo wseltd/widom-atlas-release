@@ -1,0 +1,11 @@
+{
+  "system": "6c MFI+Ar (all-silica, Ar-O+Ar-Si LB, full recipe)",
+  "note": "blocking spheres placed on 64 framework-O positions (every 3rd O); kUPS mcmc_widom",
+  "kups_block_SEM_pct": 3.4,
+  "runs": [
+    {"blocking": "off",        "n_spheres": 0,  "radius_A": null, "K_H_A3_eV": 17979149.69, "q_st_eV": 0.168429, "q_st_kJ": 16.25, "dKH_pct": 0.0},
+    {"blocking": "on",         "n_spheres": 64, "radius_A": 2.0,  "K_H_A3_eV": 18558571.93, "q_st_eV": 0.169341, "q_st_kJ": 16.34, "dKH_pct": 3.2},
+    {"blocking": "on",         "n_spheres": 64, "radius_A": 3.0,  "K_H_A3_eV": 18116255.46, "q_st_eV": 0.168687, "q_st_kJ": 16.28, "dKH_pct": 0.8}
+  ],
+  "finding": "blocking is a NO-OP for a physically-repulsive LJ recipe (dKH within SEM, q_st unchanged); load-bearing only where the recipe has an unphysical short-range well (OMS over-binding / the v0.5 1b case). The small K_H nudge is the insertion-count normalization (see BLOCKERS B2)."
+}

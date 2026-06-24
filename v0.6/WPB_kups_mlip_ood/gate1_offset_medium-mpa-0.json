@@ -1,0 +1,34 @@
+{
+  "model": "medium-mpa-0",
+  "ar_in_model_elements": true,
+  "model_z_table_len": 89,
+  "T0_note": "if ar_in_model is False, the +floor is NON-physical (Ar unsupported), not under-binding",
+  "Ta_U_isolated_Ar_far_kJ": 0.0,
+  "Ta_min_dist_A": 12.92,
+  "Ta_expect": "~0 if differencing is correct; a constant != 0 means reference offset",
+  "Tb_U_largest_pore_center_kJ": 9.586,
+  "Tb_min_dist_A": 4.68,
+  "Tb_expect": "~0 to slightly negative if model sees Ar in an open cage; large + => confinement or offset",
+  "Tc_paired_open_insertions": [
+    {
+      "i": 76,
+      "min_dist_A": 4.3338,
+      "U_classical_kJ": -16.21,
+      "U_mace_mpa0_kJ": 10.7
+    },
+    {
+      "i": 95,
+      "min_dist_A": 4.2324,
+      "U_classical_kJ": -13.42,
+      "U_mace_mpa0_kJ": 8.51
+    },
+    {
+      "i": 51,
+      "min_dist_A": 3.9903,
+      "U_classical_kJ": -17.79,
+      "U_mace_mpa0_kJ": 10.48
+    }
+  ],
+  "e_guest_eV": -0.0493,
+  "e_frame_eV": -852.79
+}

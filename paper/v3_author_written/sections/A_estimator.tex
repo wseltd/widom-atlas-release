@@ -1,0 +1,23 @@
+% Appendix A --- Estimator details. Populated 2026-06-09 from the main-text
+% beyond the main text.
+\section{Estimator details}\label{app:estimator}
+
+This appendix records the estimator and unit details behind the equations of Section~\ref{sec:observable}. It introduces no physics beyond the main text.
+
+For a guest in a rigid host at temperature \(T\), widom-atlas estimates the zero-coverage Henry constant by Widom insertion as
+\[
+K_H = \frac{V}{M\,k_B\,T\,N_A}\,\bigl\langle \exp(-\beta U)\bigr\rangle,
+\]
+and the zero-coverage isosteric heat as the Boltzmann-weighted mean insertion energy plus the ideal-gas thermal term,
+\[
+Q_{st} = -\,\frac{\bigl\langle U\,\exp(-\beta U)\bigr\rangle}{\bigl\langle \exp(-\beta U)\bigr\rangle} + RT.
+\]
+Here \(U\) is the host--guest interaction energy of a single inserted, non-perturbing test molecule; \(\beta = 1/(k_B T)\), with \(k_B\) the Boltzmann constant; \(V\) and \(M\) are the simulation-cell volume and mass; \(N_A\) is Avogadro's constant; \(R\) is the molar gas constant; \(T\) is the temperature; and \(\langle\,\cdot\,\rangle\) denotes the average over uniformly sampled insertion positions and orientations in the rigid host.
+
+The first estimator is reported in \(\mathrm{mol\,kg^{-1}\,bar^{-1}}\) and the second in \(\mathrm{kJ\,mol^{-1}}\). The conversion from the raw simulation quantities to these reported units is part of the locked recipe, not a formatting step.
+
+These estimators are exact only for the specified rigid host structure and the specified energy model, in the dilute-gas limit. They are not exact for the material unless the locked structure and energy model are the correct ones for the experiment being compared against; that is the distinction developed in the main text.
+
+A test insertion that overlaps a host atom produces a large positive \(U\), so its Boltzmann weight \(\exp(-\beta U)\) is negligible. Such severe overlaps therefore contribute essentially nothing to either average, which is why a short-range hard core does not bias the estimators.
+
+Sampling uncertainty is estimated from independent random-number-generator seeds: each branch is run with several seeds, and the reported \(\pm\) values are the seed-to-seed standard deviations of \(K_H\) and \(Q_{st}\). The recorded per-branch seed and insertion counts are listed in Appendix~\ref{app:compute}.

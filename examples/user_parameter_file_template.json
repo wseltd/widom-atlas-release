@@ -1,0 +1,64 @@
+{
+  "framework_atom_types": [
+    {
+      "label": "Mg",
+      "atom_type": "Mg_OMS",
+      "charge_e": null,
+      "sigma_A": 2.694,
+      "epsilon_K": 55.85,
+      "source": "user_supplied (replace charge with your DDEC/Qeq/EQeq result; σ/ε from your chosen framework FF)",
+      "doi": null
+    },
+    {
+      "label": "O",
+      "atom_type": "O_carb",
+      "charge_e": null,
+      "sigma_A": 3.118,
+      "epsilon_K": 30.19,
+      "source": "user_supplied",
+      "doi": null
+    },
+    {
+      "label": "C",
+      "atom_type": "C_linker",
+      "charge_e": null,
+      "sigma_A": 3.431,
+      "epsilon_K": 52.84,
+      "source": "user_supplied",
+      "doi": null
+    },
+    {
+      "label": "H",
+      "atom_type": "H_linker",
+      "charge_e": null,
+      "sigma_A": 2.571,
+      "epsilon_K": 22.14,
+      "source": "user_supplied",
+      "doi": null
+    }
+  ],
+  "gas_sites": [
+    {
+      "label": "C",
+      "atom_type": "C_CO2",
+      "charge_e": null,
+      "sigma_A": null,
+      "epsilon_K": null,
+      "source": "user_supplied (typically TraPPE-CO2 from Potoff & Siepmann 2001; verify licence)",
+      "doi": null
+    },
+    {
+      "label": "O",
+      "atom_type": "O_CO2",
+      "charge_e": null,
+      "sigma_A": null,
+      "epsilon_K": null,
+      "source": "user_supplied",
+      "doi": null
+    }
+  ],
+  "mixing_rules": "Lorentz-Berthelot",
+  "electrostatics": "Wolf",
+  "redistribution_status": "user_supplied_not_bundled",
+  "hybrid_warning": null
+}

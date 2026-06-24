@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>widom-atlas report — {{ structure_metadata.structure_id }}</title>
+<style>
+body { font-family: system-ui, sans-serif; margin: 2em; max-width: 960px; }
+h1 { border-bottom: 2px solid #888; padding-bottom: 0.2em; }
+section { margin-bottom: 1.5em; }
+table { border-collapse: collapse; }
+th, td { border: 1px solid #ccc; padding: 0.3em 0.6em; }
+img { max-width: 100%; height: auto; }
+.caveat { color: #b65; }
+</style>
+</head>
+<body>
+<h1>widom-atlas report — {{ structure_metadata.structure_id }}</h1>
+
+<section>
+  <h2>Structure &amp; Conditions</h2>
+  <ul>
+    <li><strong>structure_id:</strong> {{ structure_metadata.structure_id }}</li>
+    <li><strong>gas:</strong> {{ gas }}</li>
+    <li><strong>temperature_K:</strong> {{ temperature_K }}</li>
+  </ul>
+</section>
+
+<section>
+  <h2>Sample Summary</h2>
+  <ul>
+    <li><strong>n_samples:</strong> {{ samples_summary.n_samples }}</li>
+    <li><strong>input_hash:</strong> <code>{{ samples_summary.input_hash }}</code></li>
+    <li><strong>mean_energy_eV:</strong> {{ samples_summary.mean_energy_eV }}</li>
+  </ul>
+</section>
+
+<section>
+  <h2>Density Map</h2>
+  <ul>
+    <li><strong>grid shape:</strong> {{ density_summary.shape }}</li>
+    <li><strong>spacing_A:</strong> {{ density_summary.spacing_A }}</li>
+    <li><strong>smoothing_sigma_A:</strong> {{ density_summary.smoothing_sigma_A }}</li>
+  </ul>
+  <img src="{{ figure_paths.density_slices }}" alt="density slices">
+</section>
+
+<section>
+  <h2>Basins</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>basin_id</th><th>count</th><th>weight</th><th>mean_energy_eV</th><th>spread_A</th><th>accessible_fraction</th>
+      </tr>
+    </thead>
+    <tbody>
+    {% for b in basins %}
+      <tr>
+        <td>{{ b.basin_id }}</td>
+        <td>{{ b.count }}</td>
+        <td>{{ '%.4f' % b.weight }}</td>
+        <td>{{ '%.4f' % b.mean_energy_eV }}</td>
+        <td>{{ '%.4f' % b.spread_A }}</td>
+        <td>{{ '%.3f' % b.accessible_fraction }}</td>
+      </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+  <img src="{{ figure_paths.basin_centroids }}" alt="basin centroids">
+</section>
+
+<section>
+  <h2>Symmetry Grouping</h2>
+  {% if symmetry_groups %}
+  <ul>
+    {% for g in symmetry_groups %}
+    <li>
+      <strong>group {{ g.group_id }}</strong> — space group <code>{{ g.space_group_symbol }}</code> (#{{ g.space_group_number }}),
+      confidence {{ '%.2f' % g.grouping_confidence }}, members: {{ g.member_basin_ids }}
+      {% if g.uncertainty_flags %}<br>uncertainty: {{ g.uncertainty_flags | join(', ') }}{% endif %}
+    </li>
+    {% endfor %}
+  </ul>
+  {% else %}
+  <p><em>No symmetry groups recorded.</em></p>
+  {% endif %}
+</section>
+
+<section>
+  <h2>Perturbations</h2>
+  {% if perturbation_summary %}
+  <ul>
+    {% for p in perturbation_summary %}
+    <li>{{ p.kind }}: {{ p.label }}{% if p.notes %} — {{ p.notes }}{% endif %}</li>
+    {% endfor %}
+  </ul>
+  {% else %}
+  <p><em>No perturbations applied to this run.</em></p>
+  {% endif %}
+</section>
+
+<section>
+  <h2>Robustness</h2>
+  {% if robustness_metrics %}
+  <ul>
+    <li><strong>delta_ln_KH:</strong> {{ robustness_metrics.delta_ln_KH }}</li>
+    <li><strong>delta_Qads_kJmol:</strong> {{ robustness_metrics.delta_Qads_kJmol }}</li>
+    <li><strong>basin_persistence_fraction:</strong> {{ robustness_metrics.basin_persistence_fraction }}</li>
+    <li><strong>mean_basin_displacement_A:</strong> {{ robustness_metrics.mean_basin_displacement_A }}</li>
+  </ul>
+  <img src="{{ figure_paths.robustness_bar }}" alt="robustness">
+  {% else %}
+  <p><em>No robustness comparison run.</em></p>
+  {% endif %}
+</section>
+
+<section>
+  <h2>Caveats &amp; Uncertainty</h2>
+  <ul>
+  {% for c in caveats %}
+    <li class="caveat">{{ c }}</li>
+  {% endfor %}
+  {% for n in uncertainty_notes %}
+    <li>{{ n }}</li>
+  {% endfor %}
+  </ul>
+</section>
+</body>
+</html>

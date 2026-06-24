@@ -1,0 +1,42 @@
+{
+  "sample_format_version": "0.3",
+  "framework": "UiO-66",
+  "gas": "CO2",
+  "temperature_K": 298.15,
+  "backend": "raspa3_external",
+  "backend_version": "REPLACE-ME (e.g. 3.0.4)",
+  "n_insertions": 10000,
+  "random_seed": 0,
+  "energy_unit": "K",
+  "distance_unit": "A",
+  "parameter_mode": "external_samples",
+  "force_field": {
+    "framework_lj": "UFF",
+    "framework_charges": "user_supplied",
+    "gas_model": "TraPPE-CO2",
+    "mixing_rules": "Lorentz-Berthelot",
+    "electrostatics": "Ewald"
+  },
+  "citations": [
+    {
+      "role": "gas_model",
+      "doi": "10.1002/aic.690470719",
+      "source": "Potoff & Siepmann. AIChE J. 47, 1676 (2001) — TraPPE-CO2"
+    },
+    {
+      "role": "framework_lj",
+      "doi": "10.1021/ja00051a040",
+      "source": "Rappé et al. JACS 114, 10024 (1992) — UFF"
+    },
+    {
+      "role": "engine",
+      "doi": "REPLACE-ME",
+      "source": "RASPA3 (Dubbeldam, Calero, Snurr, Vlugt; MIT licence)"
+    }
+  ],
+  "redistribution_status": "user_supplied_not_bundled",
+  "warnings": [
+    "Hybrid approximation: TraPPE-CO2 + UFF framework + user-supplied charges. Not a published validated force field."
+  ],
+  "suitable_for_quantitative_interpretation": true
+}

@@ -1,0 +1,69 @@
+{
+  "branch_id": "1b",
+  "case_id": "1",
+  "verdict": "FAIL",
+  "status": "locked_strict_executed",
+  "backend": "native_widom_v04",
+  "verdict_tier": "flagship_strict",
+  "numeric_thresholds": "flagship_strict",
+  "thresholds_used": {
+    "delta_log10_KH_max": 0.1,
+    "delta_Qads_kJ_per_mol_max": 2.0
+  },
+  "parsed_K_H_mol_per_kg_per_Pa": 0.26599980756105607,
+  "parsed_K_H_mol_per_kg_per_bar": 26599.980756105608,
+  "parsed_Q_st_kJ_per_mol": 57.02638800490663,
+  "delta_log10_K_H": 2.1530397159020804,
+  "delta_Q_st_kJ_per_mol": 15.026388004906629,
+  "passes_K_H": false,
+  "passes_Q_st": false,
+  "reference": {
+    "K_H_value_mol_per_kg_per_bar": 187.0,
+    "K_H_value_mol_per_kg_per_Pa": 0.00187,
+    "K_H_source": "Mason_2011_EES_regression (same as 1a, cross-FF audit)",
+    "K_H_temperature_K": 298.0,
+    "Q_st_value_kj_per_mol": 42.0,
+    "Q_st_source": "Mason_2011 + Simmons_2011_Fig_S23"
+  },
+  "no_external_backend_triangulation_available": true,
+  "backend_triangulation_blocker_note": "Neither RASPA3 v3.0.29 (JSON force_field.json: no A\u00b7exp - C/r^5 - D/r^6 form) nor RASPA2 v2.0.50 (native potentials lack Dzubak form per V04_BLOCKER_REPORT \u00a73) can represent the Dzubak 2012 modified-Buckingham potential. The native widom-atlas evaluator was validated V1-V4 against RASPA3/RASPA2 on representable branches before this 1b production run.",
+  "validation_history": {
+    "V1_native_LJ_vs_RASPA3_6c": "PASS (\u0394log10 K_H = +0.005, \u0394Q_st = -0.14)",
+    "V2_native_LJ_vs_RASPA3_6a": "PASS (\u0394log10 K_H = +0.005, \u0394Q_st = +0.077)",
+    "V3_native_charged_vs_RASPA3_4a": "PASS-within-RASPA3-MC-noise (\u0394log10 K_H = +0.034, \u0394Q_st = -4.5 kJ/mol but RASPA3's \u03c3_K_H_323 = \u00b148%)",
+    "V4_native_Buckingham_vs_RASPA2_1a": "PASS (\u0394log10 K_H = -0.037, \u0394Q_st = +2.82 kJ/mol)"
+  },
+  "evidence": {
+    "backend_tag": "native_widom_v04",
+    "seeds": 3,
+    "insertions_per_seed": 100000,
+    "aggregate_insertions": 600000,
+    "K_H_seed_std_mol_per_kg_per_Pa": 0.05965989917073341,
+    "Q_st_seed_std_kJ_per_mol": 2.4186607788456875,
+    "Q_st_method": "direct_widom_boltzmann_weighted",
+    "K_H_298_per_seed": [
+      0.33295326420153165,
+      0.2184792353232491,
+      0.24656692315838752
+    ],
+    "K_H_323_per_seed": [
+      0.05222805223999688,
+      0.03868927771003562,
+      0.043991514004373
+    ],
+    "Q_st_298_per_seed": [
+      59.81427896575472,
+      55.776206066253685,
+      55.488678982711484
+    ],
+    "ff_lineage": "Dzubak_2012_Table_SI_4_Mg-MOF-74_CO2",
+    "ff_source_doi": "10.1038/nchem.1432",
+    "framework_charges_source": "Dzubak_2012_SI_Table_SI_8_LoProp",
+    "gas_charges_source": "Dzubak_2012_SI_Table_SI_13_TraPPE_CO2",
+    "gas_self_LJ_source": "Dzubak_2012_SI_Table_SI_12 (column labels swapped per PDF; values Epsilon/Sigma)"
+  },
+  "notes": [
+    "1b VAN'T HOFF Q_st: 56.902 kJ/mol from K_H(298,323)",
+    "1b is the only branch with `no_external_backend_triangulation_available: true`."
+  ]
+}

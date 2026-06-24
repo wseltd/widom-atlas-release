@@ -1,0 +1,18 @@
+{
+  "started_utc": "2026-05-17T20:56:13.535969+00:00",
+  "duration_s": 237.22649002075195,
+  "exit_code": 0,
+  "raspa2_version": "2.0.50",
+  "raspa2_bin_sha256": "b875b3eee608d5bef456655e13b5b8afa67cbde3370287a717c7117ab23e70a8",
+  "raspa2_lib_sha256": "4e911a1543fe8985375d2fc23452af66ca16a16426d5fffadd5ef4f097dd34fc",
+  "input_sha256": {
+    "simulation.input": "833f9e2825bbb01f5e7d8d9a0fb2288922db754fe29f259309d71cf05eff7738",
+    "share/raspa/forcefield/LinMercado/pseudo_atoms.def": "6e485d9eff811d36c493ca4b6ca824ac035d21af76893adbc6fcc06e8ba8ad0a",
+    "share/raspa/forcefield/LinMercado/force_field_mixing_rules.def": "cbf24b3eb4abedc324b53ace95a530cd8f971874328ce7cb42d8c6da70b303ca",
+    "share/raspa/forcefield/LinMercado/force_field.def": "9c99fc68413b5e82e2220f5436adae650c945eabe4a2f4ba60bcaec6ccd95e12",
+    "share/raspa/structures/cif/VOGTIV_LinMercado.cif": "ffae1b58206b32f08bfed26acf262b85c6509809e8cb535cb3fee4a5e73fcf95"
+  },
+  "stdout_path": "raspa2.stdout.txt",
+  "stderr_path": "raspa2.stderr.txt",
+  "output_data_path": "Output/System_0/output_VOGTIV_LinMercado_4.2.2_323.000000_0.data"
+}

@@ -1,0 +1,44 @@
+{
+  "system": "4c Si-CHA + CO2 (Bai 2013 TraPPE-zeo + TraPPE-CO2, LB, 14A, framework charges Si+2.05/O-1.025, Ewald)",
+  "leg": "electrostatic / Ewald cross-engine validation",
+  "recipe": {
+    "cutoff_A": 14.0,
+    "lj_truncation_native": "shifted_truncated",
+    "lj_truncation_kups": "truncated (plain lennard_jones_energy)",
+    "tail_correction": true,
+    "mixing": "lorentz_berthelot",
+    "framework_charges_e": {
+      "Si_zeo": 2.05,
+      "O_zeo": -1.025
+    },
+    "co2": "TraPPE qC=+0.7 qO=-0.35, C-O 1.16A"
+  },
+  "kups": {
+    "K_H_A3_eV": 7868644.07,
+    "mu_ex_eV": -0.11393152,
+    "q_st_eV": 0.2381592,
+    "W_from_mu_ex": 84.49,
+    "K_H_mol_kg_bar": 2.2706,
+    "q_st_kJ": 22.98,
+    "n_widom": 50000,
+    "ewald": "real_cutoff 14, precision 1e-6, auto reciprocal"
+  },
+  "native_v04": {
+    "K_H_mol_kg_bar": 2.2227,
+    "q_st_kJ": 22.99,
+    "n_insertions": 180000
+  },
+  "deltas": {
+    "q_st_kJ": -0.01,
+    "K_H_vs_shifted_lock_pct": 2.2,
+    "K_H_vs_native_matched_truncated_pct": -8.2
+  },
+  "conclusion": "q_st VALIDATED to 0.01 kJ/mol (energies right). K_H: the +2.2% vs the shifted v0.4 lock is a CANCELLATION (convention matrix native_4c_convention_matrix.json): kUPS uses a TRUNCATED LJ, so the +11.6% shift convention lifts it above native(shifted) while a separate -8.2% residual pulls it back. On the SAME (truncated) convention kUPS is -8.2% vs native (vs -2.4% on 6c) -- a 4c-specific residual, open: Ewald convention / kUPS in-engine tail vs native post-hoc tail / CO2 orientation. The earlier 'shift negligible at 14A' statement is corrected: shift is +11.6% at 14A. mu_ex used for <W> (kUPS K_H is per primitive-cell volume).",
+  "convention_matrix": {
+    "native_shifted_tail": 2.215,
+    "native_truncated_tail": 2.472,
+    "shift_toggle_pct": 11.6,
+    "tail_toggle_pct": 11.9,
+    "note": "fresh native re-run; shifted+tail 2.215 reproduces v0.4 lock 2.2227 to 0.3%"
+  }
+}

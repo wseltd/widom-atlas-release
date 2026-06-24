@@ -1,0 +1,163 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "widom-atlas"
+version = "0.1.0"
+description = "Turn CuspAI Widom insertion samples into adsorption basins, symmetry-aware site maps, and defect-sensitive robustness reports for porous materials."
+readme = "README.md"
+requires-python = ">=3.12"
+license = { text = "Apache-2.0" }
+authors = [
+    { name = "widom-atlas contributors" },
+]
+keywords = [
+    "widom-insertion",
+    "adsorption",
+    "porous-materials",
+    "MOF",
+    "zeolite",
+    "symmetry",
+    "robustness",
+]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: Apache Software License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Scientific/Engineering :: Chemistry",
+    "Topic :: Scientific/Engineering :: Physics",
+]
+dependencies = [
+    "numpy>=1.26",
+    "scipy>=1.11",
+    "pandas>=2.1",
+    "pydantic>=2.5",
+    "ase>=3.22",
+    "pymatgen>=2024.1",
+    "spglib>=2.1",
+    "scikit-learn>=1.3",
+    "matplotlib>=3.8",
+    "tqdm>=4.66",
+    "rich>=13.7",
+    "typer>=0.9",
+    "jinja2>=3.1",
+    "pyyaml>=6.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.4",
+    "hypothesis>=6.92",
+    "ruff>=0.1.9",
+    "mypy>=1.7",
+    "pre-commit>=3.6",
+]
+# CuspAI Widom — install via git per implementation-verdict.txt §13.A
+widom = [
+    "widom @ git+https://github.com/Cusp-AI/widom.git",
+]
+# CoRE MOF 2019 — bundled CIF data, used by the public-benchmark layer
+benchmarks = [
+    "CoRE-MOF @ git+https://github.com/coudertlab/CoRE-MOF.git",
+]
+all = [
+    "widom @ git+https://github.com/Cusp-AI/widom.git",
+    "CoRE-MOF @ git+https://github.com/coudertlab/CoRE-MOF.git",
+]
+
+[project.scripts]
+widom-atlas = "widom_atlas.cli:app"
+
+[project.urls]
+Homepage = "https://github.com/widom-atlas/widom-atlas"
+Documentation = "https://github.com/widom-atlas/widom-atlas#readme"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+widom_atlas = [
+    "py.typed",
+    "reports/templates/*.j2",
+    "reports/templates/*.md",
+    "reports/templates/*.html",
+    "benchmarks/templates/*.j2",
+    "benchmarks/data/mofxdb_cache/*.json",
+    "data_registry/data/*.yaml",
+]
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+# v0.6/ is reproducible research/analysis code (one-shot scripts run in dedicated
+# venvs), not the shipped library under src/. Excluded from ruff style enforcement.
+extend-exclude = ["v0.6", "build"]
+
+[tool.ruff.lint]
+select = [
+    "E",
+    "F",
+    "W",
+    "I",
+    "B",
+    "UP",
+    "SIM",
+    "RUF",
+]
+ignore = [
+    "E501",
+    "B008",   # Typer relies on Argument/Option in defaults
+    "RUF001", # ambiguous-unicode-character-string (we keep en-dash in user-visible text)
+    "RUF002", # ambiguous-unicode-character-docstring
+    "RUF003", # ambiguous-unicode-character-comment
+    "UP031",  # printf-style %-formatting is preferred for error messages with array indices
+    "SIM105", # suppressible try/except — used deliberately around optional ASE/pymatgen imports
+]
+
+[tool.ruff.lint.per-file-ignores]
+"tests/**" = ["B011", "B017", "F841", "RUF059", "E741"]
+
+[tool.mypy]
+python_version = "3.12"
+warn_unused_configs = true
+warn_redundant_casts = true
+warn_unused_ignores = true
+no_implicit_optional = true
+check_untyped_defs = true
+disallow_untyped_defs = false
+disallow_incomplete_defs = false
+ignore_missing_imports = true
+exclude = [
+    "tests/",
+    "examples/",
+    "benchmarks/",
+]
+
+[[tool.mypy.overrides]]
+module = [
+    "ase.*",
+    "pymatgen.*",
+    "spglib.*",
+    "scipy.*",
+    "sklearn.*",
+    "matplotlib.*",
+    "tqdm.*",
+]
+ignore_missing_imports = true
+
+[tool.pytest.ini_options]
+minversion = "7.0"
+testpaths = ["tests"]
+addopts = "-q --strict-markers -m \"not public_benchmark\""
+markers = [
+    "public_benchmark: opt-in tests that download / use public datasets and run the full benchmark pipeline (excluded from default CI; run with `pytest -m public_benchmark`)",
+    "real_material: tests that use cached real-material CIFs from tests/fixtures/real_structures/ (included by default; uses Si-diamond stand-in when no committed CIF is present)",
+    "slow: tests that take more than ~1s",
+]
+filterwarnings = [
+    "ignore::DeprecationWarning:pkg_resources",
+]

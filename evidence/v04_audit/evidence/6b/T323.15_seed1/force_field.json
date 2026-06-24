@@ -1,0 +1,77 @@
+{
+  "PseudoAtoms": [
+    {
+      "name": "O",
+      "framework": true,
+      "element": "O",
+      "mass": 15.9994,
+      "charge": -1.025,
+      "source": "Jaramillo-Auerbach 1999 via Garc\u00eda-P\u00e9rez 2007"
+    },
+    {
+      "name": "Si",
+      "framework": true,
+      "element": "Si",
+      "mass": 28.0855,
+      "charge": 2.05,
+      "source": "Jaramillo-Auerbach 1999 via Garc\u00eda-P\u00e9rez 2007"
+    },
+    {
+      "name": "Kr",
+      "framework": false,
+      "element": "Kr",
+      "print_as": "Kr",
+      "mass": 83.798,
+      "charge": 0.0,
+      "source": "Talu-Myers 2001"
+    }
+  ],
+  "SelfInteractions": [
+    {
+      "name": "O",
+      "type": "lennard-jones",
+      "parameters": [
+        53.0,
+        3.3
+      ],
+      "source": "TraPPE-zeo Bai 2013"
+    },
+    {
+      "name": "Si",
+      "type": "lennard-jones",
+      "parameters": [
+        22.0,
+        2.3
+      ],
+      "source": "TraPPE-zeo Bai 2013"
+    },
+    {
+      "name": "Kr",
+      "type": "lennard-jones",
+      "parameters": [
+        166.4,
+        3.636
+      ],
+      "source": "Talu-Myers 2001"
+    }
+  ],
+  "MixingRule": "Lorentz-Berthelot",
+  "TruncationMethod": "shifted",
+  "TailCorrections": false,
+  "CutOffVDW": 12.0,
+  "CutOffCoulomb": 12.0,
+  "BinaryInteractions": [
+    {
+      "names": [
+        "Kr",
+        "O"
+      ],
+      "type": "lennard-jones",
+      "parameters": [
+        109.6,
+        3.45
+      ],
+      "source": "Talu_Myers_2001_Table_4_Kr_in_silicalite"
+    }
+  ]
+}

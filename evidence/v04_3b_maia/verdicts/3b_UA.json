@@ -1,0 +1,73 @@
+{
+  "variant": "UA",
+  "n_insertions_per_seed": 80000,
+  "seeds": [
+    0,
+    1,
+    2
+  ],
+  "temperature_K": 298.0,
+  "ewald_enabled": false,
+  "cutoff_angstrom": 14.0,
+  "mixing_rule": "lorentz_berthelot",
+  "cif_used": "fixtures/v04/RUBTAK01_SL_DDEC.cif",
+  "force_field_lineage": "Maia_2023_UiO-66_CO2_TraPPE_UA",
+  "force_field_doi": "10.3390/cryst13101523",
+  "charge_provenance_for_charged_variants": "Maia Table 2/3 charges (Maia attributes to Yang 2011 JPC C, DOI 10.1021/jp202633t); applied per Maia atom-type after DDEC-bucket classification overwrites CIF charges",
+  "seed_results": [
+    {
+      "seed": 0,
+      "n_insertions": 80000,
+      "K_H_mol_per_kg_per_Pa": 1.99217820737526e-05,
+      "K_H_mol_per_kg_per_bar": 1.9921782073752599,
+      "Q_st_kJ_per_mol": 20.39573384688965,
+      "wall_seconds": 47.552098751068115,
+      "framework_mass_kg": 2.2159461837933433e-23
+    },
+    {
+      "seed": 1,
+      "n_insertions": 80000,
+      "K_H_mol_per_kg_per_Pa": 2.022362300359482e-05,
+      "K_H_mol_per_kg_per_bar": 2.022362300359482,
+      "Q_st_kJ_per_mol": 20.430445925149527,
+      "wall_seconds": 48.866347789764404,
+      "framework_mass_kg": 2.2159461837933433e-23
+    },
+    {
+      "seed": 2,
+      "n_insertions": 80000,
+      "K_H_mol_per_kg_per_Pa": 1.966012917210167e-05,
+      "K_H_mol_per_kg_per_bar": 1.966012917210167,
+      "Q_st_kJ_per_mol": 20.401273617056905,
+      "wall_seconds": 49.093477725982666,
+      "framework_mass_kg": 2.2159461837933433e-23
+    }
+  ],
+  "aggregated": {
+    "K_H_mean_mol_per_kg_per_bar": 1.9935178083149694,
+    "K_H_std_mol_per_kg_per_bar": 0.028198566334750562,
+    "K_H_min": 1.966012917210167,
+    "K_H_max": 2.022362300359482,
+    "Q_st_mean_kJ_per_mol": 20.409151129698696,
+    "Q_st_std_kJ_per_mol": 0.018648686236464564,
+    "Q_st_min": 20.39573384688965,
+    "Q_st_max": 20.430445925149527
+  },
+  "verdict": {
+    "variant": "UA",
+    "K_H_mean_mol_per_kg_per_bar": 1.9935178083149694,
+    "K_H_reference_mol_per_kg_per_bar": 5.14,
+    "delta_log10_K_H": -0.41134299937891483,
+    "Q_st_mean_kJ_per_mol": 20.409151129698696,
+    "Q_st_reference_kJ_per_mol": 26.5,
+    "delta_Q_st_kJ_per_mol": -6.090848870301304,
+    "K_H_passes_acceptance_window": false,
+    "Q_st_passes_acceptance_window": false,
+    "K_H_passes_strict_threshold_0p10": false,
+    "Q_st_passes_strict_threshold_2kJ_per_mol": false,
+    "verdict_strict": "FAIL",
+    "verdict_window": "FAIL"
+  },
+  "wall_seconds_total": 145.51192426681519,
+  "backend_tag": "native_widom_v04"
+}

@@ -1,0 +1,21 @@
+{
+  "_README": "This is the canonical RASPA3-shape CO2 component definition for the MFI Henry-coefficient parity test. Numbers are the operator-public García-Sánchez 2009 / Potoff & Siepmann 2001 TraPPE-style 3-site rigid linear CO2 model that is referenced (but not redistributed-bundled) by widom-atlas. They appear here ONLY as test fixture data, mirroring the public RASPA3 example tree at iRASPA/RASPA3/examples/basic/12_mc_henry_coefficient_of_co2_n2_methane_in_mfi.",
+  "Name": "CO2",
+  "MoleculeDefinition": "rigid",
+  "PseudoAtoms": ["C_co2", "O_co2", "O_co2"],
+  "Positions": [
+    [0.0, 0.0, 0.0],
+    [0.0, 0.0,  1.149],
+    [0.0, 0.0, -1.149]
+  ],
+  "Geometry": {
+    "_units": "Angstrom",
+    "_orientation": "linear; C at origin; bond length 1.149 A",
+    "bond_length_A": 1.149
+  },
+  "_provenance": {
+    "licence_status": "licence_unverified",
+    "source": "operator_supplied_or_raspa_example",
+    "comment": "TraPPE-style numerical values from peer-reviewed literature (Potoff & Siepmann 2001 DOI 10.1002/aic.690470719; García-Sánchez 2009 DOI 10.1021/jp9035419). Used as TEST FIXTURE only. widom-atlas does not bundle this as a redistributable parameter table."
+  }
+}

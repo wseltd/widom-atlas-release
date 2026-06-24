@@ -1,0 +1,15 @@
+{
+  "branch_id": "4b",
+  "case_id": "4",
+  "verdict": "DEFERRED",
+  "verdict_tier": "not_applicable",
+  "numeric_thresholds": "not_applicable",
+  "affects_v04_verdict": false,
+  "parsed_K_H_mol_per_kg_per_Pa": null,
+  "parsed_Q_st_kJ_per_mol": null,
+  "reference": {},
+  "evidence": {},
+  "notes": [
+    "No literature-anchored Cu-SSZ-13 force field + reference K_H/Q_st identified in v0.4 research. Cu-CHA cation-gating physics requires non-UFF Cu parameters (e.g., Pham 2013 LDA-DFT or similar, paywalled). Branch reserved for v0.5 \u2014 keeping the scope item recorded prevents accidental drop."
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "cell_matrix": [
+    [
+      26.136,
+      0.0,
+      0.0
+    ],
+    [
+      -13.067999999999994,
+      22.63443995331009,
+      0.0
+    ],
+    [
+      0.0,
+      0.0,
+      6.942
+    ]
+  ],
+  "metadata": {
+    "KH_mol_per_kg_per_Pa": 5.2231845019364874e-05,
+    "Qads_kJ_per_mol": 17.72235044479107,
+    "case_id": "flag-01-mg-mof-74-CO2-298",
+    "evaluator": "widom_atlas.evaluator (LJ+Wolf-Coulomb)",
+    "formula": "C72H18Mg18O54",
+    "framework_name": "Mg-MOF-74",
+    "grid_mode": "stochastic_uniform",
+    "n_atoms": 162,
+    "n_insertions": 1024,
+    "r_cut_A": 12.0,
+    "seed": 0,
+    "source": "ase",
+    "structure_sha256": "84923453752f66781295f70de4d8eaba8ecc8510d676ebcfd547ee8d68e23e43"
+  },
+  "structure_id": "C72H18Mg18O54"
+}

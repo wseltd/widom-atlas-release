@@ -1,0 +1,135 @@
+{
+  "branch_id": "4c",
+  "case_id": "4",
+  "label": "Si-CHA + CO2 (Bai 2013 TraPPE-zeo + TraPPE-CO2, Lorentz-Berthelot, shifted-truncated, 14 A cutoff + LJ tail)",
+  "force_field": {
+    "force_field_lineage": "Bai_2013_TraPPE_zeo_per_RASPA3_bundled_JSON_primary_anchored",
+    "force_field_doi": "10.1021/jp4074224",
+    "framework_atom_type_counts_per_primitive_cell": {
+      "O_zeo": 72,
+      "Si_zeo": 36
+    },
+    "framework_atom_type_counts_in_supercell": {
+      "O_zeo": 1296,
+      "Si_zeo": 648
+    },
+    "cell_volume_angstrom3_supercell": 43047.71281090722,
+    "cutoff_angstrom": 14.0,
+    "mixing_rule": "lorentz_berthelot",
+    "lj_truncation": "shifted_truncated",
+    "apply_lj_tail_correction": true,
+    "gas_species": "CO2",
+    "probe_self_lj": {
+      "C_co2": [
+        27.0,
+        2.8
+      ],
+      "O_co2": [
+        79.0,
+        3.05
+      ]
+    },
+    "framework_self_lj": {
+      "Si_zeo": [
+        22.0,
+        2.3
+      ],
+      "O_zeo": [
+        53.0,
+        3.3
+      ]
+    },
+    "framework_charges_e_per_type": {
+      "Si_zeo": 2.05,
+      "O_zeo": -1.025
+    },
+    "supercell_replicas": [
+      3,
+      3,
+      2
+    ]
+  },
+  "executed_backend": "native_widom_v04",
+  "executed_at_utc": "2026-06-01 21:06:20",
+  "temperature_K": 298.0,
+  "n_insertions_per_seed": 60000,
+  "n_seeds": 3,
+  "tail_correction_offset_K": -33.390999699134696,
+  "seeds": [
+    {
+      "seed": 0,
+      "n_insertions": 60000,
+      "wall_seconds": 26.2477285861969,
+      "K_H_mol_per_kg_per_bar_without_tail": 1.9805003366292315,
+      "K_H_mol_per_kg_per_bar_with_tail": 2.215326601716991,
+      "Q_st_kJ_per_mol_without_tail": 22.554812852732717,
+      "Q_st_kJ_per_mol_with_tail": 22.832425624231323
+    },
+    {
+      "seed": 1,
+      "n_insertions": 60000,
+      "wall_seconds": 26.275360822677612,
+      "K_H_mol_per_kg_per_bar_without_tail": 2.1178077449832013,
+      "K_H_mol_per_kg_per_bar_with_tail": 2.3689144344042985,
+      "Q_st_kJ_per_mol_without_tail": 23.09233381547554,
+      "Q_st_kJ_per_mol_with_tail": 23.369946586974148
+    },
+    {
+      "seed": 2,
+      "n_insertions": 60000,
+      "wall_seconds": 26.367870092391968,
+      "K_H_mol_per_kg_per_bar_without_tail": 1.8628674266607628,
+      "K_H_mol_per_kg_per_bar_with_tail": 2.0837460561998635,
+      "Q_st_kJ_per_mol_without_tail": 22.498087295167682,
+      "Q_st_kJ_per_mol_with_tail": 22.77570006666629
+    }
+  ],
+  "K_H_mean_mol_per_kg_per_bar": 2.2226623641070513,
+  "K_H_std_mol_per_kg_per_bar": 0.14272564954947473,
+  "Q_st_mean_kJ_per_mol": 22.992690759290586,
+  "Q_st_std_kJ_per_mol": 0.32794194129627985,
+  "reference_K_H_mol_per_kg_per_bar": 2.43,
+  "reference_Q_st_kJ_per_mol": 21.0,
+  "reference_K_H_source": "Maghsoudi 2013 Adsorption (DOI 10.1007/s10450-013-9528-1) Toth fit",
+  "reference_Q_st_source": "Maghsoudi 2013 Adsorption (van't Hoff)",
+  "smoke_test_K_H_simulated": null,
+  "smoke_test_source": null,
+  "two_tier_verdict": {
+    "case_id": "4",
+    "branch_id": "4c",
+    "K_H_mean_mol_per_kg_per_bar": 2.2226623641070513,
+    "K_H_reference_mol_per_kg_per_bar": 2.43,
+    "Q_st_mean_kJ_per_mol": 22.992690759290586,
+    "Q_st_reference_kJ_per_mol": 21.0,
+    "delta_log10_K_H": -0.03873277785473683,
+    "delta_Q_st_kJ_per_mol": 1.9926907592905856,
+    "tier_A_regression": {
+      "delta_log10_KH_max": 0.1,
+      "delta_Qst_kJ_per_mol_max": 2.0,
+      "K_H_pass": true,
+      "Q_st_pass": true,
+      "composite": "PASS",
+      "rationale": "Historical v04.2 strict thresholds. Used as an internal regression gate to detect code-change-induced shifts in K_H / Q_st. NOT a physical-accuracy claim. Tighter than experimental scatter for open-metal-site / defective MOFs."
+    },
+    "tier_B_physical": {
+      "delta_log10_KH_max": 0.2,
+      "delta_Qst_kJ_per_mol_max": 4.0,
+      "K_H_pass": true,
+      "Q_st_pass": true,
+      "composite": "PASS",
+      "rationale": "Si-CHA + CO2: all-silica framework, low synthesis variation. Maghsoudi 2013 Toth fit is the canonical reference.",
+      "sources": [
+        "10.1007/s10450-013-9528-1 (Maghsoudi 2013)"
+      ]
+    },
+    "headline_disposition": "PHYSICAL_PASS",
+    "note": "Within Tier B literature-scatter band. Atlas reproduces published experiment to within documented experimental reproducibility."
+  },
+  "bayesian_log_space_comparison": {
+    "delta_log10": -0.03873277785473683,
+    "combined_log10_std": 0.20193137146158854,
+    "z_score": -0.19181159209877696,
+    "classification": "AGREEMENT_WITHIN_1_SIGMA",
+    "p_agreement_within_tier_b_band": 0.6691919065286636
+  }
+}

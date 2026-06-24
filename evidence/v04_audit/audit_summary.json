@@ -1,0 +1,13 @@
+{
+  "n_branches": 14,
+  "n_strict": 9,
+  "n_strict_pass": 1,
+  "n_strict_broad_pass": 0,
+  "n_strict_fail": 5,
+  "n_strict_blocked": 2,
+  "n_strict_reference_blocked": 1,
+  "n_strict_site_truth_only": 1,
+  "n_exploratory": 1,
+  "n_numerical": 1,
+  "n_deferred": 3
+}

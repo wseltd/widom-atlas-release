@@ -1,0 +1,80 @@
+# widom-atlas report — {{ structure_metadata.structure_id }}
+
+## Structure & Conditions
+
+- **structure_id:** {{ structure_metadata.structure_id }}
+- **gas:** {{ gas }}
+- **temperature_K:** {{ temperature_K }}
+- **cell_matrix (Å):**
+{%- for row in structure_metadata.cell_matrix %}
+  - {{ row }}
+{%- endfor %}
+
+## Sample Summary
+
+- **n_samples:** {{ samples_summary.n_samples }}
+- **input_hash:** `{{ samples_summary.input_hash }}`
+- **mean_energy_eV:** {{ samples_summary.mean_energy_eV }}
+
+## Density Map
+
+- **grid shape:** {{ density_summary.shape }}
+- **spacing_A:** {{ density_summary.spacing_A }}
+- **smoothing_sigma_A:** {{ density_summary.smoothing_sigma_A }}
+
+![density slices]({{ figure_paths.density_slices }})
+
+## Basins
+
+| basin_id | count | weight | mean_energy_eV | spread_A | accessible_fraction |
+|---|---|---|---|---|---|
+{%- for b in basins %}
+| {{ b.basin_id }} | {{ b.count }} | {{ '%.4f' % b.weight }} | {{ '%.4f' % b.mean_energy_eV }} | {{ '%.4f' % b.spread_A }} | {{ '%.3f' % b.accessible_fraction }} |
+{%- endfor %}
+
+![basin centroids]({{ figure_paths.basin_centroids }})
+
+## Symmetry Grouping
+
+{%- if symmetry_groups %}
+{%- for g in symmetry_groups %}
+- **group {{ g.group_id }}** — space group `{{ g.space_group_symbol }}` (#{{ g.space_group_number }}), confidence {{ '%.2f' % g.grouping_confidence }}, members: {{ g.member_basin_ids }}
+{%- if g.uncertainty_flags %}
+  - uncertainty: {{ g.uncertainty_flags | join(', ') }}
+{%- endif %}
+{%- endfor %}
+{%- else %}
+_No symmetry groups recorded._
+{%- endif %}
+
+## Perturbations
+
+{%- if perturbation_summary %}
+{%- for p in perturbation_summary %}
+- {{ p.kind }}: {{ p.label }}{% if p.notes %} — {{ p.notes }}{% endif %}
+{%- endfor %}
+{%- else %}
+_No perturbations applied to this run._
+{%- endif %}
+
+## Robustness
+
+{%- if robustness_metrics %}
+- **delta_ln_KH:** {{ robustness_metrics.delta_ln_KH }}
+- **delta_Qads_kJmol:** {{ robustness_metrics.delta_Qads_kJmol }}
+- **basin_persistence_fraction:** {{ robustness_metrics.basin_persistence_fraction }}
+- **mean_basin_displacement_A:** {{ robustness_metrics.mean_basin_displacement_A }}
+
+![robustness]({{ figure_paths.robustness_bar }})
+{%- else %}
+_No robustness comparison run._
+{%- endif %}
+
+## Caveats & Uncertainty
+
+{%- for c in caveats %}
+- {{ c }}
+{%- endfor %}
+{%- for n in uncertainty_notes %}
+- {{ n }}
+{%- endfor %}

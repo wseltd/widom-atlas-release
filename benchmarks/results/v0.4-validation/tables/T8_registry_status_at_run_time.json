@@ -1,0 +1,199 @@
+{
+  "generated_at_utc": "2026-05-08T14:26:25Z",
+  "n_rows": 21,
+  "notes": "",
+  "rows": [
+    {
+      "cache_path": "benchmarks/cache/crafted",
+      "dataset_name": "CRAFTED",
+      "kind": "scalar_adsorption",
+      "license": "CDLA-Sharing-1.0",
+      "note": "cache_path missing \u2014 operator has not downloaded yet",
+      "present": false,
+      "verified": false
+    },
+    {
+      "cache_path": "benchmarks/cache/core_mof_2019",
+      "dataset_name": "CoRE-MOF-2019",
+      "kind": "structures",
+      "license": "CC-BY-4.0",
+      "note": "cache_path missing \u2014 operator has not downloaded yet",
+      "present": false,
+      "verified": false
+    },
+    {
+      "cache_path": "benchmarks/cache/qmof",
+      "dataset_name": "QMOF",
+      "kind": "ml_force_field",
+      "license": "CC-BY-4.0",
+      "note": "cache_path missing \u2014 operator has not downloaded yet",
+      "present": false,
+      "verified": false
+    },
+    {
+      "cache_path": "benchmarks/cache/pacmof_service_outputs",
+      "dataset_name": "PACMOF-service",
+      "kind": "service",
+      "license": "research_use",
+      "note": "cache_path missing \u2014 operator has not downloaded yet",
+      "present": false,
+      "verified": false
+    },
+    {
+      "cache_path": "benchmarks/cache/mepo_ml",
+      "dataset_name": "ARC-MOF-MEPO-ML",
+      "kind": "ml_force_field",
+      "license": "research_use",
+      "note": "cache_path missing \u2014 operator has not downloaded yet",
+      "present": false,
+      "verified": false
+    },
+    {
+      "cache_path": "benchmarks/cache/mofsimbench",
+      "dataset_name": "MOFSimBench",
+      "kind": "benchmark_suite",
+      "license": "unverified",
+      "note": "cache_path missing \u2014 operator has not downloaded yet",
+      "present": false,
+      "verified": false
+    },
+    {
+      "cache_path": "benchmarks/cache/core_mof_ddec",
+      "dataset_name": "CoRE-MOF-2019-DDEC",
+      "kind": "charges",
+      "license": "CC-BY-4.0",
+      "note": "cache_path missing \u2014 operator has not downloaded yet",
+      "present": false,
+      "verified": false
+    },
+    {
+      "cache_path": "benchmarks/cache/odac25",
+      "dataset_name": "ODAC25",
+      "kind": "ml_force_field",
+      "license": "CC-BY-4.0",
+      "note": "cache_path missing \u2014 operator has not downloaded yet",
+      "present": false,
+      "verified": false
+    },
+    {
+      "cache_path": "benchmarks/cache/nist_isodb_responses",
+      "dataset_name": "NIST-ISODB",
+      "kind": "scalar_adsorption",
+      "license": "public_domain_us_government",
+      "note": "cache_path missing \u2014 operator has not downloaded yet",
+      "present": false,
+      "verified": false
+    },
+    {
+      "cache_path": "benchmarks/cache/mofxdb_client_outputs",
+      "dataset_name": "MOFX-DB",
+      "kind": "scalar_adsorption",
+      "license": "research_use",
+      "note": "cache_path missing \u2014 operator has not downloaded yet",
+      "present": false,
+      "verified": false
+    },
+    {
+      "cache_path": "benchmarks/cache/core_mof_dft_ddec6",
+      "dataset_name": "CoRE-MOF-DFT-2014-DDEC6",
+      "kind": "charges",
+      "license": "CC-BY-4.0",
+      "note": "cache_path missing \u2014 operator has not downloaded yet",
+      "present": false,
+      "verified": false
+    },
+    {
+      "cache_path": "benchmarks/cache/dzubak_mgmof74_co2",
+      "dataset_name": "Dzubak-MgMOF74-CO2-FF",
+      "kind": "force_field_parameters",
+      "license": "research_use",
+      "note": "cache_path missing \u2014 operator has not downloaded yet",
+      "present": false,
+      "verified": false
+    },
+    {
+      "cache_path": "benchmarks/cache/mace_mp_0",
+      "dataset_name": "MACE-MP-0",
+      "kind": "ml_force_field",
+      "license": "MIT",
+      "note": "cache_path missing \u2014 operator has not downloaded yet",
+      "present": false,
+      "verified": false
+    },
+    {
+      "cache_path": "benchmarks/cache/odac25_mace",
+      "dataset_name": "ODAC25-MACE",
+      "kind": "ml_force_field",
+      "license": "MIT",
+      "note": "cache_path missing \u2014 operator has not downloaded yet",
+      "present": false,
+      "verified": false
+    },
+    {
+      "cache_path": "benchmarks/cache/uma_fairchem",
+      "dataset_name": "UMA-FAIR-Chem",
+      "kind": "ml_force_field",
+      "license": "MIT",
+      "note": "cache_path missing \u2014 operator has not downloaded yet",
+      "present": false,
+      "verified": false
+    },
+    {
+      "cache_path": "benchmarks/cache/raspa3_templates_mfi_henry",
+      "dataset_name": "RASPA3-templates-MFI-henry",
+      "kind": "force_field_parameters",
+      "license": "MIT",
+      "note": "cache_path missing \u2014 operator has not downloaded yet",
+      "present": false,
+      "verified": false
+    },
+    {
+      "cache_path": "benchmarks/cache/odac23",
+      "dataset_name": "ODAC23",
+      "kind": "ml_force_field",
+      "license": "CC-BY-4.0",
+      "note": "cache_path missing \u2014 operator has not downloaded yet",
+      "present": false,
+      "verified": false
+    },
+    {
+      "cache_path": "benchmarks/cache/core_mof_2024/structures",
+      "dataset_name": "CoRE-MOF-2024-structures",
+      "kind": "structures",
+      "license": "CC-BY-4.0",
+      "note": "cache_path missing \u2014 operator has not downloaded yet",
+      "present": false,
+      "verified": false
+    },
+    {
+      "cache_path": "benchmarks/cache/core_mof_2024/TSA",
+      "dataset_name": "CoRE-MOF-2024-TSA-stability",
+      "kind": "stability_metadata",
+      "license": "CC-BY-4.0",
+      "note": "cache_path missing \u2014 operator has not downloaded yet",
+      "present": false,
+      "verified": false
+    },
+    {
+      "cache_path": "benchmarks/cache/core_mof_2024/water",
+      "dataset_name": "CoRE-MOF-2024-water",
+      "kind": "subset",
+      "license": "CC-BY-4.0",
+      "note": "cache_path missing \u2014 operator has not downloaded yet",
+      "present": false,
+      "verified": false
+    },
+    {
+      "cache_path": "benchmarks/cache/core_mof_2024/mofid-v2",
+      "dataset_name": "CoRE-MOF-2024-mofid-v2",
+      "kind": "topology_metadata",
+      "license": "CC-BY-4.0",
+      "note": "cache_path missing \u2014 operator has not downloaded yet",
+      "present": false,
+      "verified": false
+    }
+  ],
+  "schema_version": "0.4",
+  "table_id": "T8",
+  "title": "Registry status at run time"
+}

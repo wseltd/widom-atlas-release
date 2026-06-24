@@ -1,0 +1,49 @@
+{
+  "branch_id": "4a",
+  "case_id": "4",
+  "label": "Si-CHA + CO2 TraPPE-zeo + Harris-Yung",
+  "two_tier_verdict": {
+    "case_id": "4",
+    "branch_id": "4a",
+    "K_H_mean_mol_per_kg_per_bar": 1.86,
+    "K_H_reference_mol_per_kg_per_bar": 2.43,
+    "Q_st_mean_kJ_per_mol": 32.74,
+    "Q_st_reference_kJ_per_mol": 21.0,
+    "delta_log10_K_H": -0.1160933293803959,
+    "delta_Q_st_kJ_per_mol": 11.740000000000002,
+    "tier_A_regression": {
+      "delta_log10_KH_max": 0.1,
+      "delta_Qst_kJ_per_mol_max": 2.0,
+      "K_H_pass": false,
+      "Q_st_pass": false,
+      "composite": "FAIL",
+      "rationale": "Historical v04.2 strict thresholds. Used as an internal regression gate to detect code-change-induced shifts in K_H / Q_st. NOT a physical-accuracy claim. Tighter than experimental scatter for open-metal-site / defective MOFs."
+    },
+    "tier_B_physical": {
+      "delta_log10_KH_max": 0.2,
+      "delta_Qst_kJ_per_mol_max": 4.0,
+      "K_H_pass": true,
+      "Q_st_pass": false,
+      "composite": "FAIL",
+      "rationale": "Si-CHA + CO2: all-silica framework, low synthesis variation. Maghsoudi 2013 Toth fit is the canonical reference.",
+      "sources": [
+        "10.1007/s10450-013-9528-1 (Maghsoudi 2013)"
+      ]
+    },
+    "headline_disposition": "PHYSICAL_FAIL",
+    "note": "Outside Tier B literature-scatter band. Honest force-field / reference disagreement beyond documented experimental scatter."
+  },
+  "bayesian_log_space_comparison": {
+    "K_H_sim_log10_std": 0.004670035625731772,
+    "K_H_exp_log10_std": 0.1,
+    "delta_log10": -0.1160933293803959,
+    "combined_log10_std": 0.10010898677314442,
+    "z_score": -1.1596694075375409,
+    "p_agreement_within_1_sigma": 0.4211716149130854,
+    "p_agreement_within_2_sigma": 0.7988487321882392,
+    "p_agreement_within_tier_b_band": 0.7982320118306766,
+    "tier_b_delta_log10_threshold": 0.2,
+    "classification": "AGREEMENT_WITHIN_2_SIGMA",
+    "note": "\u0394log10 = -0.116 \u00b1 0.100 (sim 1\u03c3 \u2248 0.005, exp scatter 1\u03c3 \u2248 0.100). |Z| = 1.16."
+  }
+}

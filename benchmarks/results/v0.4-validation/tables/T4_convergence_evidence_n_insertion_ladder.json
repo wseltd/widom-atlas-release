@@ -1,0 +1,58 @@
+{
+  "generated_at_utc": "2026-05-08T14:26:25Z",
+  "n_rows": 6,
+  "notes": "",
+  "rows": [
+    {
+      "Qads_internal_kJ_per_mol": 17.72235044479107,
+      "case_id": "flag-01-mg-mof-74-CO2-298",
+      "log10_KH_internal": -4.282064633026171,
+      "n_insertions": 1024,
+      "status": "ok",
+      "tier": "flagship"
+    },
+    {
+      "Qads_internal_kJ_per_mol": 17.147252978726872,
+      "case_id": "flag-02-hkust-1-CO2-298",
+      "log10_KH_internal": -4.651779284203682,
+      "n_insertions": 1024,
+      "status": "ok",
+      "tier": "flagship"
+    },
+    {
+      "Qads_internal_kJ_per_mol": 18.545790691194853,
+      "case_id": "flag-03-uio-66-CO2-298",
+      "log10_KH_internal": -4.221587967178441,
+      "n_insertions": 1024,
+      "status": "ok",
+      "tier": "flagship"
+    },
+    {
+      "Qads_internal_kJ_per_mol": 26.0797404201185,
+      "case_id": "flag-04-cha-CO2-298",
+      "log10_KH_internal": -3.0635799533798034,
+      "n_insertions": 1024,
+      "status": "ok",
+      "tier": "flagship"
+    },
+    {
+      "Qads_internal_kJ_per_mol": 34.76652724675282,
+      "case_id": "flag-05-nak-a-CO2-298",
+      "log10_KH_internal": -2.4678141184171425,
+      "n_insertions": 1024,
+      "status": "ok",
+      "tier": "flagship"
+    },
+    {
+      "Qads_internal_kJ_per_mol": 27.77041020812041,
+      "case_id": "flag-06-mfi-CH4-Kr-298",
+      "log10_KH_internal": -2.969222735582521,
+      "n_insertions": 1024,
+      "status": "ok",
+      "tier": "flagship"
+    }
+  ],
+  "schema_version": "0.4",
+  "table_id": "T4",
+  "title": "Convergence evidence (n_insertion ladder)"
+}

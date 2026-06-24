@@ -1,0 +1,20 @@
+{
+  "PseudoAtoms": [
+    {"name": "O",  "framework": true,  "element": "O",  "mass": 15.9994, "charge": 0.0, "source": "TraPPE-zeo Bai 2013 (O LJ); oxygen-only clean recipe"},
+    {"name": "Si", "framework": true,  "element": "Si", "mass": 28.0855, "charge": 0.0, "source": "oxygen-only: Si LJ set to zero (no Ar-Si)"},
+    {"name": "Ar", "framework": false, "element": "Ar", "print_as": "Ar", "mass": 39.948, "charge": 0.0, "source": "Talu-Myers 2001"}
+  ],
+  "SelfInteractions": [
+    {"name": "O",  "type": "lennard-jones", "parameters": [53.0, 3.3],   "source": "Bai 2013"},
+    {"name": "Si", "type": "lennard-jones", "parameters": [0.0, 2.3],    "source": "oxygen-only: epsilon=0 disables Ar-Si"},
+    {"name": "Ar", "type": "lennard-jones", "parameters": [119.8, 3.405], "source": "Talu-Myers 2001"}
+  ],
+  "MixingRule": "Lorentz-Berthelot",
+  "TruncationMethod": "shifted",
+  "TailCorrections": true,
+  "CutOffVDW": 24.0,
+  "CutOffCoulomb": 24.0,
+  "BinaryInteractions": [
+    {"names": ["Ar", "O"], "type": "lennard-jones", "parameters": [93.0, 3.335], "source": "Talu_Myers_2001 Ar-O explicit (pure-Talu oxygen-only)"}
+  ]
+}

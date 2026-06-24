@@ -1,0 +1,77 @@
+{
+  "PseudoAtoms": [
+    {
+      "name": "O",
+      "framework": true,
+      "element": "O",
+      "mass": 15.9994,
+      "charge": -1.025,
+      "source": "Jaramillo-Auerbach 1999 via Garc\u00eda-P\u00e9rez 2007"
+    },
+    {
+      "name": "Si",
+      "framework": true,
+      "element": "Si",
+      "mass": 28.0855,
+      "charge": 2.05,
+      "source": "Jaramillo-Auerbach 1999 via Garc\u00eda-P\u00e9rez 2007"
+    },
+    {
+      "name": "Ar",
+      "framework": false,
+      "element": "Ar",
+      "print_as": "Ar",
+      "mass": 39.948,
+      "charge": 0.0,
+      "source": "Talu-Myers 2001"
+    }
+  ],
+  "SelfInteractions": [
+    {
+      "name": "O",
+      "type": "lennard-jones",
+      "parameters": [
+        53.0,
+        3.3
+      ],
+      "source": "TraPPE-zeo Bai 2013"
+    },
+    {
+      "name": "Si",
+      "type": "lennard-jones",
+      "parameters": [
+        22.0,
+        2.3
+      ],
+      "source": "TraPPE-zeo Bai 2013"
+    },
+    {
+      "name": "Ar",
+      "type": "lennard-jones",
+      "parameters": [
+        119.8,
+        3.405
+      ],
+      "source": "Talu-Myers 2001"
+    }
+  ],
+  "MixingRule": "Lorentz-Berthelot",
+  "TruncationMethod": "shifted",
+  "TailCorrections": false,
+  "CutOffVDW": 12.0,
+  "CutOffCoulomb": 12.0,
+  "BinaryInteractions": [
+    {
+      "names": [
+        "Ar",
+        "O"
+      ],
+      "type": "lennard-jones",
+      "parameters": [
+        93.0,
+        3.335
+      ],
+      "source": "Talu_Myers_2001_Table_3_Ar_in_silicalite"
+    }
+  ]
+}

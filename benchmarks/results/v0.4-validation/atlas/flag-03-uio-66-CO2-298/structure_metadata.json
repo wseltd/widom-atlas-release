@@ -1,0 +1,35 @@
+{
+  "cell_matrix": [
+    [
+      20.7004,
+      0.0,
+      0.0
+    ],
+    [
+      0.0,
+      20.7004,
+      0.0
+    ],
+    [
+      0.0,
+      0.0,
+      20.7004
+    ]
+  ],
+  "metadata": {
+    "KH_mol_per_kg_per_Pa": 6.003603924447084e-05,
+    "Qads_kJ_per_mol": 18.545790691194853,
+    "case_id": "flag-03-uio-66-CO2-298",
+    "evaluator": "widom_atlas.evaluator (LJ+Wolf-Coulomb)",
+    "formula": "C192H96O120Zr24",
+    "framework_name": "UiO-66",
+    "grid_mode": "stochastic_uniform",
+    "n_atoms": 432,
+    "n_insertions": 1024,
+    "r_cut_A": 12.0,
+    "seed": 0,
+    "source": "ase",
+    "structure_sha256": "d272f0329766bbe589ff82f76e7d659b69f1bb7d543552dd67a4d211260aef87"
+  },
+  "structure_id": "C192H96O120Zr24"
+}

@@ -1,0 +1,81 @@
+{
+  "PseudoAtoms": [
+    {
+      "name": "O",
+      "framework": true,
+      "element": "O",
+      "mass": 15.9994,
+      "charge": -1.025,
+      "source": "Jaramillo-Auerbach 1999 via Garc\u00eda-P\u00e9rez 2007"
+    },
+    {
+      "name": "Si",
+      "framework": true,
+      "element": "Si",
+      "mass": 28.0855,
+      "charge": 2.05,
+      "source": "Jaramillo-Auerbach 1999 via Garc\u00eda-P\u00e9rez 2007"
+    },
+    {
+      "name": "C_co2",
+      "framework": false,
+      "element": "C",
+      "print_as": "C",
+      "mass": 12.0107,
+      "charge": 0.7,
+      "source": "TraPPE-CO2 (Potoff-Siepmann 2001) TASK13 4c"
+    },
+    {
+      "name": "O_co2",
+      "framework": false,
+      "element": "O",
+      "print_as": "O",
+      "mass": 15.9994,
+      "charge": -0.35,
+      "source": "TraPPE-CO2 (Potoff-Siepmann 2001) TASK13 4c"
+    }
+  ],
+  "SelfInteractions": [
+    {
+      "name": "O",
+      "type": "lennard-jones",
+      "parameters": [
+        53.0,
+        3.3
+      ],
+      "source": "TraPPE-zeo Bai 2013"
+    },
+    {
+      "name": "Si",
+      "type": "lennard-jones",
+      "parameters": [
+        22.0,
+        2.3
+      ],
+      "source": "TraPPE-zeo Bai 2013"
+    },
+    {
+      "name": "C_co2",
+      "type": "lennard-jones",
+      "parameters": [
+        27.0,
+        2.8
+      ],
+      "source": "TraPPE-CO2 (Potoff-Siepmann)"
+    },
+    {
+      "name": "O_co2",
+      "type": "lennard-jones",
+      "parameters": [
+        79.0,
+        3.05
+      ],
+      "source": "TraPPE-CO2 (Potoff-Siepmann)"
+    }
+  ],
+  "MixingRule": "Lorentz-Berthelot",
+  "TruncationMethod": "shifted",
+  "TailCorrections": true,
+  "CutOffVDW": 14.0,
+  "CutOffCoulomb": 14.0
+}

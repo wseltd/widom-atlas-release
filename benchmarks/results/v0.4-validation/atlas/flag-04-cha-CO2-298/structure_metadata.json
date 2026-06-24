@@ -1,0 +1,35 @@
+{
+  "cell_matrix": [
+    [
+      9.459,
+      0.0,
+      0.0
+    ],
+    [
+      -0.6713541877329091,
+      9.435145179307707,
+      0.0
+    ],
+    [
+      -0.6713541877329091,
+      -0.7208215218635481,
+      9.407570403044124
+    ]
+  ],
+  "metadata": {
+    "KH_mol_per_kg_per_Pa": 0.0008638136184239451,
+    "Qads_kJ_per_mol": 26.0797404201185,
+    "case_id": "flag-04-cha-CO2-298",
+    "evaluator": "widom_atlas.evaluator (LJ+Wolf-Coulomb)",
+    "formula": "O24Si12",
+    "framework_name": "CHA",
+    "grid_mode": "stochastic_uniform",
+    "n_atoms": 36,
+    "n_insertions": 1024,
+    "r_cut_A": 12.0,
+    "seed": 0,
+    "source": "ase",
+    "structure_sha256": "980a6f07c5041a165dfe1556179f0768bc7714455f527bc11a38c4d895a78011"
+  },
+  "structure_id": "O24Si12"
+}

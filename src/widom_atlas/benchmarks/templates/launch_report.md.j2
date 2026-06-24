@@ -1,0 +1,87 @@
+# widom-atlas — Launch readiness report
+
+**Package version:** {{ package_version }}
+**Set:** {{ set_name }}
+**Gas:** {{ gas }}
+**Temperature (K):** {{ temperature_K }}
+
+## Coverage
+
+- materials attempted: {{ totals.attempted }}
+- materials succeeded: {{ totals.succeeded }}
+- materials failed: {{ totals.failed }}
+- materials skipped: {{ totals.skipped }}
+
+## TREND comparison summary
+
+{%- for label, count in trend_counts.items() %}
+- {{ label }}: {{ count }}
+{%- endfor %}
+
+## Dataset provenance
+
+| material_id | source | license | sha256 | dataset_version |
+|---|---|---|---|---|
+{%- for r in provenance %}
+| {{ r.material_id }} | {{ r.source }} | {{ r.license }} | `{{ r.sha256 }}` | {{ r.dataset_version }} |
+{%- endfor %}
+
+## Failed materials
+
+{%- if failed %}
+{%- for f in failed %}
+- {{ f.material_id }} — {{ f.error_class }}: {{ f.error_message }}
+{%- endfor %}
+{%- else %}
+_No failures._
+{%- endif %}
+
+## Excluded tools (v1 guard rails)
+
+{%- for line in exclusions.excluded_tools %}
+- {{ line }}
+{%- endfor %}
+
+## H2O exclusion in v1
+
+{%- for line in exclusions.h2o_exclusion %}
+- {{ line }}
+{%- endfor %}
+
+## Automatic defect-engine exclusion in v1
+
+{%- for line in exclusions.automatic_defect_engine_exclusion %}
+- {{ line }}
+{%- endfor %}
+
+## Commercial dependency exclusion
+
+{%- for line in exclusions.commercial_dependency_exclusion %}
+- {{ line }}
+{%- endfor %}
+
+## License-risky dataset exclusion
+
+{%- for line in exclusions.license_risky_dataset_exclusion %}
+- {{ line }}
+{%- endfor %}
+
+## What this report does not certify
+
+{%- for line in exclusions.what_this_report_does_not_certify %}
+- {{ line }}
+{%- endfor %}
+
+## Why toy Lennard-Jones outputs are not chemically meaningful
+
+{%- for line in exclusions.toy_lj_caveat %}
+- {{ line }}
+{%- endfor %}
+
+## Scientific caveats (summary)
+
+- This report does NOT constitute proof of quantitative accuracy.
+- Scalar comparisons against MOFX-DB / NIST are TREND-only.
+- Toy Lennard-Jones samples are not chemically meaningful (verdict §13.J).
+- Symmetry assignments may be uncertain on defective or strained frameworks.
+

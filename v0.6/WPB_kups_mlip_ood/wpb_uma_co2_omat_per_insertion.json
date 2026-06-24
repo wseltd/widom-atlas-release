@@ -1,0 +1,602 @@
+[
+ {
+  "i": 0,
+  "min_dist_A": 2.0905,
+  "U_classical_kJ": 400.6,
+  "U_mace_kJ": 97.683,
+  "w_mace": 7.702025800341356e-18,
+  "flagged": true,
+  "flag_hard_overlap": true,
+  "flag_energetic_anomaly": true
+ },
+ {
+  "i": 1,
+  "min_dist_A": 0.8205,
+  "U_classical_kJ": 91062682.75,
+  "U_mace_kJ": 14025.255,
+  "w_mace": 0.0,
+  "flagged": true,
+  "flag_hard_overlap": true,
+  "flag_energetic_anomaly": true
+ },
+ {
+  "i": 2,
+  "min_dist_A": 2.0711,
+  "U_classical_kJ": 927.44,
+  "U_mace_kJ": 259.058,
+  "w_mace": 4.120203810027624e-46,
+  "flagged": true,
+  "flag_hard_overlap": true,
+  "flag_energetic_anomaly": true
+ },
+ {
+  "i": 3,
+  "min_dist_A": 1.6749,
+  "U_classical_kJ": 6998.81,
+  "U_mace_kJ": 576.003,
+  "w_mace": 1.2262083377296365e-101,
+  "flagged": true,
+  "flag_hard_overlap": true,
+  "flag_energetic_anomaly": true
+ },
+ {
+  "i": 4,
+  "min_dist_A": 3.1086,
+  "U_classical_kJ": -23.02,
+  "U_mace_kJ": 2.129,
+  "w_mace": 0.42366501422705205,
+  "flagged": false,
+  "flag_hard_overlap": false,
+  "flag_energetic_anomaly": false
+ },
+ {
+  "i": 5,
+  "min_dist_A": 1.627,
+  "U_classical_kJ": 14509.03,
+  "U_mace_kJ": 930.35,
+  "w_mace": 1.0227623643564269e-163,
+  "flagged": true,
+  "flag_hard_overlap": true,
+  "flag_energetic_anomaly": true
+ },
+ {
+  "i": 6,
+  "min_dist_A": 1.3581,
+  "U_classical_kJ": 63462.07,
+  "U_mace_kJ": 934.754,
+  "w_mace": 1.730494867648475e-164,
+  "flagged": true,
+  "flag_hard_overlap": true,
+  "flag_energetic_anomaly": true
+ },
+ {
+  "i": 7,
+  "min_dist_A": 0.9408,
+  "U_classical_kJ": 5148823.94,
+  "U_mace_kJ": 2713.733,
+  "w_mace": 0.0,
+  "flagged": true,
+  "flag_hard_overlap": true,
+  "flag_energetic_anomaly": true
+ },
+ {
+  "i": 8,
+  "min_dist_A": 1.2802,
+  "U_classical_kJ": 673473.1,
+  "U_mace_kJ": 2878.08,
+  "w_mace": 0.0,
+  "flagged": true,
+  "flag_hard_overlap": true,
+  "flag_energetic_anomaly": true
+ },
+ {
+  "i": 9,
+  "min_dist_A": 1.1147,
+  "U_classical_kJ": 878723.88,
+  "U_mace_kJ": 3601.225,
+  "w_mace": 0.0,
+  "flagged": true,
+  "flag_hard_overlap": true,
+  "flag_energetic_anomaly": true
+ },
+ {
+  "i": 10,
+  "min_dist_A": 1.6598,
+  "U_classical_kJ": 43645.38,
+  "U_mace_kJ": 1427.332,
+  "w_mace": 8.754968168486967e-251,
+  "flagged": true,
+  "flag_hard_overlap": true,
+  "flag_energetic_anomaly": true
+ },
+ {
+  "i": 11,
+  "min_dist_A": 1.8197,
+  "U_classical_kJ": 1951.82,
+  "U_mace_kJ": 241.823,
+  "w_mace": 4.3102256948106185e-43,
+  "flagged": true,
+  "flag_hard_overlap": true,
+  "flag_energetic_anomaly": true
+ },
+ {
+  "i": 12,
+  "min_dist_A": 0.8114,
+  "U_classical_kJ": 161262795.04,
+  "U_mace_kJ": 12386.73,
+  "w_mace": 0.0,
+  "flagged": true,
+  "flag_hard_overlap": true,
+  "flag_energetic_anomaly": true
+ },
+ {
+  "i": 13,
+  "min_dist_A": 1.3475,
+  "U_classical_kJ": 360237.34,
+  "U_mace_kJ": 2129.927,
+  "w_mace": 0.0,
+  "flagged": true,
+  "flag_hard_overlap": true,
+  "flag_energetic_anomaly": true
+ },
+ {
+  "i": 14,
+  "min_dist_A": 0.9137,
+  "U_classical_kJ": 7380440.19,
+  "U_mace_kJ": 3134.217,
+  "w_mace": 0.0,
+  "flagged": true,
+  "flag_hard_overlap": true,
+  "flag_energetic_anomaly": true
+ },
+ {
+  "i": 15,
+  "min_dist_A": 1.5655,
+  "U_classical_kJ": 59196.45,
+  "U_mace_kJ": 920.645,
+  "w_mace": 5.127996193257082e-162,
+  "flagged": true,
+  "flag_hard_overlap": true,
+  "flag_energetic_anomaly": true
+ },
+ {
+  "i": 16,
+  "min_dist_A": 0.6318,
+  "U_classical_kJ": 634514007.86,
+  "U_mace_kJ": 20128.477,
+  "w_mace": 0.0,
+  "flagged": true,
+  "flag_hard_overlap": true,
+  "flag_energetic_anomaly": true
+ },
+ {
+  "i": 17,
+  "min_dist_A": 1.6428,
+  "U_classical_kJ": 35866.76,
+  "U_mace_kJ": 796.553,
+  "w_mace": 2.817885505733672e-140,
+  "flagged": true,
+  "flag_hard_overlap": true,
+  "flag_energetic_anomaly": true
+ },
+ {
+  "i": 18,
+  "min_dist_A": 0.6856,
+  "U_classical_kJ": 230585128.28,
+  "U_mace_kJ": 9155.9,
+  "w_mace": 0.0,
+  "flagged": true,
+  "flag_hard_overlap": true,
+  "flag_energetic_anomaly": true
+ },
+ {
+  "i": 19,
+  "min_dist_A": 2.2728,
+  "U_classical_kJ": 247.24,
+  "U_mace_kJ": 73.639,
+  "w_mace": 1.2558023776789789e-13,
+  "flagged": true,
+  "flag_hard_overlap": true,
+  "flag_energetic_anomaly": true
+ },
+ {
+  "i": 20,
+  "min_dist_A": 1.5896,
+  "U_classical_kJ": 12742.02,
+  "U_mace_kJ": 776.476,
+  "w_mace": 9.27534265336521e-137,
+  "flagged": true,
+  "flag_hard_overlap": true,
+  "flag_energetic_anomaly": true
+ },
+ {
+  "i": 21,
+  "min_dist_A": 1.3365,
+  "U_classical_kJ": 174985.63,
+  "U_mace_kJ": 3088.988,
+  "w_mace": 0.0,
+  "flagged": true,
+  "flag_hard_overlap": true,
+  "flag_energetic_anomaly": true
+ },
+ {
+  "i": 22,
+  "min_dist_A": 1.272,
+  "U_classical_kJ": 210983.36,
+  "U_mace_kJ": 3414.002,
+  "w_mace": 0.0,
+  "flagged": true,
+  "flag_hard_overlap": true,
+  "flag_energetic_anomaly": true
+ },
+ {
+  "i": 23,
+  "min_dist_A": 0.8245,
+  "U_classical_kJ": 25853597.25,
+  "U_mace_kJ": 6138.089,
+  "w_mace": 0.0,
+  "flagged": true,
+  "flag_hard_overlap": true,
+  "flag_energetic_anomaly": true
+ },
+ {
+  "i": 24,
+  "min_dist_A": 2.0696,
+  "U_classical_kJ": 489.23,
+  "U_mace_kJ": 131.402,
+  "w_mace": 9.537540758549416e-24,
+  "flagged": true,
+  "flag_hard_overlap": true,
+  "flag_energetic_anomaly": true
+ },
+ {
+  "i": 25,
+  "min_dist_A": 0.7356,
+  "U_classical_kJ": 98478778.26,
+  "U_mace_kJ": 6950.221,
+  "w_mace": 0.0,
+  "flagged": true,
+  "flag_hard_overlap": true,
+  "flag_energetic_anomaly": true
+ },
+ {
+  "i": 26,
+  "min_dist_A": 0.836,
+  "U_classical_kJ": 8659200.33,
+  "U_mace_kJ": 6404.13,
+  "w_mace": 0.0,
+  "flagged": true,
+  "flag_hard_overlap": true,
+  "flag_energetic_anomaly": true
+ },
+ {
+  "i": 27,
+  "min_dist_A": 0.8853,
+  "U_classical_kJ": 4971641.02,
+  "U_mace_kJ": 4728.6,
+  "w_mace": 0.0,
+  "flagged": true,
+  "flag_hard_overlap": true,
+  "flag_energetic_anomaly": true
+ },
+ {
+  "i": 28,
+  "min_dist_A": 0.9658,
+  "U_classical_kJ": 2039611.32,
+  "U_mace_kJ": 4541.342,
+  "w_mace": 0.0,
+  "flagged": true,
+  "flag_hard_overlap": true,
+  "flag_energetic_anomaly": true
+ },
+ {
+  "i": 29,
+  "min_dist_A": 2.1854,
+  "U_classical_kJ": 394.82,
+  "U_mace_kJ": 85.184,
+  "w_mace": 1.1923626512325496e-15,
+  "flagged": true,
+  "flag_hard_overlap": true,
+  "flag_energetic_anomaly": true
+ },
+ {
+  "i": 30,
+  "min_dist_A": 1.3774,
+  "U_classical_kJ": 140089.21,
+  "U_mace_kJ": 3528.658,
+  "w_mace": 0.0,
+  "flagged": true,
+  "flag_hard_overlap": true,
+  "flag_energetic_anomaly": true
+ },
+ {
+  "i": 31,
+  "min_dist_A": 0.6744,
+  "U_classical_kJ": 399672637.34,
+  "U_mace_kJ": 19153.237,
+  "w_mace": 0.0,
+  "flagged": true,
+  "flag_hard_overlap": true,
+  "flag_energetic_anomaly": true
+ },
+ {
+  "i": 32,
+  "min_dist_A": 2.2022,
+  "U_classical_kJ": 198.56,
+  "U_mace_kJ": 72.529,
+  "w_mace": 1.9653364083475352e-13,
+  "flagged": true,
+  "flag_hard_overlap": true,
+  "flag_energetic_anomaly": true
+ },
+ {
+  "i": 33,
+  "min_dist_A": 0.7719,
+  "U_classical_kJ": 21333415.67,
+  "U_mace_kJ": 6845.935,
+  "w_mace": 0.0,
+  "flagged": true,
+  "flag_hard_overlap": true,
+  "flag_energetic_anomaly": true
+ },
+ {
+  "i": 34,
+  "min_dist_A": 2.1754,
+  "U_classical_kJ": 455.87,
+  "U_mace_kJ": 161.545,
+  "w_mace": 4.996051000389843e-29,
+  "flagged": true,
+  "flag_hard_overlap": true,
+  "flag_energetic_anomaly": true
+ },
+ {
+  "i": 35,
+  "min_dist_A": 1.1338,
+  "U_classical_kJ": 891232.7,
+  "U_mace_kJ": 4296.537,
+  "w_mace": 0.0,
+  "flagged": true,
+  "flag_hard_overlap": true,
+  "flag_energetic_anomaly": true
+ },
+ {
+  "i": 36,
+  "min_dist_A": 0.7385,
+  "U_classical_kJ": 106767715.36,
+  "U_mace_kJ": 11452.701,
+  "w_mace": 0.0,
+  "flagged": true,
+  "flag_hard_overlap": true,
+  "flag_energetic_anomaly": true
+ },
+ {
+  "i": 37,
+  "min_dist_A": 1.1089,
+  "U_classical_kJ": 539955.1,
+  "U_mace_kJ": 3512.308,
+  "w_mace": 0.0,
+  "flagged": true,
+  "flag_hard_overlap": true,
+  "flag_energetic_anomaly": true
+ },
+ {
+  "i": 38,
+  "min_dist_A": 1.3376,
+  "U_classical_kJ": 114996.24,
+  "U_mace_kJ": 2291.769,
+  "w_mace": 0.0,
+  "flagged": true,
+  "flag_hard_overlap": true,
+  "flag_energetic_anomaly": true
+ },
+ {
+  "i": 39,
+  "min_dist_A": 0.8136,
+  "U_classical_kJ": 94967189.5,
+  "U_mace_kJ": 11419.431,
+  "w_mace": 0.0,
+  "flagged": true,
+  "flag_hard_overlap": true,
+  "flag_energetic_anomaly": true
+ },
+ {
+  "i": 40,
+  "min_dist_A": 2.8237,
+  "U_classical_kJ": -11.03,
+  "U_mace_kJ": 13.033,
+  "w_mace": 0.005209133286558402,
+  "flagged": false,
+  "flag_hard_overlap": false,
+  "flag_energetic_anomaly": false
+ },
+ {
+  "i": 41,
+  "min_dist_A": 1.9754,
+  "U_classical_kJ": 1659.1,
+  "U_mace_kJ": 242.59,
+  "w_mace": 3.162435574097383e-43,
+  "flagged": true,
+  "flag_hard_overlap": true,
+  "flag_energetic_anomaly": true
+ },
+ {
+  "i": 42,
+  "min_dist_A": 1.1309,
+  "U_classical_kJ": 574473.68,
+  "U_mace_kJ": 1749.323,
+  "w_mace": 3.4026222780087123e-307,
+  "flagged": true,
+  "flag_hard_overlap": true,
+  "flag_energetic_anomaly": true
+ },
+ {
+  "i": 43,
+  "min_dist_A": 2.6089,
+  "U_classical_kJ": 8.16,
+  "U_mace_kJ": 19.949,
+  "w_mace": 0.00031995429711646577,
+  "flagged": true,
+  "flag_hard_overlap": true,
+  "flag_energetic_anomaly": false
+ },
+ {
+  "i": 44,
+  "min_dist_A": 0.8078,
+  "U_classical_kJ": 12083267.25,
+  "U_mace_kJ": 6047.842,
+  "w_mace": 0.0,
+  "flagged": true,
+  "flag_hard_overlap": true,
+  "flag_energetic_anomaly": true
+ },
+ {
+  "i": 45,
+  "min_dist_A": 0.3954,
+  "U_classical_kJ": 177440450484.52,
+  "U_mace_kJ": 60331.832,
+  "w_mace": 0.0,
+  "flagged": true,
+  "flag_hard_overlap": true,
+  "flag_energetic_anomaly": true
+ },
+ {
+  "i": 46,
+  "min_dist_A": 4.181,
+  "U_classical_kJ": -15.89,
+  "U_mace_kJ": 1.156,
+  "w_mace": 0.6273996053458056,
+  "flagged": false,
+  "flag_hard_overlap": false,
+  "flag_energetic_anomaly": false
+ },
+ {
+  "i": 47,
+  "min_dist_A": 1.839,
+  "U_classical_kJ": 6626.58,
+  "U_mace_kJ": 828.138,
+  "w_mace": 8.249327079599878e-146,
+  "flagged": true,
+  "flag_hard_overlap": true,
+  "flag_energetic_anomaly": true
+ },
+ {
+  "i": 48,
+  "min_dist_A": 0.776,
+  "U_classical_kJ": 117183085.41,
+  "U_mace_kJ": 17284.608,
+  "w_mace": 0.0,
+  "flagged": true,
+  "flag_hard_overlap": true,
+  "flag_energetic_anomaly": true
+ },
+ {
+  "i": 49,
+  "min_dist_A": 2.1024,
+  "U_classical_kJ": 669.54,
+  "U_mace_kJ": 137.541,
+  "w_mace": 8.0133996039023815e-25,
+  "flagged": true,
+  "flag_hard_overlap": true,
+  "flag_energetic_anomaly": true
+ },
+ {
+  "i": 50,
+  "min_dist_A": 1.0839,
+  "U_classical_kJ": 2444378.41,
+  "U_mace_kJ": 5826.667,
+  "w_mace": 0.0,
+  "flagged": true,
+  "flag_hard_overlap": true,
+  "flag_energetic_anomaly": true
+ },
+ {
+  "i": 51,
+  "min_dist_A": 0.4833,
+  "U_classical_kJ": 45198664043.78,
+  "U_mace_kJ": 45211.122,
+  "w_mace": 0.0,
+  "flagged": true,
+  "flag_hard_overlap": true,
+  "flag_energetic_anomaly": true
+ },
+ {
+  "i": 52,
+  "min_dist_A": 2.2094,
+  "U_classical_kJ": 214.32,
+  "U_mace_kJ": 85.817,
+  "w_mace": 9.235614427857527e-16,
+  "flagged": true,
+  "flag_hard_overlap": true,
+  "flag_energetic_anomaly": true
+ },
+ {
+  "i": 53,
+  "min_dist_A": 1.6846,
+  "U_classical_kJ": 5153.53,
+  "U_mace_kJ": 390.261,
+  "w_mace": 4.2575739841073595e-69,
+  "flagged": true,
+  "flag_hard_overlap": true,
+  "flag_energetic_anomaly": true
+ },
+ {
+  "i": 54,
+  "min_dist_A": 1.9408,
+  "U_classical_kJ": 1826.13,
+  "U_mace_kJ": 235.543,
+  "w_mace": 5.4273751090543544e-42,
+  "flagged": true,
+  "flag_hard_overlap": true,
+  "flag_energetic_anomaly": true
+ },
+ {
+  "i": 55,
+  "min_dist_A": 0.9934,
+  "U_classical_kJ": 1034499.9,
+  "U_mace_kJ": 2512.519,
+  "w_mace": 0.0,
+  "flagged": true,
+  "flag_hard_overlap": true,
+  "flag_energetic_anomaly": true
+ },
+ {
+  "i": 56,
+  "min_dist_A": 2.8321,
+  "U_classical_kJ": -20.55,
+  "U_mace_kJ": 6.583,
+  "w_mace": 0.07025195012227274,
+  "flagged": false,
+  "flag_hard_overlap": false,
+  "flag_energetic_anomaly": false
+ },
+ {
+  "i": 57,
+  "min_dist_A": 0.7152,
+  "U_classical_kJ": 306671480.15,
+  "U_mace_kJ": 18532.605,
+  "w_mace": 0.0,
+  "flagged": true,
+  "flag_hard_overlap": true,
+  "flag_energetic_anomaly": true
+ },
+ {
+  "i": 58,
+  "min_dist_A": 2.4645,
+  "U_classical_kJ": 52.75,
+  "U_mace_kJ": 41.83,
+  "w_mace": 4.696510566943628e-08,
+  "flagged": true,
+  "flag_hard_overlap": true,
+  "flag_energetic_anomaly": false
+ },
+ {
+  "i": 59,
+  "min_dist_A": 0.1954,
+  "U_classical_kJ": 1384132290536132.5,
+  "U_mace_kJ": 38817.177,
+  "w_mace": 0.0,
+  "flagged": true,
+  "flag_hard_overlap": true,
+  "flag_energetic_anomaly": true
+ }
+]

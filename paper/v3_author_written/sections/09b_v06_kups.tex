@@ -1,0 +1,159 @@
+% Section --- v0.6 extension: cross-engine validation + MLIP governance on the kUPS stack.
+% from a committed JSON in the version-controlled evidence base (see the standalone v0.6 report and CLAIMS.md).
+\section{Cross-engine validation and machine-learned potentials}\label{sec:v06}
+
+The harness above treats the simulation engine and the energy model as parts of the recipe. Two
+questions follow. First, does the recipe transfer across engines: given the same locked recipe, does a
+second, independently written estimator return the same observable? Second, the conclusion below
+anticipates machine-learned potentials as new energy-model recipes; can the same governance distinguish
+a trustworthy machine-learned adsorption number from an untrustworthy one? This section reports both,
+retargeted onto CuspAI's JAX-native engine \emph{kUPS} and the machine-learning interatomic potential
+(MLIP) it ships. Full numerical detail and the regeneration scripts are in the version-controlled evidence base.
+
+\subsection{Cross-engine parity, and a silicon double-count caught by audit}\label{sec:v06-parity}
+
+On the all-silica MFI + Ar positive control, the audit caught a subtler failure than a missing term: the
+originally-locked 6c recipe \emph{double-counted silicon}, and agreed with its reference only as a fortuitous
+cancellation of compounding errors. Talu--Myers' Ar--O cross-parameter (\(93.0\)~K) is the
+Lorentz--Berthelot combination of argon with an oxygen-only \emph{effective} oxygen (\(72.2\)~K) that
+already folds silicon's dispersion into oxygen --- Talu's model is oxygen-only by construction. The locked
+recipe nonetheless added an explicit Ar--Si from an active framework silicon, counting silicon twice (a
+factor \(1.8\) on \(K_H\)). That spurious term compensated three further errors --- an idealized rather
+than the calibration (Olson) geometry, an under-converged \(12\)~\AA{} tail-off cutoff, and a reference
+value mis-derived by \(\sim\!12\%\) --- which multiplied back to roughly the (wrong) reference. Removing
+all four and running the coherent single-source recipe (pure Talu, oxygen-only) at a converged cutoff on
+Talu's own geometry reproduces the \emph{corrected} reference (\(K_H = 0.200\)) exactly and cross-engine:
+a native estimator gives \(0.200\) and RASPA3 \(0.199\) (parity \(0.5\%\)), the heat (\(14.97\) kJ/mol)
+within \(0.7\) kJ/mol of the calorimetric value. This is the paper's own thesis landing in its own
+positive control --- a recipe assembled from incompatible silicon conventions yields a fortuitously-right
+number, and only a governed single-source rebuild makes it honest --- in strict-band terms the hybrid lands in-band
+against \emph{both} the mis-derived \(0.224\) and the corrected \(0.200\), so the rebuild changes the
+recipe's coherence, not the verdict (Table~\ref{tab:6c-cancellation}, Figure~\ref{fig:6c-cancellation}).
+
+\begin{table}[tbp]
+\centering\small
+\caption{Branch 6c: the four-error cancellation in the originally-locked recipe, and the single-source
+rebuild that removes each error in turn (reading down), reproducing the corrected reference on Talu's
+calibration (Olson) geometry. The last rows show the structure sensitivity of the converged single-source
+recipe.}\label{tab:6c-cancellation}
+\begin{tabular}{@{}lcl@{}}
+\toprule
+recipe / setup & \(K_H\) (mol\,kg\(^{-1}\)\,bar\(^{-1}\)) & note \\
+\midrule
+locked 6c: hybrid, IZA, 12~\AA{} tail-off & 0.207 & in-band by a fortuitous cancellation (also passes 0.200) \\
+\(\;\)remove the double-counted silicon & 0.115 & pure Talu, oxygen-only (IZA, 12~\AA{}) \\
+\(\;\)+ converge the cutoff (24~\AA{} + tail) & 0.154 & numerical defect fixed (IZA) \\
+\(\;\)+ Talu's calibration (Olson) geometry & \textbf{0.200} & native; RASPA3 \(0.199\), parity \(0.5\%\) \\
+\midrule
+corrected reference (Dunne 1996, \(K_H=B/kT\)) & \textbf{0.200} & strict window [0.159, 0.252] \\
+structure sensitivity (single-source recipe) & 0.200 / 0.205 / 0.154 & Olson / van Koningsveld / IZA \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{figure}[tbp]
+\centering
+\includegraphics[width=0.78\textwidth]{figures/fp_6c_cancellation.pdf}
+\caption{Finding F1 visualized: branch 6c rebuilt clean. The originally-locked hybrid recipe (\(0.207\))
+agrees with the reference only as a fortuitous cancellation of four compounding errors; removing the silicon double-count,
+converging the cutoff, and adopting Talu's calibration (Olson) geometry lands the coherent single-source
+recipe on the corrected reference \(K_H = 0.200\), cross-engine (native \(0.200\), RASPA3 \(0.199\);
+parity \(0.5\%\)). Values read from \texttt{cancellation\_6c.json}; the same chain is tabulated in
+Table~\ref{tab:6c-cancellation}.}
+\label{fig:6c-cancellation}
+\end{figure}
+
+The same control provides, to our knowledge, the first published independent cross-engine validation of
+the Widom test-particle estimator shipped in kUPS --- specifically the \texttt{kups.mcmc.widom} module,
+as distinct from standalone Widom packages and from machine-learned-potential adsorption benchmarks such
+as ODAC25~\cite{ODAC25}. The estimator is present in the engine source; a search of that source
+found internal unit tests only, and the open issue tracker, inspected on 2026-06-12, carried one
+unrelated feature request. On
+two locked controls --- MFI + Ar without electrostatics, and Si-CHA + CO\(_2\) with framework charges and
+Ewald summation --- kUPS reproduces the isosteric heat to \(0.22\) and \(0.01\) kJ/mol respectively; its
+energies and its \(W=\exp(-\beta U)\) reduction are correct. The dominant \(K_H\) discrepancies trace to
+named conventions: a \(+16\%\) gap on the Ar control root-causes to an LJ truncation convention (kUPS
+truncates the potential at the cutoff where the reference shifts it; matching the convention reproduces
+kUPS to \(+2.4\%\)), and the electrostatic control carries an additional tail-implementation difference.
+One residual of order \(8\%\) remains, characterized as a normalization-flavoured, \(Q_{st}\)-invariant
+scale and flagged open rather than hand-waved. Neither engine is wrong; the truncation convention is a
+recipe element worth \(16\%\) on \(K_H\). The exponential sensitivity of \(K_H\) to a constant energy
+offset, and the resulting need to lock the tail/truncation convention, are established
+\cite{Jablonka2019,Dubbeldam2016}; what is new here is the cross-engine \emph{quantification} of the
+effect, and the governed comparison is what makes it visible (Figure~\ref{fig:v06-parity}). The recipe these three engines share for this parity is the as-locked
+hybrid reframed above as a silicon double-count; this does not weaken the validation, which tests whether
+independent estimators agree on a \emph{common} recipe (they do, to \(1.1\%\) on \(K_H\) and \(0.22\)
+kJ/mol on \(Q_{st}\)), not whether that recipe reproduces experiment. The experimental-reproduction
+correction --- silicon, structure, convention, reference --- lives entirely in the rebuilt control above;
+the two findings are consistent.
+
+\begin{figure}[tbp]
+\centering
+\includegraphics[width=\textwidth]{figures/fp_cross_engine_parity.pdf}
+\caption{Cross-engine Widom parity. Left: on MFI + Ar, two independent estimators agree on the as-locked
+hybrid recipe --- native + Ar--Si reproduces the locked RASPA3 reference --- and the factor-\(1.8\) gap to
+the oxygen-only recipe is the silicon double-count of Finding~F1 quantified, not a legitimate missing
+term. Right: the Si-CHA + CO\(_2\) (Ewald) convention matrix, isolating the LJ truncation shift and the
+tail-implementation difference that account for the kUPS--reference offset.}
+\label{fig:v06-parity}
+\end{figure}
+
+\subsection{Machine-learned potentials as governed recipes}\label{sec:v06-mlip}
+
+Treating an MLIP as one more energy-model recipe, we score Widom insertions of Ar into all-silica CHA
+under four configurations, with a classical Lennard-Jones baseline scoring the same insertion geometries
+so that every difference is the potential, not the sampling. The governance is a pre-registered schema
+with two refusal classes: out-of-distribution over-binding (flagged insertions carry at least half the
+Boltzmann weight) and under-binding (no physisorption well where one is established). The result
+discriminates two distinct failure modes and, for one of them, certifies a governed screen-pass (Figure~\ref{fig:v06-triptych}). The 2023
+MACE-MP-small potential hallucinates attractive energies \emph{inside} atomic overlaps --- its global
+minimum, \(-19.3\) kJ/mol, lies at a hard overlap, and the flagged insertions carry \(99.5\%\) of the
+weight; it is refused. The MACE-MPA-0 potential as shipped in CuspAI's \texttt{kUPS-mace-jax} export is
+the opposite: repulsive everywhere (minimum \(+8.5\) kJ/mol), finding no physisorption well at all, the
+bare PBE signature of a missing dispersion term; it too is refused. Pairing the \emph{same} weights with
+the standard D3(BJ) dispersion correction recovers a physical well (minimum \(-5.0\) kJ/mol, shallower than the
+\(-22\) kJ/mol classical baseline) at a non-overlap distance: it passes the out-of-distribution screen, accuracy
+unassessed. Dispersion-correction on or off is therefore
+a load-bearing recipe element, and an ungoverned pipeline silently differs on it. The kUPS in-engine JAX
+export was verified energy-identical to the upstream reference implementation to a maximum relative
+difference of \(2.1\times10^{-7}\), so the governance conclusions carry to the runtime path.
+
+\begin{figure}[tbp]
+\centering
+\includegraphics[width=\textwidth]{figures/f1_wpb_triptych.pdf}
+\caption{Out-of-distribution governance discriminates the failure mode across four configurations
+(Si-CHA + Ar). MACE-MP-small over-binds inside overlaps (refused); MACE-MPA-0 bare is repulsive
+everywhere, missing dispersion (refused); the same weights with D3(BJ) recover a physical well
+(screen-pass); the UMA materials head is erratic at overlaps (refused). Every label renders from a
+committed JSON.}
+\label{fig:v06-triptych}
+\end{figure}
+
+A multi-task foundation model sharpens the point that a verdict is only as good as the harness's right to
+issue it. The UMA potential carries several level-of-theory heads; its choice is itself a recipe element.
+Its materials head, used on Ar in silica, is erratic at close contact and is refused. Its direct-air-capture
+head, used on Ar --- a noble gas outside its training distribution --- assigns energies that differ by
+\(2.7\) kJ/mol between symmetry-equivalent open sites; the harness fails its own internal consistency
+check and returns \emph{withheld}: no verdict, rather than a confident wrong one. The \emph{same}
+direct-air-capture head, used on CO\(_2\) in the same framework, its actual training domain, is
+self-consistent and finds a physical well (minimum \(-15.7\) kJ/mol, screen isosteric heat \(17.7\) kJ/mol
+against a reference anchor of \(21.0\)): it passes the screen (Figure~\ref{fig:v06-uma}). The model passes
+where its own documentation says it should, and is refused or withheld elsewhere. A screen-pass is not a
+certificate of accuracy --- the runs are screens at \(N=60\)--\(120\) insertions, not converged
+thermodynamics --- but it is the difference between a number that may be trusted and one that must not.
+
+\begin{figure}[tbp]
+\centering
+\includegraphics[width=\textwidth]{figures/f2_uma_domain.pdf}
+\caption{Governance respects the training domain. Left: the UMA direct-air-capture head screen-passes
+in-domain on CO\(_2\) (a physical well) and is withheld out-of-domain on Ar (internally inconsistent).
+Right: the full task-by-system verdict matrix; the model passes exactly where its training domain says
+it should.}
+\label{fig:v06-uma}
+\end{figure}
+
+None of this changes the v0.4 verdict. It extends the same discipline to a second engine and to
+machine-learned energy models, and it adds two recipe elements to the list that must be locked before a
+Widom number is trustworthy: the engine's truncation convention, and the potential's domain of validity.
+The point is unchanged. The trustworthy quantity is not the number; it is the number together with the
+complete, locked recipe that produced it.

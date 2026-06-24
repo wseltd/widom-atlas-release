@@ -1,0 +1,51 @@
+{
+  "branch_id": "3b_EHq",
+  "case_id": "3",
+  "label": "UiO-66 Maia 2023 EHq (explicit H + Yang 2011 charges)",
+  "two_tier_verdict": {
+    "case_id": "3",
+    "branch_id": "3b_EHq",
+    "K_H_mean_mol_per_kg_per_bar": 2.874,
+    "K_H_reference_mol_per_kg_per_bar": 5.14,
+    "Q_st_mean_kJ_per_mol": 22.07,
+    "Q_st_reference_kJ_per_mol": 26.5,
+    "delta_log10_K_H": -0.2524763551970688,
+    "delta_Q_st_kJ_per_mol": -4.43,
+    "tier_A_regression": {
+      "delta_log10_KH_max": 0.1,
+      "delta_Qst_kJ_per_mol_max": 2.0,
+      "K_H_pass": false,
+      "Q_st_pass": false,
+      "composite": "FAIL",
+      "rationale": "Historical v04.2 strict thresholds. Used as an internal regression gate to detect code-change-induced shifts in K_H / Q_st. NOT a physical-accuracy claim. Tighter than experimental scatter for open-metal-site / defective MOFs."
+    },
+    "tier_B_physical": {
+      "delta_log10_KH_max": 0.4,
+      "delta_Qst_kJ_per_mol_max": 8.0,
+      "K_H_pass": true,
+      "Q_st_pass": true,
+      "composite": "PASS",
+      "rationale": "UiO-66 CO2: notorious defect-density spread; Cmarik 2012 K_H = 5.14 mol/(kg.bar) vs Cavka-matched ~1.99 (\u0394log10 = 0.41); Maia 2023 UA reports best match to Cavka not Cmarik. Synthesis-missing-linker/missing-cluster defects dominate at the experimental level.",
+      "sources": [
+        "10.1021/la3035352 (Cmarik 2012)",
+        "10.3390/cryst13101523 (Maia 2023)",
+        "10.1021/acs.jctc.4c00287 (McCready 2024)"
+      ]
+    },
+    "headline_disposition": "PHYSICAL_PASS",
+    "note": "Within Tier B literature-scatter band. Atlas reproduces published experiment to within documented experimental reproducibility. (Tier A regression FAIL \u2014 for code-change tracking only.)"
+  },
+  "bayesian_log_space_comparison": {
+    "K_H_sim_log10_std": 0.01429767287667903,
+    "K_H_exp_log10_std": 0.3,
+    "delta_log10": -0.2524763551970688,
+    "combined_log10_std": 0.30034051250154137,
+    "z_score": -0.8406336963807807,
+    "p_agreement_within_1_sigma": 0.5304722291590994,
+    "p_agreement_within_2_sigma": 0.8745953472916079,
+    "p_agreement_within_tier_b_band": 0.6734425777438146,
+    "tier_b_delta_log10_threshold": 0.4,
+    "classification": "AGREEMENT_WITHIN_1_SIGMA",
+    "note": "\u0394log10 = -0.252 \u00b1 0.300 (sim 1\u03c3 \u2248 0.014, exp scatter 1\u03c3 \u2248 0.300). |Z| = 0.84."
+  }
+}

@@ -1,0 +1,78 @@
+% LAYOUT RULE (load-bearing): the main results table (Table 1) must render
+% in or immediately after Section 6 ("The audit result") and must NEVER
+% float past the references. In the v2 PDF the [t]-floated results table
+% stranded itself on the last page, AFTER the bibliography
+% (see audit/v2_page_images/page-15.png). This skeleton prevents that by:
+%   (i)  building Table 1 as a non-floating longtable, or table[h!] guarded
+%        by \FloatBarrier inside Section 6; and
+%   (ii) a \FloatBarrier + \clearpage backstop before \bibliography so no
+%        deferred float can ever land after the references.
+%
+%   pdflatex -> bibtex -> pdflatex -> pdflatex, output to build/.
+%
+\documentclass[11pt,a4paper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb}
+\usepackage{array}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage[margin=1in]{geometry}
+\usepackage[hidelinks]{hyperref}
+\usepackage{caption}
+\usepackage{microtype}
+\usepackage{placeins}
+\setlength{\emergencystretch}{3em}
+
+\title{widom-atlas: Auditing Widom-Insertion Recipes for Zero-Coverage Adsorption}
+\author{Onur Alexander William Aydogan\\
+Waynestark Enterprises Limited}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+Widom insertion gives well-defined zero-coverage adsorption observables only after the host structure, atom typing, force field, gas model, mixing rule, electrostatics, backend, sampling protocol, and reference observable have been specified. In materials screening, the resulting Henry constant \(K_H\) and zero-coverage isosteric heat \(Q_{st}\) are often treated as properties of the material, but they are in fact outputs of this complete recipe. We present widom-atlas, a governed validation harness that locks each recipe as a branch, compares the resulting observable with one stated experimental reference, and classifies the outcome as a strict pass, a physical-accuracy pass, a force-field disagreement, a reference-observable mismatch, a structural blocker, or an ensemble/method mismatch. In v0.4, presented as method-plus-audited-examples rather than a fifteen-branch certification, two of fifteen verdict-affecting branches pass the strict criterion --- an all-silica MFI + Ar positive control and a UiO-66 + CO\(_2\) branch under genuine Universal Force Field (UFF) --- and five of fifteen pass the broader Tier-B physical-accuracy criterion (those two, plus HKUST-1 + CO\(_2\) under genuine UFF, the Si-CHA + CO\(_2\) Bai 2013 control, and the UiO-66 explicit-hydrogen Maia 2023 variant). Two of those passes (HKUST-1 and UiO-66) were recovered only after the audit caught a generator silently substituting guest and zeolite parameters under a false ``UFF'' label on the framework atoms; corrected to genuine UFF, the linker dispersion compensates the weak open-metal site and both MOFs reproduce experiment. The remaining branches expose force-field transferability limits at the Mg-MOF-74 open metal site, reference-observable mismatches, missing cationic-zeolite structures and cation models, and a Na-Rho trapdoor ensemble mismatch. A subsequent extension retargets the harness onto CuspAI's kUPS engine and the machine-learned potential it ships: it provides, to our knowledge and based on public-source searches conducted on 15 June 2026, the first published independent cross-engine validation of the Widom estimator shipped in kUPS --- the \texttt{kups.mcmc.widom} module specifically, as distinct from standalone Widom packages and from machine-learned-potential adsorption benchmarks such as ODAC25~\cite{ODAC25}; that same cross-engine audit found the originally-locked MFI + Ar positive control had \emph{double-counted silicon}: it still landed inside the strict band, but only as a fortuitous cancellation of four compounding errors --- a coincidence, not a coherent result --- and rebuilding it clean on the calibration (Olson) geometry reproduces the corrected reference \(K_H = 0.200\) exactly and cross-engine (the project's native estimator 0.200, RASPA3 0.199) --- with the isosteric heat reproduced to 0.01--0.22 kJ/mol on two locked controls, the dominant \(K_H\) discrepancies traced to named conventions and one normalization-flavoured residual on the electrostatic control flagged open, and a governed out-of-distribution demonstration on machine-learned potentials that discriminates over-binding from missing-dispersion failure, screen-passes a dispersion-corrected route for the latter, and withholds a verdict on a foundation model used outside its training domain. widom-atlas is therefore not scientifically validated as a general predictive adsorption tool. It is a reproducible way to decide whether a particular Widom adsorption number is a trustworthy zero-coverage observable or merely the output of an untested recipe.
+\end{abstract}
+
+% ====================== MAIN TEXT (Sections 1--9) ======================
+\input{sections/01_problem.tex}
+\input{sections/02_observable.tex}
+\input{sections/03_recipe.tex}
+\input{sections/04_harness.tex}
+\input{sections/05_controls.tex}
+\input{sections/06_audit_result.tex}   % Table 1 anchor lives here
+\input{sections/07_failures.tex}
+\input{sections/08_missing.tex}
+\input{sections/09b_v06_kups.tex}
+\input{sections/09_conclusion.tex}
+
+% ====================== APPENDICES (A--E) ======================
+\appendix
+\input{sections/A_estimator.tex}
+\input{sections/B_numerical_lock.tex}
+\input{sections/C_branch_table.tex}
+\input{sections/D_compute.tex}
+\input{sections/E_v05_notes.tex}
+
+% ============ ACKNOWLEDGEMENTS (unnumbered; before References) ============
+% Author-supplied text, added verbatim 2026-06-09 per author instruction.
+\section*{Acknowledgements}
+
+The author thanks The London Library for the quiet of its reading rooms, where much of this manuscript was thought through and revised. He also thanks the Library for the use of its printers during drafting; they were asked to produce more intermediate versions than any sensible machine should have had to tolerate.
+
+% ====================== REFERENCES ======================
+% Backstop: flush every pending float and start a fresh page BEFORE the
+% bibliography, so no result table can ever strand after the references.
+\FloatBarrier
+\clearpage
+\bibliographystyle{unsrt}
+\bibliography{references}
+
+\end{document}

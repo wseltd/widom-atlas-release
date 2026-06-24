@@ -1,0 +1,178 @@
+{
+  "generated_at_utc": "2026-05-08T14:26:25Z",
+  "n_rows": 21,
+  "notes": "",
+  "rows": [
+    {
+      "dataset_name": "CRAFTED",
+      "license": "CDLA-Sharing-1.0",
+      "predecessor_doi": "10.5281/zenodo.7689919",
+      "primary_doi": "10.5281/zenodo.10120180",
+      "primary_url": "https://doi.org/10.5281/zenodo.10120180",
+      "redistribution_status": "open_access_with_attribution"
+    },
+    {
+      "dataset_name": "CoRE-MOF-2019",
+      "license": "CC-BY-4.0",
+      "predecessor_doi": "10.5281/zenodo.3677685",
+      "primary_doi": "10.5281/zenodo.14184621",
+      "primary_url": "https://zenodo.org/records/14184621",
+      "redistribution_status": "open_access_with_attribution"
+    },
+    {
+      "dataset_name": "QMOF",
+      "license": "CC-BY-4.0",
+      "predecessor_doi": null,
+      "primary_doi": "10.1038/s41467-021-23298-3",
+      "primary_url": "https://doi.org/10.1038/s41467-021-23298-3",
+      "redistribution_status": "open_access_with_attribution"
+    },
+    {
+      "dataset_name": "PACMOF-service",
+      "license": "research_use",
+      "predecessor_doi": null,
+      "primary_doi": "10.1021/acs.jctc.0c00010",
+      "primary_url": "https://github.com/snurr-group/pacmof",
+      "redistribution_status": "license_unverified"
+    },
+    {
+      "dataset_name": "ARC-MOF-MEPO-ML",
+      "license": "research_use",
+      "predecessor_doi": null,
+      "primary_doi": "10.1021/acs.jctc.4c00478",
+      "primary_url": "https://doi.org/10.1021/acs.jctc.4c00478",
+      "redistribution_status": "license_unverified"
+    },
+    {
+      "dataset_name": "MOFSimBench",
+      "license": "unverified",
+      "predecessor_doi": null,
+      "primary_doi": "10.26434/chemrxiv-2024-mofsimbench",
+      "primary_url": "https://github.com/sailfish009/MOFSimBench",
+      "redistribution_status": "license_unverified"
+    },
+    {
+      "dataset_name": "CoRE-MOF-2019-DDEC",
+      "license": "CC-BY-4.0",
+      "predecessor_doi": null,
+      "primary_doi": "10.5281/zenodo.3677685",
+      "primary_url": "https://zenodo.org/records/3677685",
+      "redistribution_status": "open_access_user_downloads"
+    },
+    {
+      "dataset_name": "ODAC25",
+      "license": "CC-BY-4.0",
+      "predecessor_doi": null,
+      "primary_doi": "10.57967/hf/ODAC25",
+      "primary_url": "https://huggingface.co/datasets/fairchem/ODAC25",
+      "redistribution_status": "open_access_with_attribution"
+    },
+    {
+      "dataset_name": "NIST-ISODB",
+      "license": "public_domain_us_government",
+      "predecessor_doi": null,
+      "primary_doi": "10.18434/T43882",
+      "primary_url": "https://adsorption.nist.gov/isodb/",
+      "redistribution_status": "open_access_with_attribution"
+    },
+    {
+      "dataset_name": "MOFX-DB",
+      "license": "research_use",
+      "predecessor_doi": null,
+      "primary_doi": "10.1021/acs.jced.9b00835",
+      "primary_url": "https://mof.tech.northwestern.edu/",
+      "redistribution_status": "open_access_with_attribution"
+    },
+    {
+      "dataset_name": "CoRE-MOF-DFT-2014-DDEC6",
+      "license": "CC-BY-4.0",
+      "predecessor_doi": null,
+      "primary_doi": "10.5281/zenodo.3986569",
+      "primary_url": "https://zenodo.org/records/3986569",
+      "redistribution_status": "open_access_with_attribution"
+    },
+    {
+      "dataset_name": "Dzubak-MgMOF74-CO2-FF",
+      "license": "research_use",
+      "predecessor_doi": null,
+      "primary_doi": "10.1038/nchem.1432",
+      "primary_url": "https://doi.org/10.1038/nchem.1432",
+      "redistribution_status": "user_supplied_not_bundled"
+    },
+    {
+      "dataset_name": "MACE-MP-0",
+      "license": "MIT",
+      "predecessor_doi": null,
+      "primary_doi": "10.48550/arXiv.2401.00096",
+      "primary_url": "https://github.com/ACEsuit/mace-mp",
+      "redistribution_status": "open_access_with_attribution"
+    },
+    {
+      "dataset_name": "ODAC25-MACE",
+      "license": "MIT",
+      "predecessor_doi": null,
+      "primary_doi": "10.57967/hf/ODAC25-MACE",
+      "primary_url": "https://huggingface.co/fairchem/ODAC25-MACE",
+      "redistribution_status": "open_access_with_attribution"
+    },
+    {
+      "dataset_name": "UMA-FAIR-Chem",
+      "license": "MIT",
+      "predecessor_doi": null,
+      "primary_doi": "10.48550/arXiv.2410.12771",
+      "primary_url": "https://github.com/FAIR-Chem/fairchem",
+      "redistribution_status": "open_access_with_attribution"
+    },
+    {
+      "dataset_name": "RASPA3-templates-MFI-henry",
+      "license": "MIT",
+      "predecessor_doi": null,
+      "primary_doi": "https://github.com/iRASPA/RASPA3",
+      "primary_url": "https://github.com/iRASPA/RASPA3",
+      "redistribution_status": "open_access_with_attribution"
+    },
+    {
+      "dataset_name": "ODAC23",
+      "license": "CC-BY-4.0",
+      "predecessor_doi": null,
+      "primary_doi": "10.48550/arXiv.2311.00341",
+      "primary_url": "https://dl.fbaipublicfiles.com/large_objects/dac/datasets/odac23_s2ef.tar.gz",
+      "redistribution_status": "open_access_with_attribution"
+    },
+    {
+      "dataset_name": "CoRE-MOF-2024-structures",
+      "license": "CC-BY-4.0",
+      "predecessor_doi": null,
+      "primary_doi": "10.5281/zenodo.14510695",
+      "primary_url": "https://zenodo.org/records/14510695",
+      "redistribution_status": "open_access_with_attribution"
+    },
+    {
+      "dataset_name": "CoRE-MOF-2024-TSA-stability",
+      "license": "CC-BY-4.0",
+      "predecessor_doi": null,
+      "primary_doi": "10.5281/zenodo.14510695",
+      "primary_url": "https://zenodo.org/records/14510695",
+      "redistribution_status": "open_access_with_attribution"
+    },
+    {
+      "dataset_name": "CoRE-MOF-2024-water",
+      "license": "CC-BY-4.0",
+      "predecessor_doi": null,
+      "primary_doi": "10.5281/zenodo.14510695",
+      "primary_url": "https://zenodo.org/records/14510695",
+      "redistribution_status": "open_access_with_attribution"
+    },
+    {
+      "dataset_name": "CoRE-MOF-2024-mofid-v2",
+      "license": "CC-BY-4.0",
+      "predecessor_doi": null,
+      "primary_doi": "10.5281/zenodo.14510695",
+      "primary_url": "https://zenodo.org/records/14510695",
+      "redistribution_status": "open_access_with_attribution"
+    }
+  ],
+  "schema_version": "0.4",
+  "table_id": "T7",
+  "title": "Provenance inventory (datasets used)"
+}

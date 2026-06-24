@@ -1,0 +1,61 @@
+{
+  "branch_id": "3a",
+  "system": "UiO-66 + CO2",
+  "force_field": "genuine plain UFF (Rappe 1992) framework + DDEC charges + EPM2/Harris-Yung-or-TraPPE CO2",
+  "engine": "RASPA3 v3.0.29",
+  "raspa3_binary_sha256": "2b4132becc0f38dedb2de470386defe9956d8129307e70dc7fcd0d6f03d57732",
+  "n_seeds": 12,
+  "n_cycles_per_seed": 400000,
+  "temperatures_K": [
+    298.15,
+    323.15
+  ],
+  "K_H_mol_per_kg_per_bar_298_per_seed": [
+    5.9697,
+    6.0928,
+    6.1029,
+    8.5734,
+    5.7288,
+    6.3908,
+    6.2592,
+    5.9997,
+    5.7633,
+    7.1066,
+    5.8343,
+    5.8462
+  ],
+  "K_H_mol_per_kg_per_bar_323_per_seed": [
+    3.0883,
+    2.7083,
+    2.8783,
+    2.8885,
+    2.7792,
+    2.7799,
+    2.8428,
+    2.7494,
+    2.8676,
+    2.735,
+    2.7661,
+    2.7384
+  ],
+  "K_H_298_median": 6.046,
+  "K_H_298_trimmed_geomean": 6.059,
+  "K_H_298_geomean": 6.265,
+  "Q_st_kJ_per_mol_vant_Hoff": 25.61,
+  "reference_K_H_mol_per_kg_per_bar": 5.14,
+  "reference_Q_st_kJ_per_mol": 26.5,
+  "delta_log10_K_H_median": 0.071,
+  "delta_log10_K_H_geomean": 0.086,
+  "delta_Q_st_kJ_per_mol": -0.89,
+  "tier": "Tier-A strict",
+  "superseded_as_locked": {
+    "dlogKH": -0.802,
+    "dQst": -9.21
+  },
+  "input_sha256": {
+    "force_field.json": "a42161837d8059e132c5668c1dbcc8d043c21a7f4edbce7fdca7243ce62e22bf",
+    "simulation.json": "025eff1f4ce3f0a1beac19fea8d3b8c066be637551e75ebd2cf0afbfd7b8eae8",
+    "RUBTAK01_SL_DDEC.cif": "db5f8bdb9a0fefd4f0cffe66b9fdce69bcf7eafc54ab055f26a517fac4e51ea9"
+  },
+  "caveat": "RASPA3-only: the native charged-Ewald estimator shows a large empirical discrepancy on these oblique MOF primitive cells (see manuscript limitation) and does not corroborate these numbers."
+}

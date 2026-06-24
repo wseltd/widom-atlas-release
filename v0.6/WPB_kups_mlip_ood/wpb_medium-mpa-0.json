@@ -1,0 +1,62 @@
+{
+  "system": "Si-CHA + Ar",
+  "N": 120,
+  "seed": 0,
+  "T_K": 298.15,
+  "model": "medium-mpa-0",
+  "dispersion_D3": false,
+  "mace_checkpoint_sha16": "75428afe3a1d7d80",
+  "kups_mace_jax_zip_sha16": "c5eb645f2dc2c904",
+  "model_card_note": "MACE-MPA-0 'Not trained for isolated molecules' (kUPS HF model card) -> scoring an adsorbate is OOD by the authors' statement",
+  "n_flagged": 99,
+  "flagged_fraction": 0.825,
+  "flagged_weight_fraction": 0.0,
+  "KH_proxy_all": 0.0012,
+  "KH_proxy_flagged_removed": 0.0066,
+  "inflation_factor": 0.2,
+  "min_U_mace_kJ": 8.51,
+  "min_U_classical_kJ": -22.08,
+  "screen_q_st_kJ": -8.47,
+  "screen_q_st_note": "N=120 random insertions; diagnostic not converged; dominated by deepest-weight insertion for Class-I cases",
+  "n_exponent_capped": 0,
+  "verdict_schema": "VERDICT_SCHEMA_V06.md",
+  "overlap_survival_examples": [
+    {
+      "i": 84,
+      "min_dist_A": 1.9383,
+      "U_classical_kJ": 2690.685,
+      "U_mace_kJ": 109.142,
+      "w_mace": 7.571823009630032e-20,
+      "w_capped": false,
+      "flag_hard_overlap": true,
+      "flag_energetic_anomaly": true,
+      "flag_exponent_capped": false,
+      "flagged": true
+    },
+    {
+      "i": 110,
+      "min_dist_A": 1.8965,
+      "U_classical_kJ": 3916.703,
+      "U_mace_kJ": 138.998,
+      "w_mace": 4.453055021664343e-25,
+      "w_capped": false,
+      "flag_hard_overlap": true,
+      "flag_energetic_anomaly": true,
+      "flag_exponent_capped": false,
+      "flagged": true
+    },
+    {
+      "i": 89,
+      "min_dist_A": 1.8423,
+      "U_classical_kJ": 5031.241,
+      "U_mace_kJ": 148.523,
+      "w_mace": 9.548056115302535e-27,
+      "w_capped": false,
+      "flag_hard_overlap": true,
+      "flag_energetic_anomaly": true,
+      "flag_exponent_capped": false,
+      "flagged": true
+    }
+  ],
+  "verdict": "REFUSE [Class II: no-physisorption] \u2014 min U > 0 over N insertions; physisorption is established for this pair (6c Ar/silica q_st=15.7 kJ/mol >> RT). Per VERDICT_SCHEMA_V06.md"
+}

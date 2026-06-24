@@ -1,0 +1,130 @@
+{
+  "branch_id_candidate": "5c_KZK5_CO2_303K_alternate",
+  "label": "K-ZK-5 + CO2 at 303 K \u2014 alternate KFI cation comparison",
+  "reference_isodb_audit": {
+    "source_file": "docs/research/dataset-research-for-v0.4/5c_replacement_branches/na_zk5_pham_lobo_2013/pham_lobo_2013_isotherm50_k_zk5_co2_303K.json",
+    "doi": "10.1021/La400352r",
+    "adsorbent": "Zeolite K-ZK-5",
+    "adsorbate": "Carbon Dioxide",
+    "temperature_K": 303.0,
+    "n_points": 8,
+    "p_units_in_json": "bar",
+    "q_units_in_json": "mmol/g",
+    "unit_conversion": {
+      "bar_to_Pa": 100000.0,
+      "mmol_per_g_to_mol_per_kg": 1.0
+    },
+    "isotherm_data": [
+      {
+        "p_bar": 0.00146929,
+        "p_Pa": 146.929,
+        "q_mmol_per_g": 0.0112343,
+        "q_mol_per_kg": 0.0112343
+      },
+      {
+        "p_bar": 0.00664616,
+        "p_Pa": 664.616,
+        "q_mmol_per_g": 0.0636713,
+        "q_mol_per_kg": 0.0636713
+      },
+      {
+        "p_bar": 0.0316142,
+        "p_Pa": 3161.42,
+        "q_mmol_per_g": 0.312747,
+        "q_mol_per_kg": 0.312747
+      },
+      {
+        "p_bar": 0.203369,
+        "p_Pa": 20336.899999999998,
+        "q_mmol_per_g": 1.03376,
+        "q_mol_per_kg": 1.03376
+      },
+      {
+        "p_bar": 0.54242,
+        "p_Pa": 54242.0,
+        "q_mmol_per_g": 1.72855,
+        "q_mol_per_kg": 1.72855
+      },
+      {
+        "p_bar": 1.37574,
+        "p_Pa": 137574.0,
+        "q_mmol_per_g": 2.29224,
+        "q_mol_per_kg": 2.29224
+      },
+      {
+        "p_bar": 3.31811,
+        "p_Pa": 331811.0,
+        "q_mmol_per_g": 2.84283,
+        "q_mol_per_kg": 2.84283
+      },
+      {
+        "p_bar": 9.30656,
+        "p_Pa": 930655.9999999999,
+        "q_mmol_per_g": 3.34098,
+        "q_mol_per_kg": 3.34098
+      }
+    ],
+    "K_H_fits": [
+      {
+        "method": "1pt_slope",
+        "K_H_mmol_per_g_per_bar": 7.646073954086667,
+        "K_H_mol_per_kg_per_bar": 7.646073954086667,
+        "K_H_mol_per_kg_per_Pa": 7.646073954086667e-05,
+        "n_points_used": 1,
+        "p_max_used_bar": 0.00146929,
+        "notes": []
+      },
+      {
+        "method": "2pt_origin_linear",
+        "K_H_mmol_per_g_per_bar": 9.490042387880468,
+        "K_H_mol_per_kg_per_bar": 9.490042387880468,
+        "K_H_mol_per_kg_per_Pa": 9.490042387880469e-05,
+        "n_points_used": 2,
+        "p_max_used_bar": 0.00664616,
+        "notes": []
+      },
+      {
+        "method": "3pt_origin_linear",
+        "K_H_mmol_per_g_per_bar": 9.874777021271381,
+        "K_H_mol_per_kg_per_bar": 9.874777021271381,
+        "K_H_mol_per_kg_per_Pa": 9.87477702127138e-05,
+        "n_points_used": 3,
+        "p_max_used_bar": 0.0316142,
+        "notes": []
+      },
+      {
+        "method": "virial_lowhalf",
+        "K_H_mmol_per_g_per_bar": 9.331151467161398,
+        "K_H_mol_per_kg_per_bar": 9.331151467161398,
+        "K_H_mol_per_kg_per_Pa": 9.331151467161398e-05,
+        "n_points_used": 4,
+        "p_max_used_bar": 0.203369,
+        "notes": []
+      }
+    ],
+    "K_H_sensitivity": {
+      "min_mol_per_kg_per_bar": 7.646073954086667,
+      "max_mol_per_kg_per_bar": 9.874777021271381,
+      "ratio_max_over_min": 1.2914833260268845
+    },
+    "henry_regime_adequacy": "adequate (q[0]/q_max = 0.003 < 0.05)"
+  },
+  "Q_st_reference": {
+    "value_kJ_per_mol": 45.0,
+    "source": "Pham & Lobo 2013 Langmuir; KFI K variant Qst \u2248 45 kJ/mol.",
+    "source_doi": "10.1021/la400352r",
+    "method": "literature_citation (not derived from isotherm; would require multi-T van't Hoff or calorimetric data)"
+  },
+  "structure_provenance_required": "K-KFI framework + K cation positions.",
+  "structure_provenance_in_repo": false,
+  "ff_provenance_required": "UFF K+ + framework Garcia-Perez 2007 Si/O LJ + TraPPE-CO2.",
+  "ff_provenance_in_repo": false,
+  "execution_status": "reference_audited_pending_both_cation_cif_and_ff_lock",
+  "exact_missing_artefacts_for_atlas_execution": [
+    "K-KFI framework + K cation positions.",
+    "UFF K+ + framework Garcia-Perez 2007 Si/O LJ + TraPPE-CO2."
+  ],
+  "verdict": "REFERENCE_AUDITED",
+  "verdict_notes": "K_H reference + Q_st reference + sensitivity range fully audited and reproducible from the archived ISODB JSON. Atlas simulation execution pending cation-CIF + force-field lock (see exact_missing_artefacts_for_atlas_execution). NOT a 5b validation.",
+  "do_not_call_replacement_a_validation_of_5b": true
+}

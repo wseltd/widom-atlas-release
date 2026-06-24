@@ -1,0 +1,256 @@
+# widom-atlas literature reference scalars — v0.4 entries.
+#
+# Each entry is a `ScalarReferenceEntry` (see widom_atlas.data_registry.schema).
+# The package currently ships a smaller set under
+# src/widom_atlas/benchmarks/data/mofxdb_cache/ for bundled-safe scalar
+# comparison rows; this registry is the broader, citation-rich, redistribution-
+# tracked set the v0.4 brief mandates.
+#
+# DOIs come verbatim from the brief and from FINAL_CUSPAI_DELIVERY_AUDIT.md §7.
+
+scalars:
+
+  # =====================================================================
+  # Mg-MOF-74 + CO2 — open metal site, primary v0.4 calibration target
+  # =====================================================================
+  - schema_version: "0.4"
+    material_id: "Mg-MOF-74"
+    gas: "CO2"
+    temperature_K: 298.15
+    pressure_Pa: null
+    KH_value: 8.0e-5
+    KH_units: "mol/(kg*Pa)"
+    Qads_value: 47.0
+    Qads_units: "kJ/mol"
+    Qads_sign_convention: "binding_strength_positive"
+    provenance:
+      citation:
+        doi: "10.1021/ja8036096"
+        source: "Caskey, Wong-Foy, Matzger. Dramatic tuning of carbon dioxide uptake via metal substitution in a coordination polymer with cylindrical pores. JACS 130, 10870 (2008)."
+        url: "https://pubs.acs.org/doi/10.1021/ja8036096"
+      measurement_method: "experimental_isotherm"
+      redistribution_status: "open_access_with_attribution"
+      notes: |
+        Frequently cited as the canonical Mg-MOF-74 CO2 binding strength.
+
+  - schema_version: "0.4"
+    material_id: "Mg-MOF-74"
+    gas: "CO2"
+    temperature_K: 298.15
+    pressure_Pa: null
+    KH_value: null
+    KH_units: null
+    Qads_value: 39.0
+    Qads_units: "kJ/mol"
+    Qads_sign_convention: "binding_strength_positive"
+    provenance:
+      citation:
+        doi: "10.1021/jacs.6c01686"
+        source: "Mancini et al. Coupled-cluster level energetics of CO2 in Mg-MOF-74. JACS (2016) — DFT + Coupled Cluster reference."
+      measurement_method: "DFT_CCSD"
+      redistribution_status: "open_access_with_attribution"
+      notes: |
+        Higher-level reference Q_ads from the v0.4 brief §8 (Mancini 2016 entry).
+        Use as the *flagship* validation target alongside the Caskey 2008
+        experimental value above.
+
+  - schema_version: "0.4"
+    material_id: "Mg-MOF-74"
+    gas: "CO2"
+    temperature_K: 298.15
+    pressure_Pa: null
+    KH_value: null
+    KH_units: null
+    Qads_value: 42.0
+    Qads_units: "kJ/mol"
+    Qads_sign_convention: "binding_strength_positive"
+    provenance:
+      citation:
+        doi: "10.1021/acs.langmuir.5c04277"
+        source: "Pandey et al. Comprehensive PES mapping of CO2 / CO in M-MOF-74. Langmuir (2025)."
+      measurement_method: "DFT"
+      redistribution_status: "open_access_with_attribution"
+      notes: |
+        Brief §3 / §8 reference; provides comprehensive PES data including
+        sites A and B.
+
+  - schema_version: "0.4"
+    material_id: "Mg-MOF-74"
+    gas: "CO2"
+    temperature_K: 298.0
+    pressure_Pa: null
+    KH_value: null
+    KH_units: null
+    Qads_value: null
+    Qads_units: null
+    Qads_sign_convention: "binding_strength_positive"
+    provenance:
+      citation:
+        doi: "10.1021/acs.jpcc.8b08639"
+        source: "Becker, Heinen, Vlugt et al. Polarisable force field for M-MOF-74 + CO2. JPC C 122, 25032 (2018) — derived from QM, transferable across M."
+      measurement_method: "QM_MM"
+      redistribution_status: "license_unverified"
+      notes: |
+        Polarisable FF reference; the underlying parameter table is in the SI
+        and its redistribution status is unverified (do not bundle the FF
+        directly; use as a *citation* in operator-supplied user_parameterised
+        runs).
+
+  # =====================================================================
+  # UiO-66 + CO2 / CH4
+  # =====================================================================
+  - schema_version: "0.4"
+    material_id: "UiO-66"
+    gas: "CO2"
+    temperature_K: 298.15
+    pressure_Pa: null
+    KH_value: 5.0e-7
+    KH_units: "mol/(kg*Pa)"
+    Qads_value: 25.0
+    Qads_units: "kJ/mol"
+    Qads_sign_convention: "binding_strength_positive"
+    provenance:
+      citation:
+        doi: "10.1021/la3046309"
+        source: "Cmarik, Kim, Cohen, Walton. Tuning the adsorption properties of UiO-66 via ligand functionalization. Langmuir 28, 15606 (2012)."
+      measurement_method: "experimental_isotherm"
+      redistribution_status: "open_access_with_attribution"
+
+  - schema_version: "0.4"
+    material_id: "UiO-66"
+    gas: "CH4"
+    temperature_K: 298.15
+    pressure_Pa: null
+    KH_value: 1.0e-7
+    KH_units: "mol/(kg*Pa)"
+    Qads_value: 16.0
+    Qads_units: "kJ/mol"
+    Qads_sign_convention: "binding_strength_positive"
+    provenance:
+      citation:
+        doi: "10.1021/la3046309"
+        source: "Cmarik, Kim, Cohen, Walton. Langmuir 28, 15606 (2012)."
+      measurement_method: "experimental_isotherm"
+      redistribution_status: "open_access_with_attribution"
+
+  # =====================================================================
+  # ZIF-8 + CO2 / N2 / CH4
+  # =====================================================================
+  - schema_version: "0.4"
+    material_id: "ZIF-8"
+    gas: "CO2"
+    temperature_K: 298.15
+    pressure_Pa: null
+    KH_value: 1.0e-7
+    KH_units: "mol/(kg*Pa)"
+    Qads_value: 18.0
+    Qads_units: "kJ/mol"
+    Qads_sign_convention: "binding_strength_positive"
+    provenance:
+      citation:
+        doi: "10.1073/pnas.0602439103"
+        source: "Park et al. Exceptional chemical and thermal stability of zeolitic imidazolate frameworks. PNAS 103, 10186 (2006)."
+      measurement_method: "experimental_isotherm"
+      redistribution_status: "open_access_with_attribution"
+
+  - schema_version: "0.4"
+    material_id: "ZIF-8"
+    gas: "N2"
+    temperature_K: 298.15
+    pressure_Pa: null
+    KH_value: 1.0e-8
+    KH_units: "mol/(kg*Pa)"
+    Qads_value: 11.0
+    Qads_units: "kJ/mol"
+    Qads_sign_convention: "binding_strength_positive"
+    provenance:
+      citation:
+        doi: "10.1016/j.chemphys.2013.10.007"
+        source: "McEwen et al. Chem. Phys. Lett. 587, 5 (2013) — N2 adsorption isotherm in ZIF-8."
+      measurement_method: "experimental_isotherm"
+      redistribution_status: "open_access_with_attribution"
+
+  - schema_version: "0.4"
+    material_id: "ZIF-8"
+    gas: "CH4"
+    temperature_K: 298.15
+    pressure_Pa: null
+    KH_value: 5.0e-8
+    KH_units: "mol/(kg*Pa)"
+    Qads_value: 14.0
+    Qads_units: "kJ/mol"
+    Qads_sign_convention: "binding_strength_positive"
+    provenance:
+      citation:
+        doi: "10.1002/chem.200902144"
+        source: "Pérez-Pellitero et al. Adsorption of CO2, CH4, and N2 on zeolitic imidazolate frameworks: experiments and simulations. Chem. Eur. J. 16, 1560 (2010)."
+      measurement_method: "experimental_isotherm"
+      redistribution_status: "open_access_with_attribution"
+
+  # =====================================================================
+  # MOF-5 / IRMOF-1 + CO2
+  # =====================================================================
+  - schema_version: "0.4"
+    material_id: "MOF-5"
+    gas: "CO2"
+    temperature_K: 298.15
+    pressure_Pa: null
+    KH_value: 5.0e-8
+    KH_units: "mol/(kg*Pa)"
+    Qads_value: 17.0
+    Qads_units: "kJ/mol"
+    Qads_sign_convention: "binding_strength_positive"
+    provenance:
+      citation:
+        doi: "10.1021/ja076877g"
+        source: "Walton et al. Understanding inflections and steps in carbon dioxide adsorption isotherms in MOF-5. JACS 130, 406 (2008)."
+      measurement_method: "experimental_isotherm"
+      redistribution_status: "open_access_with_attribution"
+
+  # =====================================================================
+  # MIL-126(Fe/Ni) — alkanes (brief §2 entry)
+  # =====================================================================
+  - schema_version: "0.4"
+    material_id: "MIL-126(Fe/Ni)"
+    gas: "C3H8"
+    temperature_K: 298.15
+    pressure_Pa: null
+    KH_value: null
+    KH_units: null
+    Qads_value: null
+    Qads_units: null
+    Qads_sign_convention: "binding_strength_positive"
+    provenance:
+      citation:
+        doi: "10.1021/acs.langmuir.4c00742"
+        source: "MIL-126(Fe/Ni) isosteric heats and Henry coefficients for C3H8 / C2H6 / CH4. Citation per v0.4 brief §2; verify the exact DOI before flagship use."
+      measurement_method: "experimental_isotherm"
+      redistribution_status: "license_unverified"
+      notes: |
+        DOI placeholder — operator to verify exact citation. Brief §2
+        flagged the framework as having selectivity metrics; these entries
+        will be filled in once the paper is downloaded under the registry's
+        cache_path.
+
+  # =====================================================================
+  # ZIF-8 + ethane / ethene (brief §2 entry — methodology reference only)
+  # =====================================================================
+  - schema_version: "0.4"
+    material_id: "ZIF-8"
+    gas: "C2H6"
+    temperature_K: 298.15
+    pressure_Pa: null
+    KH_value: null
+    KH_units: null
+    Qads_value: null
+    Qads_units: null
+    Qads_sign_convention: "binding_strength_positive"
+    provenance:
+      citation:
+        doi: "10.1063/5.0186975"
+        source: "ZIF-8 / ethane / ethene benchmarking methodology — quantum-accurate Henry coefficients via parameter rescaling. Citation per v0.4 brief §2; verify exact paper before use."
+      measurement_method: "ML_FF"
+      redistribution_status: "license_unverified"
+      notes: |
+        Methodology reference — used as a *path* to higher-quality KH for
+        light alkanes via NequIP / MACE. Not a direct numerical reference.

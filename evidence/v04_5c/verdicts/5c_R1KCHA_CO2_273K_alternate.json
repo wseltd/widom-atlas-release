@@ -1,0 +1,154 @@
+{
+  "branch_id_candidate": "5c_R1KCHA_CO2_273K_alternate",
+  "label": "K-CHA + CO2 at 273 K \u2014 trapdoor system (interpretation caveat)",
+  "reference_isodb_audit": {
+    "source_file": "docs/research/dataset-research-for-v0.4/5c_replacement_branches/shang_2012_k_cha/shang_2012_isotherm5_r1kcha_co2_273K.json",
+    "doi": "10.1021/Ja309274y",
+    "adsorbent": "R1KCHA",
+    "adsorbate": "Carbon Dioxide",
+    "temperature_K": 273.0,
+    "n_points": 12,
+    "p_units_in_json": "bar",
+    "q_units_in_json": "mmol/g",
+    "unit_conversion": {
+      "bar_to_Pa": 100000.0,
+      "mmol_per_g_to_mol_per_kg": 1.0
+    },
+    "isotherm_data": [
+      {
+        "p_bar": 0.00843546,
+        "p_Pa": 843.546,
+        "q_mmol_per_g": 0.332126,
+        "q_mol_per_kg": 0.332126
+      },
+      {
+        "p_bar": 0.0253369,
+        "p_Pa": 2533.69,
+        "q_mmol_per_g": 0.399309,
+        "q_mol_per_kg": 0.399309
+      },
+      {
+        "p_bar": 0.0760411,
+        "p_Pa": 7604.11,
+        "q_mmol_per_g": 0.498183,
+        "q_mol_per_kg": 0.498183
+      },
+      {
+        "p_bar": 0.136604,
+        "p_Pa": 13660.4,
+        "q_mmol_per_g": 0.567901,
+        "q_mol_per_kg": 0.567901
+      },
+      {
+        "p_bar": 0.207027,
+        "p_Pa": 20702.699999999997,
+        "q_mmol_per_g": 0.626211,
+        "q_mol_per_kg": 0.626211
+      },
+      {
+        "p_bar": 0.27745,
+        "p_Pa": 27744.999999999996,
+        "q_mmol_per_g": 0.670577,
+        "q_mol_per_kg": 0.670577
+      },
+      {
+        "p_bar": 0.405619,
+        "p_Pa": 40561.9,
+        "q_mmol_per_g": 0.731422,
+        "q_mol_per_kg": 0.731422
+      },
+      {
+        "p_bar": 0.535196,
+        "p_Pa": 53519.6,
+        "q_mmol_per_g": 0.779591,
+        "q_mol_per_kg": 0.779591
+      },
+      {
+        "p_bar": 0.663365,
+        "p_Pa": 66336.5,
+        "q_mmol_per_g": 0.817619,
+        "q_mol_per_kg": 0.817619
+      },
+      {
+        "p_bar": 0.791534,
+        "p_Pa": 79153.4,
+        "q_mmol_per_g": 0.850577,
+        "q_mol_per_kg": 0.850577
+      },
+      {
+        "p_bar": 0.926745,
+        "p_Pa": 92674.5,
+        "q_mmol_per_g": 0.878464,
+        "q_mol_per_kg": 0.878464
+      },
+      {
+        "p_bar": 0.97745,
+        "p_Pa": 97745.0,
+        "q_mmol_per_g": 0.888605,
+        "q_mol_per_kg": 0.888605
+      }
+    ],
+    "K_H_fits": [
+      {
+        "method": "1pt_slope",
+        "K_H_mmol_per_g_per_bar": 39.372600901432754,
+        "K_H_mol_per_kg_per_bar": 39.372600901432754,
+        "K_H_mol_per_kg_per_Pa": 0.00039372600901432754,
+        "n_points_used": 1,
+        "p_max_used_bar": 0.00843546,
+        "notes": []
+      },
+      {
+        "method": "2pt_origin_linear",
+        "K_H_mmol_per_g_per_bar": 18.116122879362866,
+        "K_H_mol_per_kg_per_bar": 18.116122879362866,
+        "K_H_mol_per_kg_per_Pa": 0.00018116122879362865,
+        "n_points_used": 2,
+        "p_max_used_bar": 0.0253369,
+        "notes": []
+      },
+      {
+        "method": "3pt_origin_linear",
+        "K_H_mmol_per_g_per_bar": 7.8211580088187835,
+        "K_H_mol_per_kg_per_bar": 7.8211580088187835,
+        "K_H_mol_per_kg_per_Pa": 7.821158008818784e-05,
+        "n_points_used": 3,
+        "p_max_used_bar": 0.0760411,
+        "notes": []
+      },
+      {
+        "method": "virial_lowhalf",
+        "K_H_mmol_per_g_per_bar": 61.0952639521473,
+        "K_H_mol_per_kg_per_bar": 61.0952639521473,
+        "K_H_mol_per_kg_per_Pa": 0.000610952639521473,
+        "n_points_used": 6,
+        "p_max_used_bar": 0.27745,
+        "notes": []
+      }
+    ],
+    "K_H_sensitivity": {
+      "min_mol_per_kg_per_bar": 7.8211580088187835,
+      "max_mol_per_kg_per_bar": 61.0952639521473,
+      "ratio_max_over_min": 7.811536844449255
+    },
+    "henry_regime_adequacy": "inadequate (q[0]/q_max = 0.374 >= 0.15 \u2014 first point is far past Henry regime)"
+  },
+  "Q_st_reference": {
+    "value_kJ_per_mol": 35.0,
+    "source": "Shang et al. 2012 JACS; K-CHA Qst \u2248 35 kJ/mol; trapdoor selectivity system.",
+    "source_doi": "10.1021/ja309274y",
+    "method": "literature_citation (not derived from isotherm; would require multi-T van't Hoff or calorimetric data)"
+  },
+  "structure_provenance_required": "K-CHA framework + K cation positions.",
+  "structure_provenance_in_repo": false,
+  "ff_provenance_required": "UFF K+ + framework Si/O LJ + TraPPE-CO2.",
+  "ff_provenance_in_repo": false,
+  "execution_status": "reference_audited_pending_both_cation_cif_and_ff_lock",
+  "exact_missing_artefacts_for_atlas_execution": [
+    "K-CHA framework + K cation positions.",
+    "UFF K+ + framework Si/O LJ + TraPPE-CO2."
+  ],
+  "verdict": "REFERENCE_AUDITED",
+  "verdict_notes": "K_H reference + Q_st reference + sensitivity range fully audited and reproducible from the archived ISODB JSON. Atlas simulation execution pending cation-CIF + force-field lock (see exact_missing_artefacts_for_atlas_execution). NOT a 5b validation.",
+  "do_not_call_replacement_a_validation_of_5b": true
+}

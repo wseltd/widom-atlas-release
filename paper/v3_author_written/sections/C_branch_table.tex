@@ -1,0 +1,58 @@
+% Appendix C --- Full branch table. Populated 2026-06-09. The provenance table
+% below is generated from the SAME source as the main-text Table 1: the
+% production verdict JSONs (evidence/v04_two_tier/verdicts/*.json, plus
+% v04_4c_bai_2013 and v04_6e_bai_2013). 5b scalar columns are em-dashes; 5c is
+% not listed as an executed validation row.
+\section{Full branch table}\label{app:branch-table}
+
+Table~\ref{tab:branch-disposition} in the main text is the compact branch-disposition table. This appendix records the per-branch provenance behind it.
+
+\paragraph{The fifteen-branch denominator.} The headline strict-pass denominator is fifteen verdict-affecting scalar branches. The UiO-66 3b case is run in three force-field variants (united-atom; united-atom + charges; explicit-hydrogen + charges). These variants are shown separately below for transparency, but they are counted according to the locked v0.4 disposition rather than as three independent denominator slots. Branch 5b is method-blocked and is not scalar-scored, so it does not enter the scalar denominator. The 5c cationic-zeolite targets are reference-audited only and are not executed validation branches; they are recorded in Appendix~\ref{app:lock} and are deliberately not listed as rows here, so that the table cannot be read as if they validated Na-Rho. The displayed scalar comparison rows are therefore not the same object as the locked headline denominator: the fifteen locked verdict-affecting branches expand to sixteen displayed scalar rows (the UiO-66 3b family in its three force-field variants), while branch 5b is method-blocked and the four 5c targets are reference-audited, both outside the scalar denominator.
+
+\paragraph{Provenance table.} Table~\ref{tab:appendix-c} lists, for each scalar branch, the per-axis deviations, the Tier-A and Tier-B verdicts, the recorded agreement class, and the production verdict directory. The deviation values are those used for Table~\ref{tab:branch-disposition}, read from the verdict JSONs. For the method-blocked branch 5b the scalar columns are blank.
+
+{\scriptsize
+\setlength{\tabcolsep}{3pt}
+\renewcommand{\arraystretch}{1.15}
+\begin{longtable}{@{}l>{\raggedright\arraybackslash}p{0.12\textwidth}rrcccl@{}}
+\caption{Per-branch provenance behind Table~\ref{tab:branch-disposition}. Tier A is the strict regression gate ($\pm0.10$ / $\pm2.0$); Tier B is the per-system physical-accuracy band; Class is the recorded agreement class (a diagnostic, not a Tier-A criterion); Source is the production verdict directory. Branch 5b is method-blocked, so its scalar columns are blank; the reference-audited 5c targets are not listed.}\label{tab:appendix-c}\\
+\toprule
+Br. & System & $\Delta\log_{10}K_H$ & $\Delta Q_{st}$ & Tier A & Tier B & Class & Source \\
+\midrule
+\endfirsthead
+\multicolumn{8}{@{}l}{\footnotesize\emph{Table~\ref{tab:appendix-c}, continued}}\\
+\toprule
+Br. & System & $\Delta\log_{10}K_H$ & $\Delta Q_{st}$ & Tier A & Tier B & Class & Source \\
+\midrule
+\endhead
+\midrule
+\multicolumn{8}{@{}r}{\footnotesize\emph{continued on next page}}\\
+\endfoot
+\bottomrule
+\endlastfoot
+6c & MFI + Ar & $0.000$ & $-0.73$ & PASS & PASS & $\le 1\sigma$ & v04\_6c\_olson\_clean \\
+4c & Si-CHA + CO\textsubscript{2} & $-0.079$ & $+2.24$ & FAIL & PASS & $\le 1\sigma$ & v04\_4c (RASPA3 xcheck) \\
+3b\_EHq & UiO-66 + CO\textsubscript{2} & $-0.252$ & $-4.43$ & FAIL & PASS & $\le 1\sigma$ & v04\_two\_tier \\
+3b\_UA & UiO-66 + CO\textsubscript{2} & $-0.411$ & $-6.09$ & FAIL & FAIL & $\le 2\sigma$ & v04\_two\_tier \\
+3b\_UAq & UiO-66 + CO\textsubscript{2} & $-0.415$ & $-5.86$ & FAIL & FAIL & $\le 2\sigma$ & v04\_two\_tier \\
+4a & Si-CHA + CO\textsubscript{2} & $-0.116$ & $+11.74$ & FAIL & FAIL & $\le 2\sigma$ & v04\_two\_tier \\
+6b & MFI + Kr & $+0.071$ & $-4.17$ & FAIL & FAIL & $\le 2\sigma$ & v04\_two\_tier \\
+6e & MFI + CH\textsubscript{4} & $-0.296$ & $-2.14$ & FAIL & FAIL & $\le 2\sigma$ & v04\_6e\_bai\_2013 \\
+1c & Mg-MOF-74 + CO\textsubscript{2} & $+0.581$ & $+4.01$ & FAIL & FAIL & $2$--$3\sigma$ & v04\_two\_tier \\
+3a & UiO-66 + CO\textsubscript{2} & $+0.086$ & $-0.89$ & PASS & PASS & $\le 1\sigma$ & v0.4.2 rebuild \\
+1a & Mg-MOF-74 + CO\textsubscript{2} & $+1.765$ & $+8.83$ & FAIL & FAIL & $>3\sigma$ & v04\_two\_tier \\
+1b & Mg-MOF-74 + CO\textsubscript{2} & $+1.799$ & $+9.55$ & FAIL & FAIL & $>3\sigma$ & v04\_two\_tier \\
+1d & Mg-MOF-74 + CO\textsubscript{2} & $+1.716$ & $+11.84$ & FAIL & FAIL & $>3\sigma$ & v04\_two\_tier \\
+2a & HKUST-1 + CO\textsubscript{2} & $+0.13$ & $+3.9$ & FAIL & PASS & $\le 1\sigma$ & v0.4.2 rebuild \\
+2b & HKUST-1 + CO\textsubscript{2} & $+1.400$ & $+14.03$ & FAIL & FAIL & $>3\sigma$ & v04\_two\_tier \\
+6a & MFI + CH\textsubscript{4} & $-0.347$ & $-2.43$ & FAIL & FAIL & $>3\sigma$ & v04\_two\_tier \\
+\addlinespace[2pt]
+5b & Na-Rho + CO\textsubscript{2} & --- & --- & --- & --- & --- & lock \\
+\end{longtable}
+}
+
+Branch 5b is shown with blank scalar columns because it is method-blocked (an ensemble mismatch between the rigid closed-state calculation and the open-state experiment) and is not scored on a scalar \(K_H\)/\(Q_{st}\) axis.
+
+\paragraph{On the agreement class.} The agreement class is a diagnostic classification recorded by the audit pipeline: it is the agreement of the \(K_H\) deviation in log space, computed as a z-score \(\Delta\log_{10}K_H / \sigma\) with an assumed experimental scatter \(\sigma = 0.05\) in \(\log_{10}K_H\). It does not encode \(Q_{st}\). It is not used as a Tier-A pass criterion and should not be read as a posterior probability unless the corresponding uncertainty model is inspected.
+
+\FloatBarrier

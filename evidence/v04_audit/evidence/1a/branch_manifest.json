@@ -1,0 +1,22 @@
+{
+  "branch_id": "1a",
+  "case_id": "1",
+  "status": "blocked",
+  "K_H_mol_per_kg_per_Pa": null,
+  "K_H_seed_std": null,
+  "Q_st_kJ_per_mol": null,
+  "Q_st_uncertainty_kJ_per_mol": null,
+  "Q_st_method": null,
+  "seeds": 0,
+  "insertions_per_seed": null,
+  "aggregate_insertions": null,
+  "derived_charges": null,
+  "derivation_notes": null,
+  "binary_interactions": null,
+  "blocked_info": {
+    "reason": "RASPA3 v3.0.29 JSON force_field.json does not support the Buckingham potential V(r) = A\u00b7exp(-B\u00b7r) - C/r^6 prescribed by Lin/Mercado Model 4. BinaryInteractions entries with type=buckingham are silently dropped by the parser; SelfInteractions entries with type=buckingham yield zero LJ parameters. No tabulated/custom pair-potential JSON path exists in v3.0.29. Verified by direct probe of the installed binary.",
+    "prescribed_form": "BUCKINGHAM_A_EXP_C6 (Lin 2014 / Mercado Model 4)",
+    "required_action": "Resolve at RASPA3 layer: upgrade RASPA3 to a release that exposes Buckingham via JSON, OR add a tabulated/spline pair-potential JSON path, OR switch the strict tier backend to RASPA2/4 with the original force_field.def file `docs/research/dataset-research-for-v0.4/9/raspa_force_field.def`."
+  },
+  "runs": []
+}

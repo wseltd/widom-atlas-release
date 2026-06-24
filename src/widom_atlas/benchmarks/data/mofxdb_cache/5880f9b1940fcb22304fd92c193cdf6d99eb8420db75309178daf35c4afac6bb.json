@@ -1,0 +1,16 @@
+{
+  "KH": 5e-08,
+  "KH_units": "mol/(kg*Pa)",
+  "Qads": 17.0,
+  "Qads_units": "kJ/mol",
+  "citation": "Walton et al., JACS 130, 406 (2008); Saha & Deng, J. Phys. Chem. C 114, 17828 (2010). IRMOF-1 (MOF-5) + CO2 at 298 K: KH ~5e-8 mol/(kg*Pa); Q_ads ~17 kJ/mol.",
+  "dataset_version": "literature_v1_2026-05",
+  "gas": "CO2",
+  "identity_confidence": "high",
+  "license": "literature value reproduced under fair-use citation",
+  "material_id": "MOF-5",
+  "retrieved_at": "2026-05-07T11:21:43.426763+00:00",
+  "sha256": "fc47cf095d4edc8613d054acf7dc2c9058963b304dfa887f8b9c691845dd3632",
+  "source_url": "https://doi.org/10.1021/ja076877g",
+  "temperature_K": 298.15
+}

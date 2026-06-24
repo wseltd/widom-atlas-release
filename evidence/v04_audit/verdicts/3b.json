@@ -1,0 +1,15 @@
+{
+  "branch_id": "3b",
+  "case_id": "3",
+  "verdict": "DEFERRED",
+  "verdict_tier": "not_applicable",
+  "numeric_thresholds": "not_applicable",
+  "affects_v04_verdict": false,
+  "parsed_K_H_mol_per_kg_per_Pa": null,
+  "parsed_Q_st_kJ_per_mol": null,
+  "reference": {},
+  "evidence": {},
+  "notes": [
+    "No literature-anchored Zr-cluster-specific FF identified beyond UFF in v0.4 research. Branch reserved as v0.5 candidate."
+  ]
+}

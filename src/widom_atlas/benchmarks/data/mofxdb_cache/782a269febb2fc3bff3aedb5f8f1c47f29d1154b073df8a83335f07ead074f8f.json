@@ -1,0 +1,17 @@
+{
+  "KH": 1e-08,
+  "KH_units": "mol/(kg*Pa)",
+  "Qads": 11.0,
+  "Qads_units": "kJ/mol",
+  "citation": "McEwen et al., Chem. Phys. 412, 72 (2013). ZIF-8 + N2 at 298 K low-loading region: KH \u2248 1e-8 mol/(kg*Pa); Q_ads \u2248 11 kJ/mol.",
+  "dataset_version": "literature_v1_2026-05",
+  "gas": "N2",
+  "identity_confidence": "high",
+  "license": "literature value reproduced under fair-use citation",
+  "material_id": "ZIF-8",
+  "retrieved_at": "2026-05-07T13:10:55.162589+00:00",
+  "sha256": "8a5664d9814e036f2a717883a7446816a94b7638bbb0b0c2a288a8a258b2f1ae",
+  "source": "literature",
+  "source_url": "https://doi.org/10.1016/j.chemphys.2013.10.007",
+  "temperature_K": 298.15
+}

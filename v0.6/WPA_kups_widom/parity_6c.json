@@ -1,0 +1,24 @@
+{
+  "system": "6c MFI + Ar (LJ only, Ar-O 93.0K/3.335A, cutoff 12, no charges)",
+  "metric": "mean_exp_negbU = <exp(-beta U)>",
+  "engines": {
+    "kups_widom": {
+      "mean_exp_negbU": 5.9804,
+      "K_H_mol_kg_bar": 0.1313,
+      "source": "kups mcmc_widom, K_H=9.704e6 A3/eV"
+    },
+    "native_lj": {
+      "mean_exp_negbU": 5.235,
+      "K_H_mol_kg_bar": 0.1149,
+      "source": "v0.6 native_widom_lj.py, 2M insertions"
+    },
+    "raspa3_locked": {
+      "K_H_mol_kg_bar": 0.207,
+      "source": "evidence v04 6c locked (RASPA3)"
+    }
+  },
+  "deltas": {
+    "kups_vs_native_pct_on_W": 14.2,
+    "native_vs_raspa3_KH_ratio": 1.8
+  }
+}

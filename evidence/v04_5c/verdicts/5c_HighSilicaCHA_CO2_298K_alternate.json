@@ -1,0 +1,141 @@
+{
+  "branch_id_candidate": "5c_HighSilicaCHA_CO2_298K_alternate",
+  "label": "High-silica CHA + CO2 at 298 K \u2014 alternate; OVERLAPS 4a Si-CHA branch scope",
+  "reference_isodb_audit": {
+    "source_file": "docs/research/dataset-research-for-v0.4/5c_replacement_branches/pham_2017_cha/pham_2017_isotherm2_high_silica_cha_co2_298K.json",
+    "doi": "10.1007/s10450-017-9894-1",
+    "adsorbent": "High-silica CHA zeolite",
+    "adsorbate": "Carbon Dioxide",
+    "temperature_K": 298.0,
+    "n_points": 10,
+    "p_units_in_json": "bar",
+    "q_units_in_json": "mmol/g",
+    "unit_conversion": {
+      "bar_to_Pa": 100000.0,
+      "mmol_per_g_to_mol_per_kg": 1.0
+    },
+    "isotherm_data": [
+      {
+        "p_bar": 0.008264,
+        "p_Pa": 826.4000000000001,
+        "q_mmol_per_g": 0.030612,
+        "q_mol_per_kg": 0.030612
+      },
+      {
+        "p_bar": 0.053719,
+        "p_Pa": 5371.900000000001,
+        "q_mmol_per_g": 0.209913,
+        "q_mol_per_kg": 0.209913
+      },
+      {
+        "p_bar": 0.181818,
+        "p_Pa": 18181.8,
+        "q_mmol_per_g": 0.555394,
+        "q_mol_per_kg": 0.555394
+      },
+      {
+        "p_bar": 0.363636,
+        "p_Pa": 36363.6,
+        "q_mmol_per_g": 0.975219,
+        "q_mol_per_kg": 0.975219
+      },
+      {
+        "p_bar": 0.553719,
+        "p_Pa": 55371.899999999994,
+        "q_mmol_per_g": 1.34257,
+        "q_mol_per_kg": 1.34257
+      },
+      {
+        "p_bar": 0.719008,
+        "p_Pa": 71900.8,
+        "q_mmol_per_g": 1.61808,
+        "q_mol_per_kg": 1.61808
+      },
+      {
+        "p_bar": 1.22314,
+        "p_Pa": 122313.99999999999,
+        "q_mmol_per_g": 2.36152,
+        "q_mol_per_kg": 2.36152
+      },
+      {
+        "p_bar": 3.71901,
+        "p_Pa": 371901.0,
+        "q_mmol_per_g": 3.8484,
+        "q_mol_per_kg": 3.8484
+      },
+      {
+        "p_bar": 7.49587,
+        "p_Pa": 749587.0,
+        "q_mmol_per_g": 4.67055,
+        "q_mol_per_kg": 4.67055
+      },
+      {
+        "p_bar": 10.281,
+        "p_Pa": 1028100.0000000001,
+        "q_mmol_per_g": 5.01604,
+        "q_mol_per_kg": 5.01604
+      }
+    ],
+    "K_H_fits": [
+      {
+        "method": "1pt_slope",
+        "K_H_mmol_per_g_per_bar": 3.7042594385285574,
+        "K_H_mol_per_kg_per_bar": 3.7042594385285574,
+        "K_H_mol_per_kg_per_Pa": 3.7042594385285574e-05,
+        "n_points_used": 1,
+        "p_max_used_bar": 0.008264,
+        "notes": []
+      },
+      {
+        "method": "2pt_origin_linear",
+        "K_H_mmol_per_g_per_bar": 3.902910555495745,
+        "K_H_mol_per_kg_per_bar": 3.902910555495745,
+        "K_H_mol_per_kg_per_Pa": 3.902910555495745e-05,
+        "n_points_used": 2,
+        "p_max_used_bar": 0.053719,
+        "notes": []
+      },
+      {
+        "method": "3pt_origin_linear",
+        "K_H_mmol_per_g_per_bar": 3.1242506553047704,
+        "K_H_mol_per_kg_per_bar": 3.1242506553047704,
+        "K_H_mol_per_kg_per_Pa": 3.124250655304771e-05,
+        "n_points_used": 3,
+        "p_max_used_bar": 0.181818,
+        "notes": []
+      },
+      {
+        "method": "virial_lowhalf",
+        "K_H_mmol_per_g_per_bar": 3.8593030319872943,
+        "K_H_mol_per_kg_per_bar": 3.8593030319872943,
+        "K_H_mol_per_kg_per_Pa": 3.859303031987294e-05,
+        "n_points_used": 5,
+        "p_max_used_bar": 0.553719,
+        "notes": []
+      }
+    ],
+    "K_H_sensitivity": {
+      "min_mol_per_kg_per_bar": 3.1242506553047704,
+      "max_mol_per_kg_per_bar": 3.902910555495745,
+      "ratio_max_over_min": 1.249230931221495
+    },
+    "henry_regime_adequacy": "adequate (q[0]/q_max = 0.006 < 0.05)"
+  },
+  "Q_st_reference": {
+    "value_kJ_per_mol": 25.0,
+    "source": "Pham et al. 2017 Adsorption; high-silica CHA Qst \u2248 25 kJ/mol.",
+    "source_doi": "10.1007/s10450-017-9894-1",
+    "method": "literature_citation (not derived from isotherm; would require multi-T van't Hoff or calorimetric data)"
+  },
+  "structure_provenance_required": "All-silica CHA framework (IZA database).",
+  "structure_provenance_in_repo": true,
+  "ff_provenance_required": "TraPPE-zeo Si/O LJ (still blocked pending Bai 2013 main paper) or Garcia-Perez fallback + TraPPE-CO2.",
+  "ff_provenance_in_repo": false,
+  "execution_status": "reference_audited_pending_ff_lock",
+  "exact_missing_artefacts_for_atlas_execution": [
+    "TraPPE-zeo Si/O LJ (still blocked pending Bai 2013 main paper) or Garcia-Perez fallback + TraPPE-CO2."
+  ],
+  "verdict": "REFERENCE_AUDITED",
+  "verdict_notes": "K_H reference + Q_st reference + sensitivity range fully audited and reproducible from the archived ISODB JSON. Atlas simulation execution pending cation-CIF + force-field lock (see exact_missing_artefacts_for_atlas_execution). NOT a 5b validation.",
+  "do_not_call_replacement_a_validation_of_5b": true
+}

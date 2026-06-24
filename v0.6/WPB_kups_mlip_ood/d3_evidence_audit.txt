@@ -1,0 +1,15 @@
+identical geometries (bare vs D3): True
+D3 global min U_mace = -5.027 kJ/mol at min_dist = 3.365 A (i=92)
+  -> non-overlap (min_dist > 2.762 A hard-overlap threshold): True
+hard-overlap insertions that became attractive under D3: 0
+  least-repulsive hard-overlap under D3: U_mace = 13.41 kJ/mol at 2.725 A
+block estimate (6 blocks of 20):
+  block 0-19: min U =  -3.206  flagged-weight frac = 0.0000
+  block 20-39: min U =  -3.171  flagged-weight frac = 0.0000
+  block 40-59: min U =  -1.602  flagged-weight frac = 0.0000
+  block 60-79: min U =  -3.953  flagged-weight frac = 0.0000
+  block 80-99: min U =  -5.027  flagged-weight frac = 0.0000
+  block 100-119: min U =  13.412  flagged-weight frac = 1.0000
+n_exponent_capped: bare=0  D3=0
+insertions where D3 lowered (or held) U vs bare: 120 / 120
+D3 overall flagged-weight fraction = 0.00014 (Class-I needs >= 0.5)

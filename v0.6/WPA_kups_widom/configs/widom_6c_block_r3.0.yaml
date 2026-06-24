@@ -1,0 +1,152 @@
+adsorbates:
+  - !import ["ar.yaml"]
+hosts:
+  - cif_file: v0.6/WPA_kups_widom/cifs_p1/MFI_P1.cif
+    pressure: 100000.0
+    temperature: 298.15
+    init_adsorbates: [0]
+    blocking_spheres:
+      - - center: [10.069, 1.380, 9.223]
+          radius: 3.0
+      - - center: [20.066, 18.358, 2.652]
+          radius: 3.0
+      - - center: [10.021, 11.249, 3.919]
+          radius: 3.0
+      - - center: [2.260, 11.336, 3.953]
+          radius: 3.0
+      - - center: [12.305, 18.271, 2.618]
+          radius: 3.0
+      - - center: [17.830, 1.467, 9.189]
+          radius: 3.0
+      - - center: [8.026, 7.173, 8.215]
+          radius: 3.0
+      - - center: [18.071, 7.173, 11.498]
+          radius: 3.0
+      - - center: [7.980, 0.067, 8.314]
+          radius: 3.0
+      - - center: [2.065, 19.671, 1.743]
+          radius: 3.0
+      - - center: [12.110, 9.936, 4.828]
+          radius: 3.0
+      - - center: [3.435, 10.629, 6.206]
+          radius: 3.0
+      - - center: [13.480, 18.978, 0.365]
+          radius: 3.0
+      - - center: [16.655, 0.760, 6.936]
+          radius: 3.0
+      - - center: [6.624, 10.747, 10.717]
+          radius: 3.0
+      - - center: [16.669, 10.747, 8.996]
+          radius: 3.0
+      - - center: [5.165, 1.309, 10.653]
+          radius: 3.0
+      - - center: [4.880, 18.429, 4.082]
+          radius: 3.0
+      - - center: [14.925, 11.178, 2.489]
+          radius: 3.0
+      - - center: [4.199, 12.427, 7.964]
+          radius: 3.0
+      - - center: [14.244, 17.180, 11.749]
+          radius: 3.0
+      - - center: [15.891, 2.558, 5.178]
+          radius: 3.0
+      - - center: [4.086, 8.971, 0.361]
+          radius: 3.0
+      - - center: [14.131, 8.971, 6.210]
+          radius: 3.0
+      - - center: [5.898, 0.020, 2.055]
+          radius: 3.0
+      - - center: [4.147, 19.718, 8.626]
+          radius: 3.0
+      - - center: [14.192, 9.889, 11.087]
+          radius: 3.0
+      - - center: [7.885, 12.366, 7.731]
+          radius: 3.0
+      - - center: [17.930, 17.241, 11.982]
+          radius: 3.0
+      - - center: [12.205, 2.497, 5.411]
+          radius: 3.0
+      - - center: [1.700, 9.139, 12.410]
+          radius: 3.0
+      - - center: [11.745, 9.139, 7.303]
+          radius: 3.0
+      - - center: [2.614, 1.542, 10.080]
+          radius: 3.0
+      - - center: [7.431, 18.196, 3.509]
+          radius: 3.0
+      - - center: [17.476, 11.411, 3.062]
+          radius: 3.0
+      - - center: [8.582, 9.058, 3.722]
+          radius: 3.0
+      - - center: [18.627, 0.811, 2.849]
+          radius: 3.0
+      - - center: [11.508, 18.927, 9.420]
+          radius: 3.0
+      - - center: [4.422, 7.277, 8.484]
+          radius: 3.0
+      - - center: [14.467, 7.277, 11.229]
+          radius: 3.0
+      - - center: [9.866, 16.872, 9.421]
+          radius: 3.0
+      - - center: [0.179, 2.866, 2.850]
+          radius: 3.0
+      - - center: [10.224, 7.003, 3.721]
+          radius: 3.0
+      - - center: [2.650, 6.535, 3.605]
+          radius: 3.0
+      - - center: [12.695, 3.334, 2.966]
+          radius: 3.0
+      - - center: [17.440, 16.404, 9.537]
+          radius: 3.0
+      - - center: [11.526, 4.934, 4.690]
+          radius: 3.0
+      - - center: [3.582, 7.127, 5.994]
+          radius: 3.0
+      - - center: [13.627, 2.742, 0.577]
+          radius: 3.0
+      - - center: [16.508, 16.996, 7.148]
+          radius: 3.0
+      - - center: [4.842, 12.668, 10.500]
+          radius: 3.0
+      - - center: [14.887, 12.668, 9.213]
+          radius: 3.0
+      - - center: [5.912, 14.803, 0.761]
+          radius: 3.0
+      - - center: [15.957, 14.803, 5.810]
+          radius: 3.0
+      - - center: [3.970, 13.199, 0.004]
+          radius: 3.0
+      - - center: [14.015, 13.199, 6.567]
+          radius: 3.0
+      - - center: [1.905, 14.803, 0.269]
+          radius: 3.0
+      - - center: [11.950, 14.803, 6.302]
+          radius: 3.0
+      - - center: [1.625, 12.494, 12.189]
+          radius: 3.0
+      - - center: [11.670, 12.494, 7.524]
+          radius: 3.0
+      - - center: [2.365, 16.521, 9.733]
+          radius: 3.0
+      - - center: [7.680, 3.217, 3.162]
+          radius: 3.0
+      - - center: [17.725, 6.652, 3.409]
+          radius: 3.0
+      - - center: [5.794, 4.934, 2.514]
+          radius: 3.0
+    cell_replication: 2
+lj: !import ["lj_6c_withSi.yaml"]
+ewald:
+  real_cutoff: 12.0
+  precision: 1.e-6
+run:
+  out_file: /tmp/kups_6c_block_r3.0.h5
+  num_cycles: 50
+  num_warmup_cycles: 10
+  num_displacements_per_cycle: 20
+  num_widom_per_cycle: 500
+  translation_prob: 0.333
+  rotation_prob: 0.333
+  reinsertion_prob: 0.333
+  seed: 0
+max_num_adsorbates: 200

@@ -1,0 +1,10 @@
+% Appendix D --- Computational resources. Populated 2026-06-09 from the
+% production verdicts (recorded seed/insertion counts) and the data pack.
+% No hardware bragging; no implication that GPU was used for v0.4.
+\section{Computational resources}\label{app:compute}
+
+The v0.4 strict results are CPU-reproducible and are not GPU-dependent. No v0.4 strict pass used a machine-learned interatomic potential or GPU acceleration.
+
+The two strict-pass branches are 6c (MFI + Ar) and 3a (UiO-66 + CO\textsubscript{2} under genuine UFF). Their recorded sampling is: 6c with three independent seeds of \(200{,}000\) Widom insertions on the native estimator and a RASPA3 cross-check (evidence \texttt{evidence/v04\_6c\_olson\_clean}); and 3a with twelve independent RASPA3 seeds of \(400{,}000\) cycles each at \(298.15\) and \(323.15\) K --- the v0.4.2 genuine-UFF rebuild (evidence \texttt{evidence/v04\_3a\_genuine\_uff}). The Si-CHA + CO\textsubscript{2} charged control (4c, Tier-B) was run with three independent seeds of \(60{,}000\) insertions on the native estimator and cross-checked on RASPA3 (evidence \texttt{evidence/v04\_4c\_bai\_2013}). These are the seed and insertion counts recorded in the committed evidence. Per-branch wall-time figures beyond these counts are not part of the locked v0.4 record and are therefore not stated here.
+
+Heavier future work --- machine-learned interatomic potentials, polarisable energy models, or broader branch sweeps --- may benefit from GPU acceleration or larger workstations. Such work is not part of the v0.4 verdict, and the v0.4 strict passes reported here do not depend on it.

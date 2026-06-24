@@ -1,0 +1,42 @@
+# widom-atlas v0.4 branch-disposition data (audited).
+# Source of every row: paper Table 1 (tables/table1_branch_disposition.tex) and
+# Appendix C Table 2, which were re-read from the production verdict JSONs:
+#   evidence/v04_two_tier/verdicts/*.json, v04_4c_bai_2013/verdicts/4c.json,
+#   v04_6e_bai_2013/verdicts/6e.json.
+# 6c (v0.4.1 2026-06-18 REBUILD): clean single-source pure-Talu oxygen-only recipe (no silicon),
+#   converged 24 A + tail, on Olson geometry -> K_H 0.200 (native) / 0.199 (RASPA3, parity 0.5%) vs
+#   the CORRECTED reference 0.200 (was 0.224; units/citation fix) -> dlogKH = 0.000; Q_st 14.97 vs
+#   15.7 (Dunne 1996) -> dQst = -0.73. Both inside the strict band. Evidence evidence/v04_6c_olson_clean/.
+#   The locked v0.4 hybrid (atlas 0.207 vs 0.224, dlogKH -0.034) "passed" only by a four-error
+#   cancellation (silicon double-count x structure x convention x mis-derived reference) -- see F1.
+# 2a/3a (v0.4.2 2026-06-21 GENUINE-UFF REBUILD, RASPA3): the originally-locked recipe routed the MOF
+#   framework through a generator that hardcoded a zeolite/cation table and stamped source="UFF" on
+#   framework atoms that were actually Harris-Yung CO2-carbon (28.1 vs UFF 52.8), TraPPE-zeo O (53.0 vs
+#   UFF 30.2), and a wrong-eps H -- only metals were genuine UFF. Corrected to genuine UFF (12 seeds x
+#   400k cyc): 3a K_H 6.27 (dlogKH +0.086), Q_st 25.6 (dQst -0.89) -> TIER-A strict pass; 2a K_H range
+#   8.3-10.8 (median 8.33/trimmed 9.53/geomean 10.80; open-Cu deep-well tail) plotted at ~+0.13, Q_st
+#   33.9 (dQst +3.9) -> TIER-B pass. RASPA3-only (native charged path cannot corroborate -- see limitation).
+#   Superseded buggy as-published: 2a dlogKH -0.759/dQst -9.07; 3a dlogKH -0.802/dQst -9.21.
+# 4c (v0.4.2 Tier-B): native K_H 2.223 / RASPA3 2.027 (~9% agreement), Q_st 22.99 / 23.24 (~1%); inside
+#   experimental window [1.9,3.0]. Tier-A label is engine-marginal: Q_st straddles +-2.0 (native +1.99 IN,
+#   RASPA3 +2.24 OUT). Reported here on RASPA3 (dlogKH -0.079, dQst +2.24) as TIER-B cross-engine-audited.
+# Strict (Tier A) band: |dlogKH| <= 0.10 and |dQst| <= 2.0 kJ/mol.
+# 5b (Na-Rho) is method-blocked: no scalar dlogKH / dQst (blank).
+branch,system,dlogKH,dQst,tierA,tierB,bclass
+6c,MFI + Ar,0.000,-0.73,PASS,PASS,le1
+4c,Si-CHA + CO2,-0.079,2.24,FAIL,PASS,le1
+3b_EHq,UiO-66 + CO2,-0.252,-4.43,FAIL,PASS,le1
+3b_UA,UiO-66 + CO2,-0.411,-6.09,FAIL,FAIL,le2
+3b_UAq,UiO-66 + CO2,-0.415,-5.86,FAIL,FAIL,le2
+4a,Si-CHA + CO2,-0.116,11.74,FAIL,FAIL,le2
+6b,MFI + Kr,0.071,-4.17,FAIL,FAIL,le2
+6e,MFI + CH4,-0.296,-2.14,FAIL,FAIL,le2
+1c,Mg-MOF-74 + CO2,0.581,4.01,FAIL,FAIL,2to3
+3a,UiO-66 + CO2,0.086,-0.89,PASS,PASS,le1
+1a,Mg-MOF-74 + CO2,1.765,8.83,FAIL,FAIL,gt3
+1b,Mg-MOF-74 + CO2,1.799,9.55,FAIL,FAIL,gt3
+1d,Mg-MOF-74 + CO2,1.716,11.84,FAIL,FAIL,gt3
+2a,HKUST-1 + CO2,0.13,3.9,FAIL,PASS,le1
+2b,HKUST-1 + CO2,1.400,14.03,FAIL,FAIL,gt3
+6a,MFI + CH4,-0.347,-2.43,FAIL,FAIL,gt3
+5b,Na-Rho + CO2,,,BLOCKED,BLOCKED,blocked

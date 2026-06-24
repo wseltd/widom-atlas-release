@@ -1,0 +1,2 @@
+basin_id,sample_count,weight,frac_centroid_a,frac_centroid_b,frac_centroid_c,cart_centroid_x,cart_centroid_y,cart_centroid_z,mean_energy_eV,std_energy_eV,accessible_fraction,spread_A
+0,543,1.0,0.5137201146550994,0.5017420217728737,0.5018624351802099,4.18550450951972,4.372255573693687,4.721306191600993,-0.29599119430952264,0.031630571822357186,0.9999999999999998,2.9269554032572334

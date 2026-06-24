@@ -1,0 +1,145 @@
+% widom-atlas v0.6 --- standalone report.
+% Reuses the v3 manuscript preamble + float-placement discipline.
+\documentclass[11pt,a4paper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb}
+\usepackage{textcomp}
+\usepackage{array}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage[margin=1in]{geometry}
+\usepackage[hidelinks]{hyperref}
+\usepackage{caption}
+\usepackage{microtype}
+\usepackage{placeins}
+\usepackage{calc}
+\setlength{\emergencystretch}{3em}
+\graphicspath{{figures/}}
+
+% pandoc-fragment macros (normally provided by pandoc's full template)
+\providecommand{\real}[1]{#1}
+\providecommand{\tightlist}{\setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+% --- Unicode safety for pdflatex (every glyph used in the transpiled body) ---
+\DeclareUnicodeCharacter{2212}{\ensuremath{-}}        % minus
+\DeclareUnicodeCharacter{00D7}{\ensuremath{\times}}   % times
+\DeclareUnicodeCharacter{00B7}{\ensuremath{\cdot}}    % middle dot
+\DeclareUnicodeCharacter{2248}{\ensuremath{\approx}}
+\DeclareUnicodeCharacter{2192}{\ensuremath{\rightarrow}}
+\DeclareUnicodeCharacter{27E8}{\ensuremath{\langle}}
+\DeclareUnicodeCharacter{27E9}{\ensuremath{\rangle}}
+\DeclareUnicodeCharacter{0394}{\ensuremath{\Delta}}
+\DeclareUnicodeCharacter{03B4}{\ensuremath{\delta}}
+\DeclareUnicodeCharacter{03B2}{\ensuremath{\beta}}
+\DeclareUnicodeCharacter{03C3}{\ensuremath{\sigma}}
+\DeclareUnicodeCharacter{03B5}{\ensuremath{\varepsilon}}
+\DeclareUnicodeCharacter{03BC}{\ensuremath{\mu}}
+\DeclareUnicodeCharacter{03B1}{\ensuremath{\alpha}}
+\DeclareUnicodeCharacter{00B2}{\ensuremath{^2}}
+\DeclareUnicodeCharacter{00B3}{\ensuremath{^3}}
+\DeclareUnicodeCharacter{2264}{\ensuremath{\le}}
+\DeclareUnicodeCharacter{2265}{\ensuremath{\ge}}
+\DeclareUnicodeCharacter{226B}{\ensuremath{\gg}}
+\DeclareUnicodeCharacter{226A}{\ensuremath{\ll}}
+\DeclareUnicodeCharacter{221E}{\ensuremath{\infty}}
+\DeclareUnicodeCharacter{2261}{\ensuremath{\equiv}}
+\DeclareUnicodeCharacter{00C5}{\AA{}}                 % Angstrom
+\DeclareUnicodeCharacter{2080}{\ensuremath{_0}}
+\DeclareUnicodeCharacter{2081}{\ensuremath{_1}}
+\DeclareUnicodeCharacter{2082}{\ensuremath{_2}}
+\DeclareUnicodeCharacter{2083}{\ensuremath{_3}}
+\DeclareUnicodeCharacter{2074}{\ensuremath{^4}}
+\DeclareUnicodeCharacter{2077}{\ensuremath{^7}}
+\DeclareUnicodeCharacter{207B}{\ensuremath{^{-}}}
+\DeclareUnicodeCharacter{2070}{\ensuremath{^0}}
+\DeclareUnicodeCharacter{2076}{\ensuremath{^6}}
+\DeclareUnicodeCharacter{2009}{\,}                    % thin space
+\DeclareUnicodeCharacter{2011}{-}                     % non-breaking hyphen
+\DeclareUnicodeCharacter{2086}{\ensuremath{_6}}
+\DeclareUnicodeCharacter{21D2}{\ensuremath{\Rightarrow}}
+\DeclareUnicodeCharacter{2705}{\ensuremath{\checkmark}}   % done
+\DeclareUnicodeCharacter{274C}{\ensuremath{\times}}       % not done
+\DeclareUnicodeCharacter{00A7}{\S}
+\DeclareUnicodeCharacter{00B9}{\ensuremath{^1}}
+
+\title{widom-atlas v0.6: Cross-engine Validation and MLIP\\
+Out-of-Distribution Governance for Widom-Insertion\\
+Adsorption on the kUPS Engine}
+\author{Onur Alexander William Aydogan\\
+Waynestark Enterprises Limited}
+\date{}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+\noindent A published force-field parameter table is not a complete simulation recipe: the load-bearing
+ingredients (a short-range protection convention, a mixing rule on the framework atoms, a dispersion
+correction, an LJ truncation convention) are often unpublished, and an ungoverned pipeline that guesses
+any of them wrong returns a confident, wrong number with no warning. \textbf{widom-atlas} does not
+re-estimate adsorption; it locks the complete recipe behind a number, checks cross-engine parity and
+convergence, detects out-of-distribution insertions, and \emph{refuses} averages built on unphysical
+configurations. This v0.6 report demonstrates that domain-of-validity / realization-gap failure class
+end-to-end on CuspAI's JAX engine \textbf{kUPS} and on the machine-learning interatomic potential
+(MLIP) kUPS ships. Auditing its own positive control surfaced a headline catch: the originally-locked
+all-silica MFI + Ar recipe \emph{double-counted silicon} --- Talu--Myers' Ar--O cross-parameter already
+folds silicon's dispersion into oxygen, and the locked recipe added an explicit Ar--Si on top --- so it
+landed inside the strict band only as a fortuitous cancellation of four compounding errors --- a coincidence, not a coherent result; rebuilt clean (pure Talu oxygen-only,
+converged convention, on Talu's calibration Olson geometry) it reproduces the corrected reference
+$K_H = 0.200$ exactly and cross-engine (native 0.200, RASPA3 0.199). Separately and intact: to our
+knowledge and per public-source searches conducted on 15 June 2026, the first published independent
+cross-engine validation of kUPS's Widom estimator (isosteric
+heat reproduced to 0.01--0.22 kJ/mol on two locked controls; independent estimators agree on the shared
+recipe to 1.1\% on $K_H$, the dominant $K_H$ convention gaps traced to named truncation/shift
+conventions, with one normalization-flavoured residual on the electrostatic control flagged open), and a
+four-configuration MLIP out-of-distribution governance demonstration that discriminates two failure
+modes, screen-passes a dispersion-corrected route, and respects the model's training domain. \textbf{The
+evidence base is the version-controlled repository state: every number in this document traces to
+committed JSON and regenerates from the figure scripts.}
+\end{abstract}
+
+\input{sections_body.tex}
+
+\FloatBarrier
+\clearpage
+\appendix
+\section{Figures}
+All figures regenerate from committed JSON via the figure scripts (no value is hardcoded).
+
+\begin{figure}[h!]\centering\includegraphics[width=0.95\linewidth]{f1_wpb_triptych.pdf}
+\caption{WPB --- governance discriminates the failure mode across four configurations (Si-CHA + Ar).}
+\end{figure}
+\begin{figure}[h!]\centering\includegraphics[width=0.80\linewidth]{fp_6c_cancellation.pdf}
+\caption{Finding F1 --- branch 6c rebuilt clean. The originally-locked hybrid recipe (0.207) agrees with
+the reference only as a fortuitous cancellation of four compounding errors; removing the silicon double-count, converging the
+cutoff, and adopting Talu's calibration (Olson) geometry lands the coherent single-source recipe on the
+corrected reference $K_H = 0.200$, cross-engine (native 0.200, RASPA3 0.199; parity 0.5\%). Values read
+from \texttt{cancellation\_6c.json}.}
+\end{figure}
+\begin{figure}[h!]\centering\includegraphics[width=0.98\linewidth]{fp_cross_engine_parity.pdf}
+\caption{Cross-engine Widom parity: 6c three-way (native+Ar-Si reproduces RASPA3; the 1.8$\times$ gap to
+O-only is the silicon double-count of Finding F1) and the 4c CHA+CO$_2$ convention matrix (shift / tail
+toggles).}
+\end{figure}
+\FloatBarrier\clearpage
+\begin{figure}[h!]\centering\includegraphics[width=0.98\linewidth]{f2_uma_domain.pdf}
+\caption{Governance respects the training domain: the UMA odac head screen-passes in-domain on CO$_2$
+and is WITHHELD out-of-domain on Ar; full task $\times$ system verdict matrix.}
+\end{figure}
+\begin{figure}[h!]\centering\includegraphics[width=0.95\linewidth]{f3a_insertion_map.pdf}
+\caption{Where the spurious weight lives: flagged (OOD) insertions sit inside the framework walls.}
+\end{figure}
+\FloatBarrier\clearpage
+\begin{figure}[h!]\centering\includegraphics[width=0.62\linewidth]{f3b_pathology.pdf}
+\caption{Pathology close-up: UMA's spurious deep well ($-292.8$ kJ/mol) at a 2.65 \AA{} atomic overlap.}
+\end{figure}
+\begin{figure}[h!]\centering\includegraphics[width=0.62\linewidth]{f3c_indomain_well.pdf}
+\caption{In-domain CO$_2$ well at the odac minimum-energy site (screen-pass).}
+\end{figure}
+
+\end{document}

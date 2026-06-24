@@ -1,0 +1,23 @@
+{
+  "system": "Si-CHA + Ar (PERIODIC, open-pore same-graph ref)",
+  "N": 120,
+  "seed": 0,
+  "T_K": 298.15,
+  "model": "uma-s-1p1",
+  "task_name_LOADBEARING": "odac",
+  "engine": "fairchem-UMA",
+  "protocol": "periodic same-graph: U(r)=E(host+Ar@r)-E(host+Ar@open_pore); conditioning-safe, in-domain",
+  "verdict_schema": "VERDICT_SCHEMA_V06.md",
+  "ref_min_dist_A": 4.37,
+  "gate1_second_open_U_kJ": -2.7262,
+  "gate1_pass": false,
+  "n_flagged": 119,
+  "flagged_weight_fraction": 1.0,
+  "min_U_mace_kJ": -297.09,
+  "min_U_classical_kJ": -22.08,
+  "max_U_mace_kJ": 8462.0,
+  "screen_q_st_kJ": 299.41,
+  "screen_q_st_note": "N=120 random insertions; diagnostic not converged; dominated by deepest-weight insertion for Class-I cases",
+  "n_exponent_capped": 0,
+  "verdict": "WITHHELD \u2014 Gate 1 offset -2.7 kJ (open-open ref failed); do not interpret"
+}

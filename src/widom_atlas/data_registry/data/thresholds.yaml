@@ -1,0 +1,103 @@
+# widom-atlas validation thresholds — v0.4 minimum + v0.5 broader + flagship.
+#
+# Each `ThresholdSet` (see widom_atlas.data_registry.schema) is a named
+# acceptance band that the convergence study and scalar comparator use to
+# decide whether a row is `within_range`, `trend_match`, or worse.
+#
+# Numbers come from the v0.4 brief §7 verbatim.
+
+schema_version: "0.4"
+sets:
+
+  v0_4_minimum:
+    name: "v0.4 minimum"
+    description: |
+      Minimum bar for a v0.4 release: 4-6 MOFs (Mg-MOF-74, Zn-MOF-74, UiO-66,
+      ZIF-8) with CO2 + CH4 gases, UFF + PACMOF charges, RASPA3 scalar +
+      per-insertion comparison. Convergence study at 50,000 insertions.
+    KH_relative_error_upper: 0.20             # ±20%
+    KH_log_error_upper: 0.30                  # ±0.3 log units
+    Qads_abs_error_kJmol_upper: 3.0           # ±3 kJ/mol
+    basin_centroid_max_distance_A: 1.5        # < 1.5 Å for reliable site matching
+    basin_weight_repeatability_upper: 0.10    # ±10% across seeds
+    convergence_min_insertions_KH: 50000
+    convergence_min_insertions_Qads: 100000
+    backend_agreement_max_diff_fraction: 0.05  # < 5% RASPA-vs-widom-atlas total uptake difference
+    notes: |
+      Used as the default acceptance band when no override is specified.
+      A row is `within_range` for KH only when |log_ratio| ≤ KH_log_error_upper.
+
+  v0_5_broader:
+    name: "v0.5 broader suite"
+    description: |
+      Broader v0.5 release: 12+ MOFs + 4 zeolites (MFI, FAU, LTA, CHA), all
+      8 target gases (CO2, N2, CH4, H2, Xe, Kr, Ar, H2O), refined UFF for
+      open-metal sites + DDEC / MEPO-ML charges, optional ML potential
+      (fine-tuned NequIP or MACE). 8-10 documented gas-loaded structures.
+    KH_relative_error_upper: 0.15             # ±15%
+    KH_log_error_upper: 0.20                  # ±0.20 log units
+    Qads_abs_error_kJmol_upper: 2.5           # ±2.5 kJ/mol
+    basin_centroid_max_distance_A: 1.0        # < 1.0 Å
+    basin_weight_repeatability_upper: 0.075   # ±7.5% across seeds (tightened)
+    convergence_min_insertions_KH: 100000
+    convergence_min_insertions_Qads: 200000
+    backend_agreement_max_diff_fraction: 0.03  # < 3% RASPA-vs-widom-atlas total uptake difference
+    notes: |
+      Tightening of v0.4 thresholds. Per the brief §8 v0.5 plan, this set
+      is the target for promotion to a `scientific_grade` tag.
+
+  v0_4_strict:
+    name: "v0.4 strict (per follow-up brief §9)"
+    description: |
+      Strict bar from the v0.4 follow-up brief §9. Tighter than v0_4_minimum
+      and aligned with the "<5% Henry, <2 kJ/mol Qads, <1.0 Å basin" targets
+      that the brief recommends for the v0.4 minimum suite when validated
+      against RASPA3 reference values rather than experimental literature.
+    KH_relative_error_upper: 0.05             # < 5% relative error vs RASPA reference (brief §9)
+    KH_log_error_upper: 0.10                  # < 0.1 log units MAE across the 200-MOF benchmark
+    Qads_abs_error_kJmol_upper: 2.0           # < 2 kJ/mol vs RASPA reference (brief §9)
+    basin_centroid_max_distance_A: 1.0        # < 1.0 Å from experimental neutron-diffraction CoM
+    basin_weight_repeatability_upper: 0.02    # running mean of KH must vary < 2% over the final 20% of insertions
+    convergence_min_insertions_KH: 50000
+    convergence_min_insertions_Qads: 100000
+    backend_agreement_max_diff_fraction: 0.05
+    notes: |
+      Use this set when the operator is validating widom-atlas against a
+      RASPA3 reference run. The basin-weight repeatability number encodes the
+      brief §9 convergence test: "running mean of Henry constant must vary
+      < 2% over the final 20% of insertions". Per the brief, 50k-100k
+      insertions per unit cell are the minimum for this band.
+
+  flagship:
+    name: "flagship validation"
+    description: |
+      Strictest band, intended for single-material publication-grade claims
+      (e.g. CuspAI's "we matched literature on Mg-MOF-74 + CO2 OMS" headline).
+    KH_relative_error_upper: 0.05             # ±5%
+    KH_log_error_upper: 0.10                  # ±0.10 log units
+    Qads_abs_error_kJmol_upper: 2.0           # ±2 kJ/mol (closer to experimental uncertainty)
+    basin_centroid_max_distance_A: 0.5        # < 0.5 Å
+    basin_weight_repeatability_upper: 0.05    # ±5%
+    convergence_min_insertions_KH: 100000
+    convergence_min_insertions_Qads: 500000
+    backend_agreement_max_diff_fraction: 0.02  # < 2%
+    notes: |
+      Reserved for single-material flagship claims; use only when paired with
+      a charge-aware backend AND a published validated FF (not a hybrid
+      approximation).
+
+  broad_screening:
+    name: "broad screening"
+    description: |
+      Looser band for high-throughput screening across hundreds of MOFs.
+      Per the brief §7 "broad" entries.
+    KH_relative_error_upper: 0.50             # ±50% — loose
+    KH_log_error_upper: 0.60                  # ±0.6 log units
+    Qads_abs_error_kJmol_upper: 8.0           # ±8 kJ/mol generic
+    basin_centroid_max_distance_A: 2.0
+    basin_weight_repeatability_upper: 0.20    # ±20%
+    convergence_min_insertions_KH: 10000
+    convergence_min_insertions_Qads: 50000
+    backend_agreement_max_diff_fraction: 0.10  # < 10%
+    notes: |
+      Use for quick-look screening reports; never for flagship claims.

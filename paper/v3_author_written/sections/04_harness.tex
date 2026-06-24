@@ -1,0 +1,30 @@
+% Section 4 --- The harness
+% only normalisation is the required LaTeX underscore escape in the literal
+% branch id 3b_EHq -> 3b\_EHq (renders identically). No wording changed.
+\section{The harness}\label{sec:harness}
+
+The practical role of widom-atlas is to turn the recipe described above into something that can be inspected and re-run. A recipe that lives only in prose is too easy to change without noticing. A force-field file may be edited, a framework atom label may be relabelled, a backend may change its defaults, or a reference value may be copied with a different interpretation. The harness is designed to prevent those changes from being silent.
+
+The central object is the case matrix. It is a machine-readable ledger in which every verdict-affecting branch records its structure, atom typing, force field, gas model, mixing rule, electrostatics, backend, sampling protocol, reference observable, threshold, and verdict class. The v0.4 matrix is pinned by a SHA-256 digest,
+
+\[
+\mathrm{CASE\_MATRIX\_SHA256}
+=
+\texttt{b0571780\ldots a085664}.
+\]
+
+The full digest is recorded in the reproducibility appendix. The point of the hash is simple: if the recipe changes, the identity of the calculation changes. The loader therefore checks the matrix before execution, so a result cannot be read as a v0.4 result after the locked input has changed.
+
+A branch is then executed by the backend capable of representing its energy model. Ordinary Lennard-Jones and Ewald branches can be run through RASPA3. Buckingham branches that need the older parametrisation path can be run through RASPA2. Branches whose functional forms are not expressible in the tested RASPA path are run with the native widom-atlas evaluator. An ASE-calculator route is kept for interoperability and independent driver checks. The backend is recorded because it is part of the calculation, not an implementation footnote.
+
+The harness also separates numerical execution from scientific judgement. First, the branch is run and the raw \(K_H\) and \(Q_{st}\) estimates are produced with their sampling uncertainty. Second, the estimates are compared with the specified reference observable. Third, the comparison is assigned a scientific interpretation. This prevents a single numerical difference from being treated as self-explanatory. The same deviation could indicate a transferable-force-field problem, a mismatched reference, a wrong structure, or a method mismatch.
+
+Two acceptance bands are used. The strict band is a regression and reproducibility gate: \(\pm 0.10\) in \(\Delta \log_{10} K_H\) and \(\pm 2.0\ \mathrm{kJ\,mol^{-1}}\) in \(\Delta Q_{st}\). It is deliberately tight, and passing it means that the locked recipe reproduces the chosen reference within that strict tolerance. The physical-accuracy band is broader and system-specific. It is used when the literature itself shows enough spread that a stricter numerical gate would confuse physical scatter with implementation error.
+
+This distinction is important for the v0.4 disposition. The strict result is two passes out of fifteen verdict-affecting branches: 6c, the all-silica MFI + Ar positive control, and 3a, the UiO-66 + CO\(_2\) branch under genuine UFF (recovered after the audit corrected a mislabelled framework force field; Section~\ref{sec:result}). The physical-accuracy result is five passes out of fifteen: 6c, 3a, 2a (HKUST-1 + CO\(_2\) under genuine UFF), 4c (Si-CHA + CO\(_2\) under the Bai 2013 TraPPE-zeo recipe), and 3b\_EHq (UiO-66 + CO\(_2\) under the explicit-hydrogen, Yang-charge Maia 2023 variant). Branches 2a, 4c, and 3b\_EHq do not pass the strict gate but lie inside the Tier-B band defined for their systems.
+
+The verdict labels are therefore not decorations added after the calculation. They are part of the scientific record. A strict pass means the branch passes both axes of the strict comparison. A Tier-B physical pass means the branch does not satisfy the strict regression gate but is still within the system-specific physical-accuracy band. A force-field disagreement means that the estimator and implementation may be sound, but the energy model does not reproduce the reference. A reference-observable mismatch means the calculation and the literature number are not the same thermodynamic quantity. A structural blocker means that the simulated structure is missing, incomplete, or not the experimental material. An ensemble or method mismatch means that the calculation samples a different configuration space from the experiment.
+
+The harness is conservative by design. It does not rescue a branch by changing the recipe after seeing the result. It does not average incompatible references into a convenient target. It does not treat an unexecutable branch as a hidden success. It records the reason a branch passes, fails, or cannot yet be judged. That conservatism is why the current result is scientifically useful even though the pass count is small.
+
+This design also makes the work falsifiable. A future reader can inspect the branch, reproduce the recipe, run the backend, and compare the output with the same reference. If the result changes, the change must be traced to the code, the dependency stack, the backend, or the locked inputs. If the result does not change but still disagrees with experiment, the disagreement belongs to the scientific model or the reference observable. The harness does not remove judgement from adsorption validation; it makes the judgement auditable.

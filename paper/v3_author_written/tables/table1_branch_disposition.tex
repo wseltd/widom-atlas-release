@@ -1,0 +1,65 @@
+% Table 1 --- branch-level disposition. Built 2026-06-09.
+% tables/table1_branch_disposition.source.md. Non-headline deltas were
+% re-read directly from evidence/v04_two_tier/verdicts/*.json (and 6e from
+% evidence/v04_6e_bai_2013/verdicts/6e.json); 6c/4c/3b_EHq from the lock.
+% NON-FLOATING longtable. Do not convert to table[t]. Label: tab:branch-disposition.
+{\scriptsize
+\setlength{\tabcolsep}{3pt}
+\renewcommand{\arraystretch}{1.25}
+\begin{longtable}{@{}>{\raggedright\arraybackslash}p{0.072\textwidth}>{\raggedright\arraybackslash}p{0.105\textwidth}>{\raggedright\arraybackslash}p{0.225\textwidth}r r >{\raggedright\arraybackslash}p{0.10\textwidth}>{\raggedright\arraybackslash}p{0.165\textwidth}@{}}
+\caption{Branch-level disposition of the v0.4 audit. The headline strict-pass
+denominator is fifteen verdict-affecting scalar branches. The UiO-66 3b family
+is shown in three force-field variants for scientific transparency but is
+counted according to the locked v0.4 disposition; branch 5b is shown as
+method-blocked and is not scored as a scalar $K_H$/$Q_{st}$ pass or fail. The
+Tier-A strict passes are 6c and 3a. The Tier-B physical-accuracy passes are 6c,
+3a, 2a, 4c, and 3b\_EHq. Branches 2a and 3a are the v0.4.2 genuine-UFF rebuild
+(superseded as-locked deviations in parentheses); 4c is reported on RASPA3 as
+Tier-B, its strict label being engine-marginal. Branch identifiers are internal
+locked-recipe labels, retained only to keep the table traceable to the repository
+and its evidence JSON; for example 6c = all-silica MFI + Ar, 3a = UiO-66 +
+CO\textsubscript{2} (genuine UFF), 2a = HKUST-1 + CO\textsubscript{2} (genuine
+UFF), 4c = Si-CHA + CO\textsubscript{2} (Bai 2013 control), and 3b\_EHq = UiO-66 +
+CO\textsubscript{2} (Maia 2023 explicit-hydrogen, charged).}\label{tab:branch-disposition}\\
+\toprule
+Br. & System & Recipe (structure / force field / gas) & $\Delta\log_{10}K_H$ & $\Delta Q_{st}$ & Class & Reason \\
+\midrule
+\endfirsthead
+\multicolumn{7}{@{}l}{\footnotesize\emph{Table~\ref{tab:branch-disposition}, continued}}\\
+\toprule
+Br. & System & Recipe (structure / force field / gas) & $\Delta\log_{10}K_H$ & $\Delta Q_{st}$ & Class & Reason \\
+\midrule
+\endhead
+\midrule
+\multicolumn{7}{@{}r}{\footnotesize\emph{continued on next page}}\\
+\endfoot
+\bottomrule
+\endlastfoot
+\multicolumn{7}{@{}l}{\textit{(a) Strict passes}}\\
+6c & MFI + Ar & all-silica MFI (Olson 1981 geometry) / Talu--Myers Ar, oxygen-only single-source\cite{Talu2001}; native + RASPA3 & $0.000$ & $-0.73$ & Tier A PASS & clean control, single-source (no Si double-count) \\
+3a & UiO-66 + CO\textsubscript{2} & all-silica UiO-66 / genuine UFF framework + DDEC charges / TraPPE-CO\textsubscript{2}; RASPA3 & $+0.086$ & $-0.89$ & Tier A PASS & genuine-UFF rebuild reproduces experiment (v0.4.2; was $-0.802$) \\
+\addlinespace[2pt]
+\multicolumn{7}{@{}l}{\textit{(b) Tier-B physical passes (Tier A fail)}}\\
+2a & HKUST-1 + CO\textsubscript{2} & HKUST-1 / genuine UFF framework + Nazarian DDEC\cite{Nazarian2016ChemMater} / EPM2; RASPA3 & $+0.13$ & $+3.9$ & Tier B PASS & genuine-UFF rebuild; $K_H$ 8.3--10.8 (open-Cu tail); was $-0.759$ \\
+4c & Si-CHA + CO\textsubscript{2} & IZA Si-CHA / Bai 2013 TraPPE-zeo / TraPPE-CO\textsubscript{2}\cite{PotoffSiepmann2001AIChE}; native + RASPA3 & $-0.079$ & $+2.24$ & Tier B PASS & cross-engine-audited (native$\leftrightarrow$RASPA3 $\sim$9\%); $Q_{st}$ engine-marginal \\
+3b\_EHq & UiO-66 + CO\textsubscript{2} & UiO-66 / Maia 2023 explicit-H + Yang charges / TraPPE & $-0.252$ & $-4.43$ & Tier B PASS & within UiO-66 synthesis-scatter band \\
+\addlinespace[2pt]
+\multicolumn{7}{@{}l}{\textit{(c) Near-misses by recorded agreement class (Tier A fail)}}\\
+3b\_UA & UiO-66 + CO\textsubscript{2} & Maia 2023 united-atom, no charge & $-0.411$ & $-6.09$ & within $2\sigma$ & united-atom under-binds \\
+3b\_UAq & UiO-66 + CO\textsubscript{2} & Maia 2023 united-atom + Yang charges & $-0.415$ & $-5.86$ & within $2\sigma$ & united-atom under-binds \\
+4a & Si-CHA + CO\textsubscript{2} & TraPPE-zeo + Harris--Yung CO\textsubscript{2}\cite{HarrisYung1995JPC} & $-0.116$ & $+11.74$ & within $2\sigma$ & gas-model-dependent $Q_{st}$ \\
+6b & MFI + Kr & Garc\'\i a-P\'erez framework + Talu cross-pair & $+0.071$ & $-4.17$ & within $2\sigma$ & $Q_{st}$ reference is a van't Hoff fit \\
+6e & MFI + CH\textsubscript{4} & Bai 2013 TraPPE-zeo + TraPPE-UA CH\textsubscript{4}\cite{MartinSiepmann1998JPCB} & $-0.296$ & $-2.14$ & within $2\sigma$ & TraPPE-zeo/UA under-binds (Shah 2015 agrees)\cite{Shah2015Langmuir} \\
+\addlinespace[2pt]
+\multicolumn{7}{@{}l}{\textit{(d) Force-field disagreements ($2$--$3\sigma$ tension and $>3\sigma$)}}\\
+1c & Mg-MOF-74 + CO\textsubscript{2} & Becker 2018 reduced-LJ (as-run framework = plain UFF + Mg placeholder) & $+0.581$ & $+4.01$ & $2$--$3\sigma$ & audit-caught parameter-substitution defect (see text) \\
+1a & Mg-MOF-74 + CO\textsubscript{2} & Lin et al.\ 2014 Buckingham + EPM2\cite{LinMercado2014JCTC} & $+1.765$ & $+8.83$ & $>3\sigma$ & DFT cross-pairs over-bind (no polarisation) \\
+1b & Mg-MOF-74 + CO\textsubscript{2} & Dzubak 2012 ($A\,e^{-Br}-C/r^5-D/r^6$)\cite{Dzubak2012NatChem} + TraPPE & $+1.799$ & $+9.55$ & $>3\sigma$ & over-binds vs experiment; parity unresolved \\
+1d & Mg-MOF-74 + CO\textsubscript{2} & Mercado 2016 Model 4 (Buckingham + LJ)\cite{Mercado2016JPCC} & $+1.716$ & $+11.84$ & $>3\sigma$ & over-binds open metal site \\
+2b & HKUST-1 + CO\textsubscript{2} & Ongari 2017 modified Cu-O(CO\textsubscript{2})\cite{Ongari2017JPCC} & $+1.400$ & $+14.03$ & $>3\sigma$ & over-binds Cu paddle-wheel \\
+6a & MFI + CH\textsubscript{4} & Garc\'\i a-P\'erez 2007 + Dubbeldam 2004 UA\cite{Dubbeldam2004UA} & $-0.347$ & $-2.43$ & $>3\sigma$ & united-atom under-binds \\
+\addlinespace[2pt]
+\multicolumn{7}{@{}l}{\textit{(e) Method-blocked}}\\
+5b & Na-Rho + CO\textsubscript{2} & rigid closed-state Widom vs open-state experiment & --- & --- & ensemble mismatch & different partition functions; no scalar pass/fail \\
+\end{longtable}
+}

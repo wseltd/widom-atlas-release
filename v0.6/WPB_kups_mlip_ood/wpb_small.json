@@ -1,0 +1,62 @@
+{
+  "system": "Si-CHA + Ar",
+  "N": 120,
+  "seed": 0,
+  "T_K": 298.15,
+  "model": "small",
+  "dispersion_D3": false,
+  "mace_checkpoint_sha16": "75428afe3a1d7d80",
+  "kups_mace_jax_zip_sha16": "c5eb645f2dc2c904",
+  "model_card_note": "MACE-MPA-0 'Not trained for isolated molecules' (kUPS HF model card) -> scoring an adsorbate is OOD by the authors' statement",
+  "n_flagged": 99,
+  "flagged_fraction": 0.825,
+  "flagged_weight_fraction": 0.9948,
+  "KH_proxy_all": 59.0542,
+  "KH_proxy_flagged_removed": 1.7431,
+  "inflation_factor": 33.9,
+  "min_U_mace_kJ": -19.3,
+  "min_U_classical_kJ": -22.08,
+  "screen_q_st_kJ": 18.26,
+  "screen_q_st_note": "N=120 random insertions; diagnostic not converged; dominated by deepest-weight insertion for Class-I cases",
+  "n_exponent_capped": 0,
+  "verdict_schema": "VERDICT_SCHEMA_V06.md",
+  "overlap_survival_examples": [
+    {
+      "i": 74,
+      "min_dist_A": 1.5832,
+      "U_classical_kJ": 33393.178,
+      "U_mace_kJ": -19.302,
+      "w_mace": 2407.430902252502,
+      "w_capped": false,
+      "flag_hard_overlap": true,
+      "flag_energetic_anomaly": true,
+      "flag_exponent_capped": false,
+      "flagged": true
+    },
+    {
+      "i": 43,
+      "min_dist_A": 1.9159,
+      "U_classical_kJ": 8380.544,
+      "U_mace_kJ": -17.579,
+      "w_mace": 1201.5464422479242,
+      "w_capped": false,
+      "flag_hard_overlap": true,
+      "flag_energetic_anomaly": true,
+      "flag_exponent_capped": false,
+      "flagged": true
+    },
+    {
+      "i": 9,
+      "min_dist_A": 1.4626,
+      "U_classical_kJ": 76063.349,
+      "U_mace_kJ": -15.696,
+      "w_mace": 562.0127865685344,
+      "w_capped": false,
+      "flag_hard_overlap": true,
+      "flag_energetic_anomaly": true,
+      "flag_exponent_capped": false,
+      "flagged": true
+    }
+  ],
+  "verdict": "REFUSE [Class I: OOD over-binding] \u2014 flagged-weight fraction >= 0.5. Per VERDICT_SCHEMA_V06.md"
+}

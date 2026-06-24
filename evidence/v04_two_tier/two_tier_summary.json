@@ -1,0 +1,791 @@
+{
+  "generated_at_utc": "2026-06-01 21:20:55",
+  "tier_A_definition": {
+    "delta_log10_KH_max": 0.1,
+    "delta_Qst_kJ_per_mol_max": 2.0,
+    "rationale": "Historical v04.2 strict thresholds. Used as an internal regression gate to detect code-change-induced shifts in K_H / Q_st. NOT a physical-accuracy claim. Tighter than experimental scatter for open-metal-site / defective MOFs."
+  },
+  "tier_B_per_system_bands": {
+    "case_1_mg_mof_74_co2": {
+      "delta_log10_KH_max": 0.4,
+      "delta_Qst_kJ_per_mol_max": 8.0,
+      "rationale": "Mg-MOF-74 CO2: open-metal-site MOF with documented multi-fold experimental scatter. Q_st spread 39 (Britt 2009 PNAS) -- 47 (Valenzano IR \u0394H) kJ/mol. K_H spread spans the Mason DSL, Vandenbrande triangulation, and McCready/Jorge consensus uncertainty.",
+      "sources": [
+        "10.1073/pnas.0909718106 (Britt 2009)",
+        "10.1039/c1ee01720a (Mason 2011)",
+        "10.1021/acs.jctc.4c00287 (McCready 2024)",
+        "10.1021/jp208529p (Queen 2012)"
+      ]
+    },
+    "case_2_hkust_1_co2": {
+      "delta_log10_KH_max": 0.4,
+      "delta_Qst_kJ_per_mol_max": 8.0,
+      "rationale": "HKUST-1 CO2: canonical Cu paddle-wheel; Park 2017 inter-lab BET/uptake scatter; documented synthesis-dependent K_H spread.",
+      "sources": [
+        "10.1021/acs.jctc.4c00287 (McCready 2024)",
+        "Park et al. 2017 (cited in McCready 2024)"
+      ]
+    },
+    "case_3_uio66_co2": {
+      "delta_log10_KH_max": 0.4,
+      "delta_Qst_kJ_per_mol_max": 8.0,
+      "rationale": "UiO-66 CO2: notorious defect-density spread; Cmarik 2012 K_H = 5.14 mol/(kg.bar) vs Cavka-matched ~1.99 (\u0394log10 = 0.41); Maia 2023 UA reports best match to Cavka not Cmarik. Synthesis-missing-linker/missing-cluster defects dominate at the experimental level.",
+      "sources": [
+        "10.1021/la3035352 (Cmarik 2012)",
+        "10.3390/cryst13101523 (Maia 2023)",
+        "10.1021/acs.jctc.4c00287 (McCready 2024)"
+      ]
+    },
+    "case_4_si_cha_co2": {
+      "delta_log10_KH_max": 0.2,
+      "delta_Qst_kJ_per_mol_max": 4.0,
+      "rationale": "Si-CHA + CO2: all-silica framework, low synthesis variation. Maghsoudi 2013 Toth fit is the canonical reference.",
+      "sources": [
+        "10.1007/s10450-013-9528-1 (Maghsoudi 2013)"
+      ]
+    },
+    "case_5_na_rho_co2": {
+      "delta_log10_KH_max": Infinity,
+      "delta_Qst_kJ_per_mol_max": Infinity,
+      "rationale": "Na-Rho CO2: trapdoor cationic zeolite. Closed-state Widom partition function is not the same physical observable as experimental open-state Langmuir K_H. ENSEMBLE MISMATCH KNOWN OPEN PROBLEM. Strict METHOD_BLOCKED stands; physical-accuracy comparison is not defined on the K_H/Q_st axes. Site-truth axis remains active.",
+      "sources": [
+        "10.1021/acs.chemmater.6b03837 (Coudert/Verma trapdoor gating)",
+        "10.1021/acs.jctc.8b00534 (Witman 2018 flat-histogram MC)",
+        "v04_case_matrix.yaml::5b lozinska_2012_packet_2026_05_28_finalisation"
+      ]
+    },
+    "case_6_mfi_small_gas": {
+      "delta_log10_KH_max": 0.15,
+      "delta_Qst_kJ_per_mol_max": 3.0,
+      "rationale": "All-silica MFI: well-characterized synthesis, narrow scatter. Hufton 1993 + Talu-Myers + Dunne 1996 + Golden-Sircar all consistent within ~10% on K_H.",
+      "sources": [
+        "10.1002/aic.690390605 (Hufton 1993)",
+        "10.1021/la960495z (Dunne 1996)"
+      ]
+    }
+  },
+  "branches": [
+    {
+      "branch_id": "1a",
+      "case_id": "1",
+      "label": "Mg-MOF-74 Lin/Mercado Buckingham \u2014 RASPA2",
+      "two_tier_verdict": {
+        "case_id": "1",
+        "branch_id": "1a",
+        "K_H_mean_mol_per_kg_per_bar": 22153.0,
+        "K_H_reference_mol_per_kg_per_bar": 381.0,
+        "Q_st_mean_kJ_per_mol": 50.83,
+        "Q_st_reference_kJ_per_mol": 42.0,
+        "delta_log10_K_H": 1.7645075718235277,
+        "delta_Q_st_kJ_per_mol": 8.829999999999998,
+        "tier_A_regression": {
+          "delta_log10_KH_max": 0.1,
+          "delta_Qst_kJ_per_mol_max": 2.0,
+          "K_H_pass": false,
+          "Q_st_pass": false,
+          "composite": "FAIL",
+          "rationale": "Historical v04.2 strict thresholds. Used as an internal regression gate to detect code-change-induced shifts in K_H / Q_st. NOT a physical-accuracy claim. Tighter than experimental scatter for open-metal-site / defective MOFs."
+        },
+        "tier_B_physical": {
+          "delta_log10_KH_max": 0.4,
+          "delta_Qst_kJ_per_mol_max": 8.0,
+          "K_H_pass": false,
+          "Q_st_pass": false,
+          "composite": "FAIL",
+          "rationale": "Mg-MOF-74 CO2: open-metal-site MOF with documented multi-fold experimental scatter. Q_st spread 39 (Britt 2009 PNAS) -- 47 (Valenzano IR \u0394H) kJ/mol. K_H spread spans the Mason DSL, Vandenbrande triangulation, and McCready/Jorge consensus uncertainty.",
+          "sources": [
+            "10.1073/pnas.0909718106 (Britt 2009)",
+            "10.1039/c1ee01720a (Mason 2011)",
+            "10.1021/acs.jctc.4c00287 (McCready 2024)",
+            "10.1021/jp208529p (Queen 2012)"
+          ]
+        },
+        "headline_disposition": "PHYSICAL_FAIL",
+        "note": "Outside Tier B literature-scatter band. Honest force-field / reference disagreement beyond documented experimental scatter."
+      },
+      "bayesian_log_space_comparison": {
+        "K_H_sim_log10_std": 0.0029995144827128406,
+        "K_H_exp_log10_std": 0.2,
+        "delta_log10": 1.7645075718235277,
+        "combined_log10_std": 0.20002249145316636,
+        "z_score": 8.82154581219519,
+        "p_agreement_within_1_sigma": 2.609024107869118e-15,
+        "p_agreement_within_2_sigma": 4.50328663248456e-12,
+        "p_agreement_within_tier_b_band": 4.49623671627819e-12,
+        "tier_b_delta_log10_threshold": 0.4,
+        "classification": "STRONG_DISAGREEMENT_GT_3_SIGMA",
+        "note": "\u0394log10 = 1.765 \u00b1 0.200 (sim 1\u03c3 \u2248 0.003, exp scatter 1\u03c3 \u2248 0.200). |Z| = 8.82."
+      }
+    },
+    {
+      "branch_id": "1b",
+      "case_id": "1",
+      "label": "Mg-MOF-74 Dzubak C5+D6 \u2014 native_widom_v04",
+      "two_tier_verdict": {
+        "case_id": "1",
+        "branch_id": "1b",
+        "K_H_mean_mol_per_kg_per_bar": 23988.0,
+        "K_H_reference_mol_per_kg_per_bar": 381.0,
+        "Q_st_mean_kJ_per_mol": 51.55,
+        "Q_st_reference_kJ_per_mol": 42.0,
+        "delta_log10_K_H": 1.7990690644901224,
+        "delta_Q_st_kJ_per_mol": 9.549999999999997,
+        "tier_A_regression": {
+          "delta_log10_KH_max": 0.1,
+          "delta_Qst_kJ_per_mol_max": 2.0,
+          "K_H_pass": false,
+          "Q_st_pass": false,
+          "composite": "FAIL",
+          "rationale": "Historical v04.2 strict thresholds. Used as an internal regression gate to detect code-change-induced shifts in K_H / Q_st. NOT a physical-accuracy claim. Tighter than experimental scatter for open-metal-site / defective MOFs."
+        },
+        "tier_B_physical": {
+          "delta_log10_KH_max": 0.4,
+          "delta_Qst_kJ_per_mol_max": 8.0,
+          "K_H_pass": false,
+          "Q_st_pass": false,
+          "composite": "FAIL",
+          "rationale": "Mg-MOF-74 CO2: open-metal-site MOF with documented multi-fold experimental scatter. Q_st spread 39 (Britt 2009 PNAS) -- 47 (Valenzano IR \u0394H) kJ/mol. K_H spread spans the Mason DSL, Vandenbrande triangulation, and McCready/Jorge consensus uncertainty.",
+          "sources": [
+            "10.1073/pnas.0909718106 (Britt 2009)",
+            "10.1039/c1ee01720a (Mason 2011)",
+            "10.1021/acs.jctc.4c00287 (McCready 2024)",
+            "10.1021/jp208529p (Queen 2012)"
+          ]
+        },
+        "headline_disposition": "PHYSICAL_FAIL",
+        "note": "Outside Tier B literature-scatter band. Honest force-field / reference disagreement beyond documented experimental scatter."
+      },
+      "bayesian_log_space_comparison": {
+        "K_H_sim_log10_std": 0.0034037536804938295,
+        "K_H_exp_log10_std": 0.2,
+        "delta_log10": 1.7990690644901224,
+        "combined_log10_std": 0.20002896175083618,
+        "z_score": 8.994042906302301,
+        "p_agreement_within_1_sigma": 6.661338147750939e-16,
+        "p_agreement_within_2_sigma": 1.3353762540191383e-12,
+        "p_agreement_within_tier_b_band": 1.3326006964575754e-12,
+        "tier_b_delta_log10_threshold": 0.4,
+        "classification": "STRONG_DISAGREEMENT_GT_3_SIGMA",
+        "note": "\u0394log10 = 1.799 \u00b1 0.200 (sim 1\u03c3 \u2248 0.003, exp scatter 1\u03c3 \u2248 0.200). |Z| = 8.99."
+      }
+    },
+    {
+      "branch_id": "1c",
+      "case_id": "1",
+      "label": "Mg-MOF-74 Becker reduced-LJ non-polarizable approximation",
+      "two_tier_verdict": {
+        "case_id": "1",
+        "branch_id": "1c",
+        "K_H_mean_mol_per_kg_per_bar": 1452.0,
+        "K_H_reference_mol_per_kg_per_bar": 381.0,
+        "Q_st_mean_kJ_per_mol": 46.01,
+        "Q_st_reference_kJ_per_mol": 42.0,
+        "delta_log10_K_H": 0.5810416406884555,
+        "delta_Q_st_kJ_per_mol": 4.009999999999998,
+        "tier_A_regression": {
+          "delta_log10_KH_max": 0.1,
+          "delta_Qst_kJ_per_mol_max": 2.0,
+          "K_H_pass": false,
+          "Q_st_pass": false,
+          "composite": "FAIL",
+          "rationale": "Historical v04.2 strict thresholds. Used as an internal regression gate to detect code-change-induced shifts in K_H / Q_st. NOT a physical-accuracy claim. Tighter than experimental scatter for open-metal-site / defective MOFs."
+        },
+        "tier_B_physical": {
+          "delta_log10_KH_max": 0.4,
+          "delta_Qst_kJ_per_mol_max": 8.0,
+          "K_H_pass": false,
+          "Q_st_pass": true,
+          "composite": "FAIL",
+          "rationale": "Mg-MOF-74 CO2: open-metal-site MOF with documented multi-fold experimental scatter. Q_st spread 39 (Britt 2009 PNAS) -- 47 (Valenzano IR \u0394H) kJ/mol. K_H spread spans the Mason DSL, Vandenbrande triangulation, and McCready/Jorge consensus uncertainty.",
+          "sources": [
+            "10.1073/pnas.0909718106 (Britt 2009)",
+            "10.1039/c1ee01720a (Mason 2011)",
+            "10.1021/acs.jctc.4c00287 (McCready 2024)",
+            "10.1021/jp208529p (Queen 2012)"
+          ]
+        },
+        "headline_disposition": "PHYSICAL_FAIL",
+        "note": "Outside Tier B literature-scatter band. Honest force-field / reference disagreement beyond documented experimental scatter."
+      },
+      "bayesian_log_space_comparison": {
+        "K_H_sim_log10_std": 0.0029910620305636506,
+        "K_H_exp_log10_std": 0.2,
+        "delta_log10": 0.5810416406884555,
+        "combined_log10_std": 0.20002236487970712,
+        "z_score": 2.904883366606991,
+        "p_agreement_within_1_sigma": 0.028350481515336312,
+        "p_agreement_within_2_sigma": 0.18276312251026178,
+        "p_agreement_within_tier_b_band": 0.18270388662918602,
+        "tier_b_delta_log10_threshold": 0.4,
+        "classification": "TENSION_2_TO_3_SIGMA",
+        "note": "\u0394log10 = 0.581 \u00b1 0.200 (sim 1\u03c3 \u2248 0.003, exp scatter 1\u03c3 \u2248 0.200). |Z| = 2.90."
+      }
+    },
+    {
+      "branch_id": "1d",
+      "case_id": "1",
+      "label": "Mg-MOF-74 Mercado Model 4 DFT-derived",
+      "two_tier_verdict": {
+        "case_id": "1",
+        "branch_id": "1d",
+        "K_H_mean_mol_per_kg_per_bar": 19811.0,
+        "K_H_reference_mol_per_kg_per_bar": 381.0,
+        "Q_st_mean_kJ_per_mol": 53.84,
+        "Q_st_reference_kJ_per_mol": 42.0,
+        "delta_log10_K_H": 1.7159814223021388,
+        "delta_Q_st_kJ_per_mol": 11.840000000000003,
+        "tier_A_regression": {
+          "delta_log10_KH_max": 0.1,
+          "delta_Qst_kJ_per_mol_max": 2.0,
+          "K_H_pass": false,
+          "Q_st_pass": false,
+          "composite": "FAIL",
+          "rationale": "Historical v04.2 strict thresholds. Used as an internal regression gate to detect code-change-induced shifts in K_H / Q_st. NOT a physical-accuracy claim. Tighter than experimental scatter for open-metal-site / defective MOFs."
+        },
+        "tier_B_physical": {
+          "delta_log10_KH_max": 0.4,
+          "delta_Qst_kJ_per_mol_max": 8.0,
+          "K_H_pass": false,
+          "Q_st_pass": false,
+          "composite": "FAIL",
+          "rationale": "Mg-MOF-74 CO2: open-metal-site MOF with documented multi-fold experimental scatter. Q_st spread 39 (Britt 2009 PNAS) -- 47 (Valenzano IR \u0394H) kJ/mol. K_H spread spans the Mason DSL, Vandenbrande triangulation, and McCready/Jorge consensus uncertainty.",
+          "sources": [
+            "10.1073/pnas.0909718106 (Britt 2009)",
+            "10.1039/c1ee01720a (Mason 2011)",
+            "10.1021/acs.jctc.4c00287 (McCready 2024)",
+            "10.1021/jp208529p (Queen 2012)"
+          ]
+        },
+        "headline_disposition": "PHYSICAL_FAIL",
+        "note": "Outside Tier B literature-scatter band. Honest force-field / reference disagreement beyond documented experimental scatter."
+      },
+      "bayesian_log_space_comparison": {
+        "K_H_sim_log10_std": 0.0024333579834276693,
+        "K_H_exp_log10_std": 0.2,
+        "delta_log10": 1.7159814223021388,
+        "combined_log10_std": 0.20001480252990156,
+        "z_score": 8.579272136848997,
+        "p_agreement_within_1_sigma": 1.73749903353837e-14,
+        "p_agreement_within_2_sigma": 2.363781392844544e-11,
+        "p_agreement_within_tier_b_band": 2.3614332711474617e-11,
+        "tier_b_delta_log10_threshold": 0.4,
+        "classification": "STRONG_DISAGREEMENT_GT_3_SIGMA",
+        "note": "\u0394log10 = 1.716 \u00b1 0.200 (sim 1\u03c3 \u2248 0.002, exp scatter 1\u03c3 \u2248 0.200). |Z| = 8.58."
+      }
+    },
+    {
+      "branch_id": "2a",
+      "case_id": "2",
+      "label": "HKUST-1 Nazarian DDEC + UFF Cu LJ",
+      "two_tier_verdict": {
+        "case_id": "2",
+        "branch_id": "2a",
+        "K_H_mean_mol_per_kg_per_bar": 1.22,
+        "K_H_reference_mol_per_kg_per_bar": 7.0,
+        "Q_st_mean_kJ_per_mol": 20.93,
+        "Q_st_reference_kJ_per_mol": 30.0,
+        "delta_log10_K_H": -0.7587382093395086,
+        "delta_Q_st_kJ_per_mol": -9.07,
+        "tier_A_regression": {
+          "delta_log10_KH_max": 0.1,
+          "delta_Qst_kJ_per_mol_max": 2.0,
+          "K_H_pass": false,
+          "Q_st_pass": false,
+          "composite": "FAIL",
+          "rationale": "Historical v04.2 strict thresholds. Used as an internal regression gate to detect code-change-induced shifts in K_H / Q_st. NOT a physical-accuracy claim. Tighter than experimental scatter for open-metal-site / defective MOFs."
+        },
+        "tier_B_physical": {
+          "delta_log10_KH_max": 0.4,
+          "delta_Qst_kJ_per_mol_max": 8.0,
+          "K_H_pass": false,
+          "Q_st_pass": false,
+          "composite": "FAIL",
+          "rationale": "HKUST-1 CO2: canonical Cu paddle-wheel; Park 2017 inter-lab BET/uptake scatter; documented synthesis-dependent K_H spread.",
+          "sources": [
+            "10.1021/acs.jctc.4c00287 (McCready 2024)",
+            "Park et al. 2017 (cited in McCready 2024)"
+          ]
+        },
+        "headline_disposition": "PHYSICAL_FAIL",
+        "note": "Outside Tier B literature-scatter band. Honest force-field / reference disagreement beyond documented experimental scatter."
+      },
+      "bayesian_log_space_comparison": {
+        "K_H_sim_log10_std": 0.007120299294132374,
+        "K_H_exp_log10_std": 0.18,
+        "delta_log10": -0.7587382093395086,
+        "combined_log10_std": 0.18014077456821934,
+        "z_score": -4.211918213175965,
+        "p_agreement_within_1_sigma": 0.0006591660801703592,
+        "p_agreement_within_2_sigma": 0.013486158018249927,
+        "p_agreement_within_tier_b_band": 0.02321667457347243,
+        "tier_b_delta_log10_threshold": 0.4,
+        "classification": "STRONG_DISAGREEMENT_GT_3_SIGMA",
+        "note": "\u0394log10 = -0.759 \u00b1 0.180 (sim 1\u03c3 \u2248 0.007, exp scatter 1\u03c3 \u2248 0.180). |Z| = 4.21."
+      }
+    },
+    {
+      "branch_id": "2b",
+      "case_id": "2",
+      "label": "HKUST-1 Ongari 2017 modified Cu-O(CO2) RASPA generic",
+      "two_tier_verdict": {
+        "case_id": "2",
+        "branch_id": "2b",
+        "K_H_mean_mol_per_kg_per_bar": 176.0,
+        "K_H_reference_mol_per_kg_per_bar": 7.0,
+        "Q_st_mean_kJ_per_mol": 44.03,
+        "Q_st_reference_kJ_per_mol": 30.0,
+        "delta_log10_K_H": 1.400414627799893,
+        "delta_Q_st_kJ_per_mol": 14.030000000000001,
+        "tier_A_regression": {
+          "delta_log10_KH_max": 0.1,
+          "delta_Qst_kJ_per_mol_max": 2.0,
+          "K_H_pass": false,
+          "Q_st_pass": false,
+          "composite": "FAIL",
+          "rationale": "Historical v04.2 strict thresholds. Used as an internal regression gate to detect code-change-induced shifts in K_H / Q_st. NOT a physical-accuracy claim. Tighter than experimental scatter for open-metal-site / defective MOFs."
+        },
+        "tier_B_physical": {
+          "delta_log10_KH_max": 0.4,
+          "delta_Qst_kJ_per_mol_max": 8.0,
+          "K_H_pass": false,
+          "Q_st_pass": false,
+          "composite": "FAIL",
+          "rationale": "HKUST-1 CO2: canonical Cu paddle-wheel; Park 2017 inter-lab BET/uptake scatter; documented synthesis-dependent K_H spread.",
+          "sources": [
+            "10.1021/acs.jctc.4c00287 (McCready 2024)",
+            "Park et al. 2017 (cited in McCready 2024)"
+          ]
+        },
+        "headline_disposition": "PHYSICAL_FAIL",
+        "note": "Outside Tier B literature-scatter band. Honest force-field / reference disagreement beyond documented experimental scatter."
+      },
+      "bayesian_log_space_comparison": {
+        "K_H_sim_log10_std": 0.0024676121570377588,
+        "K_H_exp_log10_std": 0.18,
+        "delta_log10": 1.400414627799893,
+        "combined_log10_std": 0.18001691339915135,
+        "z_score": 7.779350291907043,
+        "p_agreement_within_1_sigma": 6.035894006828357e-12,
+        "p_agreement_within_2_sigma": 3.749482391235404e-09,
+        "p_agreement_within_tier_b_band": 1.3696090261916538e-08,
+        "tier_b_delta_log10_threshold": 0.4,
+        "classification": "STRONG_DISAGREEMENT_GT_3_SIGMA",
+        "note": "\u0394log10 = 1.400 \u00b1 0.180 (sim 1\u03c3 \u2248 0.002, exp scatter 1\u03c3 \u2248 0.180). |Z| = 7.78."
+      }
+    },
+    {
+      "branch_id": "3a",
+      "case_id": "3",
+      "label": "UiO-66 PACMOF2 DDEC6 + UFF Zr LJ",
+      "two_tier_verdict": {
+        "case_id": "3",
+        "branch_id": "3a",
+        "K_H_mean_mol_per_kg_per_bar": 0.81,
+        "K_H_reference_mol_per_kg_per_bar": 5.14,
+        "Q_st_mean_kJ_per_mol": 17.29,
+        "Q_st_reference_kJ_per_mol": 26.5,
+        "delta_log10_K_H": -0.8024781001166259,
+        "delta_Q_st_kJ_per_mol": -9.21,
+        "tier_A_regression": {
+          "delta_log10_KH_max": 0.1,
+          "delta_Qst_kJ_per_mol_max": 2.0,
+          "K_H_pass": false,
+          "Q_st_pass": false,
+          "composite": "FAIL",
+          "rationale": "Historical v04.2 strict thresholds. Used as an internal regression gate to detect code-change-induced shifts in K_H / Q_st. NOT a physical-accuracy claim. Tighter than experimental scatter for open-metal-site / defective MOFs."
+        },
+        "tier_B_physical": {
+          "delta_log10_KH_max": 0.4,
+          "delta_Qst_kJ_per_mol_max": 8.0,
+          "K_H_pass": false,
+          "Q_st_pass": false,
+          "composite": "FAIL",
+          "rationale": "UiO-66 CO2: notorious defect-density spread; Cmarik 2012 K_H = 5.14 mol/(kg.bar) vs Cavka-matched ~1.99 (\u0394log10 = 0.41); Maia 2023 UA reports best match to Cavka not Cmarik. Synthesis-missing-linker/missing-cluster defects dominate at the experimental level.",
+          "sources": [
+            "10.1021/la3035352 (Cmarik 2012)",
+            "10.3390/cryst13101523 (Maia 2023)",
+            "10.1021/acs.jctc.4c00287 (McCready 2024)"
+          ]
+        },
+        "headline_disposition": "PHYSICAL_FAIL",
+        "note": "Outside Tier B literature-scatter band. Honest force-field / reference disagreement beyond documented experimental scatter."
+      },
+      "bayesian_log_space_comparison": {
+        "K_H_sim_log10_std": 0.0053619667493089345,
+        "K_H_exp_log10_std": 0.3,
+        "delta_log10": -0.8024781001166259,
+        "combined_log10_std": 0.3000479139861177,
+        "z_score": -2.674499847226914,
+        "p_agreement_within_1_sigma": 0.04689704430879604,
+        "p_agreement_within_2_sigma": 0.24999531805679776,
+        "p_agreement_within_tier_b_band": 0.08986797936062607,
+        "tier_b_delta_log10_threshold": 0.4,
+        "classification": "TENSION_2_TO_3_SIGMA",
+        "note": "\u0394log10 = -0.802 \u00b1 0.300 (sim 1\u03c3 \u2248 0.005, exp scatter 1\u03c3 \u2248 0.300). |Z| = 2.67."
+      }
+    },
+    {
+      "branch_id": "3b_UA",
+      "case_id": "3",
+      "label": "UiO-66 Maia 2023 UA (best Cavka match, framework no-charge)",
+      "two_tier_verdict": {
+        "case_id": "3",
+        "branch_id": "3b_UA",
+        "K_H_mean_mol_per_kg_per_bar": 1.994,
+        "K_H_reference_mol_per_kg_per_bar": 5.14,
+        "Q_st_mean_kJ_per_mol": 20.41,
+        "Q_st_reference_kJ_per_mol": 26.5,
+        "delta_log10_K_H": -0.4112379650196387,
+        "delta_Q_st_kJ_per_mol": -6.09,
+        "tier_A_regression": {
+          "delta_log10_KH_max": 0.1,
+          "delta_Qst_kJ_per_mol_max": 2.0,
+          "K_H_pass": false,
+          "Q_st_pass": false,
+          "composite": "FAIL",
+          "rationale": "Historical v04.2 strict thresholds. Used as an internal regression gate to detect code-change-induced shifts in K_H / Q_st. NOT a physical-accuracy claim. Tighter than experimental scatter for open-metal-site / defective MOFs."
+        },
+        "tier_B_physical": {
+          "delta_log10_KH_max": 0.4,
+          "delta_Qst_kJ_per_mol_max": 8.0,
+          "K_H_pass": false,
+          "Q_st_pass": true,
+          "composite": "FAIL",
+          "rationale": "UiO-66 CO2: notorious defect-density spread; Cmarik 2012 K_H = 5.14 mol/(kg.bar) vs Cavka-matched ~1.99 (\u0394log10 = 0.41); Maia 2023 UA reports best match to Cavka not Cmarik. Synthesis-missing-linker/missing-cluster defects dominate at the experimental level.",
+          "sources": [
+            "10.1021/la3035352 (Cmarik 2012)",
+            "10.3390/cryst13101523 (Maia 2023)",
+            "10.1021/acs.jctc.4c00287 (McCready 2024)"
+          ]
+        },
+        "headline_disposition": "PHYSICAL_FAIL",
+        "note": "Outside Tier B literature-scatter band. Honest force-field / reference disagreement beyond documented experimental scatter."
+      },
+      "bayesian_log_space_comparison": {
+        "K_H_sim_log10_std": 0.0061030381184740985,
+        "K_H_exp_log10_std": 0.3,
+        "delta_log10": -0.4112379650196387,
+        "combined_log10_std": 0.30006207203556323,
+        "z_score": -1.370509648986557,
+        "p_agreement_within_1_sigma": 0.3466196041019082,
+        "p_agreement_within_2_sigma": 0.73511081174094,
+        "p_agreement_within_tier_b_band": 0.48163227317992074,
+        "tier_b_delta_log10_threshold": 0.4,
+        "classification": "AGREEMENT_WITHIN_2_SIGMA",
+        "note": "\u0394log10 = -0.411 \u00b1 0.300 (sim 1\u03c3 \u2248 0.006, exp scatter 1\u03c3 \u2248 0.300). |Z| = 1.37."
+      }
+    },
+    {
+      "branch_id": "3b_UAq",
+      "case_id": "3",
+      "label": "UiO-66 Maia 2023 UAq (united-atom + Yang 2011 charges)",
+      "two_tier_verdict": {
+        "case_id": "3",
+        "branch_id": "3b_UAq",
+        "K_H_mean_mol_per_kg_per_bar": 1.975,
+        "K_H_reference_mol_per_kg_per_bar": 5.14,
+        "Q_st_mean_kJ_per_mol": 20.64,
+        "Q_st_reference_kJ_per_mol": 26.5,
+        "delta_log10_K_H": -0.4153960190327966,
+        "delta_Q_st_kJ_per_mol": -5.859999999999999,
+        "tier_A_regression": {
+          "delta_log10_KH_max": 0.1,
+          "delta_Qst_kJ_per_mol_max": 2.0,
+          "K_H_pass": false,
+          "Q_st_pass": false,
+          "composite": "FAIL",
+          "rationale": "Historical v04.2 strict thresholds. Used as an internal regression gate to detect code-change-induced shifts in K_H / Q_st. NOT a physical-accuracy claim. Tighter than experimental scatter for open-metal-site / defective MOFs."
+        },
+        "tier_B_physical": {
+          "delta_log10_KH_max": 0.4,
+          "delta_Qst_kJ_per_mol_max": 8.0,
+          "K_H_pass": false,
+          "Q_st_pass": true,
+          "composite": "FAIL",
+          "rationale": "UiO-66 CO2: notorious defect-density spread; Cmarik 2012 K_H = 5.14 mol/(kg.bar) vs Cavka-matched ~1.99 (\u0394log10 = 0.41); Maia 2023 UA reports best match to Cavka not Cmarik. Synthesis-missing-linker/missing-cluster defects dominate at the experimental level.",
+          "sources": [
+            "10.1021/la3035352 (Cmarik 2012)",
+            "10.3390/cryst13101523 (Maia 2023)",
+            "10.1021/acs.jctc.4c00287 (McCready 2024)"
+          ]
+        },
+        "headline_disposition": "PHYSICAL_FAIL",
+        "note": "Outside Tier B literature-scatter band. Honest force-field / reference disagreement beyond documented experimental scatter."
+      },
+      "bayesian_log_space_comparison": {
+        "K_H_sim_log10_std": 0.0078649383949326,
+        "K_H_exp_log10_std": 0.3,
+        "delta_log10": -0.4153960190327966,
+        "combined_log10_std": 0.30010307771823347,
+        "z_score": -1.3841778038105013,
+        "p_agreement_within_1_sigma": 0.3418646693018036,
+        "p_agreement_within_2_sigma": 0.7306371030886175,
+        "p_agreement_within_tier_b_band": 0.4762489621189937,
+        "tier_b_delta_log10_threshold": 0.4,
+        "classification": "AGREEMENT_WITHIN_2_SIGMA",
+        "note": "\u0394log10 = -0.415 \u00b1 0.300 (sim 1\u03c3 \u2248 0.008, exp scatter 1\u03c3 \u2248 0.300). |Z| = 1.38."
+      }
+    },
+    {
+      "branch_id": "3b_EHq",
+      "case_id": "3",
+      "label": "UiO-66 Maia 2023 EHq (explicit H + Yang 2011 charges)",
+      "two_tier_verdict": {
+        "case_id": "3",
+        "branch_id": "3b_EHq",
+        "K_H_mean_mol_per_kg_per_bar": 2.874,
+        "K_H_reference_mol_per_kg_per_bar": 5.14,
+        "Q_st_mean_kJ_per_mol": 22.07,
+        "Q_st_reference_kJ_per_mol": 26.5,
+        "delta_log10_K_H": -0.2524763551970688,
+        "delta_Q_st_kJ_per_mol": -4.43,
+        "tier_A_regression": {
+          "delta_log10_KH_max": 0.1,
+          "delta_Qst_kJ_per_mol_max": 2.0,
+          "K_H_pass": false,
+          "Q_st_pass": false,
+          "composite": "FAIL",
+          "rationale": "Historical v04.2 strict thresholds. Used as an internal regression gate to detect code-change-induced shifts in K_H / Q_st. NOT a physical-accuracy claim. Tighter than experimental scatter for open-metal-site / defective MOFs."
+        },
+        "tier_B_physical": {
+          "delta_log10_KH_max": 0.4,
+          "delta_Qst_kJ_per_mol_max": 8.0,
+          "K_H_pass": true,
+          "Q_st_pass": true,
+          "composite": "PASS",
+          "rationale": "UiO-66 CO2: notorious defect-density spread; Cmarik 2012 K_H = 5.14 mol/(kg.bar) vs Cavka-matched ~1.99 (\u0394log10 = 0.41); Maia 2023 UA reports best match to Cavka not Cmarik. Synthesis-missing-linker/missing-cluster defects dominate at the experimental level.",
+          "sources": [
+            "10.1021/la3035352 (Cmarik 2012)",
+            "10.3390/cryst13101523 (Maia 2023)",
+            "10.1021/acs.jctc.4c00287 (McCready 2024)"
+          ]
+        },
+        "headline_disposition": "PHYSICAL_PASS",
+        "note": "Within Tier B literature-scatter band. Atlas reproduces published experiment to within documented experimental reproducibility. (Tier A regression FAIL \u2014 for code-change tracking only.)"
+      },
+      "bayesian_log_space_comparison": {
+        "K_H_sim_log10_std": 0.01429767287667903,
+        "K_H_exp_log10_std": 0.3,
+        "delta_log10": -0.2524763551970688,
+        "combined_log10_std": 0.30034051250154137,
+        "z_score": -0.8406336963807807,
+        "p_agreement_within_1_sigma": 0.5304722291590994,
+        "p_agreement_within_2_sigma": 0.8745953472916079,
+        "p_agreement_within_tier_b_band": 0.6734425777438146,
+        "tier_b_delta_log10_threshold": 0.4,
+        "classification": "AGREEMENT_WITHIN_1_SIGMA",
+        "note": "\u0394log10 = -0.252 \u00b1 0.300 (sim 1\u03c3 \u2248 0.014, exp scatter 1\u03c3 \u2248 0.300). |Z| = 0.84."
+      }
+    },
+    {
+      "branch_id": "4a",
+      "case_id": "4",
+      "label": "Si-CHA + CO2 TraPPE-zeo + Harris-Yung",
+      "two_tier_verdict": {
+        "case_id": "4",
+        "branch_id": "4a",
+        "K_H_mean_mol_per_kg_per_bar": 1.86,
+        "K_H_reference_mol_per_kg_per_bar": 2.43,
+        "Q_st_mean_kJ_per_mol": 32.74,
+        "Q_st_reference_kJ_per_mol": 21.0,
+        "delta_log10_K_H": -0.1160933293803959,
+        "delta_Q_st_kJ_per_mol": 11.740000000000002,
+        "tier_A_regression": {
+          "delta_log10_KH_max": 0.1,
+          "delta_Qst_kJ_per_mol_max": 2.0,
+          "K_H_pass": false,
+          "Q_st_pass": false,
+          "composite": "FAIL",
+          "rationale": "Historical v04.2 strict thresholds. Used as an internal regression gate to detect code-change-induced shifts in K_H / Q_st. NOT a physical-accuracy claim. Tighter than experimental scatter for open-metal-site / defective MOFs."
+        },
+        "tier_B_physical": {
+          "delta_log10_KH_max": 0.2,
+          "delta_Qst_kJ_per_mol_max": 4.0,
+          "K_H_pass": true,
+          "Q_st_pass": false,
+          "composite": "FAIL",
+          "rationale": "Si-CHA + CO2: all-silica framework, low synthesis variation. Maghsoudi 2013 Toth fit is the canonical reference.",
+          "sources": [
+            "10.1007/s10450-013-9528-1 (Maghsoudi 2013)"
+          ]
+        },
+        "headline_disposition": "PHYSICAL_FAIL",
+        "note": "Outside Tier B literature-scatter band. Honest force-field / reference disagreement beyond documented experimental scatter."
+      },
+      "bayesian_log_space_comparison": {
+        "K_H_sim_log10_std": 0.004670035625731772,
+        "K_H_exp_log10_std": 0.1,
+        "delta_log10": -0.1160933293803959,
+        "combined_log10_std": 0.10010898677314442,
+        "z_score": -1.1596694075375409,
+        "p_agreement_within_1_sigma": 0.4211716149130854,
+        "p_agreement_within_2_sigma": 0.7988487321882392,
+        "p_agreement_within_tier_b_band": 0.7982320118306766,
+        "tier_b_delta_log10_threshold": 0.2,
+        "classification": "AGREEMENT_WITHIN_2_SIGMA",
+        "note": "\u0394log10 = -0.116 \u00b1 0.100 (sim 1\u03c3 \u2248 0.005, exp scatter 1\u03c3 \u2248 0.100). |Z| = 1.16."
+      }
+    },
+    {
+      "branch_id": "6a",
+      "case_id": "6",
+      "label": "MFI + CH4 Garcia-Perez 2007 + Dubbeldam 2004 UA",
+      "two_tier_verdict": {
+        "case_id": "6",
+        "branch_id": "6a",
+        "K_H_mean_mol_per_kg_per_bar": 0.4,
+        "K_H_reference_mol_per_kg_per_bar": 0.89,
+        "Q_st_mean_kJ_per_mol": 18.47,
+        "Q_st_reference_kJ_per_mol": 20.9,
+        "delta_log10_K_H": -0.3473300153169504,
+        "delta_Q_st_kJ_per_mol": -2.4299999999999997,
+        "tier_A_regression": {
+          "delta_log10_KH_max": 0.1,
+          "delta_Qst_kJ_per_mol_max": 2.0,
+          "K_H_pass": false,
+          "Q_st_pass": false,
+          "composite": "FAIL",
+          "rationale": "Historical v04.2 strict thresholds. Used as an internal regression gate to detect code-change-induced shifts in K_H / Q_st. NOT a physical-accuracy claim. Tighter than experimental scatter for open-metal-site / defective MOFs."
+        },
+        "tier_B_physical": {
+          "delta_log10_KH_max": 0.15,
+          "delta_Qst_kJ_per_mol_max": 3.0,
+          "K_H_pass": false,
+          "Q_st_pass": true,
+          "composite": "FAIL",
+          "rationale": "All-silica MFI: well-characterized synthesis, narrow scatter. Hufton 1993 + Talu-Myers + Dunne 1996 + Golden-Sircar all consistent within ~10% on K_H.",
+          "sources": [
+            "10.1002/aic.690390605 (Hufton 1993)",
+            "10.1021/la960495z (Dunne 1996)"
+          ]
+        },
+        "headline_disposition": "PHYSICAL_FAIL",
+        "note": "Outside Tier B literature-scatter band. Honest force-field / reference disagreement beyond documented experimental scatter."
+      },
+      "bayesian_log_space_comparison": {
+        "K_H_sim_log10_std": 0.010859907704602233,
+        "K_H_exp_log10_std": 0.05,
+        "delta_log10": -0.3473300153169504,
+        "combined_log10_std": 0.051165785397592395,
+        "z_score": -6.788325687135725,
+        "p_agreement_within_1_sigma": 3.554570193742279e-09,
+        "p_agreement_within_2_sigma": 8.408927679726119e-07,
+        "p_agreement_within_tier_b_band": 5.746894537050906e-05,
+        "tier_b_delta_log10_threshold": 0.15,
+        "classification": "STRONG_DISAGREEMENT_GT_3_SIGMA",
+        "note": "\u0394log10 = -0.347 \u00b1 0.051 (sim 1\u03c3 \u2248 0.011, exp scatter 1\u03c3 \u2248 0.050). |Z| = 6.79."
+      }
+    },
+    {
+      "branch_id": "6b",
+      "case_id": "6",
+      "label": "MFI + Kr Garcia-Perez 2007 + Talu-Myers cross-pair",
+      "two_tier_verdict": {
+        "case_id": "6",
+        "branch_id": "6b",
+        "K_H_mean_mol_per_kg_per_bar": 0.95,
+        "K_H_reference_mol_per_kg_per_bar": 0.806,
+        "Q_st_mean_kJ_per_mol": 12.22,
+        "Q_st_reference_kJ_per_mol": 16.39,
+        "delta_log10_K_H": 0.07138856348375708,
+        "delta_Q_st_kJ_per_mol": -4.17,
+        "tier_A_regression": {
+          "delta_log10_KH_max": 0.1,
+          "delta_Qst_kJ_per_mol_max": 2.0,
+          "K_H_pass": true,
+          "Q_st_pass": false,
+          "composite": "FAIL",
+          "rationale": "Historical v04.2 strict thresholds. Used as an internal regression gate to detect code-change-induced shifts in K_H / Q_st. NOT a physical-accuracy claim. Tighter than experimental scatter for open-metal-site / defective MOFs."
+        },
+        "tier_B_physical": {
+          "delta_log10_KH_max": 0.15,
+          "delta_Qst_kJ_per_mol_max": 3.0,
+          "K_H_pass": true,
+          "Q_st_pass": false,
+          "composite": "FAIL",
+          "rationale": "All-silica MFI: well-characterized synthesis, narrow scatter. Hufton 1993 + Talu-Myers + Dunne 1996 + Golden-Sircar all consistent within ~10% on K_H.",
+          "sources": [
+            "10.1002/aic.690390605 (Hufton 1993)",
+            "10.1021/la960495z (Dunne 1996)"
+          ]
+        },
+        "headline_disposition": "PHYSICAL_FAIL",
+        "note": "Outside Tier B literature-scatter band. Honest force-field / reference disagreement beyond documented experimental scatter."
+      },
+      "bayesian_log_space_comparison": {
+        "K_H_sim_log10_std": 0.0045717108272665015,
+        "K_H_exp_log10_std": 0.05,
+        "delta_log10": 0.07138856348375708,
+        "combined_log10_std": 0.0502085703828355,
+        "z_score": 1.421840194600766,
+        "p_agreement_within_1_sigma": 0.32884976269338106,
+        "p_agreement_within_2_sigma": 0.7181108892033943,
+        "p_agreement_within_tier_b_band": 0.9412850985873815,
+        "tier_b_delta_log10_threshold": 0.15,
+        "classification": "AGREEMENT_WITHIN_2_SIGMA",
+        "note": "\u0394log10 = 0.071 \u00b1 0.050 (sim 1\u03c3 \u2248 0.005, exp scatter 1\u03c3 \u2248 0.050). |Z| = 1.42."
+      }
+    },
+    {
+      "branch_id": "6c",
+      "case_id": "6",
+      "label": "MFI + Ar Garcia-Perez 2007 + Talu-Myers cross-pair (POSITIVE CONTROL)",
+      "two_tier_verdict": {
+        "case_id": "6",
+        "branch_id": "6c",
+        "K_H_mean_mol_per_kg_per_bar": 0.20701,
+        "K_H_reference_mol_per_kg_per_bar": 0.224,
+        "Q_st_mean_kJ_per_mol": 16.033,
+        "Q_st_reference_kJ_per_mol": 17.0,
+        "delta_log10_K_H": -0.03425669297424816,
+        "delta_Q_st_kJ_per_mol": -0.9669999999999987,
+        "tier_A_regression": {
+          "delta_log10_KH_max": 0.1,
+          "delta_Qst_kJ_per_mol_max": 2.0,
+          "K_H_pass": true,
+          "Q_st_pass": true,
+          "composite": "PASS",
+          "rationale": "Historical v04.2 strict thresholds. Used as an internal regression gate to detect code-change-induced shifts in K_H / Q_st. NOT a physical-accuracy claim. Tighter than experimental scatter for open-metal-site / defective MOFs."
+        },
+        "tier_B_physical": {
+          "delta_log10_KH_max": 0.15,
+          "delta_Qst_kJ_per_mol_max": 3.0,
+          "K_H_pass": true,
+          "Q_st_pass": true,
+          "composite": "PASS",
+          "rationale": "All-silica MFI: well-characterized synthesis, narrow scatter. Hufton 1993 + Talu-Myers + Dunne 1996 + Golden-Sircar all consistent within ~10% on K_H.",
+          "sources": [
+            "10.1002/aic.690390605 (Hufton 1993)",
+            "10.1021/la960495z (Dunne 1996)"
+          ]
+        },
+        "headline_disposition": "PHYSICAL_PASS",
+        "note": "Within Tier B literature-scatter band. Atlas reproduces published experiment to within documented experimental reproducibility."
+      },
+      "bayesian_log_space_comparison": {
+        "K_H_sim_log10_std": 0.0015105233828522757,
+        "K_H_exp_log10_std": 0.05,
+        "delta_log10": -0.03425669297424816,
+        "combined_log10_std": 0.05002281160520812,
+        "z_score": -0.6848214219666439,
+        "p_agreement_within_1_sigma": 0.5776754499381085,
+        "p_agreement_within_2_sigma": 0.902146625134969,
+        "p_agreement_within_tier_b_band": 0.9895458928784449,
+        "tier_b_delta_log10_threshold": 0.15,
+        "classification": "AGREEMENT_WITHIN_1_SIGMA",
+        "note": "\u0394log10 = -0.034 \u00b1 0.050 (sim 1\u03c3 \u2248 0.002, exp scatter 1\u03c3 \u2248 0.050). |Z| = 0.68."
+      }
+    }
+  ],
+  "headline_tally": {
+    "tier_A_PASS": 1,
+    "tier_A_FAIL": 13,
+    "tier_B_PASS": 2,
+    "tier_B_FAIL": 12,
+    "method_blocked_ensemble_mismatch": 0,
+    "headline_disposition_counts": {
+      "PHYSICAL_FAIL": 12,
+      "PHYSICAL_PASS": 2
+    }
+  }
+}

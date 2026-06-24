@@ -1,0 +1,136 @@
+{
+  "branch_id_candidate": "5c_NaZK5_CO2_303K_PRIMARY",
+  "label": "Na-ZK-5 + CO2 at 303 K \u2014 primary 5c replacement-branch reference",
+  "reference_isodb_audit": {
+    "source_file": "docs/research/dataset-research-for-v0.4/5c_replacement_branches/na_zk5_pham_lobo_2013/pham_lobo_2013_isotherm49_na_zk5_co2_303K.json",
+    "doi": "10.1021/La400352r",
+    "adsorbent": "Zeolite Na-ZK-5",
+    "adsorbate": "Carbon Dioxide",
+    "temperature_K": 303.0,
+    "n_points": 9,
+    "p_units_in_json": "bar",
+    "q_units_in_json": "mmol/g",
+    "unit_conversion": {
+      "bar_to_Pa": 100000.0,
+      "mmol_per_g_to_mol_per_kg": 1.0
+    },
+    "isotherm_data": [
+      {
+        "p_bar": 0.00103316,
+        "p_Pa": 103.316,
+        "q_mmol_per_g": 0.129218,
+        "q_mol_per_kg": 0.129218
+      },
+      {
+        "p_bar": 0.00422603,
+        "p_Pa": 422.60300000000007,
+        "q_mmol_per_g": 0.168545,
+        "q_mol_per_kg": 0.168545
+      },
+      {
+        "p_bar": 0.0201022,
+        "p_Pa": 2010.22,
+        "q_mmol_per_g": 0.365184,
+        "q_mol_per_kg": 0.365184
+      },
+      {
+        "p_bar": 0.0843203,
+        "p_Pa": 8432.03,
+        "q_mmol_per_g": 0.837117,
+        "q_mol_per_kg": 0.837117
+      },
+      {
+        "p_bar": 0.170535,
+        "p_Pa": 17053.5,
+        "q_mmol_per_g": 1.3877,
+        "q_mol_per_kg": 1.3877
+      },
+      {
+        "p_bar": 0.362698,
+        "p_Pa": 36269.8,
+        "q_mmol_per_g": 2.23981,
+        "q_mol_per_kg": 2.23981
+      },
+      {
+        "p_bar": 0.811195,
+        "p_Pa": 81119.5,
+        "q_mmol_per_g": 2.81661,
+        "q_mol_per_kg": 2.81661
+      },
+      {
+        "p_bar": 2.21871,
+        "p_Pa": 221871.00000000003,
+        "q_mmol_per_g": 3.59006,
+        "q_mol_per_kg": 3.59006
+      },
+      {
+        "p_bar": 9.54363,
+        "p_Pa": 954363.0,
+        "q_mmol_per_g": 4.42905,
+        "q_mol_per_kg": 4.42905
+      }
+    ],
+    "K_H_fits": [
+      {
+        "method": "1pt_slope",
+        "K_H_mmol_per_g_per_bar": 125.07065701343451,
+        "K_H_mol_per_kg_per_bar": 125.07065701343451,
+        "K_H_mol_per_kg_per_Pa": 0.0012507065701343452,
+        "n_points_used": 1,
+        "p_max_used_bar": 0.00103316,
+        "notes": []
+      },
+      {
+        "method": "2pt_origin_linear",
+        "K_H_mmol_per_g_per_bar": 44.68697126396924,
+        "K_H_mol_per_kg_per_bar": 44.68697126396924,
+        "K_H_mol_per_kg_per_Pa": 0.0004468697126396924,
+        "n_points_used": 2,
+        "p_max_used_bar": 0.00422603,
+        "notes": []
+      },
+      {
+        "method": "3pt_origin_linear",
+        "K_H_mmol_per_g_per_bar": 19.35293929630883,
+        "K_H_mol_per_kg_per_bar": 19.35293929630883,
+        "K_H_mol_per_kg_per_Pa": 0.0001935293929630883,
+        "n_points_used": 3,
+        "p_max_used_bar": 0.0201022,
+        "notes": []
+      },
+      {
+        "method": "virial_lowhalf",
+        "K_H_mmol_per_g_per_bar": 89.19715899271426,
+        "K_H_mol_per_kg_per_bar": 89.19715899271426,
+        "K_H_mol_per_kg_per_Pa": 0.0008919715899271426,
+        "n_points_used": 4,
+        "p_max_used_bar": 0.0843203,
+        "notes": []
+      }
+    ],
+    "K_H_sensitivity": {
+      "min_mol_per_kg_per_bar": 19.35293929630883,
+      "max_mol_per_kg_per_bar": 125.07065701343451,
+      "ratio_max_over_min": 6.462618163499802
+    },
+    "henry_regime_adequacy": "adequate (q[0]/q_max = 0.029 < 0.05)"
+  },
+  "Q_st_reference": {
+    "value_kJ_per_mol": 49.0,
+    "source": "Pham et al., Adsorption 2017 (CHA zeolites) reports Na-ZK-5 Qst \u2248 49 kJ/mol \u2014 cited as literature value for KFI Na variant.",
+    "source_doi": "10.1007/s10450-017-9894-1",
+    "method": "literature_citation (not derived from isotherm; would require multi-T van't Hoff or calorimetric data)"
+  },
+  "structure_provenance_required": "Na-KFI (Si/Al \u2248 3) framework + Na cation positions \u2014 typically refined from Pham & Lobo 2013 Langmuir SI Table S2 or Ikeda et al. 2008 IZA refinements.",
+  "structure_provenance_in_repo": false,
+  "ff_provenance_required": "UFF Na+ (sigma=2.6576 A, epsilon=15.0966 K) + framework Garcia-Perez 2007 Si/O LJ (used for 5b Na-Rho); TraPPE-CO2 gas.",
+  "ff_provenance_in_repo": false,
+  "execution_status": "reference_audited_pending_both_cation_cif_and_ff_lock",
+  "exact_missing_artefacts_for_atlas_execution": [
+    "Na-KFI (Si/Al \u2248 3) framework + Na cation positions \u2014 typically refined from Pham & Lobo 2013 Langmuir SI Table S2 or Ikeda et al. 2008 IZA refinements.",
+    "UFF Na+ (sigma=2.6576 A, epsilon=15.0966 K) + framework Garcia-Perez 2007 Si/O LJ (used for 5b Na-Rho); TraPPE-CO2 gas."
+  ],
+  "verdict": "REFERENCE_AUDITED",
+  "verdict_notes": "K_H reference + Q_st reference + sensitivity range fully audited and reproducible from the archived ISODB JSON. Atlas simulation execution pending cation-CIF + force-field lock (see exact_missing_artefacts_for_atlas_execution). NOT a 5b validation.",
+  "do_not_call_replacement_a_validation_of_5b": true
+}

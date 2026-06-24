@@ -1,0 +1,16 @@
+{
+  "KH": 8e-05,
+  "KH_units": "mol/(kg*Pa)",
+  "Qads": 47.0,
+  "Qads_units": "kJ/mol",
+  "citation": "Caskey, Wong-Foy, Matzger; JACS 130, 10870 (2008). Mg-MOF-74 / Mg2(dobdc) + CO2 at 296 K: Q_ads ~47 kJ/mol; effective KH ~8e-5 mol/(kg*Pa) at low loading.",
+  "dataset_version": "literature_v1_2026-05",
+  "gas": "CO2",
+  "identity_confidence": "high",
+  "license": "literature value reproduced under fair-use citation",
+  "material_id": "Mg-MOF-74",
+  "retrieved_at": "2026-05-07T11:21:43.426763+00:00",
+  "sha256": "896e01ad4008d5bb1d2abae9ec26bd4d7ffcc7547de7e620ef7d5325a96870ea",
+  "source_url": "https://doi.org/10.1021/ja8036096",
+  "temperature_K": 298.15
+}

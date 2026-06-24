@@ -1,0 +1,22 @@
+{
+  "branch_id": "1b",
+  "case_id": "1",
+  "status": "blocked",
+  "K_H_mol_per_kg_per_Pa": null,
+  "K_H_seed_std": null,
+  "Q_st_kJ_per_mol": null,
+  "Q_st_uncertainty_kJ_per_mol": null,
+  "Q_st_method": null,
+  "seeds": 0,
+  "insertions_per_seed": null,
+  "aggregate_insertions": null,
+  "derived_charges": null,
+  "derivation_notes": null,
+  "binary_interactions": null,
+  "blocked_info": {
+    "reason": "RASPA3 v3.0.29 has no native representation for the Dzubak two-attraction form V(r) = A\u00b7exp(-B\u00b7r) - C/r^5 - D/r^6. Buckingham (C/r^6 only) is the closest available form but cannot recover the C/r^5 mid-range attraction term that Dzubak 2012 specifically introduced for Mg-MOF-74 + CO2.",
+    "prescribed_form": "DZUBAK_A_EXP_C5_D6 (Dzubak 2012)",
+    "required_action": "Same as 1a \u2014 backend-level fix required."
+  },
+  "runs": []
+}

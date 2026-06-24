@@ -1,0 +1,27 @@
+{
+  "SimulationType": "MonteCarlo",
+  "NumberOfCycles": 400000,
+  "NumberOfInitializationCycles": 0,
+  "PrintEvery": 500,
+  "Systems": [
+    {
+      "Type": "Framework",
+      "Name": "RUBTAK01_SL_DDEC",
+      "NumberOfUnitCells": [
+        2,
+        2,
+        2
+      ],
+      "ExternalTemperature": 298.0,
+      "ChargeMethod": "Ewald"
+    }
+  ],
+  "Components": [
+    {
+      "Name": "CO2",
+      "IdealGasRosenbluthWeight": 1.0,
+      "WidomProbability": 1.0,
+      "CreateNumberOfMolecules": 0
+    }
+  ]
+}

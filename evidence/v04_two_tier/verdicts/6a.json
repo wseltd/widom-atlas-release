@@ -1,0 +1,50 @@
+{
+  "branch_id": "6a",
+  "case_id": "6",
+  "label": "MFI + CH4 Garcia-Perez 2007 + Dubbeldam 2004 UA",
+  "two_tier_verdict": {
+    "case_id": "6",
+    "branch_id": "6a",
+    "K_H_mean_mol_per_kg_per_bar": 0.4,
+    "K_H_reference_mol_per_kg_per_bar": 0.89,
+    "Q_st_mean_kJ_per_mol": 18.47,
+    "Q_st_reference_kJ_per_mol": 20.9,
+    "delta_log10_K_H": -0.3473300153169504,
+    "delta_Q_st_kJ_per_mol": -2.4299999999999997,
+    "tier_A_regression": {
+      "delta_log10_KH_max": 0.1,
+      "delta_Qst_kJ_per_mol_max": 2.0,
+      "K_H_pass": false,
+      "Q_st_pass": false,
+      "composite": "FAIL",
+      "rationale": "Historical v04.2 strict thresholds. Used as an internal regression gate to detect code-change-induced shifts in K_H / Q_st. NOT a physical-accuracy claim. Tighter than experimental scatter for open-metal-site / defective MOFs."
+    },
+    "tier_B_physical": {
+      "delta_log10_KH_max": 0.15,
+      "delta_Qst_kJ_per_mol_max": 3.0,
+      "K_H_pass": false,
+      "Q_st_pass": true,
+      "composite": "FAIL",
+      "rationale": "All-silica MFI: well-characterized synthesis, narrow scatter. Hufton 1993 + Talu-Myers + Dunne 1996 + Golden-Sircar all consistent within ~10% on K_H.",
+      "sources": [
+        "10.1002/aic.690390605 (Hufton 1993)",
+        "10.1021/la960495z (Dunne 1996)"
+      ]
+    },
+    "headline_disposition": "PHYSICAL_FAIL",
+    "note": "Outside Tier B literature-scatter band. Honest force-field / reference disagreement beyond documented experimental scatter."
+  },
+  "bayesian_log_space_comparison": {
+    "K_H_sim_log10_std": 0.010859907704602233,
+    "K_H_exp_log10_std": 0.05,
+    "delta_log10": -0.3473300153169504,
+    "combined_log10_std": 0.051165785397592395,
+    "z_score": -6.788325687135725,
+    "p_agreement_within_1_sigma": 3.554570193742279e-09,
+    "p_agreement_within_2_sigma": 8.408927679726119e-07,
+    "p_agreement_within_tier_b_band": 5.746894537050906e-05,
+    "tier_b_delta_log10_threshold": 0.15,
+    "classification": "STRONG_DISAGREEMENT_GT_3_SIGMA",
+    "note": "\u0394log10 = -0.347 \u00b1 0.051 (sim 1\u03c3 \u2248 0.011, exp scatter 1\u03c3 \u2248 0.050). |Z| = 6.79."
+  }
+}

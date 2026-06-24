@@ -1,0 +1,33 @@
+# kUPS Widom validation example — Ar in all-silica MFI (positive control)
+# PREPARED, NOT SUBMITTED. Proposed as a regression/validation fixture for kups.mcmc.widom.
+#
+# Recipe: Garcia-Perez 2007 framework + Talu-Myers 2001 Ar cross-pair, Lorentz-Berthelot,
+#         shifted truncation, 12 A cutoff, no tail, no charges.
+# Expected (independent native Widom @1e6 insertions AND locked RASPA3 @6e5 insertions):
+#   <exp(-bU)> ~ 9.5    K_H ~ 0.207 mol/kg/bar (= ~1.53e7 A3/eV at this V,T)    q_st ~ 16.0 kJ/mol
+# Observed (kUPS mcmc_widom, this config): K_H ~ 1.80e7 A3/eV, q_st ~ 16.25 kJ/mol.
+#   -> q_st within 0.25 kJ/mol; K_H ~+16% = LJ shift convention (kUPS truncated vs RASPA shifted);
+#      reproduced to +2.4% by toggling the shift off in native. See UPSTREAM_NOTE.md section 2.
+adsorbates:
+  - !import ["ar.yaml"]
+hosts:
+  - cif_file: ./MFI_P1.cif          # all-silica MFI in P1 (288 atoms)
+    pressure: 100000.0
+    temperature: 298.15
+    init_adsorbates: [0]
+    cell_replication: 2
+lj: !import ["lj_6c_withSi.yaml"]   # Ar/O/Si self-params; LB reproduces Talu-Myers Ar-O + Ar-Si
+ewald:
+  real_cutoff: 12.0
+  precision: 1.e-6
+run:
+  out_file: ./widom_validation_6c.h5
+  num_cycles: 200
+  num_warmup_cycles: 20
+  num_displacements_per_cycle: 20
+  num_widom_per_cycle: 500
+  translation_prob: 0.333
+  rotation_prob: 0.333
+  reinsertion_prob: 0.333
+  seed: 0
+max_num_adsorbates: 200

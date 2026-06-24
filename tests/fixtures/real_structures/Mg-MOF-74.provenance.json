@@ -1,0 +1,15 @@
+{
+  "citation": "Britt et al., PNAS 106, 20637 (2009)",
+  "doi": "10.1073/pnas.0905040106",
+  "extracted_at": "2026-05-07T11:11:46.338720+00:00",
+  "file_size_bytes": 4233,
+  "formula": "Mg2(dobdc)",
+  "license": "CC BY 4.0",
+  "license_url": "https://creativecommons.org/licenses/by/4.0/",
+  "material_id": "Mg-MOF-74",
+  "redistribution_note": "CoRE MOF 2019 public data is distributed under CC BY 4.0 (see https://github.com/coudertlab/CoRE-MOF). Redistribution with attribution is permitted; original citation preserved.",
+  "sha256": "9f589bc2a7f4617e9634b5f0a8a06e33c4fe383a6b6e8866858e7962956611c5",
+  "source_dataset": "CoRE-MOF 2019-ASR",
+  "source_identifier": "VOGTIV_clean_h",
+  "source_package": "CoRE-MOF==2019.1"
+}

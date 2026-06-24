@@ -1,0 +1,31 @@
+{
+  "system": "Si-CHA (all-silica chabazite, IZA) + Ar",
+  "temperature_K": 298.15,
+  "n_insertions": 500,
+  "seed": 0,
+  "cutoff_A": 6.0,
+  "guest": "Ar",
+  "mace": {
+    "mace_torch": "0.3.16",
+    "torch": "2.12.0+cu130",
+    "model": "mace_mp small",
+    "device": "cuda",
+    "checkpoint": "20231210mace128L0_energy_epoch249model",
+    "checkpoint_sha256_16": "2ddb079cee0e131e"
+  },
+  "mace_ok": true,
+  "flag_rules": {
+    "hard_overlap_A": 2.762,
+    "anomaly_floor_kJ": -25.0,
+    "anomaly_vs_classical_kJ": 50.0
+  },
+  "n_flagged": 413,
+  "flagged_fraction": 0.826,
+  "flagged_weight_fraction": 0.995,
+  "KH_proxy_all_mace": 59.88293492482116,
+  "KH_proxy_flagged_removed_mace": 1.7190067673672298,
+  "min_U_mace_kJ": -19.3,
+  "min_U_classical_kJ": -22.08,
+  "verdict": "REFUSE \u2014 MLIP-Widom untrustworthy: flagged OOD insertions dominate the Boltzmann average",
+  "device": "cuda"
+}

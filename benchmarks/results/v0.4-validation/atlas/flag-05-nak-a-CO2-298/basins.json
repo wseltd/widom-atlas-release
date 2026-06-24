@@ -1,0 +1,76 @@
+{
+  "basins": [
+    {
+      "accessible_fraction": 0.9999999999999999,
+      "basin_id": 0,
+      "centroid_cart_A": [
+        24.191965480393797,
+        23.62096446413211,
+        0.0881560276057331
+      ],
+      "centroid_frac": [
+        0.9852154543023334,
+        0.961961493143234,
+        0.003590145697647449
+      ],
+      "centroid_stderr_A": 0.012500103451206473,
+      "count": 5,
+      "energy_stderr_eV": 0.01580402779488929,
+      "low_count_flag": true,
+      "mean_energy_eV": -0.395933605051607,
+      "spread_A": 0.20170503393996153,
+      "std_energy_eV": 0.016754700363963933,
+      "uncertainty": {},
+      "weight": 0.5506124039829084,
+      "weight_stderr": 0.015544743401705733
+    },
+    {
+      "accessible_fraction": 1.0,
+      "basin_id": 1,
+      "centroid_cart_A": [
+        11.524643103672094,
+        0.7438484820837546,
+        1.0965753546072246
+      ],
+      "centroid_frac": [
+        0.46933997571460373,
+        0.030293157486611877,
+        0.04465792525380674
+      ],
+      "centroid_stderr_A": 2.3665827156630354e-30,
+      "count": 2,
+      "energy_stderr_eV": 3.505135693155183e-28,
+      "low_count_flag": true,
+      "mean_energy_eV": -0.32408862549036643,
+      "spread_A": 9.093034918513703e-29,
+      "std_energy_eV": 3.505135693155183e-28,
+      "uncertainty": {},
+      "weight": 0.02688885404564307,
+      "weight_stderr": 0.005054956143726203
+    },
+    {
+      "accessible_fraction": 1.0,
+      "basin_id": 2,
+      "centroid_cart_A": [
+        0.5649660150480658,
+        0.885464129284295,
+        23.998174188392095
+      ],
+      "centroid_frac": [
+        0.02300818631838997,
+        0.036060441021555485,
+        0.9773233226793767
+      ],
+      "centroid_stderr_A": 0.0,
+      "count": 1,
+      "energy_stderr_eV": 0.0,
+      "low_count_flag": true,
+      "mean_energy_eV": -0.39226382541727794,
+      "spread_A": 2.7328001782604853e-15,
+      "std_energy_eV": 0.0,
+      "uncertainty": {},
+      "weight": 0.3819193900685424,
+      "weight_stderr": 0.015183029484730453
+    }
+  ]
+}

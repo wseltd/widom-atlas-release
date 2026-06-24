@@ -1,0 +1,18 @@
+{
+  "question": "Why does kUPS Widom K_H run +16% vs native/RASPA3 on the identical 6c recipe?",
+  "hypothesis_tested": "constant per-insertion energy offset from a shifted-vs-truncated LJ mismatch (predicted delta ~0.35 kJ/mol)",
+  "kups_LJ_source": "kups.potential.classical.lennard_jones.lennard_jones_energy: edge_energy = 4*eps*(c6^2 - c6) masked at r<cutoff. TRUNCATED, NOT energy-shifted (no -U(rc) term). The PairTailCorrected variant (smooth switch) and GlobalTailCorrected (analytic tail) are separate; our config selects neither.",
+  "our_config": "lj_6c_withSi.yaml: tail_correction=false, no truncation_radius -> plain unshifted truncated LJ.",
+  "raspa3_convention": "force_field.json: TruncationMethod=shifted (subtracts U(rc)).",
+  "native_convention": "shifted (subtracts ushift_K per interaction).",
+  "test": {
+    "native_shifted":  {"W": 9.537,  "K_H_mol_kg_bar": 0.2093, "q_st_kJ": 15.91},
+    "native_no_shift": {"W": 11.347, "K_H_mol_kg_bar": 0.2490, "q_st_kJ": 16.34},
+    "kups_truncated":  {"W": 11.08,  "K_H_mol_kg_bar": 0.2432, "q_st_kJ": 16.25}
+  },
+  "implied_constant_shift_delta_kJ": 0.431,
+  "predicted_delta_kJ": 0.35,
+  "native_noshift_vs_kups": {"K_H_pct": 2.4, "q_st_kJ": 0.09, "kups_K_H_SEM_pct": 3.4},
+  "conclusion": "RESOLVED. kUPS uses a TRUNCATED (unshifted) LJ; native/RASPA3 use a SHIFTED LJ. The energy-shift convention (delta ~0.43 kJ/mol more attractive per insertion in kUPS) fully accounts for BOTH the +16% K_H AND the +0.34 kJ/mol q_st. When native adopts kUPS's truncated convention, the two engines agree to 2.4% on K_H and 0.09 kJ/mol on q_st -- within the kUPS SEM. This is a load-bearing recipe-element (shift convention), NOT a normalization or volume bug. The earlier 'K_H normalization' diagnosis is SUPERSEDED.",
+  "is_kups_wrong": "No. Truncated-not-shifted is a legitimate convention; it simply must be LOCKED and matched. The shift convention is worth ~16% on K_H -- exactly the realization-gap thesis."
+}

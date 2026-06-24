@@ -1,0 +1,8 @@
+tail_correction: false
+cutoff: 14.0
+mixing_rule: lorentz_berthelot
+parameters:
+  Si_zeo: [2.300, 0.00189581]
+  O_zeo:  [3.300, 0.00456719]
+  C_co2:  [2.800, 0.00232668]
+  O_co2:  [3.050, 0.00680769]

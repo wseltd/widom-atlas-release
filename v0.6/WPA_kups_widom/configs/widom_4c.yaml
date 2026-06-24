@@ -1,0 +1,23 @@
+adsorbates:
+  - !import ["co2_4c.yaml"]
+hosts:
+  - cif_file: v0.6/WPA_kups_widom/cifs_p1/CHA_charged_P1.cif
+    pressure: 100000.0
+    temperature: 298.0
+    init_adsorbates: [0]
+    cell_replication: null
+lj: !import ["lj_4c.yaml"]
+ewald:
+  real_cutoff: 14.0
+  precision: 1.e-6
+run:
+  out_file: /tmp/kups_4c.h5
+  num_cycles: 100
+  num_warmup_cycles: 20
+  num_displacements_per_cycle: 20
+  num_widom_per_cycle: 500
+  translation_prob: 0.333
+  rotation_prob: 0.333
+  reinsertion_prob: 0.333
+  seed: 0
+max_num_adsorbates: 200

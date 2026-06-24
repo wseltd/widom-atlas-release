@@ -1,0 +1,7 @@
+{
+  "generated_at": "2026-05-08T14:26:25.737111+00:00",
+  "reason": "robustness comparison requires a pristine + perturbed pair; this run is a single analyse-samples and has no perturbed counterpart. Use `widom-atlas compare <pristine_run> <perturbed_run> --out <dir>` to produce a populated metrics.json.",
+  "run_id": "O192Si96_20260508T142625Z",
+  "schema_version": "1",
+  "status": "not_applicable_single_run"
+}

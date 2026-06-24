@@ -1,0 +1,50 @@
+{
+  "branch_id": "2b",
+  "case_id": "2",
+  "label": "HKUST-1 Ongari 2017 modified Cu-O(CO2) RASPA generic",
+  "two_tier_verdict": {
+    "case_id": "2",
+    "branch_id": "2b",
+    "K_H_mean_mol_per_kg_per_bar": 176.0,
+    "K_H_reference_mol_per_kg_per_bar": 7.0,
+    "Q_st_mean_kJ_per_mol": 44.03,
+    "Q_st_reference_kJ_per_mol": 30.0,
+    "delta_log10_K_H": 1.400414627799893,
+    "delta_Q_st_kJ_per_mol": 14.030000000000001,
+    "tier_A_regression": {
+      "delta_log10_KH_max": 0.1,
+      "delta_Qst_kJ_per_mol_max": 2.0,
+      "K_H_pass": false,
+      "Q_st_pass": false,
+      "composite": "FAIL",
+      "rationale": "Historical v04.2 strict thresholds. Used as an internal regression gate to detect code-change-induced shifts in K_H / Q_st. NOT a physical-accuracy claim. Tighter than experimental scatter for open-metal-site / defective MOFs."
+    },
+    "tier_B_physical": {
+      "delta_log10_KH_max": 0.4,
+      "delta_Qst_kJ_per_mol_max": 8.0,
+      "K_H_pass": false,
+      "Q_st_pass": false,
+      "composite": "FAIL",
+      "rationale": "HKUST-1 CO2: canonical Cu paddle-wheel; Park 2017 inter-lab BET/uptake scatter; documented synthesis-dependent K_H spread.",
+      "sources": [
+        "10.1021/acs.jctc.4c00287 (McCready 2024)",
+        "Park et al. 2017 (cited in McCready 2024)"
+      ]
+    },
+    "headline_disposition": "PHYSICAL_FAIL",
+    "note": "Outside Tier B literature-scatter band. Honest force-field / reference disagreement beyond documented experimental scatter."
+  },
+  "bayesian_log_space_comparison": {
+    "K_H_sim_log10_std": 0.0024676121570377588,
+    "K_H_exp_log10_std": 0.18,
+    "delta_log10": 1.400414627799893,
+    "combined_log10_std": 0.18001691339915135,
+    "z_score": 7.779350291907043,
+    "p_agreement_within_1_sigma": 6.035894006828357e-12,
+    "p_agreement_within_2_sigma": 3.749482391235404e-09,
+    "p_agreement_within_tier_b_band": 1.3696090261916538e-08,
+    "tier_b_delta_log10_threshold": 0.4,
+    "classification": "STRONG_DISAGREEMENT_GT_3_SIGMA",
+    "note": "\u0394log10 = 1.400 \u00b1 0.180 (sim 1\u03c3 \u2248 0.002, exp scatter 1\u03c3 \u2248 0.180). |Z| = 7.78."
+  }
+}

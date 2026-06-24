@@ -1,0 +1,27 @@
+{
+  "SimulationType": "MonteCarlo",
+  "NumberOfCycles": 20000,
+  "NumberOfInitializationCycles": 0,
+  "PrintEvery": 500,
+  "Systems": [
+    {
+      "Type": "Framework",
+      "Name": "CHA_iza",
+      "NumberOfUnitCells": [
+        2,
+        2,
+        2
+      ],
+      "ExternalTemperature": 298.15,
+      "ChargeMethod": "Ewald"
+    }
+  ],
+  "Components": [
+    {
+      "Name": "CO2",
+      "IdealGasRosenbluthWeight": 1.0,
+      "WidomProbability": 1.0,
+      "CreateNumberOfMolecules": 0
+    }
+  ]
+}

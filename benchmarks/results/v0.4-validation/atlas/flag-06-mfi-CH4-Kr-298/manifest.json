@@ -1,0 +1,61 @@
+{
+  "created_at": "2026-05-08T14:26:25.736576Z",
+  "dataset_license": null,
+  "dataset_source": null,
+  "dependency_versions": {
+    "CoRE-MOF": "2019.1",
+    "ase": "3.28.0",
+    "jinja2": "3.1.6",
+    "matplotlib": "3.10.9",
+    "numpy": "2.4.4",
+    "pandas": "3.0.2",
+    "pydantic": "2.13.4",
+    "pydantic-core": "2.46.4",
+    "pymatgen": "2026.5.4",
+    "rich": "15.0.0",
+    "scikit-learn": "1.8.0",
+    "scipy": "1.17.1",
+    "spglib": "2.7.0",
+    "tqdm": "4.67.3",
+    "typer": "0.25.1",
+    "widom": "0.1.1"
+  },
+  "gas": "CH4",
+  "input_samples_sha256": "2210b5c9a0dc5e5e9be15378135333aa9b55fb2c6997eeb11900bddeb22f26df",
+  "manifest_version": "1",
+  "output_paths": {
+    "basins_csv": "benchmarks/results/v0.4-validation/atlas/flag-06-mfi-CH4-Kr-298/basins.csv",
+    "basins_json": "benchmarks/results/v0.4-validation/atlas/flag-06-mfi-CH4-Kr-298/basins.json",
+    "cell_matrix": "[[20.022, 0.0, 0.0], [0.0, 19.899, 0.0], [0.0, 0.0, 13.383]]",
+    "density_npz": "benchmarks/results/v0.4-validation/atlas/flag-06-mfi-CH4-Kr-298/density.npz",
+    "figures_dir": "benchmarks/results/v0.4-validation/atlas/flag-06-mfi-CH4-Kr-298/figures",
+    "report_html": "benchmarks/results/v0.4-validation/atlas/flag-06-mfi-CH4-Kr-298/report/report.html",
+    "report_md": "benchmarks/results/v0.4-validation/atlas/flag-06-mfi-CH4-Kr-298/report/report.md",
+    "symmetry_groups_json": "benchmarks/results/v0.4-validation/atlas/flag-06-mfi-CH4-Kr-298/symmetry_groups.json"
+  },
+  "package_version": "0.1.0",
+  "parameters": {
+    "angle_tolerance": 5.0,
+    "annotate_uncertainty": true,
+    "basin_match_tol_A": 0.35,
+    "dbscan_eps_A": 1.5,
+    "energy_match_tol_kJmol": 2.0,
+    "grid_spacing_A": null,
+    "min_samples": 8,
+    "n_grid": [
+      32,
+      32,
+      32
+    ],
+    "smoothing_sigma_A": 0.0,
+    "symprec": 0.01,
+    "temperature_K": 298.15
+  },
+  "platform": "Linux-6.8.0-110-generic-x86_64-with-glibc2.35",
+  "python_version": "3.13.9",
+  "run_id": "O192Si96_20260508T142625Z",
+  "structure_id": "O192Si96",
+  "structure_sha256": "0ad497618b3ff048c7d0f7b037f1002e1718ce5916803bc96698632da53f6f54",
+  "structure_source": "benchmarks/results/v0.4-validation/atlas/flag-06-mfi-CH4-Kr-298/structure_metadata.json",
+  "temperature_K": 298.15
+}

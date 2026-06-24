@@ -1,0 +1,28 @@
+{
+  "basins": [
+    {
+      "accessible_fraction": 0.9999999999999998,
+      "basin_id": 0,
+      "centroid_cart_A": [
+        4.18550450951972,
+        4.372255573693687,
+        4.721306191600993
+      ],
+      "centroid_frac": [
+        0.5137201146550994,
+        0.5017420217728737,
+        0.5018624351802099
+      ],
+      "centroid_stderr_A": 0.1171737466999836,
+      "count": 543,
+      "energy_stderr_eV": 0.007486674086751502,
+      "low_count_flag": false,
+      "mean_energy_eV": -0.29599119430952264,
+      "spread_A": 2.9269554032572334,
+      "std_energy_eV": 0.031630571822357186,
+      "uncertainty": {},
+      "weight": 1.0,
+      "weight_stderr": 0.0
+    }
+  ]
+}

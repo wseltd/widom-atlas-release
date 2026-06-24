@@ -1,0 +1,10 @@
+framework=docs/research/dataset-research-for-v0.4/7/CHA_iza.cif reps=[1, 1, 1] n_atoms=108 cell_diag=[13.675     11.8428974 14.767    ]
+MACE ready: {'mace_torch': '0.3.16', 'torch': '2.12.0+cpu', 'model': 'mace_mp small', 'device': 'cpu', 'checkpoint': '20231210mace128L0_energy_epoch249model', 'checkpoint_sha256_16': '2ddb079cee0e131e'}
+E_frame=-852.652 eV  E_guest=-0.071 eV
+  insertion 0/100 min_dist=3.17 U_cl=-12.088 U_ml=-1.944
+  insertion 20/100 min_dist=1.94 U_cl=4099.424 U_ml=-8.818
+  insertion 40/100 min_dist=2.10 U_cl=1554.002 U_ml=-9.16
+  insertion 60/100 min_dist=1.43 U_cl=209110.241 U_ml=2.551
+  insertion 80/100 min_dist=1.49 U_cl=311396.297 U_ml=0.29
+WROTE governance_summary.json + per_insertion.json
+VERDICT: REFUSE — MLIP-Widom untrustworthy: flagged OOD insertions dominate the Boltzmann average

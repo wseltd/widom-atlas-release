@@ -1,0 +1,564 @@
+{
+  "symmetry_groups": [
+    {
+      "group_id": 0,
+      "grouping_confidence": 0.45,
+      "member_basin_ids": [
+        0
+      ],
+      "n_operations_used": 1,
+      "notes": "grouped via spglib + minimum-image centroid matching",
+      "space_group_number": 1,
+      "space_group_symbol": "P1",
+      "tolerances": {
+        "angle_tolerance_deg": 5.0,
+        "basin_match_tol_A": 0.35,
+        "energy_match_tol_kJmol": 2.0,
+        "symprec": 0.01
+      },
+      "uncertainty_flags": [
+        "low_symmetry_host"
+      ]
+    },
+    {
+      "group_id": 1,
+      "grouping_confidence": 0.45,
+      "member_basin_ids": [
+        1
+      ],
+      "n_operations_used": 1,
+      "notes": "grouped via spglib + minimum-image centroid matching",
+      "space_group_number": 1,
+      "space_group_symbol": "P1",
+      "tolerances": {
+        "angle_tolerance_deg": 5.0,
+        "basin_match_tol_A": 0.35,
+        "energy_match_tol_kJmol": 2.0,
+        "symprec": 0.01
+      },
+      "uncertainty_flags": [
+        "low_symmetry_host"
+      ]
+    },
+    {
+      "group_id": 2,
+      "grouping_confidence": 0.45,
+      "member_basin_ids": [
+        2
+      ],
+      "n_operations_used": 1,
+      "notes": "grouped via spglib + minimum-image centroid matching",
+      "space_group_number": 1,
+      "space_group_symbol": "P1",
+      "tolerances": {
+        "angle_tolerance_deg": 5.0,
+        "basin_match_tol_A": 0.35,
+        "energy_match_tol_kJmol": 2.0,
+        "symprec": 0.01
+      },
+      "uncertainty_flags": [
+        "low_symmetry_host"
+      ]
+    },
+    {
+      "group_id": 3,
+      "grouping_confidence": 0.45,
+      "member_basin_ids": [
+        3
+      ],
+      "n_operations_used": 1,
+      "notes": "grouped via spglib + minimum-image centroid matching",
+      "space_group_number": 1,
+      "space_group_symbol": "P1",
+      "tolerances": {
+        "angle_tolerance_deg": 5.0,
+        "basin_match_tol_A": 0.35,
+        "energy_match_tol_kJmol": 2.0,
+        "symprec": 0.01
+      },
+      "uncertainty_flags": [
+        "low_symmetry_host"
+      ]
+    },
+    {
+      "group_id": 4,
+      "grouping_confidence": 0.45,
+      "member_basin_ids": [
+        4
+      ],
+      "n_operations_used": 1,
+      "notes": "grouped via spglib + minimum-image centroid matching",
+      "space_group_number": 1,
+      "space_group_symbol": "P1",
+      "tolerances": {
+        "angle_tolerance_deg": 5.0,
+        "basin_match_tol_A": 0.35,
+        "energy_match_tol_kJmol": 2.0,
+        "symprec": 0.01
+      },
+      "uncertainty_flags": [
+        "low_symmetry_host"
+      ]
+    },
+    {
+      "group_id": 5,
+      "grouping_confidence": 0.45,
+      "member_basin_ids": [
+        5
+      ],
+      "n_operations_used": 1,
+      "notes": "grouped via spglib + minimum-image centroid matching",
+      "space_group_number": 1,
+      "space_group_symbol": "P1",
+      "tolerances": {
+        "angle_tolerance_deg": 5.0,
+        "basin_match_tol_A": 0.35,
+        "energy_match_tol_kJmol": 2.0,
+        "symprec": 0.01
+      },
+      "uncertainty_flags": [
+        "low_symmetry_host"
+      ]
+    },
+    {
+      "group_id": 6,
+      "grouping_confidence": 0.45,
+      "member_basin_ids": [
+        6
+      ],
+      "n_operations_used": 1,
+      "notes": "grouped via spglib + minimum-image centroid matching",
+      "space_group_number": 1,
+      "space_group_symbol": "P1",
+      "tolerances": {
+        "angle_tolerance_deg": 5.0,
+        "basin_match_tol_A": 0.35,
+        "energy_match_tol_kJmol": 2.0,
+        "symprec": 0.01
+      },
+      "uncertainty_flags": [
+        "low_symmetry_host"
+      ]
+    },
+    {
+      "group_id": 7,
+      "grouping_confidence": 0.45,
+      "member_basin_ids": [
+        7
+      ],
+      "n_operations_used": 1,
+      "notes": "grouped via spglib + minimum-image centroid matching",
+      "space_group_number": 1,
+      "space_group_symbol": "P1",
+      "tolerances": {
+        "angle_tolerance_deg": 5.0,
+        "basin_match_tol_A": 0.35,
+        "energy_match_tol_kJmol": 2.0,
+        "symprec": 0.01
+      },
+      "uncertainty_flags": [
+        "low_symmetry_host"
+      ]
+    },
+    {
+      "group_id": 8,
+      "grouping_confidence": 0.45,
+      "member_basin_ids": [
+        8
+      ],
+      "n_operations_used": 1,
+      "notes": "grouped via spglib + minimum-image centroid matching",
+      "space_group_number": 1,
+      "space_group_symbol": "P1",
+      "tolerances": {
+        "angle_tolerance_deg": 5.0,
+        "basin_match_tol_A": 0.35,
+        "energy_match_tol_kJmol": 2.0,
+        "symprec": 0.01
+      },
+      "uncertainty_flags": [
+        "low_symmetry_host"
+      ]
+    },
+    {
+      "group_id": 9,
+      "grouping_confidence": 0.45,
+      "member_basin_ids": [
+        9
+      ],
+      "n_operations_used": 1,
+      "notes": "grouped via spglib + minimum-image centroid matching",
+      "space_group_number": 1,
+      "space_group_symbol": "P1",
+      "tolerances": {
+        "angle_tolerance_deg": 5.0,
+        "basin_match_tol_A": 0.35,
+        "energy_match_tol_kJmol": 2.0,
+        "symprec": 0.01
+      },
+      "uncertainty_flags": [
+        "low_symmetry_host"
+      ]
+    },
+    {
+      "group_id": 10,
+      "grouping_confidence": 0.45,
+      "member_basin_ids": [
+        10
+      ],
+      "n_operations_used": 1,
+      "notes": "grouped via spglib + minimum-image centroid matching",
+      "space_group_number": 1,
+      "space_group_symbol": "P1",
+      "tolerances": {
+        "angle_tolerance_deg": 5.0,
+        "basin_match_tol_A": 0.35,
+        "energy_match_tol_kJmol": 2.0,
+        "symprec": 0.01
+      },
+      "uncertainty_flags": [
+        "low_symmetry_host"
+      ]
+    },
+    {
+      "group_id": 11,
+      "grouping_confidence": 0.45,
+      "member_basin_ids": [
+        11
+      ],
+      "n_operations_used": 1,
+      "notes": "grouped via spglib + minimum-image centroid matching",
+      "space_group_number": 1,
+      "space_group_symbol": "P1",
+      "tolerances": {
+        "angle_tolerance_deg": 5.0,
+        "basin_match_tol_A": 0.35,
+        "energy_match_tol_kJmol": 2.0,
+        "symprec": 0.01
+      },
+      "uncertainty_flags": [
+        "low_symmetry_host"
+      ]
+    },
+    {
+      "group_id": 12,
+      "grouping_confidence": 0.45,
+      "member_basin_ids": [
+        12
+      ],
+      "n_operations_used": 1,
+      "notes": "grouped via spglib + minimum-image centroid matching",
+      "space_group_number": 1,
+      "space_group_symbol": "P1",
+      "tolerances": {
+        "angle_tolerance_deg": 5.0,
+        "basin_match_tol_A": 0.35,
+        "energy_match_tol_kJmol": 2.0,
+        "symprec": 0.01
+      },
+      "uncertainty_flags": [
+        "low_symmetry_host"
+      ]
+    },
+    {
+      "group_id": 13,
+      "grouping_confidence": 0.45,
+      "member_basin_ids": [
+        13
+      ],
+      "n_operations_used": 1,
+      "notes": "grouped via spglib + minimum-image centroid matching",
+      "space_group_number": 1,
+      "space_group_symbol": "P1",
+      "tolerances": {
+        "angle_tolerance_deg": 5.0,
+        "basin_match_tol_A": 0.35,
+        "energy_match_tol_kJmol": 2.0,
+        "symprec": 0.01
+      },
+      "uncertainty_flags": [
+        "low_symmetry_host"
+      ]
+    },
+    {
+      "group_id": 14,
+      "grouping_confidence": 0.45,
+      "member_basin_ids": [
+        14
+      ],
+      "n_operations_used": 1,
+      "notes": "grouped via spglib + minimum-image centroid matching",
+      "space_group_number": 1,
+      "space_group_symbol": "P1",
+      "tolerances": {
+        "angle_tolerance_deg": 5.0,
+        "basin_match_tol_A": 0.35,
+        "energy_match_tol_kJmol": 2.0,
+        "symprec": 0.01
+      },
+      "uncertainty_flags": [
+        "low_symmetry_host"
+      ]
+    },
+    {
+      "group_id": 15,
+      "grouping_confidence": 0.45,
+      "member_basin_ids": [
+        15
+      ],
+      "n_operations_used": 1,
+      "notes": "grouped via spglib + minimum-image centroid matching",
+      "space_group_number": 1,
+      "space_group_symbol": "P1",
+      "tolerances": {
+        "angle_tolerance_deg": 5.0,
+        "basin_match_tol_A": 0.35,
+        "energy_match_tol_kJmol": 2.0,
+        "symprec": 0.01
+      },
+      "uncertainty_flags": [
+        "low_symmetry_host"
+      ]
+    },
+    {
+      "group_id": 16,
+      "grouping_confidence": 0.45,
+      "member_basin_ids": [
+        16
+      ],
+      "n_operations_used": 1,
+      "notes": "grouped via spglib + minimum-image centroid matching",
+      "space_group_number": 1,
+      "space_group_symbol": "P1",
+      "tolerances": {
+        "angle_tolerance_deg": 5.0,
+        "basin_match_tol_A": 0.35,
+        "energy_match_tol_kJmol": 2.0,
+        "symprec": 0.01
+      },
+      "uncertainty_flags": [
+        "low_symmetry_host"
+      ]
+    },
+    {
+      "group_id": 17,
+      "grouping_confidence": 0.45,
+      "member_basin_ids": [
+        17
+      ],
+      "n_operations_used": 1,
+      "notes": "grouped via spglib + minimum-image centroid matching",
+      "space_group_number": 1,
+      "space_group_symbol": "P1",
+      "tolerances": {
+        "angle_tolerance_deg": 5.0,
+        "basin_match_tol_A": 0.35,
+        "energy_match_tol_kJmol": 2.0,
+        "symprec": 0.01
+      },
+      "uncertainty_flags": [
+        "low_symmetry_host"
+      ]
+    },
+    {
+      "group_id": 18,
+      "grouping_confidence": 0.45,
+      "member_basin_ids": [
+        18
+      ],
+      "n_operations_used": 1,
+      "notes": "grouped via spglib + minimum-image centroid matching",
+      "space_group_number": 1,
+      "space_group_symbol": "P1",
+      "tolerances": {
+        "angle_tolerance_deg": 5.0,
+        "basin_match_tol_A": 0.35,
+        "energy_match_tol_kJmol": 2.0,
+        "symprec": 0.01
+      },
+      "uncertainty_flags": [
+        "low_symmetry_host"
+      ]
+    },
+    {
+      "group_id": 19,
+      "grouping_confidence": 0.45,
+      "member_basin_ids": [
+        19
+      ],
+      "n_operations_used": 1,
+      "notes": "grouped via spglib + minimum-image centroid matching",
+      "space_group_number": 1,
+      "space_group_symbol": "P1",
+      "tolerances": {
+        "angle_tolerance_deg": 5.0,
+        "basin_match_tol_A": 0.35,
+        "energy_match_tol_kJmol": 2.0,
+        "symprec": 0.01
+      },
+      "uncertainty_flags": [
+        "low_symmetry_host"
+      ]
+    },
+    {
+      "group_id": 20,
+      "grouping_confidence": 0.45,
+      "member_basin_ids": [
+        20
+      ],
+      "n_operations_used": 1,
+      "notes": "grouped via spglib + minimum-image centroid matching",
+      "space_group_number": 1,
+      "space_group_symbol": "P1",
+      "tolerances": {
+        "angle_tolerance_deg": 5.0,
+        "basin_match_tol_A": 0.35,
+        "energy_match_tol_kJmol": 2.0,
+        "symprec": 0.01
+      },
+      "uncertainty_flags": [
+        "low_symmetry_host"
+      ]
+    },
+    {
+      "group_id": 21,
+      "grouping_confidence": 0.45,
+      "member_basin_ids": [
+        21
+      ],
+      "n_operations_used": 1,
+      "notes": "grouped via spglib + minimum-image centroid matching",
+      "space_group_number": 1,
+      "space_group_symbol": "P1",
+      "tolerances": {
+        "angle_tolerance_deg": 5.0,
+        "basin_match_tol_A": 0.35,
+        "energy_match_tol_kJmol": 2.0,
+        "symprec": 0.01
+      },
+      "uncertainty_flags": [
+        "low_symmetry_host"
+      ]
+    },
+    {
+      "group_id": 22,
+      "grouping_confidence": 0.45,
+      "member_basin_ids": [
+        22
+      ],
+      "n_operations_used": 1,
+      "notes": "grouped via spglib + minimum-image centroid matching",
+      "space_group_number": 1,
+      "space_group_symbol": "P1",
+      "tolerances": {
+        "angle_tolerance_deg": 5.0,
+        "basin_match_tol_A": 0.35,
+        "energy_match_tol_kJmol": 2.0,
+        "symprec": 0.01
+      },
+      "uncertainty_flags": [
+        "low_symmetry_host"
+      ]
+    },
+    {
+      "group_id": 23,
+      "grouping_confidence": 0.45,
+      "member_basin_ids": [
+        23
+      ],
+      "n_operations_used": 1,
+      "notes": "grouped via spglib + minimum-image centroid matching",
+      "space_group_number": 1,
+      "space_group_symbol": "P1",
+      "tolerances": {
+        "angle_tolerance_deg": 5.0,
+        "basin_match_tol_A": 0.35,
+        "energy_match_tol_kJmol": 2.0,
+        "symprec": 0.01
+      },
+      "uncertainty_flags": [
+        "low_symmetry_host"
+      ]
+    },
+    {
+      "group_id": 24,
+      "grouping_confidence": 0.45,
+      "member_basin_ids": [
+        24
+      ],
+      "n_operations_used": 1,
+      "notes": "grouped via spglib + minimum-image centroid matching",
+      "space_group_number": 1,
+      "space_group_symbol": "P1",
+      "tolerances": {
+        "angle_tolerance_deg": 5.0,
+        "basin_match_tol_A": 0.35,
+        "energy_match_tol_kJmol": 2.0,
+        "symprec": 0.01
+      },
+      "uncertainty_flags": [
+        "low_symmetry_host"
+      ]
+    },
+    {
+      "group_id": 25,
+      "grouping_confidence": 0.45,
+      "member_basin_ids": [
+        25
+      ],
+      "n_operations_used": 1,
+      "notes": "grouped via spglib + minimum-image centroid matching",
+      "space_group_number": 1,
+      "space_group_symbol": "P1",
+      "tolerances": {
+        "angle_tolerance_deg": 5.0,
+        "basin_match_tol_A": 0.35,
+        "energy_match_tol_kJmol": 2.0,
+        "symprec": 0.01
+      },
+      "uncertainty_flags": [
+        "low_symmetry_host"
+      ]
+    },
+    {
+      "group_id": 26,
+      "grouping_confidence": 0.45,
+      "member_basin_ids": [
+        26
+      ],
+      "n_operations_used": 1,
+      "notes": "grouped via spglib + minimum-image centroid matching",
+      "space_group_number": 1,
+      "space_group_symbol": "P1",
+      "tolerances": {
+        "angle_tolerance_deg": 5.0,
+        "basin_match_tol_A": 0.35,
+        "energy_match_tol_kJmol": 2.0,
+        "symprec": 0.01
+      },
+      "uncertainty_flags": [
+        "low_symmetry_host"
+      ]
+    },
+    {
+      "group_id": 27,
+      "grouping_confidence": 0.45,
+      "member_basin_ids": [
+        27
+      ],
+      "n_operations_used": 1,
+      "notes": "grouped via spglib + minimum-image centroid matching",
+      "space_group_number": 1,
+      "space_group_symbol": "P1",
+      "tolerances": {
+        "angle_tolerance_deg": 5.0,
+        "basin_match_tol_A": 0.35,
+        "energy_match_tol_kJmol": 2.0,
+        "symprec": 0.01
+      },
+      "uncertainty_flags": [
+        "low_symmetry_host"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,52 @@
+{
+  "branch_id": "1d",
+  "case_id": "1",
+  "label": "Mg-MOF-74 Mercado Model 4 DFT-derived",
+  "two_tier_verdict": {
+    "case_id": "1",
+    "branch_id": "1d",
+    "K_H_mean_mol_per_kg_per_bar": 19811.0,
+    "K_H_reference_mol_per_kg_per_bar": 381.0,
+    "Q_st_mean_kJ_per_mol": 53.84,
+    "Q_st_reference_kJ_per_mol": 42.0,
+    "delta_log10_K_H": 1.7159814223021388,
+    "delta_Q_st_kJ_per_mol": 11.840000000000003,
+    "tier_A_regression": {
+      "delta_log10_KH_max": 0.1,
+      "delta_Qst_kJ_per_mol_max": 2.0,
+      "K_H_pass": false,
+      "Q_st_pass": false,
+      "composite": "FAIL",
+      "rationale": "Historical v04.2 strict thresholds. Used as an internal regression gate to detect code-change-induced shifts in K_H / Q_st. NOT a physical-accuracy claim. Tighter than experimental scatter for open-metal-site / defective MOFs."
+    },
+    "tier_B_physical": {
+      "delta_log10_KH_max": 0.4,
+      "delta_Qst_kJ_per_mol_max": 8.0,
+      "K_H_pass": false,
+      "Q_st_pass": false,
+      "composite": "FAIL",
+      "rationale": "Mg-MOF-74 CO2: open-metal-site MOF with documented multi-fold experimental scatter. Q_st spread 39 (Britt 2009 PNAS) -- 47 (Valenzano IR \u0394H) kJ/mol. K_H spread spans the Mason DSL, Vandenbrande triangulation, and McCready/Jorge consensus uncertainty.",
+      "sources": [
+        "10.1073/pnas.0909718106 (Britt 2009)",
+        "10.1039/c1ee01720a (Mason 2011)",
+        "10.1021/acs.jctc.4c00287 (McCready 2024)",
+        "10.1021/jp208529p (Queen 2012)"
+      ]
+    },
+    "headline_disposition": "PHYSICAL_FAIL",
+    "note": "Outside Tier B literature-scatter band. Honest force-field / reference disagreement beyond documented experimental scatter."
+  },
+  "bayesian_log_space_comparison": {
+    "K_H_sim_log10_std": 0.0024333579834276693,
+    "K_H_exp_log10_std": 0.2,
+    "delta_log10": 1.7159814223021388,
+    "combined_log10_std": 0.20001480252990156,
+    "z_score": 8.579272136848997,
+    "p_agreement_within_1_sigma": 1.73749903353837e-14,
+    "p_agreement_within_2_sigma": 2.363781392844544e-11,
+    "p_agreement_within_tier_b_band": 2.3614332711474617e-11,
+    "tier_b_delta_log10_threshold": 0.4,
+    "classification": "STRONG_DISAGREEMENT_GT_3_SIGMA",
+    "note": "\u0394log10 = 1.716 \u00b1 0.200 (sim 1\u03c3 \u2248 0.002, exp scatter 1\u03c3 \u2248 0.200). |Z| = 8.58."
+  }
+}

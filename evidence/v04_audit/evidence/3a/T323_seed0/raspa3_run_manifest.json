@@ -1,0 +1,17 @@
+{
+  "started_utc": "2026-05-17T14:27:13.338982+00:00",
+  "duration_s": 64.55575656890869,
+  "exit_code": 0,
+  "raspa3_version": "3.0.29",
+  "raspa3_sha256": "2b4132becc0f38dedb2de470386defe9956d8129307e70dc7fcd0d6f03d57732",
+  "raspa3_upstream_commit": "3fdb4a1c4ba468ebea66d1a8619404e05aa800bb",
+  "input_sha256": {
+    "simulation.json": "9ada78f4cfd7cb59bbb41f8ded5940b4abff1397b5723f257919453b3cf206ec",
+    "force_field.json": "f5ca7ac18cb65d377035038157c83cb326a5752d0047866861fca6690fa47c13",
+    "CO2.json": "c975266898f7e71fa73649b7a993a2f88a697548643cae337b8b392cab0d9380",
+    "RUBTAK01_SL_DDEC.cif": "db5f8bdb9a0fefd4f0cffe66b9fdce69bcf7eafc54ab055f26a517fac4e51ea9"
+  },
+  "stdout_path": "raspa3.stdout.txt",
+  "stderr_path": "raspa3.stderr.txt",
+  "output_txt_path": "output/output_323_0.s0.txt"
+}

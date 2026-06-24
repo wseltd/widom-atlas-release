@@ -1,0 +1,55 @@
+{
+  "branch_id": "5b",
+  "case_id": "5",
+  "verdict": "REFERENCE_BLOCKED",
+  "verdict_tier": "flagship_strict_with_ff_fallback_relaxation",
+  "numeric_thresholds": "broad_tier",
+  "affects_v04_scalar_verdict": false,
+  "branch_scope": "retained_in_v04",
+  "site_truth_verdict_active": true,
+  "erratum": {
+    "scalar_verdict": "reference_blocked",
+    "site_truth_verdict": "active",
+    "branch_scope": "retained_in_v04",
+    "erratum_reason": "Current K_H = 252.5 mol/(kg\u00b7bar) is an ill-conditioned 2-point Langmuir extrapolation through 87%/93%-saturated data, not a Henry-regime measurement. Current Q_st = 45 kJ/mol is the LOADING-PEAK heat from Lozinska 2014 SI Figure S2.2, not the Widom-zero-coverage observable (which is ~15-20 kJ/mol per the same figure). Both scalar references are physically mismatched to the Widom-zero-coverage observable; the simulator's scalar verdict against them is not interpretable as FF bias. Site-truth (Na-OC1 = 2.88 \u00c5, Na-OC3 = 2.58 \u00c5, \u00b10.20 \u00c5) remains verdict-affecting.",
+    "K_H_classification": "reference_blocked_trapdoor_no_Henry_regime",
+    "K_H_correction_evidence": "V04_REFERENCE_AUDIT.md \u00a75",
+    "K_H_correction_date_utc": "2026-05-17",
+    "Q_st_classification": "reference_blocked_loading_peak_not_zero_coverage",
+    "Q_st_correction_evidence": "V04_REFERENCE_AUDIT.md \u00a75",
+    "Q_st_correction_date_utc": "2026-05-17"
+  },
+  "parsed_K_H_mol_per_kg_per_Pa": 1.2157796666666668e-05,
+  "parsed_K_H_mol_per_kg_per_bar": 1.2157796666666667,
+  "parsed_Q_st_kJ_per_mol": 27.328189928712312,
+  "reference": {
+    "K_H_value_mol_per_kg_per_bar": 252.5,
+    "K_H_value_mol_per_kg_per_Pa": 0.002525,
+    "K_H_window_min": null,
+    "K_H_window_max": null,
+    "K_H_source": "Lozinska_2012_JACS_Table_S11.1_2pt_Langmuir (PROVISIONAL, ill-conditioned)",
+    "K_H_temperature_K": 298.0,
+    "Q_st_value_kj_per_mol": 45.0,
+    "Q_st_window_min": null,
+    "Q_st_window_max": null,
+    "Q_st_source": "Lozinska_2012_JACS_literature_consensus_for_Na_cation_gating + Pham_2014_CHA_family_comparison (PROVISIONAL, loading-peak)"
+  },
+  "evidence": {
+    "raspa3_version": "3.0.29",
+    "raspa3_sha256": "2b4132becc0f38dedb2de470386defe9956d8129307e70dc7fcd0d6f03d57732",
+    "input_sha256": {
+      "simulation.json": "d1b58ee09b317d5691fbb80edd5828b69c9cdf9d8a4ab7e0910b28cc42da5e03",
+      "force_field.json": "b2b5faf975d6590071a256ab96b681e59c949a2ae9abf5cb110054d568f9da15",
+      "CO2.json": "c975266898f7e71fa73649b7a993a2f88a697548643cae337b8b392cab0d9380",
+      "Na-Rho_CO2_open_0p1bar.cif": "03f3cea57f53bd327f90af8a1e74d7ba24d00772ecb7953c4765531fc4459672"
+    },
+    "output_txt_path": "evidence/v04_audit/evidence/5b/T298_seed0/output/output_298_0.s0.txt",
+    "stdout_path": "evidence/v04_audit/evidence/5b/T298_seed0/raspa3.stdout.txt",
+    "stderr_path": "evidence/v04_audit/evidence/5b/T298_seed0/raspa3.stderr.txt",
+    "seeds": 3,
+    "insertions_per_seed": 100000,
+    "aggregate_insertions": 600000,
+    "branch_manifest_path": "branch_manifest.json"
+  },
+  "notes": []
+}

@@ -1,0 +1,59 @@
+# Manuscript metadata for the widom-atlas v3 manuscript.
+# Title / authors / abstract are taken from main.tex. primary_category and
+# comments are sensible defaults -- confirm/override before any real submission.
+
+title: "widom-atlas: Auditing Widom-Insertion Recipes for Zero-Coverage Adsorption"
+
+authors:
+  - name: "Aydogan, Onur Alexander William"
+    affiliation: "Waynestark Enterprises Limited"
+    email: null
+    orcid: null
+
+abstract: |
+  Widom insertion gives well-defined zero-coverage adsorption observables only
+  after the host structure, atom typing, force field, gas model, mixing rule,
+  electrostatics, backend, sampling protocol, and reference observable have been
+  specified. In materials screening, the resulting Henry constant K_H and
+  zero-coverage isosteric heat Q_st are often treated as properties of the
+  material, but they are in fact outputs of this complete recipe. We present
+  widom-atlas, a governed validation harness that locks each recipe as a branch,
+  compares the resulting observable with one stated experimental reference, and
+  classifies the outcome as a strict pass, a physical-accuracy pass, a
+  force-field disagreement, a reference-observable mismatch, a structural
+  blocker, or an ensemble/method mismatch. In v0.4, two of fifteen
+  verdict-affecting branches pass the strict criterion: an all-silica MFI + Ar
+  positive control and a Si-CHA + CO2 branch under the Bai 2013 TraPPE-zeo
+  recipe. One additional branch, UiO-66 + CO2 under the explicit-hydrogen,
+  Yang-charge Maia 2023 variant, passes the Tier-B physical-accuracy criterion.
+  The remaining branches expose force-field transferability limits at open metal
+  sites, reference-observable mismatches, missing cationic-zeolite structures and
+  cation models, and a Na-Rho trapdoor ensemble mismatch. widom-atlas is
+  therefore not scientifically validated as a general predictive adsorption tool.
+  It is a reproducible way to decide whether a particular Widom adsorption number
+  is a trustworthy zero-coverage observable or merely the output of an untested
+  recipe.
+
+primary_category: "physics.chem-ph"
+secondary_categories: ["cond-mat.mtrl-sci"]
+
+comments: "20 pages, 4 figures, 2 tables"
+doi: null
+journal_ref: null
+report_number: null
+msc_class: null
+acm_class: null
+
+license: "arxiv-perpetual"
+submitter_is_author: true
+endorsement_required: null
+
+# Build settings
+main_tex: "main.tex"
+latex_engine: "pdflatex"
+bib_engine: "bibtex"
+force_pdfoutput: false
+
+extra_includes: []
+ancillary_files: []
+readme_xxx: null

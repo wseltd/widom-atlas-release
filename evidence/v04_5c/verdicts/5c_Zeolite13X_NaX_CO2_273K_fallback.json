@@ -1,0 +1,352 @@
+{
+  "branch_id_candidate": "5c_Zeolite13X_NaX_CO2_273K_fallback",
+  "label": "Zeolite 13X (Na-FAU) + CO2 at 273 K \u2014 well-established fallback",
+  "reference_isodb_audit": {
+    "source_file": "docs/research/dataset-research-for-v0.4/5c_replacement_branches/zeolite_13x_wang_levan_2009/wang_levan_2009_isotherm27_13x_co2_273K.json",
+    "doi": "10.1021/Je800900a",
+    "adsorbent": "Zeolite 13X",
+    "adsorbate": "Carbon Dioxide",
+    "temperature_K": 273.0,
+    "n_points": 45,
+    "p_units_in_json": "bar",
+    "q_units_in_json": "mmol/g",
+    "unit_conversion": {
+      "bar_to_Pa": 100000.0,
+      "mmol_per_g_to_mol_per_kg": 1.0
+    },
+    "isotherm_data": [
+      {
+        "p_bar": 0.000104429,
+        "p_Pa": 10.4429,
+        "q_mmol_per_g": 0.269206,
+        "q_mol_per_kg": 0.269206
+      },
+      {
+        "p_bar": 0.000121537,
+        "p_Pa": 12.1537,
+        "q_mmol_per_g": 0.293914,
+        "q_mol_per_kg": 0.293914
+      },
+      {
+        "p_bar": 0.000144544,
+        "p_Pa": 14.4544,
+        "q_mmol_per_g": 0.325621,
+        "q_mol_per_kg": 0.325621
+      },
+      {
+        "p_bar": 0.000171906,
+        "p_Pa": 17.1906,
+        "q_mmol_per_g": 0.355506,
+        "q_mol_per_kg": 0.355506
+      },
+      {
+        "p_bar": 0.000200069,
+        "p_Pa": 20.0069,
+        "q_mmol_per_g": 0.388135,
+        "q_mol_per_kg": 0.388135
+      },
+      {
+        "p_bar": 0.000237941,
+        "p_Pa": 23.7941,
+        "q_mmol_per_g": 0.423759,
+        "q_mol_per_kg": 0.423759
+      },
+      {
+        "p_bar": 0.000282983,
+        "p_Pa": 28.2983,
+        "q_mmol_per_g": 0.462652,
+        "q_mol_per_kg": 0.462652
+      },
+      {
+        "p_bar": 0.000336558,
+        "p_Pa": 33.6558,
+        "q_mmol_per_g": 0.505115,
+        "q_mol_per_kg": 0.505115
+      },
+      {
+        "p_bar": 0.000400267,
+        "p_Pa": 40.0267,
+        "q_mmol_per_g": 0.551474,
+        "q_mol_per_kg": 0.551474
+      },
+      {
+        "p_bar": 0.000476047,
+        "p_Pa": 47.6047,
+        "q_mmol_per_g": 0.602089,
+        "q_mol_per_kg": 0.602089
+      },
+      {
+        "p_bar": 0.000566161,
+        "p_Pa": 56.6161,
+        "q_mmol_per_g": 0.65735,
+        "q_mol_per_kg": 0.65735
+      },
+      {
+        "p_bar": 0.000673349,
+        "p_Pa": 67.33489999999999,
+        "q_mmol_per_g": 0.707255,
+        "q_mol_per_kg": 0.707255
+      },
+      {
+        "p_bar": 0.000800811,
+        "p_Pa": 80.0811,
+        "q_mmol_per_g": 0.772168,
+        "q_mol_per_kg": 0.772168
+      },
+      {
+        "p_bar": 0.00106141,
+        "p_Pa": 106.141,
+        "q_mmol_per_g": 0.868079,
+        "q_mol_per_kg": 0.868079
+      },
+      {
+        "p_bar": 0.00126234,
+        "p_Pa": 126.23400000000001,
+        "q_mmol_per_g": 0.947752,
+        "q_mol_per_kg": 0.947752
+      },
+      {
+        "p_bar": 0.00150131,
+        "p_Pa": 150.131,
+        "q_mmol_per_g": 1.01971,
+        "q_mol_per_kg": 1.01971
+      },
+      {
+        "p_bar": 0.00182463,
+        "p_Pa": 182.463,
+        "q_mmol_per_g": 1.09712,
+        "q_mol_per_kg": 1.09712
+      },
+      {
+        "p_bar": 0.00221759,
+        "p_Pa": 221.75900000000001,
+        "q_mmol_per_g": 1.18041,
+        "q_mol_per_kg": 1.18041
+      },
+      {
+        "p_bar": 0.00300363,
+        "p_Pa": 300.363,
+        "q_mmol_per_g": 1.3466,
+        "q_mol_per_kg": 1.3466
+      },
+      {
+        "p_bar": 0.00365051,
+        "p_Pa": 365.051,
+        "q_mmol_per_g": 1.44883,
+        "q_mol_per_kg": 1.44883
+      },
+      {
+        "p_bar": 0.00434157,
+        "p_Pa": 434.15700000000004,
+        "q_mmol_per_g": 1.55882,
+        "q_mol_per_kg": 1.55882
+      },
+      {
+        "p_bar": 0.00527659,
+        "p_Pa": 527.659,
+        "q_mmol_per_g": 1.67717,
+        "q_mol_per_kg": 1.67717
+      },
+      {
+        "p_bar": 0.00641297,
+        "p_Pa": 641.2969999999999,
+        "q_mmol_per_g": 1.77828,
+        "q_mol_per_kg": 1.77828
+      },
+      {
+        "p_bar": 0.00831764,
+        "p_Pa": 831.7639999999999,
+        "q_mmol_per_g": 1.94149,
+        "q_mol_per_kg": 1.94149
+      },
+      {
+        "p_bar": 0.0101089,
+        "p_Pa": 1010.8900000000001,
+        "q_mmol_per_g": 2.08889,
+        "q_mol_per_kg": 2.08889
+      },
+      {
+        "p_bar": 0.012286,
+        "p_Pa": 1228.6,
+        "q_mmol_per_g": 2.21482,
+        "q_mol_per_kg": 2.21482
+      },
+      {
+        "p_bar": 0.014932,
+        "p_Pa": 1493.2,
+        "q_mmol_per_g": 2.34835,
+        "q_mol_per_kg": 2.34835
+      },
+      {
+        "p_bar": 0.0197911,
+        "p_Pa": 1979.11,
+        "q_mmol_per_g": 2.56388,
+        "q_mol_per_kg": 2.56388
+      },
+      {
+        "p_bar": 0.0240534,
+        "p_Pa": 2405.3399999999997,
+        "q_mmol_per_g": 2.71845,
+        "q_mol_per_kg": 2.71845
+      },
+      {
+        "p_bar": 0.0292336,
+        "p_Pa": 2923.3599999999997,
+        "q_mmol_per_g": 2.88235,
+        "q_mol_per_kg": 2.88235
+      },
+      {
+        "p_bar": 0.0363078,
+        "p_Pa": 3630.78,
+        "q_mmol_per_g": 3.05611,
+        "q_mol_per_kg": 3.05611
+      },
+      {
+        "p_bar": 0.0502546,
+        "p_Pa": 5025.46,
+        "q_mmol_per_g": 3.33661,
+        "q_mol_per_kg": 3.33661
+      },
+      {
+        "p_bar": 0.0610776,
+        "p_Pa": 6107.76,
+        "q_mmol_per_g": 3.48637,
+        "q_mol_per_kg": 3.48637
+      },
+      {
+        "p_bar": 0.0809534,
+        "p_Pa": 8095.339999999999,
+        "q_mmol_per_g": 3.75105,
+        "q_mol_per_kg": 3.75105
+      },
+      {
+        "p_bar": 0.0983877,
+        "p_Pa": 9838.769999999999,
+        "q_mmol_per_g": 3.97719,
+        "q_mol_per_kg": 3.97719
+      },
+      {
+        "p_bar": 0.122197,
+        "p_Pa": 12219.7,
+        "q_mmol_per_g": 4.09532,
+        "q_mol_per_kg": 4.09532
+      },
+      {
+        "p_bar": 0.148511,
+        "p_Pa": 14851.1,
+        "q_mmol_per_g": 4.34222,
+        "q_mol_per_kg": 4.34222
+      },
+      {
+        "p_bar": 0.210063,
+        "p_Pa": 21006.3,
+        "q_mmol_per_g": 4.60401,
+        "q_mol_per_kg": 4.60401
+      },
+      {
+        "p_bar": 0.260898,
+        "p_Pa": 26089.800000000003,
+        "q_mmol_per_g": 4.81064,
+        "q_mol_per_kg": 4.81064
+      },
+      {
+        "p_bar": 0.317088,
+        "p_Pa": 31708.8,
+        "q_mmol_per_g": 5.02656,
+        "q_mol_per_kg": 5.02656
+      },
+      {
+        "p_bar": 0.385372,
+        "p_Pa": 38537.2,
+        "q_mmol_per_g": 5.25217,
+        "q_mol_per_kg": 5.25217
+      },
+      {
+        "p_bar": 0.47863,
+        "p_Pa": 47863.0,
+        "q_mmol_per_g": 5.40818,
+        "q_mol_per_kg": 5.40818
+      },
+      {
+        "p_bar": 0.581715,
+        "p_Pa": 58171.5,
+        "q_mmol_per_g": 5.65092,
+        "q_mol_per_kg": 5.65092
+      },
+      {
+        "p_bar": 0.72247,
+        "p_Pa": 72247.0,
+        "q_mmol_per_g": 5.81877,
+        "q_mol_per_kg": 5.81877
+      },
+      {
+        "p_bar": 0.878072,
+        "p_Pa": 87807.2,
+        "q_mmol_per_g": 5.99159,
+        "q_mol_per_kg": 5.99159
+      }
+    ],
+    "K_H_fits": [
+      {
+        "method": "1pt_slope",
+        "K_H_mmol_per_g_per_bar": 2577.8854532744735,
+        "K_H_mol_per_kg_per_bar": 2577.8854532744735,
+        "K_H_mol_per_kg_per_Pa": 0.025778854532744734,
+        "n_points_used": 1,
+        "p_max_used_bar": 0.000104429,
+        "notes": []
+      },
+      {
+        "method": "2pt_origin_linear",
+        "K_H_mmol_per_g_per_bar": 2486.084371755289,
+        "K_H_mol_per_kg_per_bar": 2486.084371755289,
+        "K_H_mol_per_kg_per_Pa": 0.02486084371755289,
+        "n_points_used": 2,
+        "p_max_used_bar": 0.000121537,
+        "notes": []
+      },
+      {
+        "method": "3pt_origin_linear",
+        "K_H_mmol_per_g_per_bar": 2381.399846158001,
+        "K_H_mol_per_kg_per_bar": 2381.399846158001,
+        "K_H_mol_per_kg_per_Pa": 0.02381399846158001,
+        "n_points_used": 3,
+        "p_max_used_bar": 0.000144544,
+        "notes": []
+      },
+      {
+        "method": "virial_lowhalf",
+        "K_H_mmol_per_g_per_bar": 2420.874841559912,
+        "K_H_mol_per_kg_per_bar": 2420.874841559912,
+        "K_H_mol_per_kg_per_Pa": 0.02420874841559912,
+        "n_points_used": 22,
+        "p_max_used_bar": 0.00527659,
+        "notes": []
+      }
+    ],
+    "K_H_sensitivity": {
+      "min_mol_per_kg_per_bar": 2381.399846158001,
+      "max_mol_per_kg_per_bar": 2577.8854532744735,
+      "ratio_max_over_min": 1.0825084487317282
+    },
+    "henry_regime_adequacy": "adequate (q[0]/q_max = 0.045 < 0.05)"
+  },
+  "Q_st_reference": {
+    "value_kJ_per_mol": 44.0,
+    "source": "Wang & LeVan 2009 J. Chem. Eng. Data; 13X CO2 Qst \u2248 44 kJ/mol.",
+    "source_doi": "10.1021/je800900a",
+    "method": "literature_citation (not derived from isotherm; would require multi-T van't Hoff or calorimetric data)"
+  },
+  "structure_provenance_required": "Na-FAU framework + Na cation positions. Operator-cited reference structures.",
+  "structure_provenance_in_repo": false,
+  "ff_provenance_required": "UFF Na+ + framework Si/O LJ + TraPPE-CO2.",
+  "ff_provenance_in_repo": false,
+  "execution_status": "reference_audited_pending_both_cation_cif_and_ff_lock",
+  "exact_missing_artefacts_for_atlas_execution": [
+    "Na-FAU framework + Na cation positions. Operator-cited reference structures.",
+    "UFF Na+ + framework Si/O LJ + TraPPE-CO2."
+  ],
+  "verdict": "REFERENCE_AUDITED",
+  "verdict_notes": "K_H reference + Q_st reference + sensitivity range fully audited and reproducible from the archived ISODB JSON. Atlas simulation execution pending cation-CIF + force-field lock (see exact_missing_artefacts_for_atlas_execution). NOT a 5b validation.",
+  "do_not_call_replacement_a_validation_of_5b": true
+}

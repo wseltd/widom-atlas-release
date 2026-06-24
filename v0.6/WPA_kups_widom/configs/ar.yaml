@@ -1,0 +1,8 @@
+critical_temperature: 150.687
+critical_pressure: 4863000.0
+acentric_factor: -0.00219
+positions:
+  - [0, 0, 0]
+symbols:
+  - "Ar"
+charges: [0.0]

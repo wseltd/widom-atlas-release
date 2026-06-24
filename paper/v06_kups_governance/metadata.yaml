@@ -1,0 +1,14 @@
+title: "widom-atlas v0.6: Cross-engine Validation and MLIP Out-of-Distribution Governance for Widom-Insertion Adsorption on the kUPS Engine"
+authors:
+  - name: "Aydogan, Onur Alexander William"
+    affiliation: "Waynestark Enterprises Limited"
+    email: null
+    orcid: null
+abstract: |
+  A standalone report of the widom-atlas v0.6 work: the first published independent cross-engine
+  validation of CuspAI's kUPS Widom estimator, and a four-configuration MLIP out-of-distribution
+  governance demonstration on the potential kUPS ships. Every number traces to committed JSON in the
+  version-controlled repository state.
+primary_category: "cond-mat.mtrl-sci"
+license: "Apache-2.0"
+comments: "Standalone v0.6 report. The version-controlled repository state is the evidence base."

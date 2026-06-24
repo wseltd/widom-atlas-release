@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>widom-atlas — Launch readiness report</title>
+<style>
+body { font-family: system-ui, sans-serif; margin: 2em; max-width: 960px; }
+h1 { border-bottom: 2px solid #888; padding-bottom: 0.2em; }
+h2 { border-bottom: 1px solid #ccc; padding-bottom: 0.2em; }
+section { margin-bottom: 1.5em; }
+table { border-collapse: collapse; }
+th, td { border: 1px solid #ccc; padding: 0.3em 0.6em; }
+.caveat { color: #b65; }
+</style>
+</head>
+<body>
+<h1>widom-atlas — Launch readiness report</h1>
+<p><strong>Package version:</strong> {{ package_version }}<br>
+   <strong>Set:</strong> {{ set_name }}<br>
+   <strong>Gas:</strong> {{ gas }}<br>
+   <strong>Temperature (K):</strong> {{ temperature_K }}</p>
+
+<section>
+  <h2>Coverage</h2>
+  <ul>
+    <li>materials attempted: {{ totals.attempted }}</li>
+    <li>materials succeeded: {{ totals.succeeded }}</li>
+    <li>materials failed: {{ totals.failed }}</li>
+    <li>materials skipped: {{ totals.skipped }}</li>
+  </ul>
+</section>
+
+<section>
+  <h2>TREND comparison summary</h2>
+  <ul>
+  {% for label, count in trend_counts.items() %}
+    <li>{{ label }}: {{ count }}</li>
+  {% endfor %}
+  </ul>
+</section>
+
+<section>
+  <h2>Dataset provenance</h2>
+  <table>
+    <thead><tr><th>material_id</th><th>source</th><th>license</th><th>sha256</th><th>dataset_version</th></tr></thead>
+    <tbody>
+    {% for r in provenance %}
+      <tr><td>{{ r.material_id }}</td><td>{{ r.source }}</td><td>{{ r.license }}</td><td><code>{{ r.sha256 }}</code></td><td>{{ r.dataset_version }}</td></tr>
+    {% endfor %}
+    </tbody>
+  </table>
+</section>
+
+<section>
+  <h2>Failed materials</h2>
+  {% if failed %}
+  <ul>
+  {% for f in failed %}
+    <li><strong>{{ f.material_id }}</strong> — {{ f.error_class }}: {{ f.error_message }}</li>
+  {% endfor %}
+  </ul>
+  {% else %}
+  <p><em>No failures.</em></p>
+  {% endif %}
+</section>
+
+<section>
+  <h2>Excluded tools (v1 guard rails)</h2>
+  <ul>{% for line in exclusions.excluded_tools %}<li>{{ line }}</li>{% endfor %}</ul>
+</section>
+
+<section>
+  <h2>H2O exclusion in v1</h2>
+  <ul>{% for line in exclusions.h2o_exclusion %}<li>{{ line }}</li>{% endfor %}</ul>
+</section>
+
+<section>
+  <h2>Automatic defect-engine exclusion in v1</h2>
+  <ul>{% for line in exclusions.automatic_defect_engine_exclusion %}<li>{{ line }}</li>{% endfor %}</ul>
+</section>
+
+<section>
+  <h2>Commercial dependency exclusion</h2>
+  <ul>{% for line in exclusions.commercial_dependency_exclusion %}<li>{{ line }}</li>{% endfor %}</ul>
+</section>
+
+<section>
+  <h2>License-risky dataset exclusion</h2>
+  <ul>{% for line in exclusions.license_risky_dataset_exclusion %}<li>{{ line }}</li>{% endfor %}</ul>
+</section>
+
+<section>
+  <h2>What this report does not certify</h2>
+  <ul class="caveat">{% for line in exclusions.what_this_report_does_not_certify %}<li>{{ line }}</li>{% endfor %}</ul>
+</section>
+
+<section>
+  <h2>Why toy Lennard-Jones outputs are not chemically meaningful</h2>
+  <ul class="caveat">{% for line in exclusions.toy_lj_caveat %}<li>{{ line }}</li>{% endfor %}</ul>
+</section>
+
+<section>
+  <h2>Scientific caveats (summary)</h2>
+  <ul class="caveat">
+    <li>This report does NOT constitute proof of quantitative accuracy.</li>
+    <li>Scalar comparisons against MOFX-DB / NIST are TREND-only.</li>
+    <li>Toy Lennard-Jones samples are not chemically meaningful (verdict §13.J).</li>
+    <li>Symmetry assignments may be uncertain on defective or strained frameworks.</li>
+  </ul>
+</section>
+</body>
+</html>

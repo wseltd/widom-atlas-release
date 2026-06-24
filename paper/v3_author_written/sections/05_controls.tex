@@ -1,0 +1,45 @@
+% Section 5 --- The controls
+% only normalisation is LaTeX quote glyphs in the final paragraph
+% (smart-quotes -> ``...''), which render identically. No wording changed.
+% All 6c/4c numbers and the V1-V4 percentages were verified against the lock.
+\section{The controls}\label{sec:controls}
+
+Before a validation harness is allowed to blame a force field, a structure, or a reference, it must first show that its own machinery is not the cause of the disagreement. The controls in v0.4 answer that narrower question. They do not prove that Widom insertion is generally predictive. They prove that, for recipes whose ingredients are compatible with the tested backends and references, the harness can reproduce known zero-coverage observables.
+
+The first control is backend agreement. When two independent implementations can represent the same recipe, they should return the same adsorption observable within the expected sampling error. The native Lennard-Jones evaluator agrees with RASPA3 to within one percent on the all-silica MFI + Ar and MFI + CH\(_4\) recipes. On the Si-CHA + CO\(_2\) charged-framework control (4c) the native Ewald estimator and RASPA3 agree to \(\sim\!9\%\) on \(K_H\) and \(\sim\!1\%\) on \(Q_{st}\). On HKUST-1, by contrast, the native charged-Ewald path shows a large empirical discrepancy against RASPA3 --- about a factor of four on the identical recipe. A suspected non-orthogonal minimum-image explanation was tested after the audit: at the actual supercells and cutoffs of the published runs, a brute-force image check found no within-cutoff mis-imaged pairs for HKUST-1, Si-CHA, or MFI, so the root cause is not established. We therefore treat native charged-MOF results as non-verdict-supporting: the MOF branches are reported from RASPA3 (2a, 3a) or RASPA2 (1a), or presented as audited examples with this limitation stated (1b, 1c, 1d, 2b, 3b). The 4c result is retained because it is directly cross-engine checked, not because of any orthogonality assumption. The Mg-MOF-74 + CO\(_2\) Buckingham recipe was run on RASPA2; the native Buckingham path is not independently cross-validated on this MOF. No headline result depends on the native charged-MOF path. These tests are not the scientific result of the paper, but they are the guardrail that makes later disagreement with experiment interpretable.
+
+The second control is deliberately simple. Branch 6c is all-silica MFI + Ar. It has no host charges, no open metal site, no framework gate, and no flexible cation sublattice. The calculation uses a rigid all-silica MFI framework on Talu-Myers' calibration geometry (Olson 1981), an argon probe under Talu's single-source oxygen-only potential, and two independent estimators --- a native Lennard-Jones evaluator and RASPA3 --- at a converged cutoff with analytical tail correction. (Branch 6c was rebuilt in v0.4.1: the originally-locked recipe silently double-counted silicon and was scored against a mis-derived reference; the corrected single-source recipe, and the four-error cancellation it replaces, are documented in Section~\ref{sec:v06}, Finding~F1.) This is close to the cleanest adsorption problem in the atlas: if this branch failed, the harness would have no right to interpret more difficult failures.
+
+It does not fail. Against the Talu-Myers and Dunne references, branch 6c gives
+
+\[
+K_H = 0.200 \pm 0.003\ \mathrm{mol\,kg^{-1}\,bar^{-1}},
+\qquad
+Q_{st} = 14.97\ \mathrm{kJ\,mol^{-1}},
+\]
+
+with
+
+\[
+\Delta \log_{10} K_H = 0.000,
+\qquad
+\Delta Q_{st} = -0.73\ \mathrm{kJ\,mol^{-1}}.
+\]
+
+Both deviations are inside the strict band --- the Henry constant matches the corrected reference (\(0.200\ \mathrm{mol\,kg^{-1}\,bar^{-1}}\)) to within sampling error, and the heat is within \(0.73\ \mathrm{kJ\,mol^{-1}}\) of the calorimetric reference (\(Q_{st} = 15.7\ \mathrm{kJ\,mol^{-1}}\)) --- so 6c is a Tier-A strict pass, cross-confirmed by the native estimator and RASPA3 (parity \(0.5\%\)) \cite{Talu2001,Dunne1996Langmuir}. The result is important not because argon in silicalite is technologically surprising, but because it shows that the pipeline can reproduce a clean reference when the physical problem is simple.
+
+The third control is less trivial. Branch 4c tests all-silica Si-CHA + CO\(_2\), using the Bai 2013 TraPPE-zeo framework parameters, TraPPE CO\(_2\), native Ewald electrostatics, and an analytical Lennard-Jones tail correction. The branch is run over three seeds of 60,000 insertions and compared with the Maghsoudi 2013 zero-coverage reference. This case is still an all-silica zeolite, but it includes electrostatics, a multi-site quadrupolar guest model, and a tail correction that materially affects the Henry constant.
+
+Branch 4c is a cross-engine-audited charged control whose strict-versus-Tier-B verdict is itself engine-dependent. On the native estimator it gives
+
+\[
+K_H = 2.22 \pm 0.14\ \mathrm{mol\,kg^{-1}\,bar^{-1}},
+\qquad
+Q_{st} = 22.99 \pm 0.33\ \mathrm{kJ\,mol^{-1}},
+\]
+
+with \(\Delta \log_{10} K_H = -0.039\) and \(\Delta Q_{st} = +1.99\ \mathrm{kJ\,mol^{-1}}\) --- just inside the strict band. A faithful RASPA3 cross-check of the identical recipe (TraPPE-CO\(_2\), Ewald, \(14\)~\AA{} + tail) gives \(K_H = 2.03\) and \(Q_{st} = 23.24\ \mathrm{kJ\,mol^{-1}}\), i.e.\ \(\Delta \log_{10} K_H = -0.079\) and \(\Delta Q_{st} = +2.24\ \mathrm{kJ\,mol^{-1}}\) --- just outside. The reference values are \(K_H = 2.43\ \mathrm{mol\,kg^{-1}\,bar^{-1}}\) and \(Q_{st} = 21.0\ \mathrm{kJ\,mol^{-1}}\) \cite{Bai2013JPCC,Maghsoudi2013Adsorption}; both engines sit inside the experimental window \([1.9, 3.0]\) and agree to \(\sim\!9\%\) on \(K_H\) and \(\sim\!1\%\) on \(Q_{st}\). But the \(Q_{st}\) deviation straddles the \(\pm 2.0\) boundary (native \(+1.99\), inside; RASPA3 \(+2.24\), outside), so the same recipe is nominally strict on one engine and Tier-B on the other. We therefore report 4c as a Tier-B cross-engine-audited control, and note this as a worked example, on a charged system, of the verdict fragility this harness exists to expose. The tail correction is part of the recipe: it shifts the native Henry constant from \(1.98\) to \(2.22\ \mathrm{mol\,kg^{-1}\,bar^{-1}}\), moving \(\Delta \log_{10}K_H\) from \(-0.089\) to \(-0.039\), rather than being a hidden numerical default.
+
+These controls define the safe interpretation of the rest of the paper. They show that widom-atlas can reproduce experiment --- with two independent engines agreeing on it --- when the host structure is well defined, the force field is appropriate for the chemistry, and the reference is compatible with the zero-coverage observable. They do not show that every subsequent branch ought to pass. On the contrary, they make later failures more informative. Once the clean controls pass, a persistent failure in an open-metal-site MOF, a cationic zeolite, or a trapdoor framework is no longer plausibly dismissed as merely a broken Widom implementation.
+
+The controls therefore narrow the question. The remaining branches ask not ``does the code run?'' but ``does this locked recipe correspond to the experimental observable it is being asked to reproduce?'' That is the question the audit answers.

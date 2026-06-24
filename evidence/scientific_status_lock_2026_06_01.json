@@ -1,0 +1,440 @@
+{
+  "lock_version": "v04_scientific_status_2026_06_01",
+  "lock_emitted_at_utc": "2026-06-01 22:37:51",
+  "schema_version": "v04.3",
+  "case_matrix_sha256": "b0571780a4794be0fabb2a7d47a093fcb8dab07c4355467bb2fabe1a6a085664",
+  "paper_pdf_md5": "132b7bba6fa085d37c076842b56c50f9",
+  "headline_disposition": {
+    "tier_a_strict_pass_count": 2,
+    "tier_a_strict_pass_branches": [
+      "6c",
+      "4c"
+    ],
+    "tier_a_strict_fail_count": 13,
+    "tier_a_strict_denominator": 15,
+    "tier_b_physical_accuracy_pass_count": 3,
+    "tier_b_physical_accuracy_pass_branches": [
+      "6c",
+      "4c",
+      "3b_EHq"
+    ],
+    "ensemble_mismatch_known_open_problem_count": 1,
+    "ensemble_mismatch_branches": [
+      "5b"
+    ],
+    "reference_audited_pending_lock_count": 4,
+    "reference_audited_pending_lock_branches": [
+      "5c_NaZK5_CO2_303K",
+      "5c_Zeolite5A_CaA_CO2_298K",
+      "5c_Zeolite13X_NaX_CO2_273K",
+      "5c_Zeolite4A_NaA_CO2_273K"
+    ],
+    "is_scientifically_validated_as_general_predictive_tool": false
+  },
+  "load_bearing_results": {
+    "4c_si_cha_co2_strict_pass": {
+      "branch_id": "4c",
+      "force_field": "Bai_2013_TraPPE_zeo_per_RASPA3_bundled_JSON",
+      "framework_cif": "docs/research/dataset-research-for-v0.4/7/CHA_iza.cif",
+      "gas_model": "TraPPE-CO2 (record 116 from official TraPPE database)",
+      "K_H_atlas_mol_per_kg_per_bar": 2.2226623641070513,
+      "K_H_atlas_std_mol_per_kg_per_bar": 0.14272564954947473,
+      "K_H_reference_mol_per_kg_per_bar": 2.43,
+      "K_H_reference_source": "Maghsoudi 2013 Adsorption (DOI 10.1007/s10450-013-9528-1) Toth fit",
+      "Q_st_atlas_kJ_per_mol": 22.992690759290586,
+      "Q_st_atlas_std_kJ_per_mol": 0.32794194129627985,
+      "Q_st_reference_kJ_per_mol": 21.0,
+      "delta_log10_K_H": -0.03873277785473683,
+      "delta_Q_st_kJ_per_mol": 1.9926907592905856,
+      "tier_A_strict_K_H_pass": true,
+      "tier_A_strict_Q_st_pass": true,
+      "bayesian_z_score": 0.19,
+      "bayesian_classification": "AGREEMENT_WITHIN_1_SIGMA",
+      "tail_correction_offset_K": -33.39,
+      "tail_correction_load_bearing": true,
+      "n_seeds": 3,
+      "n_insertions_per_seed": 60000,
+      "temperature_K": 298.0,
+      "executed_backend": "native_widom_v04",
+      "verdict_json": "evidence/v04_4c_bai_2013/verdicts/4c.json"
+    },
+    "6c_mfi_argon_positive_control": {
+      "branch_id": "6c",
+      "force_field": "Garcia-Perez_2007_framework_+_Talu-Myers_Ar_cross_pair",
+      "backend": "RASPA3_v3.0.29",
+      "K_H_atlas_mol_per_kg_per_bar": 0.20701303333333335,
+      "K_H_atlas_std_mol_per_kg_per_bar": 0.0007237053981651136,
+      "K_H_reference_mol_per_kg_per_bar": 0.224,
+      "K_H_reference_source": "Talu-Myers 2001 Table 3 + Dunne 1996 calorimetry",
+      "Q_st_atlas_kJ_per_mol": 16.032717766030473,
+      "Q_st_atlas_std_kJ_per_mol": 0.14520849842024267,
+      "Q_st_reference_kJ_per_mol": 17.0,
+      "delta_log10_K_H": -0.034250329270674125,
+      "delta_Q_st_kJ_per_mol": 0.3327177660304734,
+      "tier_A_strict_K_H_pass": true,
+      "tier_A_strict_Q_st_pass": true,
+      "bayesian_z_score": -0.68,
+      "bayesian_classification": "AGREEMENT_WITHIN_1_SIGMA",
+      "n_seeds": 3,
+      "n_insertions_per_seed": 100000,
+      "verdict_json": "evidence/v04_audit/verdicts/6c.json",
+      "is_positive_control": true
+    },
+    "3b_EHq_uio66_tier_b_pass": {
+      "branch_id": "3b_EHq",
+      "force_field": "Maia_2023_UiO-66_CO2_TraPPE_EHq",
+      "K_H_atlas_mol_per_kg_per_bar": 2.873728535585951,
+      "K_H_atlas_std_mol_per_kg_per_bar": 0.09390969201043249,
+      "K_H_reference_mol_per_kg_per_bar": 5.14,
+      "K_H_reference_source": "Cmarik 2012 Langmuir (DOI 10.1021/la3035352)",
+      "Q_st_atlas_kJ_per_mol": 22.07430691303912,
+      "Q_st_atlas_std_kJ_per_mol": 0.1337682576697469,
+      "Q_st_reference_kJ_per_mol": 26.5,
+      "delta_log10_K_H": -0.2525173785322567,
+      "delta_Q_st_kJ_per_mol": -4.42569308696088,
+      "tier_A_strict_K_H_pass": false,
+      "tier_A_strict_Q_st_pass": false,
+      "tier_B_physical_pass": true,
+      "tier_B_band_delta_log10_KH": 0.4,
+      "tier_B_band_delta_Q_st_kJ_per_mol": 8.0,
+      "bayesian_z_score": 0.84,
+      "bayesian_classification": "AGREEMENT_WITHIN_1_SIGMA",
+      "n_seeds": 3,
+      "n_insertions_per_seed": 80000,
+      "backend_tag": "native_widom_v04",
+      "verdict_json": "evidence/v04_3b_maia/verdicts/3b_EHq.json"
+    }
+  },
+  "open_problems": {
+    "5b_na_rho_ensemble_mismatch": {
+      "classification": "ensemble_mismatch_known_open_problem",
+      "principled_paths": [
+        "flat_histogram_MC_via_FEASST_per_Witman_2018",
+        "open_state_GCMC_with_mechanism_aware_sampling"
+      ],
+      "scope": "research_project_post_v0_5",
+      "site_truth_axis_remains_active": true
+    },
+    "polarizable_widom_kernel_scf_divergence": {
+      "infrastructure_complete": true,
+      "tests_pass_on_small_systems": true,
+      "divergence_on_864_atom_becker_1c": true,
+      "candidate_fixes": [
+        "tighter_under_relaxation",
+        "alpha_preconditioning",
+        "regularised_direct_inverse"
+      ],
+      "estimated_effort_person_days": 1.5
+    },
+    "5c_cation_cif_blocker": {
+      "missing_artefacts": [
+        "Na_KFI_placed_cation_CIF",
+        "Ca_LTA_placed_cation_CIF",
+        "Na_FAU_placed_cation_CIF",
+        "Na_LTA_placed_cation_CIF"
+      ],
+      "estimated_effort_per_branch_after_cif_lands_days": 1
+    }
+  },
+  "artefacts_locked": {
+    "governance": [
+      {
+        "path": "v04_case_matrix.yaml",
+        "sha256": "b0571780a4794be0fabb2a7d47a093fcb8dab07c4355467bb2fabe1a6a085664",
+        "bytes": 157626
+      },
+      {
+        "path": "src/widom_atlas/v04/locked_inputs.py",
+        "sha256": "5fa3c6a19a833245ebac4d42ebd87367130469498fa70ea0ff1aab1310fbc43e",
+        "bytes": 16864
+      }
+    ],
+    "publication": [
+      {
+        "path": "paper/main.pdf",
+        "sha256": "0627ee08048e789fac08043c87d092fdc35a37371e645c3216a213eb9b2ecb2b",
+        "bytes": 641937
+      },
+      {
+        "path": "paper/main.tex",
+        "sha256": "3141396747a92398db803565f53bdb14e7a00437caaa1bc6cd033b9dad6b6071",
+        "bytes": 77364
+      },
+      {
+        "path": "paper/references.bib",
+        "sha256": "2d3cc7bd8af02151d59524a1fcf7926df1233cdd5bcd6b91cfcd5eac4037b882",
+        "bytes": 12777
+      }
+    ],
+    "current_production_verdicts": [
+      {
+        "path": "evidence/v04_1a_raspa2/verdicts/1a.json",
+        "sha256": "35a2de6dd62aece30bf3abcc3c3105bdb6d6e7fef4405e59284b246b9dd959b7",
+        "bytes": 4279
+      },
+      {
+        "path": "evidence/v04_1b_native/verdicts/1b.json",
+        "sha256": "d037e4d8ae0c9ac201124a2a2b8bdb6db43c204423de1762319ae28c07efad3f",
+        "bytes": 2994
+      },
+      {
+        "path": "evidence/v04_3b_maia/verdicts/3b.json",
+        "sha256": "ab83ee131909261c48671b6aaef6c86bd4eecc13433e709a6f2ff972d6af6e0d",
+        "bytes": 9056
+      },
+      {
+        "path": "evidence/v04_3b_maia/verdicts/3b_UA.json",
+        "sha256": "53913e8246a0548931bcfdcabfdf7320ce96ee46bdfa16328836d478e694468e",
+        "bytes": 2527
+      },
+      {
+        "path": "evidence/v04_3b_maia/verdicts/3b_UAq.json",
+        "sha256": "00b7fd9d7f993e78502cc5566ace5aaacc96fcf13d8f95ebfc93e9bc9558d5cf",
+        "bytes": 2523
+      },
+      {
+        "path": "evidence/v04_3b_maia/verdicts/3b_EHq.json",
+        "sha256": "acee923fd15062195029f25c9b9dae0e2a4a79088b832573f70f06b243272d21",
+        "bytes": 2521
+      },
+      {
+        "path": "evidence/v04_4c_bai_2013/verdicts/4c.json",
+        "sha256": "6bcd014525d90e639b954557f56cdeacb75e610c3399243d22a4ed19aa32e4fe",
+        "bytes": 4568
+      },
+      {
+        "path": "evidence/v04_6e_bai_2013/verdicts/6e.json",
+        "sha256": "68ea56e4f0f7c17126a880d6f87fe1dca5c46a51cfdd228dc4db8a61e2db6307",
+        "bytes": 4699
+      },
+      {
+        "path": "evidence/v04_two_tier/verdicts/1a.json",
+        "sha256": "7094e713320c38a81945a7cea697080dc44df401614dc40ed47c94c379b0e33c",
+        "bytes": 2346
+      },
+      {
+        "path": "evidence/v04_two_tier/verdicts/1b.json",
+        "sha256": "b3192ad1c7634262a601a1ebd5dc4f127d63d3191b7fa258df8d1dbbb8b07a73",
+        "bytes": 2351
+      },
+      {
+        "path": "evidence/v04_two_tier/verdicts/1c.json",
+        "sha256": "6670d4656bb258385b9d2e8b6526d3965ec8bdbe4bc23cb4da92c67514ccb5d5",
+        "bytes": 2343
+      },
+      {
+        "path": "evidence/v04_two_tier/verdicts/1d.json",
+        "sha256": "e90b1036efd544cfceb3a45302bb6380d38705c1a14521cda06208a07d110f09",
+        "bytes": 2341
+      },
+      {
+        "path": "evidence/v04_two_tier/verdicts/2a.json",
+        "sha256": "8d9dce7907195efe16e893ee7eac815fe0af53334bb8006c6f0054c79f660b22",
+        "bytes": 2107
+      },
+      {
+        "path": "evidence/v04_two_tier/verdicts/2b.json",
+        "sha256": "b437f1de31aac096df753cf34eafe8a38270bc64876628828719ad3ab9b09f84",
+        "bytes": 2139
+      },
+      {
+        "path": "evidence/v04_two_tier/verdicts/3a.json",
+        "sha256": "5815fc44fd371556dff720888ef7c02060ea01d005b0828d761000c5dd68e3fd",
+        "bytes": 2269
+      },
+      {
+        "path": "evidence/v04_two_tier/verdicts/3b_UA.json",
+        "sha256": "90651bfb7d86ac95205b57785aa3bac74234966a344f8cd5c656234de4231f5a",
+        "bytes": 2303
+      },
+      {
+        "path": "evidence/v04_two_tier/verdicts/3b_UAq.json",
+        "sha256": "ce01aab218d373f02961495d468afec0d6afb5a4068ef14be05526f5821c965f",
+        "bytes": 2312
+      },
+      {
+        "path": "evidence/v04_two_tier/verdicts/3b_EHq.json",
+        "sha256": "4af66e46a0f1e834608a01cc77c08927e62c65fff2403f62d86baf9e22eeb502",
+        "bytes": 2365
+      },
+      {
+        "path": "evidence/v04_two_tier/verdicts/4a.json",
+        "sha256": "4261a7f4fc74a411a1323f524f40ea099a2e82f4e01f6bd4c9dc2876d9192f69",
+        "bytes": 2051
+      },
+      {
+        "path": "evidence/v04_two_tier/verdicts/6a.json",
+        "sha256": "0f914b1a1c552306223fe263a6e1b4aaacc316025db19b66f7dec7ffce0b54b2",
+        "bytes": 2152
+      },
+      {
+        "path": "evidence/v04_two_tier/verdicts/6b.json",
+        "sha256": "91c596ced1936a994b460826eeb8068fe0615d4781066a3dd2576e7f840d2047",
+        "bytes": 2126
+      },
+      {
+        "path": "evidence/v04_two_tier/verdicts/6c.json",
+        "sha256": "a6a5b55b7f140526ac631ff4c2a84616ab692c0edad2b2ed29aac66602e9e20c",
+        "bytes": 2168
+      },
+      {
+        "path": "evidence/v04_two_tier/two_tier_summary.json",
+        "sha256": "7e0d2149f40744e9215566cd706cf19f7a6987dc5144664c1bf7e6085ac4963b",
+        "bytes": 37909
+      }
+    ],
+    "5c_reference_audits": [
+      {
+        "path": "evidence/v04_5c/verdicts/5c_NaZK5_CO2_303K_PRIMARY.json",
+        "sha256": "f304683aa731c3b690fdd05a0f6a29a9e094654b4f6c01881eef241fd7ee1582",
+        "bytes": 5008
+      },
+      {
+        "path": "evidence/v04_5c/verdicts/5c_Zeolite5A_CaA_CO2_298K_fallback.json",
+        "sha256": "2f4ff5f3107d63971adeda37b1be62cc261a962548aa84195d6d4fbc5593d06f",
+        "bytes": 9987
+      },
+      {
+        "path": "evidence/v04_5c/verdicts/5c_Zeolite13X_NaX_CO2_273K_fallback.json",
+        "sha256": "12926fcacff78ae23ac204471288a80d30d3f0b40efb6ab28307f446caee724b",
+        "bytes": 9628
+      },
+      {
+        "path": "evidence/v04_5c/verdicts/5c_Zeolite4A_NaA_CO2_273K_fallback.json",
+        "sha256": "ae58f752b400e2fc356eaedcfe54e605006bb8e7d95565d9c4c1bcf52abcba9b",
+        "bytes": 10856
+      },
+      {
+        "path": "evidence/v04_5c/verdicts/5c_KZK5_CO2_303K_alternate.json",
+        "sha256": "d3dc6aa76141bcc8d6154c570d28cc987d4be5a67e4ad77bc7d123c6decdb767",
+        "bytes": 4412
+      },
+      {
+        "path": "evidence/v04_5c/verdicts/5c_LiZK5_CO2_303K_alternate.json",
+        "sha256": "8f7d48ca5796baba8af79a836281325864c725961eaa0eab33695990756e8ab8",
+        "bytes": 4561
+      },
+      {
+        "path": "evidence/v04_5c/verdicts/5c_R1KCHA_CO2_273K_alternate.json",
+        "sha256": "24e89386d1a57136092f1a7d72fd550166c8dcc6eedcd2a4bfe3dc3c8d13dfbf",
+        "bytes": 4987
+      },
+      {
+        "path": "evidence/v04_5c/verdicts/5c_HighSilicaCHA_CO2_298K_alternate.json",
+        "sha256": "bd3e596e3154985e8f2c19e91da60ff41a6e04abc3d9abac38049771f63ec92c",
+        "bytes": 4783
+      },
+      {
+        "path": "evidence/v04_5c/verdicts/5c_audit_summary.json",
+        "sha256": "4c0e3562356d195d79be878222c63fc058b87d4c2828a234f200af1350ee2d15",
+        "bytes": 5101
+      }
+    ],
+    "deliverable_docs": [
+      {
+        "path": "V04_FINAL_REPORT_FOR_PROFESSOR.md",
+        "sha256": "e4ad8ac217a469d7e30610d72a44134c78fdecb3878f16e44d3372b7ac08ca24",
+        "bytes": 30389
+      },
+      {
+        "path": "V04_FINAL_CATEGORICAL_REPORT.md",
+        "sha256": "09674be7eb7c739d60fb139cfece580cb5d023c7c595bfbfc86deb0dbe5acab8",
+        "bytes": 38832
+      },
+      {
+        "path": "V04_OPEN_SCIENCE_BLOCKERS.md",
+        "sha256": "f301107b31150cc21529714a1b2621984e5141598f40b960557ab1f0c9361927",
+        "bytes": 62998
+      },
+      {
+        "path": "V04_FINAL_PIVOT_EXECUTION_REPORT.md",
+        "sha256": "71630edd210eebea311a24d151e85d6a71cef01693ac2e46aab6daf897c3527c",
+        "bytes": 11017
+      },
+      {
+        "path": "V04_3B_MAIA_2023_EXECUTION_AUDIT.md",
+        "sha256": "6db3e8a6740910fb54cb142d09bbe1c38f0e85c96b3321c178bb9830d25b0d99",
+        "bytes": 8034
+      },
+      {
+        "path": "V04_5C_REPLACEMENT_BRANCH_AUDIT.md",
+        "sha256": "27d95693fc52dee35e51eaa3adc0aeef5a16c558a183b920a6d537fdbc31c082",
+        "bytes": 8255
+      },
+      {
+        "path": "V04_DEEP_RESEARCH_PIVOT_2026_06_01.md",
+        "sha256": "a91fd23834c825d813c0441a4ee6c54a46e0decaba1a551b4365a1e9dd871583",
+        "bytes": 13050
+      }
+    ],
+    "provenance": [
+      {
+        "path": "docs/research/dataset-research-for-v0.4/PROVENANCE_MANIFEST.json",
+        "sha256": "fe274eb1a50b9275ce9318206b5ad2fc08978e990b45c83c1913a00ef888567f",
+        "bytes": 16647
+      }
+    ],
+    "load_bearing_source_modules": [
+      {
+        "path": "src/widom_atlas/v04/thresholds.py",
+        "sha256": "85489f4d72347b7feae7f9d729e186d16a67aa4b6ba120ce9178438964ffe3a7",
+        "bytes": 13166
+      },
+      {
+        "path": "src/widom_atlas/v04/bayesian_comparator.py",
+        "sha256": "2b4e5f37dacbebdcc1d174ebbb60b4f1dd1a50e507c4934985762dc861d45547",
+        "bytes": 6623
+      },
+      {
+        "path": "src/widom_atlas/v04/native/bai_2013_trappe_zeo_loader.py",
+        "sha256": "5981ebdfb0ec918e20c5e976e150b26a16f1af531962755466be36f010204f3d",
+        "bytes": 9858
+      },
+      {
+        "path": "src/widom_atlas/v04/native/maia_2023_loader.py",
+        "sha256": "70e4840ef86632c2068fbda08477b5a6b0ddbe9dded318531c956f452e42d713",
+        "bytes": 19601
+      },
+      {
+        "path": "src/widom_atlas/v04/native/tail_correction.py",
+        "sha256": "f010e1f841c3d8ade1fb6a63fee1b5e4acb16e1a5a4560df434c39b73daa92b8",
+        "bytes": 7545
+      },
+      {
+        "path": "src/widom_atlas/v04/native/polarizable_dipoles.py",
+        "sha256": "0bbb2e9d864ad0c8ecb9fb582fe64935f87b57238fdee5b078318d5f5ec41cf9",
+        "bytes": 9401
+      },
+      {
+        "path": "src/widom_atlas/v04/native/polarizable_runner.py",
+        "sha256": "5a9d15a82b56ecdd1b8b921419a7fcfd32f9ebdd09fac5258b61287711b8757e",
+        "bytes": 11449
+      },
+      {
+        "path": "src/widom_atlas/v04/native/ase_calculator.py",
+        "sha256": "210ffa0ccda9a598a5c6ae7ec6f4f7987751c948b9046d75d2409556eefbe33a",
+        "bytes": 6260
+      },
+      {
+        "path": "src/widom_atlas/v04/native/runner.py",
+        "sha256": "821ad80fd76a5a4f6e5b2e75ed0eaedbbe329e66f7a060149ea56ce6a0d1fc1e",
+        "bytes": 11531
+      },
+      {
+        "path": "src/widom_atlas/v04/native/ewald.py",
+        "sha256": "5eca39ffe79459a3de4ee760ef9128ae9c7de7b6e51348bc9a08449614d74585",
+        "bytes": 9716
+      },
+      {
+        "path": "src/widom_atlas/v04/refs/isodb_audit.py",
+        "sha256": "82d2d3ee2fac9d157b05ca27206f94e60c8ee802d9d47e376401ca82309c78f5",
+        "bytes": 10435
+      },
+      {
+        "path": "src/widom_atlas/v04/branches/dispatcher.py",
+        "sha256": "4877a62796a647a1960c63a58264bf459814b1eb436ed8dd1b8568ca9041e36c",
+        "bytes": 3321
+      }
+    ]
+  }
+}

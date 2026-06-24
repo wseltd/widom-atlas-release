@@ -1,0 +1,35 @@
+{
+  "cell_matrix": [
+    [
+      26.343,
+      0.0,
+      0.0
+    ],
+    [
+      0.0,
+      26.343,
+      0.0
+    ],
+    [
+      0.0,
+      0.0,
+      26.343
+    ]
+  ],
+  "metadata": {
+    "KH_mol_per_kg_per_Pa": 2.2295679655128404e-05,
+    "Qads_kJ_per_mol": 17.147252978726872,
+    "case_id": "flag-02-hkust-1-CO2-298",
+    "evaluator": "widom_atlas.evaluator (LJ+Wolf-Coulomb)",
+    "formula": "C288H96Cu48O192",
+    "framework_name": "HKUST-1",
+    "grid_mode": "stochastic_uniform",
+    "n_atoms": 624,
+    "n_insertions": 1024,
+    "r_cut_A": 12.0,
+    "seed": 0,
+    "source": "ase",
+    "structure_sha256": "9d10fe490d6e1cebe384edaf10e9b493096d03cc38427776e57f8db11bb735ac"
+  },
+  "structure_id": "C288H96Cu48O192"
+}

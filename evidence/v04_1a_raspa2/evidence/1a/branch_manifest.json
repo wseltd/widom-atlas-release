@@ -1,0 +1,169 @@
+{
+  "branch_id": "1a",
+  "case_id": "1",
+  "status": "ran",
+  "K_H_mol_per_kg_per_Pa": 0.22152766666666668,
+  "K_H_seed_std": 0.05351438910548578,
+  "Q_st_kJ_per_mol": 51.027189010836004,
+  "Q_st_uncertainty_kJ_per_mol": 0.9837605030983027,
+  "Q_st_method": "direct_widom_from_RASPA2",
+  "seeds": 3,
+  "insertions_per_seed": 100000,
+  "aggregate_insertions": 600000,
+  "derived_charges": null,
+  "derivation_notes": null,
+  "binary_interactions": null,
+  "blocked_info": null,
+  "runs": [
+    {
+      "temperature_K": 298.0,
+      "seed_label": "T298_seed0",
+      "exit_code": 0,
+      "duration_s": 237.28590536117554,
+      "K_H_mol_per_kg_per_Pa": 0.186599,
+      "K_H_uncertainty": 0.0259712,
+      "widom_insertions_total": 100000,
+      "raspa_evidence": {
+        "raspa2_version": "2.0.50",
+        "raspa2_bin_sha256": "b875b3eee608d5bef456655e13b5b8afa67cbde3370287a717c7117ab23e70a8",
+        "raspa2_lib_sha256": "4e911a1543fe8985375d2fc23452af66ca16a16426d5fffadd5ef4f097dd34fc",
+        "input_sha256": {
+          "simulation.input": "b72baed92eabbb130a685ad4150ddb8cd27c9cc1fbb459d4894875d3a8a83705",
+          "share/raspa/forcefield/LinMercado/pseudo_atoms.def": "6e485d9eff811d36c493ca4b6ca824ac035d21af76893adbc6fcc06e8ba8ad0a",
+          "share/raspa/forcefield/LinMercado/force_field_mixing_rules.def": "cbf24b3eb4abedc324b53ace95a530cd8f971874328ce7cb42d8c6da70b303ca",
+          "share/raspa/forcefield/LinMercado/force_field.def": "9c99fc68413b5e82e2220f5436adae650c945eabe4a2f4ba60bcaec6ccd95e12",
+          "share/raspa/structures/cif/VOGTIV_LinMercado.cif": "ffae1b58206b32f08bfed26acf262b85c6509809e8cb535cb3fee4a5e73fcf95"
+        },
+        "output_data_path": "evidence/v04_1a_raspa2/evidence/1a/T298_seed0/Output/System_0/output_VOGTIV_LinMercado_4.2.2_298.000000_0.data",
+        "stdout_path": "evidence/v04_1a_raspa2/evidence/1a/T298_seed0/raspa2.stdout.txt",
+        "stderr_path": "evidence/v04_1a_raspa2/evidence/1a/T298_seed0/raspa2.stderr.txt",
+        "Q_st_widom_kJ_per_mol_per_run": 50.210200341036
+      }
+    },
+    {
+      "temperature_K": 298.0,
+      "seed_label": "T298_seed1",
+      "exit_code": 0,
+      "duration_s": 237.5948691368103,
+      "K_H_mol_per_kg_per_Pa": 0.194847,
+      "K_H_uncertainty": 0.0755799,
+      "widom_insertions_total": 100000,
+      "raspa_evidence": {
+        "raspa2_version": "2.0.50",
+        "raspa2_bin_sha256": "b875b3eee608d5bef456655e13b5b8afa67cbde3370287a717c7117ab23e70a8",
+        "raspa2_lib_sha256": "4e911a1543fe8985375d2fc23452af66ca16a16426d5fffadd5ef4f097dd34fc",
+        "input_sha256": {
+          "simulation.input": "93204b8d1aa083d49c46fdb551ecaeeccc5eb7f714cff1c1287cb425eb217f56",
+          "share/raspa/forcefield/LinMercado/pseudo_atoms.def": "6e485d9eff811d36c493ca4b6ca824ac035d21af76893adbc6fcc06e8ba8ad0a",
+          "share/raspa/forcefield/LinMercado/force_field_mixing_rules.def": "cbf24b3eb4abedc324b53ace95a530cd8f971874328ce7cb42d8c6da70b303ca",
+          "share/raspa/forcefield/LinMercado/force_field.def": "9c99fc68413b5e82e2220f5436adae650c945eabe4a2f4ba60bcaec6ccd95e12",
+          "share/raspa/structures/cif/VOGTIV_LinMercado.cif": "ffae1b58206b32f08bfed26acf262b85c6509809e8cb535cb3fee4a5e73fcf95"
+        },
+        "output_data_path": "evidence/v04_1a_raspa2/evidence/1a/T298_seed1/Output/System_0/output_VOGTIV_LinMercado_4.2.2_298.000000_0.data",
+        "stdout_path": "evidence/v04_1a_raspa2/evidence/1a/T298_seed1/raspa2.stdout.txt",
+        "stderr_path": "evidence/v04_1a_raspa2/evidence/1a/T298_seed1/raspa2.stderr.txt",
+        "Q_st_widom_kJ_per_mol_per_run": 50.752176313936005
+      }
+    },
+    {
+      "temperature_K": 298.0,
+      "seed_label": "T298_seed2",
+      "exit_code": 0,
+      "duration_s": 237.65889191627502,
+      "K_H_mol_per_kg_per_Pa": 0.283137,
+      "K_H_uncertainty": 0.17327,
+      "widom_insertions_total": 100000,
+      "raspa_evidence": {
+        "raspa2_version": "2.0.50",
+        "raspa2_bin_sha256": "b875b3eee608d5bef456655e13b5b8afa67cbde3370287a717c7117ab23e70a8",
+        "raspa2_lib_sha256": "4e911a1543fe8985375d2fc23452af66ca16a16426d5fffadd5ef4f097dd34fc",
+        "input_sha256": {
+          "simulation.input": "1a64ee2578ac4d7b9e8ba831fb103a4c276834b79b2596c52f763136f0fabfa6",
+          "share/raspa/forcefield/LinMercado/pseudo_atoms.def": "6e485d9eff811d36c493ca4b6ca824ac035d21af76893adbc6fcc06e8ba8ad0a",
+          "share/raspa/forcefield/LinMercado/force_field_mixing_rules.def": "cbf24b3eb4abedc324b53ace95a530cd8f971874328ce7cb42d8c6da70b303ca",
+          "share/raspa/forcefield/LinMercado/force_field.def": "9c99fc68413b5e82e2220f5436adae650c945eabe4a2f4ba60bcaec6ccd95e12",
+          "share/raspa/structures/cif/VOGTIV_LinMercado.cif": "ffae1b58206b32f08bfed26acf262b85c6509809e8cb535cb3fee4a5e73fcf95"
+        },
+        "output_data_path": "evidence/v04_1a_raspa2/evidence/1a/T298_seed2/Output/System_0/output_VOGTIV_LinMercado_4.2.2_298.000000_0.data",
+        "stdout_path": "evidence/v04_1a_raspa2/evidence/1a/T298_seed2/raspa2.stdout.txt",
+        "stderr_path": "evidence/v04_1a_raspa2/evidence/1a/T298_seed2/raspa2.stderr.txt",
+        "Q_st_widom_kJ_per_mol_per_run": 52.119190377536
+      }
+    },
+    {
+      "temperature_K": 323.0,
+      "seed_label": "T323_seed0",
+      "exit_code": 0,
+      "duration_s": 237.2975091934204,
+      "K_H_mol_per_kg_per_Pa": 0.0376972,
+      "K_H_uncertainty": 0.0103885,
+      "widom_insertions_total": 100000,
+      "raspa_evidence": {
+        "raspa2_version": "2.0.50",
+        "raspa2_bin_sha256": "b875b3eee608d5bef456655e13b5b8afa67cbde3370287a717c7117ab23e70a8",
+        "raspa2_lib_sha256": "4e911a1543fe8985375d2fc23452af66ca16a16426d5fffadd5ef4f097dd34fc",
+        "input_sha256": {
+          "simulation.input": "7a2e3e20341fe8717a4646bf724507b82933094cfa52fd4704b51032f3715363",
+          "share/raspa/forcefield/LinMercado/pseudo_atoms.def": "6e485d9eff811d36c493ca4b6ca824ac035d21af76893adbc6fcc06e8ba8ad0a",
+          "share/raspa/forcefield/LinMercado/force_field_mixing_rules.def": "cbf24b3eb4abedc324b53ace95a530cd8f971874328ce7cb42d8c6da70b303ca",
+          "share/raspa/forcefield/LinMercado/force_field.def": "9c99fc68413b5e82e2220f5436adae650c945eabe4a2f4ba60bcaec6ccd95e12",
+          "share/raspa/structures/cif/VOGTIV_LinMercado.cif": "ffae1b58206b32f08bfed26acf262b85c6509809e8cb535cb3fee4a5e73fcf95"
+        },
+        "output_data_path": "evidence/v04_1a_raspa2/evidence/1a/T323_seed0/Output/System_0/output_VOGTIV_LinMercado_4.2.2_323.000000_0.data",
+        "stdout_path": "evidence/v04_1a_raspa2/evidence/1a/T323_seed0/raspa2.stdout.txt",
+        "stderr_path": "evidence/v04_1a_raspa2/evidence/1a/T323_seed0/raspa2.stderr.txt",
+        "Q_st_widom_kJ_per_mol_per_run": 49.424685999136
+      }
+    },
+    {
+      "temperature_K": 323.0,
+      "seed_label": "T323_seed1",
+      "exit_code": 0,
+      "duration_s": 237.97246932983398,
+      "K_H_mol_per_kg_per_Pa": 0.0354414,
+      "K_H_uncertainty": 0.0074867,
+      "widom_insertions_total": 100000,
+      "raspa_evidence": {
+        "raspa2_version": "2.0.50",
+        "raspa2_bin_sha256": "b875b3eee608d5bef456655e13b5b8afa67cbde3370287a717c7117ab23e70a8",
+        "raspa2_lib_sha256": "4e911a1543fe8985375d2fc23452af66ca16a16426d5fffadd5ef4f097dd34fc",
+        "input_sha256": {
+          "simulation.input": "5c40a52c7ca4767ae1b47e2ddd7a71a54952e0e64226fe51381abd38f167ceca",
+          "share/raspa/forcefield/LinMercado/pseudo_atoms.def": "6e485d9eff811d36c493ca4b6ca824ac035d21af76893adbc6fcc06e8ba8ad0a",
+          "share/raspa/forcefield/LinMercado/force_field_mixing_rules.def": "cbf24b3eb4abedc324b53ace95a530cd8f971874328ce7cb42d8c6da70b303ca",
+          "share/raspa/forcefield/LinMercado/force_field.def": "9c99fc68413b5e82e2220f5436adae650c945eabe4a2f4ba60bcaec6ccd95e12",
+          "share/raspa/structures/cif/VOGTIV_LinMercado.cif": "ffae1b58206b32f08bfed26acf262b85c6509809e8cb535cb3fee4a5e73fcf95"
+        },
+        "output_data_path": "evidence/v04_1a_raspa2/evidence/1a/T323_seed1/Output/System_0/output_VOGTIV_LinMercado_4.2.2_323.000000_0.data",
+        "stdout_path": "evidence/v04_1a_raspa2/evidence/1a/T323_seed1/raspa2.stdout.txt",
+        "stderr_path": "evidence/v04_1a_raspa2/evidence/1a/T323_seed1/raspa2.stderr.txt",
+        "Q_st_widom_kJ_per_mol_per_run": 49.524180643836004
+      }
+    },
+    {
+      "temperature_K": 323.0,
+      "seed_label": "T323_seed2",
+      "exit_code": 0,
+      "duration_s": 237.22649002075195,
+      "K_H_mol_per_kg_per_Pa": 0.0388634,
+      "K_H_uncertainty": 0.0100336,
+      "widom_insertions_total": 100000,
+      "raspa_evidence": {
+        "raspa2_version": "2.0.50",
+        "raspa2_bin_sha256": "b875b3eee608d5bef456655e13b5b8afa67cbde3370287a717c7117ab23e70a8",
+        "raspa2_lib_sha256": "4e911a1543fe8985375d2fc23452af66ca16a16426d5fffadd5ef4f097dd34fc",
+        "input_sha256": {
+          "simulation.input": "833f9e2825bbb01f5e7d8d9a0fb2288922db754fe29f259309d71cf05eff7738",
+          "share/raspa/forcefield/LinMercado/pseudo_atoms.def": "6e485d9eff811d36c493ca4b6ca824ac035d21af76893adbc6fcc06e8ba8ad0a",
+          "share/raspa/forcefield/LinMercado/force_field_mixing_rules.def": "cbf24b3eb4abedc324b53ace95a530cd8f971874328ce7cb42d8c6da70b303ca",
+          "share/raspa/forcefield/LinMercado/force_field.def": "9c99fc68413b5e82e2220f5436adae650c945eabe4a2f4ba60bcaec6ccd95e12",
+          "share/raspa/structures/cif/VOGTIV_LinMercado.cif": "ffae1b58206b32f08bfed26acf262b85c6509809e8cb535cb3fee4a5e73fcf95"
+        },
+        "output_data_path": "evidence/v04_1a_raspa2/evidence/1a/T323_seed2/Output/System_0/output_VOGTIV_LinMercado_4.2.2_323.000000_0.data",
+        "stdout_path": "evidence/v04_1a_raspa2/evidence/1a/T323_seed2/raspa2.stdout.txt",
+        "stderr_path": "evidence/v04_1a_raspa2/evidence/1a/T323_seed2/raspa2.stderr.txt",
+        "Q_st_widom_kJ_per_mol_per_run": 50.600215779236
+      }
+    }
+  ]
+}

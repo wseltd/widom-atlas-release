@@ -1,0 +1,19 @@
+{
+  "system": "Si-CHA + CO2 (rigid TraPPE geom, random orientation)",
+  "N": 60,
+  "seed": 0,
+  "model": "uma-s-1p1",
+  "task_name_LOADBEARING": "omat",
+  "engine": "fairchem-UMA",
+  "protocol": "periodic same-graph; CO2 probe (CO2 in-distribution for odac)",
+  "verdict_schema": "VERDICT_SCHEMA_V06.md",
+  "ref_min_dist_A": 4.37,
+  "gate1_second_open_U_kJ": 0.0387,
+  "gate1_pass": true,
+  "n_flagged": 56,
+  "flagged_weight_fraction": 0.0003,
+  "min_U_mace_kJ": 1.16,
+  "max_U_mace_kJ": 60331.8,
+  "min_U_classical_kJ": -23.02,
+  "verdict": "REFUSE [Class II: no-physisorption] \u2014 min U > 0. Per VERDICT_SCHEMA_V06.md"
+}

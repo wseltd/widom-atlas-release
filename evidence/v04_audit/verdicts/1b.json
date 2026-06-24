@@ -1,0 +1,33 @@
+{
+  "branch_id": "1b",
+  "case_id": "1",
+  "verdict": "BLOCKED",
+  "verdict_tier": "flagship_strict",
+  "numeric_thresholds": "flagship_strict",
+  "affects_v04_verdict": true,
+  "blocked_reason": "RASPA3 v3.0.29 has no native representation for the Dzubak two-attraction form V(r) = A\u00b7exp(-B\u00b7r) - C/r^5 - D/r^6. Buckingham (C/r^6 only) is the closest available form but cannot recover the C/r^5 mid-range attraction term that Dzubak 2012 specifically introduced for Mg-MOF-74 + CO2.",
+  "prescribed_form": "DZUBAK_A_EXP_C5_D6 (Dzubak 2012)",
+  "required_action": "Same as 1a \u2014 backend-level fix required.",
+  "parsed_K_H_mol_per_kg_per_Pa": null,
+  "parsed_Q_st_kJ_per_mol": null,
+  "reference": {
+    "K_H_value_mol_per_kg_per_bar": 187.0,
+    "K_H_value_mol_per_kg_per_Pa": 0.00187,
+    "K_H_window_min": null,
+    "K_H_window_max": null,
+    "K_H_source": "Mason_2011_EES_regression (same as 1a, cross-FF audit)",
+    "K_H_temperature_K": 298.0,
+    "Q_st_value_kj_per_mol": 42.0,
+    "Q_st_window_min": null,
+    "Q_st_window_max": null,
+    "Q_st_source": "Mason_2011 + Simmons_2011_Fig_S23"
+  },
+  "evidence": {
+    "manifest": "branch_manifest.json"
+  },
+  "notes": [
+    "BLOCKED: RASPA3 v3.0.29 has no native representation for the Dzubak two-attraction form V(r) = A\u00b7exp(-B\u00b7r) - C/r^5 - D/r^6. Buckingham (C/r^6 only) is the closest available form but cannot recover the C/r^5 mid-range attraction term that Dzubak 2012 specifically introduced for Mg-MOF-74 + CO2.",
+    "Prescribed: DZUBAK_A_EXP_C5_D6 (Dzubak 2012)",
+    "Required: Same as 1a \u2014 backend-level fix required."
+  ]
+}

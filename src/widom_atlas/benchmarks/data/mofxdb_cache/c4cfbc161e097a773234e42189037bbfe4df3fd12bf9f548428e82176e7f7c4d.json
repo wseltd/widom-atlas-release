@@ -1,0 +1,16 @@
+{
+  "KH": 1e-07,
+  "KH_units": "mol/(kg*Pa)",
+  "Qads": 18.0,
+  "Qads_units": "kJ/mol",
+  "citation": "Park et al. PNAS 103, 10186 (2006); confirmed Phan et al. Acc. Chem. Res. 43, 58 (2010). ZIF-8 + CO2 at 298 K Henry slope ~1e-7 mol/(kg*Pa); Q_ads ~18 kJ/mol.",
+  "dataset_version": "literature_v1_2026-05",
+  "gas": "CO2",
+  "identity_confidence": "high",
+  "license": "literature value reproduced under fair-use citation",
+  "material_id": "ZIF-8",
+  "retrieved_at": "2026-05-07T11:21:43.426763+00:00",
+  "sha256": "e6cda34a6da0216ca87ad55c8a05da992215cb86648d638ae1b8a80443ed6702",
+  "source_url": "https://doi.org/10.1073/pnas.0602439103",
+  "temperature_K": 298.15
+}

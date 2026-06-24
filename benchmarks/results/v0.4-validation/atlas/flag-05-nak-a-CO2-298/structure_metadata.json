@@ -1,0 +1,35 @@
+{
+  "cell_matrix": [
+    [
+      24.555,
+      0.0,
+      0.0
+    ],
+    [
+      0.0,
+      24.555,
+      0.0
+    ],
+    [
+      0.0,
+      0.0,
+      24.555
+    ]
+  ],
+  "metadata": {
+    "KH_mol_per_kg_per_Pa": 0.0034055391836882417,
+    "Qads_kJ_per_mol": 34.76652724675282,
+    "case_id": "flag-05-nak-a-CO2-298",
+    "evaluator": "widom_atlas.evaluator (LJ+Wolf-Coulomb)",
+    "formula": "O384Si192",
+    "framework_name": "NaK-A",
+    "grid_mode": "stochastic_uniform",
+    "n_atoms": 576,
+    "n_insertions": 1024,
+    "r_cut_A": 12.0,
+    "seed": 0,
+    "source": "ase",
+    "structure_sha256": "a3a9183ef6cbe8a2fac3f6b0d7b4c0ec6b92b008039736d1473079f8ed2acec0"
+  },
+  "structure_id": "O384Si192"
+}

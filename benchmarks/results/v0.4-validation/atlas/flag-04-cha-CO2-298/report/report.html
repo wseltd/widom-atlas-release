@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>widom-atlas report — O24Si12</title>
+<style>
+body { font-family: system-ui, sans-serif; margin: 2em; max-width: 960px; }
+h1 { border-bottom: 2px solid #888; padding-bottom: 0.2em; }
+section { margin-bottom: 1.5em; }
+table { border-collapse: collapse; }
+th, td { border: 1px solid #ccc; padding: 0.3em 0.6em; }
+img { max-width: 100%; height: auto; }
+.caveat { color: #b65; }
+</style>
+</head>
+<body>
+<h1>widom-atlas report — O24Si12</h1>
+
+<section>
+  <h2>Structure &amp; Conditions</h2>
+  <ul>
+    <li><strong>structure_id:</strong> O24Si12</li>
+    <li><strong>gas:</strong> CO2</li>
+    <li><strong>temperature_K:</strong> 298.15</li>
+  </ul>
+</section>
+
+<section>
+  <h2>Sample Summary</h2>
+  <ul>
+    <li><strong>n_samples:</strong> 1024</li>
+    <li><strong>input_hash:</strong> <code>7cb2d1e57e58a008d22cb68fa295a601905ed3db7f009e15ff61343fb5248662</code></li>
+    <li><strong>mean_energy_eV:</strong> 3.728743678425323e+17</li>
+  </ul>
+</section>
+
+<section>
+  <h2>Density Map</h2>
+  <ul>
+    <li><strong>grid shape:</strong> [32, 32, 32]</li>
+    <li><strong>spacing_A:</strong> [0.29559375, 0.29559375, 0.29559375]</li>
+    <li><strong>smoothing_sigma_A:</strong> 0.0</li>
+  </ul>
+  <img src="../figures/density_slices.png" alt="density slices">
+</section>
+
+<section>
+  <h2>Basins</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>basin_id</th><th>count</th><th>weight</th><th>mean_energy_eV</th><th>spread_A</th><th>accessible_fraction</th>
+      </tr>
+    </thead>
+    <tbody>
+    
+      <tr>
+        <td>0</td>
+        <td>543</td>
+        <td>1.0000</td>
+        <td>-0.2960</td>
+        <td>2.9270</td>
+        <td>1.000</td>
+      </tr>
+    
+    </tbody>
+  </table>
+  <img src="../figures/basin_centroids.png" alt="basin centroids">
+</section>
+
+<section>
+  <h2>Symmetry Grouping</h2>
+  
+  <ul>
+    
+    <li>
+      <strong>group 0</strong> — space group <code>R-3m</code> (#166),
+      confidence 0.70, members: [0]
+      
+    </li>
+    
+  </ul>
+  
+</section>
+
+<section>
+  <h2>Perturbations</h2>
+  
+  <p><em>No perturbations applied to this run.</em></p>
+  
+</section>
+
+<section>
+  <h2>Robustness</h2>
+  
+  <p><em>No robustness comparison run.</em></p>
+  
+</section>
+
+<section>
+  <h2>Caveats &amp; Uncertainty</h2>
+  <ul>
+  
+    <li class="caveat">Toy / synthetic insertion samples are not chemically meaningful by themselves.</li>
+  
+    <li class="caveat">Symmetry assignments are uncertain on defective or strained frameworks.</li>
+  
+  
+  </ul>
+</section>
+</body>
+</html>

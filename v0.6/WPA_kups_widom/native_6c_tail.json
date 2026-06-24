@@ -1,0 +1,22 @@
+{
+  "engine": "native_lj_widom",
+  "cif": "v0.6/WPA_kups_widom/cifs_p1/MFI_P1.cif",
+  "N": 400000,
+  "seed": 0,
+  "eps_K": 93.0,
+  "sigma_A": 3.335,
+  "cutoff": 12.0,
+  "T": 298.15,
+  "tail_correction": true,
+  "u_tail_K": -22.851926599155306,
+  "mean_exp_negbU": 5.646255155706182,
+  "K_H_mol_per_kg_per_Pa": 1.2392647762027401e-06,
+  "K_H_mol_per_kg_per_bar": 0.12392647762027402,
+  "Q_st_kJ_per_mol": 14.561205358777944,
+  "supercell_reps": [
+    2,
+    2,
+    2
+  ],
+  "V_supercell_A3": 41690.25305312
+}

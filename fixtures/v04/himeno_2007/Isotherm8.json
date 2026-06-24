@@ -1,0 +1,159 @@
+{
+    "filename": "10.1016j.micromeso.2006.05.018.isotherm8",
+    "DOI": "10.1016/j.micromeso.2006.05.018",
+    "articleSource": "UNKNOWN",
+    "date": "1000-01-01",
+    "digitizer": "UNKNOWN",
+    "adsorbent": {
+        "hashkey": "NIST-MATDB-1113bb98575410d3673b528947dcb838",
+        "name": "Zeolite DD3R"
+    },
+    "adsorbates": [
+        {
+            "InChIKey": "CURLTUGMZLYLDI-UHFFFAOYSA-N",
+            "name": "Carbon Dioxide"
+        }
+    ],
+    "category": "",
+    "temperature": 323,
+    "tabular_data": 0,
+    "isotherm_type": "",
+    "adsorptionUnits": "mmol/g",
+    "pressureUnits": "bar",
+    "compositionType": "molefraction",
+    "concentrationUnits": "",
+    "isotherm_data": [
+        {
+            "pressure": 0.0417962,
+            "total_adsorption": 0.0937153,
+            "species_data": [
+                {
+                    "InChIKey": "CURLTUGMZLYLDI-UHFFFAOYSA-N",
+                    "composition": 1,
+                    "adsorption": 0.0937153
+                }
+            ]
+        },
+        {
+            "pressure": 0.295317,
+            "total_adsorption": 0.428927,
+            "species_data": [
+                {
+                    "InChIKey": "CURLTUGMZLYLDI-UHFFFAOYSA-N",
+                    "composition": 1,
+                    "adsorption": 0.428927
+                }
+            ]
+        },
+        {
+            "pressure": 0.675599,
+            "total_adsorption": 0.675405,
+            "species_data": [
+                {
+                    "InChIKey": "CURLTUGMZLYLDI-UHFFFAOYSA-N",
+                    "composition": 1,
+                    "adsorption": 0.675405
+                }
+            ]
+        },
+        {
+            "pressure": 1.3094,
+            "total_adsorption": 1.12893,
+            "species_data": [
+                {
+                    "InChIKey": "CURLTUGMZLYLDI-UHFFFAOYSA-N",
+                    "composition": 1,
+                    "adsorption": 1.12893
+                }
+            ]
+        },
+        {
+            "pressure": 2.74602,
+            "total_adsorption": 1.49372,
+            "species_data": [
+                {
+                    "InChIKey": "CURLTUGMZLYLDI-UHFFFAOYSA-N",
+                    "composition": 1,
+                    "adsorption": 1.49372
+                }
+            ]
+        },
+        {
+            "pressure": 4.47842,
+            "total_adsorption": 1.75498,
+            "species_data": [
+                {
+                    "InChIKey": "CURLTUGMZLYLDI-UHFFFAOYSA-N",
+                    "composition": 1,
+                    "adsorption": 1.75498
+                }
+            ]
+        },
+        {
+            "pressure": 7.05588,
+            "total_adsorption": 1.96695,
+            "species_data": [
+                {
+                    "InChIKey": "CURLTUGMZLYLDI-UHFFFAOYSA-N",
+                    "composition": 1,
+                    "adsorption": 1.96695
+                }
+            ]
+        },
+        {
+            "pressure": 12.0418,
+            "total_adsorption": 2.25287,
+            "species_data": [
+                {
+                    "InChIKey": "CURLTUGMZLYLDI-UHFFFAOYSA-N",
+                    "composition": 1,
+                    "adsorption": 2.25287
+                }
+            ]
+        },
+        {
+            "pressure": 14.3657,
+            "total_adsorption": 2.32188,
+            "species_data": [
+                {
+                    "InChIKey": "CURLTUGMZLYLDI-UHFFFAOYSA-N",
+                    "composition": 1,
+                    "adsorption": 2.32188
+                }
+            ]
+        },
+        {
+            "pressure": 19.0136,
+            "total_adsorption": 2.43526,
+            "species_data": [
+                {
+                    "InChIKey": "CURLTUGMZLYLDI-UHFFFAOYSA-N",
+                    "composition": 1,
+                    "adsorption": 2.43526
+                }
+            ]
+        },
+        {
+            "pressure": 23.915,
+            "total_adsorption": 2.52893,
+            "species_data": [
+                {
+                    "InChIKey": "CURLTUGMZLYLDI-UHFFFAOYSA-N",
+                    "composition": 1,
+                    "adsorption": 2.52893
+                }
+            ]
+        },
+        {
+            "pressure": 28.9855,
+            "total_adsorption": 2.62259,
+            "species_data": [
+                {
+                    "InChIKey": "CURLTUGMZLYLDI-UHFFFAOYSA-N",
+                    "composition": 1,
+                    "adsorption": 2.62259
+                }
+            ]
+        }
+    ]
+}

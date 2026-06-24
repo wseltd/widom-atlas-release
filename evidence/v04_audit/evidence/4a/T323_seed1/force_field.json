@@ -1,0 +1,81 @@
+{
+  "PseudoAtoms": [
+    {
+      "name": "O",
+      "framework": true,
+      "element": "O",
+      "mass": 15.9994,
+      "charge": -1.025,
+      "source": "Jaramillo-Auerbach 1999 via Garc\u00eda-P\u00e9rez 2007"
+    },
+    {
+      "name": "Si",
+      "framework": true,
+      "element": "Si",
+      "mass": 28.0855,
+      "charge": 2.05,
+      "source": "Jaramillo-Auerbach 1999 via Garc\u00eda-P\u00e9rez 2007"
+    },
+    {
+      "name": "C_co2",
+      "framework": false,
+      "element": "C",
+      "print_as": "C",
+      "mass": 12.0107,
+      "charge": 0.6512,
+      "source": "Harris-Yung 1995 CO2"
+    },
+    {
+      "name": "O_co2",
+      "framework": false,
+      "element": "O",
+      "print_as": "O",
+      "mass": 15.9994,
+      "charge": -0.3256,
+      "source": "Harris-Yung 1995 CO2"
+    }
+  ],
+  "SelfInteractions": [
+    {
+      "name": "O",
+      "type": "lennard-jones",
+      "parameters": [
+        53.0,
+        3.3
+      ],
+      "source": "TraPPE-zeo Bai 2013"
+    },
+    {
+      "name": "Si",
+      "type": "lennard-jones",
+      "parameters": [
+        22.0,
+        2.3
+      ],
+      "source": "TraPPE-zeo Bai 2013"
+    },
+    {
+      "name": "C_co2",
+      "type": "lennard-jones",
+      "parameters": [
+        28.129,
+        2.76
+      ],
+      "source": "Harris-Yung 1995"
+    },
+    {
+      "name": "O_co2",
+      "type": "lennard-jones",
+      "parameters": [
+        80.507,
+        3.033
+      ],
+      "source": "Harris-Yung 1995"
+    }
+  ],
+  "MixingRule": "Lorentz-Berthelot",
+  "TruncationMethod": "shifted",
+  "TailCorrections": false,
+  "CutOffVDW": 12.0,
+  "CutOffCoulomb": 12.0
+}
