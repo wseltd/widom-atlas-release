@@ -114,6 +114,12 @@ kUPS (Ar--O only) & 5.98 & 0.1313 & --- \\
 \end{longtable}
 }
 
+{\footnotesize\noindent Percent differences are relative to the stated comparator. The native
+\(K_H\) offset (\(+1.1\,\%\)) is relative to the RASPA3 locked reference; the kUPS \(K_H\) offset
+(\(+16.2\,\%\)) is quoted relative to the convention-matched native shifted estimator when discussing
+the shifted-versus-truncated convention gap (it is \(+17.5\,\%\) relative to RASPA3). The \(q_{st}\)
+offsets in parentheses are relative to RASPA3.\par}
+
 \subsection{Finding F1 --- a silicon double-count caught by audit (and a
 clean rebuild)}\label{finding-f1-the-arsi-term-is-load-bearing-1.82-on-k_h}
 
@@ -436,8 +442,8 @@ UMA omat
 
   The \textbf{odac} head (trained on MOF/CO₂/H₂O direct-air-capture
   data) finds a \textbf{physical CO₂ well (−15.7 kJ/mol, screen q\_st
-  17.7; experimental CO₂/CHA ≈ 20--30) on CO₂/CHA --- its actual
-  training domain → governance screen-passes it}. The screen q\_st is 17.7 kJ/mol against a reference anchor of ≈21 (≈3 kJ/mol low, −3.3 below strict): a screen-pass, not an accuracy certificate. On Ar/CHA (a noble gas it
+  17.7; experimental CO₂/CHA ≈ 20--30) on CO₂/CHA --- CO₂ is
+  adsorbate-in-domain, though the all-silica CHA host is outside the MOF host class it was trained on → governance screen-passes it}. The screen q\_st is 17.7 kJ/mol against a reference anchor of ≈21 (≈3 kJ/mol low, −3.3 below strict): a screen-pass, not an accuracy certificate. On Ar/CHA (a noble gas it
   never trained on) the \emph{same} head is internally inconsistent ---
   2.7 kJ between symmetry-equivalent open sites --- which Gate 1 catches
   → \textbf{withheld}. The \textbf{omat} (materials) head under-binds
@@ -560,7 +566,7 @@ fairchem-core 2.21.0. N, seed, T, CIF in every summary JSON.
   conventions: \textbf{shift = +11.6 \%, tail = +11.9 \%} (the shift is
   \emph{not} negligible at 14 Å --- earlier-draft correction). kUPS uses
   a truncated LJ and \textbf{does apply a tail} (tested:
-  \texttt{tail\_correction:\ false} drops K\_H −16 \%, q\_st −0.49 --- a
+  \texttt{tail\_correction:\ false} drops K\_H by \(14\,\%\) (\(2.271 \to 1.952\)), q\_st by \(0.49\) --- a
   ``no-tail-in-Widom'' hypothesis is \emph{falsified}). So its +2.2 \%
   vs the shifted lock is a \textbf{cancellation}: read on the same
   (truncated+tail) convention, \textbf{kUPS is −8.1 \% vs native} (−11.7

@@ -24,7 +24,10 @@ value mis-derived by \(\sim\!12\%\) --- which multiplied back to roughly the (wr
 all four and running the coherent single-source recipe (pure Talu, oxygen-only) at a converged cutoff on
 Talu's own geometry reproduces the \emph{corrected} reference (\(K_H = 0.200\)) exactly and cross-engine:
 a native estimator gives \(0.200\) and RASPA3 \(0.199\) (parity \(0.5\%\)), the heat (\(14.97\) kJ/mol)
-within \(0.7\) kJ/mol of the calorimetric value. This is the paper's own thesis landing in its own
+within \(0.7\) kJ/mol of the calorimetric value. The rebuild is deliberately not flattering on the heat:
+at \(14.97\) kJ/mol it sits slightly farther from Dunne's \(15.7\) kJ/mol than the hybrid recipe's
+\(\approx\!16.0\) kJ/mol, which is exactly what one expects if the original closeness was partly a
+spurious-attraction cancellation rather than a coherent recipe. This is the paper's own thesis landing in its own
 positive control --- a recipe assembled from incompatible silicon conventions yields a fortuitously-right
 number, and only a governed single-source rebuild makes it honest --- in strict-band terms the hybrid lands in-band
 against \emph{both} the mis-derived \(0.224\) and the corrected \(0.200\), so the rebuild changes the
@@ -82,8 +85,10 @@ offset, and the resulting need to lock the tail/truncation convention, are estab
 \cite{Jablonka2019,Dubbeldam2016}; what is new here is the cross-engine \emph{quantification} of the
 effect, and the governed comparison is what makes it visible (Figure~\ref{fig:v06-parity}). The recipe these three engines share for this parity is the as-locked
 hybrid reframed above as a silicon double-count; this does not weaken the validation, which tests whether
-independent estimators agree on a \emph{common} recipe (they do, to \(1.1\%\) on \(K_H\) and \(0.22\)
-kJ/mol on \(Q_{st}\)), not whether that recipe reproduces experiment. The experimental-reproduction
+independent estimators agree on a \emph{common} recipe, not whether that recipe reproduces experiment. On the
+convention-matched shifted recipe the native estimator and RASPA3 agree to \(1.1\%\) on \(K_H\); \(Q_{st}\) is
+far less sensitive to the LJ shift convention, so kUPS stays within \(0.22\) kJ/mol of RASPA3 on the same
+control even though its \(K_H\) carries the \(+16\%\) shifted-versus-truncated convention offset quantified above. The experimental-reproduction
 correction --- silicon, structure, convention, reference --- lives entirely in the rebuilt control above;
 the two findings are consistent.
 
@@ -135,7 +140,8 @@ Its materials head, used on Ar in silica, is erratic at close contact and is ref
 head, used on Ar --- a noble gas outside its training distribution --- assigns energies that differ by
 \(2.7\) kJ/mol between symmetry-equivalent open sites; the harness fails its own internal consistency
 check and returns \emph{withheld}: no verdict, rather than a confident wrong one. The \emph{same}
-direct-air-capture head, used on CO\(_2\) in the same framework, its actual training domain, is
+direct-air-capture head, used on CO\(_2\) in the same framework --- CO\(_2\) is adsorbate-in-domain for this
+head, though the all-silica CHA host lies outside the MOF host class used in its training --- is
 self-consistent and finds a physical well (minimum \(-15.7\) kJ/mol, screen isosteric heat \(17.7\) kJ/mol
 against a reference anchor of \(21.0\)): it passes the screen (Figure~\ref{fig:v06-uma}). The model passes
 where its own documentation says it should, and is refused or withheld elsewhere. A screen-pass is not a
@@ -145,10 +151,10 @@ thermodynamics --- but it is the difference between a number that may be trusted
 \begin{figure}[tbp]
 \centering
 \includegraphics[width=\textwidth]{figures/f2_uma_domain.pdf}
-\caption{Governance respects the training domain. Left: the UMA direct-air-capture head screen-passes
-in-domain on CO\(_2\) (a physical well) and is withheld out-of-domain on Ar (internally inconsistent).
-Right: the full task-by-system verdict matrix; the model passes exactly where its training domain says
-it should.}
+\caption{Governance respects the model's domain. Left: the UMA direct-air-capture head screen-passes on
+CO\(_2\) (adsorbate-in-domain; a physical well) and is withheld out-of-domain on Ar (internally inconsistent).
+Right: the full task-by-system verdict matrix; the model passes where its adsorbate domain holds and is
+refused or withheld elsewhere.}
 \label{fig:v06-uma}
 \end{figure}
 
