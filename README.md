@@ -9,6 +9,15 @@ License: Apache-2.0.
 
 ---
 
+## Papers
+
+- [widom-atlas master article](papers/widom-atlas_master.pdf)
+- [kUPS governance companion report](papers/widom-atlas_kups-governance_companion.pdf)
+
+arXiv submission is pending endorsement. The PDFs above are the current public preprint versions.
+
+---
+
 ## Current scientific status (locked 2026-06-01)
 
 **widom-atlas is NOT scientifically validated as a general predictive tool.**
