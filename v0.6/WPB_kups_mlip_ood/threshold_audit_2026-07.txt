@@ -1,0 +1,57 @@
+=== parameter comparison (eps in K, sigma in A) ===
+  Si  as-coded eps=  202.29 sig= 3.8260   genuine-UFF eps=  202.29 sig= 3.4086
+  O   as-coded eps=   30.19 sig= 3.5000   genuine-UFF eps=   30.19 sig= 3.1181
+  Ar  as-coded eps=  185.00 sig= 3.4050   genuine-UFF eps=   93.10 sig= 3.4460
+
+=== reproduction check against committed evidence ===
+  max |dmin difference|      = 0.000000 A
+  max |U_classical difference| = 0.0005 kJ/mol   (as-coded params)
+  geometries reproduce exactly: True
+
+=== overlap threshold ===
+  as-coded  0.80 * 0.5*(3.500 + 3.405) = 2.7620 A   [mixes UFF r_min with Talu sigma]
+  genuine   0.80 * 0.5*(3.1181 + 3.4460) = 2.6257 A
+
+=== classical baseline at the four open sites (C1 comparison) ===
+  dist(A)   U_as_coded   U_genuine
+    3.564       -19.99       -11.56
+    3.990       -17.79        -9.69
+    4.232       -13.42        -7.24
+    4.334       -16.21        -8.70
+
+=== flagged fraction and CLEAN sample size, as-coded vs corrected threshold ===
+  medium-mpa-0_D3      N=120
+       as-coded : flagged  99, clean  21, flagged-weight 0.0001
+       corrected: flagged  97, clean  23, flagged-weight 0.0000
+       clean min U = -5.03 kJ/mol  bootstrap 95% CI [-5.03, -3.19]  (n_clean=23)
+
+  medium-mpa-0         N=120
+       as-coded : flagged  99, clean  21, flagged-weight 0.0000
+       corrected: flagged  97, clean  23, flagged-weight 0.0000
+       clean min U = 8.51 kJ/mol  bootstrap 95% CI [8.51, 10.71]  (n_clean=23)
+
+  small                N=120
+       as-coded : flagged  99, clean  21, flagged-weight 0.9948
+       corrected: flagged  97, clean  23, flagged-weight 0.9910
+       clean min U = -2.94 kJ/mol  bootstrap 95% CI [-2.94, -2.39]  (n_clean=23)
+
+  uma_co2_odac         N= 60
+       as-coded : flagged  56, clean   4, flagged-weight 0.0016
+       corrected: flagged  56, clean   4, flagged-weight 0.0016
+       clean min U = -15.66 kJ/mol  bootstrap 95% CI [-15.66, -4.32]  (n_clean=4)
+
+  uma_co2_omat         N= 60
+       as-coded : flagged  56, clean   4, flagged-weight 0.0003
+       corrected: flagged  56, clean   4, flagged-weight 0.0003
+       clean min U = 1.16 kJ/mol  bootstrap 95% CI [1.16, 6.58]  (n_clean=4)
+
+  uma_odac             N=120
+       as-coded : flagged 119, clean   1, flagged-weight 0.0116
+       corrected: flagged 119, clean   1, flagged-weight 0.0053
+       clean min U = -14.87 kJ/mol  bootstrap 95% CI [-14.87, -14.87]  (n_clean=1)
+
+  uma_omat             N=120
+       as-coded : flagged 117, clean   3, flagged-weight 0.9976
+       corrected: flagged 117, clean   3, flagged-weight 0.0000
+       clean min U = -11.47 kJ/mol  bootstrap 95% CI [-11.47, 121.27]  (n_clean=3)
+

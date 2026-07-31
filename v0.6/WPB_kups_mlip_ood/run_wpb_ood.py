@@ -28,6 +28,28 @@ CIF = "docs/research/dataset-research-for-v0.4/7/CHA_iza.cif"
 GUEST, T_K, KB_EV, EV_TO_KJ, SEED, CUTOFF = "Ar", 298.15, 8.617333262e-5, 96.48533212, 0, 6.0
 KT = KB_EV * T_K              # eV (unused by weights; kept for reference)
 RT_kJ = KB_EV * EV_TO_KJ * T_K  # = R*T in kJ/mol (2.478 @298.15) — energies are kJ/mol
+# ---------------------------------------------------------------------------
+# AUDIT NOTE (2026-07) -- two parameter-convention defects found by audit in the
+# classical baseline below. They are recorded here rather than silently changed,
+# because the committed per-insertion evidence was produced with the values as
+# written and must stay reproducible from this file.
+#
+#   1. sigma vs r_min. UFF tabulates x_i, the nonbond DISTANCE (= r_min), not
+#      sigma. The dict below uses x_i values (Si 3.826, O 3.500) directly as
+#      sigma in 4*eps*((sig/r)^12 - (sig/r)^6). Self-consistent sigmas are
+#      x_i / 2**(1/6): Si 3.409, O 3.118, Ar 3.446. The hard-overlap threshold
+#      0.80*sigma_min inherits this: as-run 2.762 A, corrected 2.626 A.
+#      Re-scoring the committed evidence at 2.626 A changes no refuse/
+#      screen-pass verdict, but drops the UMA-omat flagged weight 0.998 -> 0.000.
+#   2. eps_Ar. 185.0 K matches neither genuine UFF argon (D_i = 0.185 kcal/mol
+#      = 93.1 K) nor the Talu-Myers argon used elsewhere in this repository
+#      (119.8 K); it appears to be 0.185 kcal/mol scaled by 1000 rather than
+#      converted. The classical curve is therefore ~2x too deep in eps_Ar.
+#
+# The classical curve is used only as a same-geometry comparator for the MLIP
+# legs; both defects are documented in the v0.6 report and neither changes a
+# reported verdict. A corrected-parameter rerun is outstanding work.
+# ---------------------------------------------------------------------------
 UFF = {"Si": (202.29, 3.826), "O": (30.19, 3.500), "Ar": (185.0, 3.405)}
 
 def lj_classical_U_K(by_elem):

@@ -8,10 +8,17 @@ This appendix records the numerical identity of the v0.4 result. All values are 
 \paragraph{Locked case matrix.} The v0.4 case matrix is pinned by the SHA-256 digest
 \begin{center}\small\ttfamily
 CASE\_MATRIX\_SHA256 =\\
-b0571780a4794be0fabb2a7d47a093fcb8dab07c4355467bb2fabe1a6a085664\\
-8c943c3890847dfe6d98f684211d449e
+b0571780a4794be0fabb2a7d47a093fcb8dab07c4355467bb2fabe1a6a085664
 \end{center}
 A locked-input loader verifies this digest before any consumer reads the matrix.
+
+\paragraph{Temperature.} Temperature is a locked recipe element and is recorded per branch in the case matrix. Every verdict-affecting branch in this report is evaluated at 298 K: the matrix records \(298.15\ \mathrm{K}\) for branches 1a--1d, 6b and 6c, and the global default \(298.0\ \mathrm{K}\) for 2a, 2b, 3a, 3b, 4a, 4c, 5b, 6a and 6e. Branch 3a is additionally cross-checked at \(323\ \mathrm{K}\). Because \(K_H\) and \(Q_{st}\) are defined only at a stated temperature, this value is part of each locked recipe and not a reporting convention.
+
+\paragraph{Derivation of the corrected 6c reference.} The all-silica MFI + Ar reference is the single most load-bearing number in the positive control, so its derivation is given explicitly. Talu and Myers report the argon--silicalite interaction as a Henry coefficient in the second-virial form, and the conversion to the mass-basis Henry constant used throughout this report is
+\begin{equation*}
+K_H \;=\; \frac{B}{k_B T \, \rho_{\mathrm{f}}},
+\end{equation*}
+where \(B\) is the reported host--guest second virial (volume per unit cell), \(k_B T\) is the thermal energy at the branch temperature \(298.15\ \mathrm{K}\), and \(\rho_{\mathrm{f}}\) is the framework mass density used to put \(K_H\) on a per-kilogram basis. The value carried in the original lock, \(0.224\ \mathrm{mol\,kg^{-1}\,bar^{-1}}\), was obtained with an inconsistent step in this conversion; carrying the same source data through the relation above gives \(0.200\ \mathrm{mol\,kg^{-1}\,bar^{-1}}\), a \(\sim\!12\%\) reduction. The corrected value is the one used for the strict window \([0.159, 0.252]\) and for every deviation quoted for 6c. The correction is in the \emph{reference}, not in the simulation: it does not change any computed \(K_H\).
 
 \paragraph{Strict acceptance thresholds.} The Tier-A strict (regression) band is \(\pm 0.10\) in \(\Delta\log_{10} K_H\) and \(\pm 2.0\ \mathrm{kJ\,mol^{-1}}\) in \(\Delta Q_{st}\). It is a conservative reproducibility gate --- tighter than typical inter-study or inter-sample scatter rather than a direct substitute for each experiment's own reported precision --- and is not itself a physical-accuracy claim. Acceptance is \emph{inclusive}: a branch passes when \(|\Delta\log_{10}K_H| \le 0.10\) and \(|\Delta Q_{st}| \le 2.0\ \mathrm{kJ\,mol^{-1}}\). The decision is taken on the three-seed point estimate; the seed-to-seed standard deviation (for example \(\pm 0.33\ \mathrm{kJ\,mol^{-1}}\) on the 4c heat) is reported as a reproducibility indicator and is not folded into the pass/fail logic. Branch 4c sits exactly on the heat boundary, and which side it lands on is engine-dependent: on the native estimator \(\Delta Q_{st} = +1.99\ \mathrm{kJ\,mol^{-1}}\) (inside), on RASPA3 \(+2.24\) (outside). The same recipe is therefore nominally strict on one engine and Tier-B on the other; we report 4c as Tier-B (the cross-engine \(K_H\) agreement is \(\sim\!9\%\) and the result is inside the experimental window).
 

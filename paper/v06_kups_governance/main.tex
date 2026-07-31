@@ -90,13 +90,21 @@ end-to-end on CuspAI's JAX engine \textbf{kUPS} and on the machine-learning inte
 (MLIP) kUPS ships. Auditing its own positive control surfaced a headline catch: the originally-locked
 all-silica MFI + Ar recipe \emph{double-counted silicon} --- Talu--Myers' Ar--O cross-parameter already
 folds silicon's dispersion into oxygen, and the locked recipe added an explicit Ar--Si on top --- so it
-landed inside the strict band only as a fortuitous cancellation of four compounding errors --- a coincidence, not a coherent result; rebuilt clean (pure Talu oxygen-only,
+landed inside the strict band as a fortuitous cancellation of four errors --- three in the calculation
+(silicon double-count, under-converged cutoff, non-calibration structure) and one in the reference
+(a mis-derived $K_H$); rebuilt clean (pure Talu oxygen-only,
 converged convention, on Talu's calibration Olson geometry) it reproduces the corrected reference
-$K_H = 0.200$ exactly and cross-engine (native 0.200, RASPA3 0.199). Separately and intact: to our
-knowledge and per public-source searches conducted on 15 June 2026, the first published independent
-cross-engine validation of kUPS's Widom estimator (isosteric
-heat reproduced to 0.01--0.22 kJ/mol on two locked controls; independent estimators agree on the shared
-recipe to 1.1\% on $K_H$, the dominant $K_H$ convention gaps traced to named truncation/shift
+$K_H = 0.200$ exactly and cross-engine (native 0.200, RASPA3 0.199). \textbf{The verdict does not
+change} --- the as-locked recipe is inside the strict band against both the mis-derived 0.224
+($\Delta\log_{10}K_H = -0.034$) and the corrected 0.200 ($+0.015$), and the three computational errors
+net to only $\times1.04$; what the rebuild changes is the \emph{coherence} of the recipe, not its
+pass/fail. The clean rebuild is in fact slightly worse on $Q_{st}$ ($-0.73$ vs $+0.33$ kJ/mol), which is
+what a spurious-attraction cancellation predicts. Separately: per public-source searches conducted on
+15 June 2026 we are not aware of a prior external check of kUPS's Widom estimator, which we check here
+against two independent estimators (isosteric
+heat reproduced to 0.01--0.22 kJ/mol on two locked controls; native $\leftrightarrow$ RASPA3 agree on the
+shared recipe to 1.1\% on $K_H$, while kUPS differs by $+16$\% until its truncation convention is matched
+and by 2.4\% once it is; the dominant $K_H$ convention gaps traced to named truncation/shift
 conventions, with one normalization-flavoured residual on the electrostatic control flagged open), and a
 four-configuration MLIP out-of-distribution governance demonstration that discriminates two failure
 modes, screen-passes a dispersion-corrected route, and respects the model's training domain. \textbf{The

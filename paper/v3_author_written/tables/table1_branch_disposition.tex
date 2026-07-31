@@ -20,7 +20,10 @@ locked-recipe labels, retained only to keep the table traceable to the repositor
 and its evidence JSON; for example 6c = all-silica MFI + Ar, 3a = UiO-66 +
 CO\textsubscript{2} (genuine UFF), 2a = HKUST-1 + CO\textsubscript{2} (genuine
 UFF), 4c = Si-CHA + CO\textsubscript{2} (Bai 2013 control), and 3b\_EHq = UiO-66 +
-CO\textsubscript{2} (Maia 2023 explicit-hydrogen, charged).}\label{tab:branch-disposition}\\
+CO\textsubscript{2} (Maia 2023 explicit-hydrogen, charged). Every branch listed is
+evaluated at 298~K: the locked case matrix records $298.15$~K for 1a--1d, 6b and
+6c and the global default $298.0$~K for the remainder, with 3a additionally
+cross-checked at $323$~K.}\label{tab:branch-disposition}\\
 \toprule
 Br. & System & Recipe (structure / force field / gas) & $\Delta\log_{10}K_H$ & $\Delta Q_{st}$ & Class & Reason \\
 \midrule
@@ -48,7 +51,7 @@ Br. & System & Recipe (structure / force field / gas) & $\Delta\log_{10}K_H$ & $
 3b\_UA & UiO-66 + CO\textsubscript{2} & Maia 2023 united-atom, no charge & $-0.411$ & $-6.09$ & within $2\sigma$ & united-atom under-binds \\
 3b\_UAq & UiO-66 + CO\textsubscript{2} & Maia 2023 united-atom + Yang charges & $-0.415$ & $-5.86$ & within $2\sigma$ & united-atom under-binds \\
 4a & Si-CHA + CO\textsubscript{2} & TraPPE-zeo + Harris--Yung CO\textsubscript{2}\cite{HarrisYung1995JPC} & $-0.116$ & $+11.74$ & within $2\sigma$ & gas-model-dependent $Q_{st}$ \\
-6b & MFI + Kr & Garc\'\i a-P\'erez framework + Talu cross-pair & $+0.071$ & $-4.17$ & within $2\sigma$ & $Q_{st}$ reference is a van't Hoff fit \\
+6b & MFI + Kr & Garc\'\i a-P\'erez framework\cite{GarciaPerez2007} + Talu cross-pair & $+0.071$ & $-4.17$ & within $2\sigma$ & $Q_{st}$ reference is a van't Hoff fit \\
 6e & MFI + CH\textsubscript{4} & Bai 2013 TraPPE-zeo + TraPPE-UA CH\textsubscript{4}\cite{MartinSiepmann1998JPCB} & $-0.296$ & $-2.14$ & within $2\sigma$ & TraPPE-zeo/UA under-binds (Shah 2015 agrees)\cite{Shah2015Langmuir} \\
 \addlinespace[2pt]
 \multicolumn{7}{@{}l}{\textit{(d) Force-field disagreements ($2$--$3\sigma$ tension and $>3\sigma$)}}\\
@@ -57,7 +60,7 @@ Br. & System & Recipe (structure / force field / gas) & $\Delta\log_{10}K_H$ & $
 1b & Mg-MOF-74 + CO\textsubscript{2} & Dzubak 2012 ($A\,e^{-Br}-C/r^5-D/r^6$)\cite{Dzubak2012NatChem} + TraPPE & $+1.799$ & $+9.55$ & $>3\sigma$ & over-binds vs experiment; parity unresolved \\
 1d & Mg-MOF-74 + CO\textsubscript{2} & Mercado 2016 Model 4 (Buckingham + LJ)\cite{Mercado2016JPCC} & $+1.716$ & $+11.84$ & $>3\sigma$ & over-binds open metal site \\
 2b & HKUST-1 + CO\textsubscript{2} & Ongari 2017 modified Cu-O(CO\textsubscript{2})\cite{Ongari2017JPCC} & $+1.400$ & $+14.03$ & $>3\sigma$ & over-binds Cu paddle-wheel \\
-6a & MFI + CH\textsubscript{4} & Garc\'\i a-P\'erez 2007 + Dubbeldam 2004 UA\cite{Dubbeldam2004UA} & $-0.347$ & $-2.43$ & $>3\sigma$ & united-atom under-binds \\
+6a & MFI + CH\textsubscript{4} & Garc\'\i a-P\'erez 2007\cite{GarciaPerez2007} + Dubbeldam 2004 UA\cite{Dubbeldam2004UA} & $-0.347$ & $-2.43$ & $>3\sigma$ & united-atom under-binds \\
 \addlinespace[2pt]
 \multicolumn{7}{@{}l}{\textit{(e) Method-blocked}}\\
 5b & Na-Rho + CO\textsubscript{2} & rigid closed-state Widom vs open-state experiment & --- & --- & ensemble mismatch & different partition functions; no scalar pass/fail \\

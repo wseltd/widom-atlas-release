@@ -43,9 +43,23 @@ LABELS = {  # display names (no numbers — those come from JSON)
 
 # ── Fixed parameters (single source; not results) ──
 T_K = 298.15
-# overlap threshold = 0.80 * 0.5*(sigma_O + sigma_Ar), the WPB hard-overlap rule
-SIGMA_O, SIGMA_AR = 3.500, 3.405
-OVERLAP_A = round(0.80 * 0.5 * (SIGMA_O + SIGMA_AR), 3)
+# Overlap threshold = 0.80 * 0.5*(sigma_O + sigma_Ar), the WPB hard-overlap rule.
+#
+# AUDIT CORRECTION (2026-07): the as-run threshold was 2.762 A, built from
+# 0.5*(3.500 + 3.405). Those lengths are not in the same convention -- 3.500 is
+# UFF's x_i for oxygen, which is r_min, NOT sigma (sigma = x_i / 2**(1/6) =
+# 3.118), while 3.405 is a Lennard-Jones sigma for argon. Re-derived
+# self-consistently in genuine UFF the threshold is 2.626 A. Re-scoring the
+# committed per-insertion evidence at 2.626 A leaves every refuse/screen-pass
+# verdict unchanged but drops the UMA-omat flagged weight from 0.998 to 0.000
+# (its deepest insertion sits at 2.646 A). OVERLAP_A_AS_RUN is retained so the
+# published figures remain reproducible; OVERLAP_A is the corrected value.
+TWO_ONE_SIXTH = 2.0 ** (1.0 / 6.0)
+UFF_XI_O = 3.500                      # UFF nonbond distance x_i (= r_min), oxygen
+SIGMA_O = UFF_XI_O / TWO_ONE_SIXTH    # -> 3.118 A
+SIGMA_AR = 3.868 / TWO_ONE_SIXTH      # UFF argon x_i 3.868 -> 3.446 A
+OVERLAP_A = round(0.80 * 0.5 * (SIGMA_O + SIGMA_AR), 3)          # 2.626 A
+OVERLAP_A_AS_RUN = round(0.80 * 0.5 * (UFF_XI_O + 3.405), 3)     # 2.762 A (superseded)
 
 
 def load(path):

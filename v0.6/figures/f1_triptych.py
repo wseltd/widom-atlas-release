@@ -37,16 +37,16 @@ ax.set_yscale("symlog", linthresh=20)
 ax.set_xlabel("nearest host–guest distance (Å)"); ax.set_ylabel(r"insertion energy $U$ (kJ mol$^{-1}$)")
 ax.set_title("WPB — governance discriminates the failure mode across 4 configurations (Si-CHA + Ar)")
 ax.annotate(f"small (2023) dives ATTRACTIVE\nat overlaps (min {S.fmt(m_sml, signed=True)}); flagged weight {S.fmt(fw_sml, 2)} → REFUSE I",
-            (1.5, -15), xytext=(2.7, -38), fontsize=6.8, color=S.COLORS["mace_small"],
+            (1.5, -15), xytext=(4.55, -45), fontsize=7.0, color=S.COLORS["mace_small"], ha="left", va="center",
             arrowprops=dict(arrowstyle="->", color=S.COLORS["mace_small"], lw=0.8))
 ax.annotate(f"MPA-0 bare ≥ {S.fmt(m_mpa, signed=True)} everywhere:\nno physisorption → REFUSE II",
-            (4.5, 9), xytext=(4.7, 60), fontsize=6.8, color=S.COLORS["mpa0_bare"],
+            (4.5, 9), xytext=(4.5, 1100), fontsize=7.0, color=S.COLORS["mpa0_bare"], ha="left", va="center",
             arrowprops=dict(arrowstyle="->", color=S.COLORS["mpa0_bare"], lw=0.8))
 ax.annotate(f"+D3(BJ) restores the well\n(min {S.fmt(m_d3, signed=True)}) → screen-pass",
-            (4.2, -5), xytext=(5.3, -32), fontsize=6.8, color=S.COLORS["mpa0_d3"],
+            (4.2, -5), xytext=(5.75, 120), fontsize=7.0, color=S.COLORS["mpa0_d3"], ha="left", va="center",
             arrowprops=dict(arrowstyle="->", color=S.COLORS["mpa0_d3"], lw=0.8))
-ax.annotate(f"UMA omat erratic at overlaps\n(min {S.fmt(m_uma, signed=True)}) → REFUSE I",
-            (2.65, -290), xytext=(3.2, -180), fontsize=6.8, color=S.COLORS["uma_omat"],
+ax.annotate(f"UMA omat erratic at overlap AND open sites\n(min {S.fmt(m_uma, signed=True)}, outside the overlap band)\n→ REFUSE on the energetic-anomaly gate",
+            (2.65, -290), xytext=(4.3, -220), fontsize=7.0, color=S.COLORS["uma_omat"], ha="left", va="center",
             arrowprops=dict(arrowstyle="->", color=S.COLORS["uma_omat"], lw=0.8))
 ax.legend(fontsize=6.4, loc="upper right"); ax.set_xlim(0.5, 8)
 fig.tight_layout()

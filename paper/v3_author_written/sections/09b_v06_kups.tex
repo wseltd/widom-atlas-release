@@ -30,8 +30,26 @@ at \(14.97\) kJ/mol it sits slightly farther from Dunne's \(15.7\) kJ/mol than t
 spurious-attraction cancellation rather than a coherent recipe. This is the paper's own thesis landing in its own
 positive control --- a recipe assembled from incompatible silicon conventions yields a fortuitously-right
 number, and only a governed single-source rebuild makes it honest --- in strict-band terms the hybrid lands in-band
-against \emph{both} the mis-derived \(0.224\) and the corrected \(0.200\), so the rebuild changes the
+against \emph{both} the mis-derived \(0.224\) (\(\Delta\log_{10}K_H = -0.034\)) and the corrected \(0.200\)
+(\(+0.015\)), so the rebuild changes the
 recipe's coherence, not the verdict (Table~\ref{tab:6c-cancellation}, Figure~\ref{fig:6c-cancellation}).
+The reason the hybrid survived is quantitative: of the four errors, three are in the calculation
+(silicon double-count \(\times1.80\), under-converged cutoff \(\times0.75\), non-calibration structure
+\(\times0.77\)) and one is in the reference. The three computational errors compound to only
+\(\times1.04\), so they very nearly cancel among themselves, and the fourth error moved the target to
+meet them.
+
+\paragraph{Structure sensitivity, and the limit of this control.} The converged single-source recipe is
+not structure-independent. Evaluated on Talu's calibration (Olson) geometry \cite{Olson1981JPC} it gives
+\(K_H = 0.200\ \mathrm{mol\,kg^{-1}\,bar^{-1}}\) and on the van Koningsveld geometry
+\cite{vanKoningsveld1987ActaCrystB} \(0.205\), both
+inside the strict window \([0.159, 0.252]\); on the IZA geometry the same recipe gives \(0.154\), which
+is \emph{outside} that window (\(\Delta\log_{10}K_H = -0.114\)). Stated plainly: the clean recipe passes
+strict on Talu's calibration geometry and fails strict on the IZA geometry, so the structure is a
+verdict-affecting recipe element in its own right and not a detail. A second limit should be read with
+this control: the Talu--Myers argon parameters were themselves fitted to silicalite adsorption data of
+this kind, so three-figure agreement between this recipe and that reference is closer to a
+self-consistency check on the calibration than to an independent validation of the energy model.
 
 \begin{table}[tbp]
 \centering\small
