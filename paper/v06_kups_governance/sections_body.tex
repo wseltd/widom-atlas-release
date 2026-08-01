@@ -415,17 +415,47 @@ and a well in the right place, passes this screen unchanged. A
 screen-pass therefore licenses \emph{use in a governed screen}, not a
 thermodynamic number; it is not an endorsement of the potential.
 
-\paragraph{Corroboration of the UMA anomaly.} The \(-292.8\) kJ/mol
-value is a single-configuration result and this report does not carry a
-continuous \(U(r)\) scan for it. What it does carry is an independent
-repeat on a second task head: the ODAC head on the same Ar/CHA system
-gives a spurious minimum of \(-297.1\) kJ/mol, i.e.\ the anomaly
-reproduces to \(\sim\)1.5 \% across two heads rather than being a
-one-off numerical excursion. Given that this section already
-documents two harness-level hazards for UMA, we treat the magnitude as
-indicative and the \emph{verdict} --- refuse --- as the reportable
-result. A continuous \(U(r)\) scan along one trajectory remains the
-right confirmation and is listed as outstanding work.
+\paragraph{Corroboration of the UMA anomaly (continuous \(U(r)\) scan).}
+The \(-292.8\) kJ/mol value was checked three ways. \emph{(i) Repeat.}
+Recomputing the committed deepest insertion reproduces it to
+\(0.0005\) kJ/mol (\(-292.777\) recomputed vs \(-292.777\) committed).
+\emph{(ii) Second reference configuration.} Re-referencing the entire
+calculation against a second open-pore configuration shifts every point
+by a \emph{constant} \(-0.195\) kJ/mol, with zero spread across the
+scan; the anomaly is therefore not a reference artefact.
+\emph{(iii) Continuous scan.} Scanning argon along the line from the
+nearest framework oxygen through that insertion (61 points,
+Figure~\ref{fig:uma-ur}) shows the anomaly is not a numerical spike but
+a \textbf{smooth, broad, spurious basin}: the potential crosses zero near
+\(1.9\) Å and descends continuously to \(-309.8\) kJ/mol at a
+host--guest separation of \(2.73\) Å, where the classical comparator on
+the same trajectory is \emph{repulsive} at \(+18\) kJ/mol. Thirty of the
+sixty-one scan points lie below the \(-25\) kJ/mol anomaly floor,
+spanning \(1.99\)--\(2.76\) Å, and ten of those lie \emph{outside} the
+corrected \(2.626\) Å overlap threshold. Two conclusions follow. The
+refusal is well founded and the magnitude is real rather than a sampling
+excursion --- indeed random insertion \emph{under}-sampled the basin,
+whose true minimum along this line is \(17\) kJ/mol deeper than the
+sampled value. And the basin minimum sits at an open, non-overlapping
+distance, which independently confirms that ``over-binding inside an
+overlap'' was the wrong mechanism: this potential places a
+\(\sim\!300\) kJ/mol well where a physical argon--oxygen interaction is
+of order \(1\) kJ/mol.
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.92\textwidth]{f4_uma_ur_scan.pdf}
+\caption{Continuous \(U(r)\) scan for UMA \texttt{uma-s-1.1} (omat) on
+Si-CHA~+~Ar, along the line from the nearest framework oxygen through the
+deepest committed insertion. The classical comparator (blue) is
+monotonically repulsive over the whole range; the machine-learned
+potential (brown) crosses zero near \(1.9\) Å and falls into a smooth
+spurious basin reaching \(-309.8\) kJ/mol at \(2.73\) Å, outside the
+corrected overlap band. Shading marks the corrected hard-overlap
+threshold; the dotted line is the energetic-anomaly floor. Every UMA
+value is read from the committed scan JSON.}
+\label{fig:uma-ur}
+\end{figure}
 
 Paired energies at identical \emph{open} (\textasciitilde4 Å, no
 overlap) insertions, four geometries and no error bars, are consistent
