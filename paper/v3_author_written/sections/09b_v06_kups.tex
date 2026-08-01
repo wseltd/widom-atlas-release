@@ -129,15 +129,21 @@ tail-implementation difference that account for the kUPS--reference offset.}
 
 Treating an MLIP as one more energy-model recipe, we score Widom insertions of Ar into all-silica CHA
 under four configurations, with a classical Lennard-Jones baseline scoring the same insertion geometries
-so that every difference is the potential, not the sampling. The governance is a pre-registered schema
+so that every difference is the potential, not the sampling. The governance is a rule-based schema,
+written before the results were seen and applied with one documented post-hoc correction (a spurious
+weight clip, removed),
 with two refusal classes: out-of-distribution over-binding (flagged insertions carry at least half the
-Boltzmann weight) and under-binding (no physisorption well where one is established). The result
+Boltzmann weight) and absent-well under-binding (no physisorption minimum where one is established).
+The second class is named for the observation rather than a mechanism: a flat positive plateau is
+consistent with a missing dispersion term but equally with an unquantified out-of-distribution energy
+offset, and the evidence here does not separate the two. The result
 discriminates two distinct failure modes and, for one of them, certifies a governed screen-pass (Figure~\ref{fig:v06-triptych}). The 2023
 MACE-MP-small potential hallucinates attractive energies \emph{inside} atomic overlaps --- its global
 minimum, \(-19.3\) kJ/mol, lies at a hard overlap, and the flagged insertions carry \(99.5\%\) of the
 weight; it is refused. The MACE-MPA-0 potential as shipped in CuspAI's \texttt{kUPS-mace-jax} export is
-the opposite: repulsive everywhere (minimum \(+8.5\) kJ/mol), finding no physisorption well at all, the
-bare PBE signature of a missing dispersion term; it too is refused. Pairing the \emph{same} weights with
+the opposite: repulsive everywhere (minimum \(+8.5\) kJ/mol), finding no physisorption well at all ---
+consistent with the bare PBE signature of a missing dispersion term, although the plateau is flat with
+distance and an out-of-distribution offset is not excluded; it too is refused. Pairing the \emph{same} weights with
 the standard D3(BJ) dispersion correction recovers a physical well (minimum \(-5.0\) kJ/mol, shallower than the
 \(-22\) kJ/mol classical baseline) at a non-overlap distance: it passes the out-of-distribution screen, accuracy
 unassessed. Dispersion-correction on or off is therefore
@@ -145,14 +151,32 @@ a load-bearing recipe element, and an ungoverned pipeline silently differs on it
 export was verified energy-identical to the upstream reference implementation to a maximum relative
 difference of \(2.1\times10^{-7}\), so the governance conclusions carry to the runtime path.
 
+\paragraph{Audit correction to the overlap threshold.} The hard-overlap flag was applied at
+\(0.80\,\sigma_{\min} = 2.762\)~\AA{}, built from \(\tfrac{1}{2}(3.500 + 3.405)\)~\AA{}. Those lengths
+are not in the same convention: \(3.500\)~\AA{} is UFF's \(x_i\) for oxygen, which is \(r_{\min}\) and
+not \(\sigma\) (\(\sigma = x_i/2^{1/6} = 3.118\)~\AA{}), while \(3.405\)~\AA{} is a Lennard-Jones
+\(\sigma\) for argon. Re-derived self-consistently the threshold is \(2.626\)~\AA{}. Re-scoring the
+committed per-insertion evidence changes no refuse or screen-pass verdict, but the UMA materials-head
+flagged weight falls from \(0.998\) to \(0.000\), because its deepest insertion lies at \(2.646\)~\AA{}
+--- inside the as-run overlap region and outside the corrected one. That refusal is therefore carried by
+the energetic-anomaly gate, not the overlap gate, and the accurate description is that the potential is
+erratic irrespective of overlap. A continuous \(U(r)\) scan along the line from the nearest framework
+oxygen through that insertion confirms this: the anomaly is a smooth spurious basin reaching
+\(-309.8\) kJ/mol at a host--guest separation of \(2.73\)~\AA{}, where the classical comparator on the
+same trajectory is repulsive, and it reproduces on repeat to \(0.0005\) kJ/mol and shifts by a constant
+\(0.195\) kJ/mol under a second reference configuration. The companion report carries the scan and the
+full re-scoring. This is a \(\sigma \leftrightarrow r_{\min}\) slip of exactly the kind this paper is
+about, caught by audit rather than by inspection.
+
 \begin{figure}[tbp]
 \centering
 \includegraphics[width=\textwidth]{figures/f1_wpb_triptych.pdf}
 \caption{Out-of-distribution governance discriminates the failure mode across four configurations
 (Si-CHA + Ar). MACE-MP-small over-binds inside overlaps (refused); MACE-MPA-0 bare is repulsive
-everywhere, missing dispersion (refused); the same weights with D3(BJ) recover a physical well
-(screen-pass); the UMA materials head is erratic at overlaps (refused). Every label renders from a
-committed JSON.}
+everywhere, finding no physisorption well (refused); the same weights with D3(BJ) recover a physical well
+(screen-pass); the UMA materials head is erratic both inside and outside the overlap region and is
+refused on the energetic-anomaly gate. The shaded band is the corrected \(2.626\)~\AA{} hard-overlap
+threshold. Every label renders from a committed JSON.}
 \label{fig:v06-triptych}
 \end{figure}
 
